@@ -1,0 +1,371 @@
+<title>Insurtech Capital Flow</title>
+<meta name="description" content="332 insurtech startups' funding mapped onto the P&C value chain: where capital went, who doubled down, and what raised nothing.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --paper:#f3f4f7; --card:#ffffff; --ink:#141b2d; --muted:#5a6478; --faint:#8b93a3;
+    --line:#dde1e8; --gold:#a9772e; --gold-soft:#f2e6cf; --green:#2f6b52; --green-soft:#e3efe8;
+    --rose:#9c3b3b; --track:#eceef2;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#11151f; --card:#171d29; --ink:#e8eaef; --muted:#98a1b3; --faint:#6c7488;
+      --line:#2a3140; --gold:#d3a45c; --gold-soft:#3a2f1c; --green:#5aab86; --green-soft:#1c3128;
+      --rose:#c07272; --track:#1e2531;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#11151f; --card:#171d29; --ink:#e8eaef; --muted:#98a1b3; --faint:#6c7488;
+    --line:#2a3140; --gold:#d3a45c; --gold-soft:#3a2f1c; --green:#5aab86; --green-soft:#1c3128;
+    --rose:#c07272; --track:#1e2531;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans",-apple-system,sans-serif;font-size:15px;line-height:1.5;padding-block:0;}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 20px 90px}
+  .mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
+  header{padding:48px 0 6px}
+  .eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:12px}
+  h1{font-family:"Fraunces",Georgia,serif;font-size:clamp(28px,4.2vw,42px);font-weight:500;line-height:1.1;margin:0 0 14px;max-width:18ch;text-wrap:balance}
+  .lede{color:var(--muted);max-width:66ch;margin:0 0 22px;font-size:16px}
+  h2{font-family:"Fraunces",Georgia,serif;font-size:22px;font-weight:500;margin:0 0 4px}
+  h3{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 12px}
+  section{padding-top:46px}
+  .sec-head{border-bottom:2px solid var(--ink);padding-bottom:9px;margin-bottom:18px;display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .sec-note{color:var(--muted);font-size:13px;max-width:72ch;margin:0 0 20px}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:8px 0 0}
+  .stat{background:var(--card);padding:16px 18px}
+  .stat b{display:block;font-family:"IBM Plex Mono",monospace;font-size:22px;font-weight:600}
+  .stat span{color:var(--muted);font-size:12px;display:block;margin-top:3px;line-height:1.35}
+
+  .callout{background:var(--gold-soft);border-left:3px solid var(--gold);padding:14px 18px;font-size:14px;margin:0 0 26px}
+  .callout b{color:var(--gold)}
+
+  /* stage bars */
+  .bar-row{display:grid;grid-template-columns:190px 1fr 92px 60px;align-items:center;gap:10px;margin-bottom:7px}
+  .bar-row .lbl{font-size:12.5px;text-align:right;color:var(--ink)}
+  .bar-row .lbl small{display:block;color:var(--faint);font-size:10.5px}
+  .bar-track{background:var(--track);height:20px;position:relative;border-radius:2px;overflow:hidden}
+  .bar-fill{position:absolute;inset:0 auto 0 0;background:var(--gold);opacity:.88}
+  .bar-fill.crosscut{background:var(--muted);opacity:.55}
+  .bar-row .val{font-family:"IBM Plex Mono",monospace;font-size:12.5px;text-align:right}
+  .bar-row .cnt{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--faint);text-align:right}
+  .crosscut-block{margin-bottom:22px}
+  .crosscut-block .bar-row .lbl{color:var(--muted)}
+
+  /* value-chain tiers (rollup of the workflow steps onto the Workflow Map's participants) */
+  .tier{margin-bottom:6px}
+  .tier-row{display:grid;grid-template-columns:190px 1fr 92px 60px;align-items:center;gap:10px;cursor:pointer;border-radius:4px;padding:5px 0}
+  .tier-row:hover{background:var(--track)}
+  .tier-row .lbl{font-size:13px;text-align:right;color:var(--ink);font-weight:600}
+  .tier-row .lbl small{display:block;color:var(--faint);font-size:10.5px;font-weight:400}
+  .tier-row .bar-track{height:24px}
+  .tier-row .val{font-family:"IBM Plex Mono",monospace;font-size:13px;text-align:right}
+  .tier-row .cnt{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--faint);text-align:right;white-space:nowrap}
+  .tier-row .cnt::after{content:" ▸";color:var(--faint)}
+  .tier.open .tier-row .cnt::after{content:" ▾"}
+  .tier.crosscut .tier-row .lbl{color:var(--muted)}
+  .sub-rows{display:none;padding:4px 0 8px}
+  .tier.open .sub-rows{display:block}
+  .sub-rows .bar-row{margin-bottom:4px}
+  .sub-rows .bar-row .lbl{font-size:11.5px;color:var(--muted)}
+  .sub-rows .bar-track{height:12px}
+  .sub-rows .bar-fill{opacity:.5}
+  .chain-arrow{color:var(--faint);font-size:13px;line-height:1;margin:0 0 6px 190px;padding-left:2px}
+
+  /* funnel */
+  .funnel-row{display:grid;grid-template-columns:110px 1fr 84px 70px;align-items:center;gap:10px;margin-bottom:6px;font-size:12.5px}
+  .funnel-row .lbl{text-align:right}
+  .funnel-track{background:var(--track);height:16px;border-radius:2px;overflow:hidden}
+  .funnel-fill{height:100%;background:var(--green);opacity:.8}
+  .funnel-row .val,.funnel-row .cnt{font-family:"IBM Plex Mono",monospace;text-align:right;color:var(--muted)}
+
+  /* investor table */
+  table{border-collapse:collapse;width:100%;font-size:13px;background:var(--card)}
+  th{text-align:left;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:9px 12px;border-bottom:2px solid var(--ink)}
+  td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  td.n{font-family:"IBM Plex Mono",monospace;text-align:right}
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line)}
+  table{min-width:560px}
+  th,td{white-space:nowrap}
+  td.wrap-ok{white-space:normal}
+  .tag{display:inline-block;font-size:10px;letter-spacing:.05em;text-transform:uppercase;padding:2px 7px;border-radius:99px;font-weight:600}
+  .tag.conc{background:var(--green-soft);color:var(--green)}
+  .tag.gen{background:var(--track);color:var(--faint)}
+
+  /* doubled-down cards */
+  .dd-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}
+  .dd-card{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--green);padding:12px 14px}
+  .dd-card .name{font-weight:600;font-size:14px}
+  .dd-card .meta{font-size:11.5px;color:var(--muted);margin:2px 0 8px}
+  .dd-card .chips{display:flex;flex-wrap:wrap;gap:5px}
+  .chip{font-size:11px;background:var(--track);color:var(--ink);padding:2px 8px;border-radius:99px}
+  .chip.more{color:var(--faint)}
+
+  footer{margin-top:60px;padding-top:16px;border-top:1px solid var(--line);color:var(--faint);font-size:12px;max-width:78ch}
+  a{color:var(--gold)}
+  @media (max-width:640px){
+    .bar-row{grid-template-columns:100px 1fr 74px 44px}
+    .bar-row .lbl{font-size:11px}
+    /* narrow screens: label on its own line, bar gets the full width */
+    .tier-row,.sub-rows .bar-row{grid-template-columns:1fr 74px 52px;grid-template-areas:"lbl lbl lbl" "bar val cnt";row-gap:3px}
+    .tier-row .lbl,.sub-rows .bar-row .lbl{grid-area:lbl;text-align:left;font-size:12.5px}
+    .tier-row .lbl small{display:inline;margin-left:6px}
+    .tier-row .bar-track,.sub-rows .bar-row .bar-track{grid-area:bar}
+    .tier-row .val,.sub-rows .bar-row .val{grid-area:val}
+    .tier-row .cnt,.sub-rows .bar-row .cnt{grid-area:cnt}
+    .chain-arrow{margin-left:0}
+    .funnel-row{grid-template-columns:64px 1fr 60px 0}
+    .funnel-row .cnt{display:none}
+  }
+
+  /* ---- disclosure kit: shared across all five pages in this repo ---- */
+  .dmark{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;
+    background:var(--track,var(--line));color:var(--faint);font:600 9px/1 "IBM Plex Mono",ui-monospace,monospace;
+    cursor:help;border:none;padding:0;margin-left:5px;vertical-align:middle;position:relative}
+  .dmark:hover,.dmark:focus-visible,.dmark.open{background:var(--gold,var(--accent,#a9772e));color:var(--card,#fff);outline:none}
+  .dmark .dpop{display:none;position:absolute;z-index:30;left:50%;bottom:calc(100% + 7px);transform:translateX(-50%);
+    width:max-content;max-width:250px;background:var(--ink);color:var(--paper,var(--card));font-size:11.5px;line-height:1.45;
+    padding:8px 11px;border-radius:7px;box-shadow:0 6px 18px rgba(0,0,0,.22);text-align:left;
+    font-family:"IBM Plex Sans",-apple-system,sans-serif;font-weight:400}
+  .dmark.open > .dpop{display:block}
+  .dpop::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--ink)}
+  details.mnote{margin:10px 0 22px}
+  details.mnote summary{cursor:pointer;color:var(--muted);font-size:12px;font-weight:600;list-style:none;
+    display:flex;align-items:center;gap:6px;user-select:none}
+  details.mnote summary::before{content:"▸";font-size:9px;color:var(--faint);transition:transform .15s;display:inline-block}
+  details.mnote[open] summary::before{transform:rotate(90deg)}
+  details.mnote summary::-webkit-details-marker{display:none}
+  details.mnote .mnote-body{color:var(--muted);font-size:12.5px;padding:8px 2px 0 15px;max-width:72ch;line-height:1.55}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Analysis · Insurtech Capital Flow</div>
+  <h1>Where the money actually went</h1>
+  <p class="lede">332 tracked insurtech startups, their funding, and their investors — mapped onto the same value-chain stages as the <a href="pc-workflow-map.html">Workflow Evidence Map</a>. See also: <a href="capital-timeline.html">Capital Deployment Timeline</a>, this same data with a time axis.</p>
+  <div class="stats" id="headline-stats"></div>
+</header>
+
+<section id="chain">
+  <div class="sec-head"><h2>Capital along the value chain</h2><div class="mono" style="font-size:12px;color:var(--muted)">same spine as the Workflow Evidence Map</div></div>
+  <p class="sec-note">Broker → underwriter → policy in force → claims: the same participants as the Workflow Evidence Map's chain. Click a tier to see the steps inside it. Full-stack insurers aren't a stage — they're a bet on the whole chain — so they sit below it, not in it.</p>
+  <div id="chain-tiers"></div>
+  <div class="crosscut-block">
+    <h3 style="margin-top:26px">Not a stage — a bet on the whole chain</h3>
+    <div id="crosscut-tiers"></div>
+  </div>
+  <div class="callout"><b>The read:</b> <span id="chain-callout"></span></div>
+</section>
+
+<section id="funnel">
+  <div class="sec-head"><h2>Stage-of-maturity funnel</h2></div>
+  <p class="sec-note">How far each company has gotten, regardless of what it does. Capital concentrates at Series C/D — fewer, bigger rounds. Two catch-alls sit underneath and they are not the same thing: companies that state a figure but never name the round, and companies that disclose nothing at all.</p>
+  <div id="funnel-bars"></div>
+</section>
+
+<section id="investors">
+  <div class="sec-head"><h2>Investor leaderboard</h2><div class="mono" style="font-size:12px;color:var(--muted)" id="inv-count"></div></div>
+  <p class="sec-note">Ranked by number of portfolio companies in this dataset. "Concentrated" means 60%+ of an investor's bets sit in one tier of the value chain — a thesis, not a spray. Everyone else is a generalist across insurtech.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Investor</th><th style="text-align:right">Cos.</th><th>Top segment</th><th>Pattern</th></tr></thead>
+      <tbody id="inv-table"></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="doubled-down">
+  <div class="sec-head"><h2>Who doubled down</h2></div>
+  <p class="sec-note">Investors with 3+ portfolio companies concentrated (≥60%) in a single value-chain segment — repeated conviction in one part of the chain, not diversification across insurtech broadly.</p>
+  <div class="dd-grid" id="dd-grid"></div>
+</section>
+
+<footer>
+  Source: <code>insurtech-dataset.json</code> (332 companies, this repo), cross-referenced with the <a href="pc-workflow-map.html">Workflow Evidence Map</a>'s value-chain stages and the <a href="insurtech-graph.html">Investor Graph</a>. Capital figures are the largest single dollar amount parsed from each company's free-text funding history — a "total raised" proxy, not an audited figure; rounds without a disclosed amount are excluded from totals but still counted as companies. Investor names normalized across known aliases (e.g. HSCM Ventures / HSCM Bermuda / Hudson Structured Capital Management merged as one fund). Compiled 2026-09.
+</footer>
+</div>
+
+<script>
+const STAGE_ORDER = [
+  ["intake","Submission intake","& digitization"],
+  ["triage","Triage","& prioritization"],
+  ["risk-enrichment","Risk enrichment","& verification"],
+  ["pricing","Pricing","infrastructure"],
+  ["MGA-ops","MGA / underwriting","ops, delegated authority"],
+  ["quote-bind","Quote–bind","connectivity"],
+  ["broker-ops","Broker & agency","operations"],
+  ["policy-servicing","Policy servicing","& administration"],
+  ["claims-fnol","Claims FNOL","& intake"],
+  ["claims-guidance","Claims guidance","& medical"],
+  ["fraud","Fraud","& SIU"],
+  ["bordereaux","Bordereaux","& MGA finance"],
+  ["compliance","Compliance","& licensing"],
+  ["other","Other /","uncategorized"],
+];
+const CROSSCUT = [
+  ["full-stack-insurer","Full-stack insurer","new carrier, owns the whole chain"],
+  ["distribution/embedded","Distribution & embedded","marketplaces, embedded & new channels"],
+];
+
+const BY_STAGE = {"intake":{"capital":673850000.0,"count":14,"funded_count":11},"broker-ops":{"capital":1006250000.0,"count":44,"funded_count":35},"full-stack-insurer":{"capital":4618920000.0,"count":38,"funded_count":34},"claims-fnol":{"capital":260182000.0,"count":14,"funded_count":10},"policy-servicing":{"capital":1064950000.0,"count":19,"funded_count":16},"risk-enrichment":{"capital":1037984000.0,"count":33,"funded_count":28},"MGA-ops":{"capital":1393000000.0,"count":40,"funded_count":31},"distribution/embedded":{"capital":2336090000.0,"count":51,"funded_count":45},"pricing":{"capital":399700000.0,"count":13,"funded_count":9},"claims-guidance":{"capital":663950000.0,"count":29,"funded_count":24},"fraud":{"capital":235650000.0,"count":5,"funded_count":4},"quote-bind":{"capital":246100000.0,"count":14,"funded_count":14},"compliance":{"capital":219000000.0,"count":6,"funded_count":4},"other":{"capital":517720000.0,"count":10,"funded_count":9},"triage":{"capital":180000000.0,"count":1,"funded_count":1},"bordereaux":{"capital":7000000.0,"count":1,"funded_count":1}};
+const FUNNEL = {"Series A":{"count":73,"capital":1788618000.0},"Round not stated":{"count":35,"capital":2043790000.0},"Seed":{"count":69,"capital":418864000.0},"Series B":{"count":51,"capital":2397632500.0},"Series D":{"count":16,"capital":3253100000.0},"Pre-Seed":{"count":10,"capital":25841500.0},"Nothing disclosed":{"count":41,"capital":0.0},"Series C":{"count":28,"capital":2925600000.0},"Series E":{"count":7,"capital":1299000000.0},"Series G":{"count":2,"capital":707900000.0}};
+const TOP_INVESTORS = [{"investor":"Y Combinator","company_count":37,"companies":["Armilla AI","Avallon AI","Axle","Casey","ClaimSorted","CopyCat","Corgi Insurance","Covera","Coverage Cat","Curacel","Fernstone","FurtherAI","Harper","Healia","Hesper AI","Kyber","Momento Seguros","Newfront","Panta","Pasito","Pibit.ai","PolicyFly","Qlo","RiskCube","SafetyWing","Shepherd","Solva","Soteris","Strada","Stream","SuretyNow","Tesora","Tint","Vantel","Veltha","Verdex","Vouch"],"segment_spread":{"intake":2,"broker-ops":7,"full-stack-insurer":3,"claims-fnol":4,"policy-servicing":3,"risk-enrichment":2,"MGA-ops":2,"distribution/embedded":5,"pricing":3,"claims-guidance":3,"fraud":2,"quote-bind":1}},{"investor":"Hudson Structured Capital Management","company_count":28,"companies":["Ascend","Atidot","Battleface","Bold Penguin","Branch","Buckle","Cape Analytics","Corvus Insurance","CyberCube","Dayforward","Doma","Embroker","Inclined Technologies","Insurate","Kin","Ladder","Layr","Meanwhile","Metromile","Modern Life","Mulberry","Parsyl","Polly (fka DealerPolicy)","Renegade Insurance","RiskGenius","TensorFlight","Tu Momento","reThought Insurance"],"segment_spread":{"risk-enrichment":4,"full-stack-insurer":8,"quote-bind":1,"MGA-ops":4,"distribution/embedded":3,"broker-ops":4,"policy-servicing":2,"pricing":1,"other":1}},{"investor":"MTech Capital","company_count":24,"companies":["Adapt","Akur8","Assured","Bold Penguin","Corvus Insurance","Covr","CyberCube","Embroker","INSHUR","Insurify","Irys","Matic","Monitaur","Napo","Openly","Pasito","Pendella","Plum Life","Polly (fka DealerPolicy)","Property Lens","Qumis","Sonant AI","Stere","Thinksurance"],"segment_spread":{"policy-servicing":1,"distribution/embedded":6,"pricing":1,"claims-fnol":1,"quote-bind":2,"MGA-ops":4,"claims-guidance":1,"risk-enrichment":2,"full-stack-insurer":1,"broker-ops":2,"intake":1,"compliance":1,"other":1}},{"investor":"Anthemis","company_count":19,"companies":["AgentSync","Amplify","Branch","Cowbell","EasyHealth","Flock","Hokodo","Insurdata","Kettle","Koffie Financial","Matic","Qover","Raincoat","Reserv","Stable","Stoik","Vouch","YuLife","kWh Analytics"],"segment_spread":{"full-stack-insurer":3,"MGA-ops":4,"distribution/embedded":7,"compliance":1,"pricing":1,"claims-fnol":1,"risk-enrichment":1,"other":1}},{"investor":"ManchesterStory","company_count":19,"companies":["Better.agency","Betterview","COVU","Cowbell","FLORA Insurance","Goose","Kinetic","LimitFi","Matic","Plnar","Plum Life","Powerbroker AI","Rainwalk Pet Insurance","Stitch Studio","Trailblazer","Trussed AI","Verikai","Wisedocs","reThought Insurance"],"segment_spread":{"MGA-ops":4,"distribution/embedded":3,"broker-ops":3,"risk-enrichment":2,"other":3,"claims-guidance":2,"policy-servicing":1,"compliance":1}},{"investor":"IA Capital Group","company_count":16,"companies":["Afficiency","Axio","Boost Insurance","Clearcover","Delos","Delos Insurance Solutions","Frontier Risk","Marble","Matic","Scription","Snapsheet","Sure","Testudo","The Demex Group","The Zebra","reThought Insurance"],"segment_spread":{"distribution/embedded":6,"full-stack-insurer":1,"risk-enrichment":2,"pricing":2,"MGA-ops":3,"claims-fnol":1,"other":1}},{"investor":"Altai Ventures","company_count":14,"companies":["Authentic","AutoComplete","Comeryx","CommonPoint","Ennabl","EvolutionIQ","Gail","LeapEasy","Modern Life","Newfront","Propeller Bonds","Rainbow","Reserv","Upfort"],"segment_spread":{"broker-ops":4,"claims-guidance":2,"claims-fnol":1,"MGA-ops":2,"distribution/embedded":3,"quote-bind":2}},{"investor":"Munich Re Ventures","company_count":14,"companies":["Acko","Amplify","At-Bay","Azos","Dayforward","Empathy","Faye","Functional Finance","INSHUR","Insify","ManyPets","Next Insurance","Stoik","Ticker"],"segment_spread":{"claims-guidance":1,"MGA-ops":1,"pricing":1,"full-stack-insurer":9,"distribution/embedded":1,"policy-servicing":1}},{"investor":"MS&AD Ventures","company_count":13,"companies":["Armilla AI","Artificial Labs","Assured Allies","Cowbell","Fairmatic","INSHUR","Laka","Marble","Mulberri","Optifino","Socotra","Vouch","Wagmo"],"segment_spread":{"full-stack-insurer":2,"MGA-ops":3,"distribution/embedded":4,"quote-bind":1,"policy-servicing":1,"pricing":1,"risk-enrichment":1}},{"investor":"American Family Ventures","company_count":13,"companies":["Branch","Clearcover","Comeryx","Elysian","Gradient AI","Hover","LeaseLock","Ledgebrook","Optifino","Pathwork","Qumis","Sana","Turtlemint"],"segment_spread":{"full-stack-insurer":3,"broker-ops":1,"MGA-ops":2,"claims-fnol":1,"intake":1,"distribution/embedded":3,"risk-enrichment":2}},{"investor":"Brewer Lane Ventures","company_count":12,"companies":["Cape Analytics","Cowbell","EasyHealth","Empathy","Ennabl","EvolutionIQ","Herald","Hi Marley","Ladder","Novella","Sixfold","Socotra"],"segment_spread":{"risk-enrichment":2,"MGA-ops":1,"distribution/embedded":1,"claims-guidance":2,"broker-ops":2,"quote-bind":1,"policy-servicing":2,"full-stack-insurer":1}},{"investor":"Greycroft","company_count":10,"companies":["Amplify","Armilla AI","Boost Insurance","Branch","Clearcover","CyberFortress","EnterMedicare","FairClaims","Pie Insurance","Stable"],"segment_spread":{"MGA-ops":1,"full-stack-insurer":4,"distribution/embedded":3,"other":1,"claims-guidance":1}},{"investor":"Eos Venture Partners","company_count":10,"companies":["Bamboo Insurance","Buckle","Champ Titles","CyberSmart","Elpha Secure","Mulberri","Players Health","Ticker","Westhill","Yarowa"],"segment_spread":{"MGA-ops":2,"full-stack-insurer":1,"claims-guidance":3,"risk-enrichment":1,"quote-bind":1,"distribution/embedded":1,"pricing":1}},{"investor":"Markd","company_count":9,"companies":["Assureful","COVU","Cake (Cake Insure/Cake M&A)","CrashBay","Indemn","Irys","Ledgebrook","Pinpoint Predictive","Scription"],"segment_spread":{"broker-ops":3,"risk-enrichment":1,"quote-bind":1,"MGA-ops":1,"pricing":1,"claims-guidance":1,"other":1}},{"investor":"Nationwide Ventures","company_count":8,"companies":["Betterview","EasyHealth","Hover","Insurify","Matic","Next Insurance","Snapsheet","Socotra"],"segment_spread":{"distribution/embedded":3,"claims-fnol":1,"full-stack-insurer":1,"risk-enrichment":2,"policy-servicing":1}},{"investor":"Gaingels","company_count":8,"companies":["Betterview","Blueprint Title","Boost Insurance","Branch","Embroker","Nava Benefits","Super (HomeServe-style home warranty)","Upfort"],"segment_spread":{"full-stack-insurer":1,"MGA-ops":1,"quote-bind":2,"risk-enrichment":1,"distribution/embedded":1,"broker-ops":1,"other":1}},{"investor":"Intact Ventures","company_count":7,"companies":["Acko","Arqu","Comeryx","Quandri","Shepherd","Snapsheet","Urban Jungle"],"segment_spread":{"MGA-ops":2,"claims-fnol":1,"full-stack-insurer":2,"broker-ops":2}},{"investor":"Insight Partners","company_count":7,"companies":["Corvus Insurance","CoverForce","DigitalOwl","Insurely","Pasito","Socotra","Tractable"],"segment_spread":{"policy-servicing":2,"MGA-ops":1,"risk-enrichment":2,"claims-guidance":1,"quote-bind":1}},{"investor":"Acrew Capital","company_count":7,"companies":["At-Bay","Branch","Kettle","Pie Insurance","Stable","Stream Claims","Vellum"],"segment_spread":{"full-stack-insurer":3,"pricing":1,"other":1,"bordereaux":1,"claims-guidance":1}},{"investor":"Andreessen Horowitz","company_count":6,"companies":["FurtherAI","Hyperexponential","Segura","Stoik","Tesora","XBuild"],"segment_spread":{"intake":1,"pricing":2,"full-stack-insurer":1,"distribution/embedded":1,"claims-guidance":1}},{"investor":"Opera Tech Ventures","company_count":6,"companies":["Arbol","Hokodo","Insify","Insurely","Stoik","Wrisk"],"segment_spread":{"distribution/embedded":2,"full-stack-insurer":3,"risk-enrichment":1}},{"investor":"Emergence Capital","company_count":5,"companies":["AIUC (Artificial Intelligence Underwriting Company)","Federato","Harper","Hi Marley","Pace"],"segment_spread":{"broker-ops":1,"policy-servicing":1,"intake":1,"triage":1,"other":1}},{"investor":"Alumni Ventures","company_count":5,"companies":["Corgi Insurance","Nava Benefits","Nirvana Insurance","Qumis","ResiQuant"],"segment_spread":{"full-stack-insurer":2,"broker-ops":2,"risk-enrichment":1}},{"investor":"Index Ventures","company_count":5,"companies":["Alan","Ascend","Empathy","Metromile","Newfront"],"segment_spread":{"broker-ops":2,"claims-guidance":1,"full-stack-insurer":2}},{"investor":"State Farm Ventures","company_count":5,"companies":["Cape Analytics","Elpha Secure","HOMEE","Hover","Snapsheet"],"segment_spread":{"risk-enrichment":2,"claims-fnol":1,"quote-bind":1,"claims-guidance":1}},{"investor":"Crystal Venture Partners","company_count":5,"companies":["Advance","Bright Harbor","Novella","Sixfold","WithCoverage"],"segment_spread":{"broker-ops":2,"claims-guidance":1,"risk-enrichment":1,"policy-servicing":1}},{"investor":"Foundation Capital","company_count":4,"companies":["Agentero","Fairmatic","Fulcrum","Tesora"],"segment_spread":{"pricing":2,"broker-ops":2}},{"investor":"Khosla Ventures","company_count":4,"companies":["At-Bay","Cape Analytics","Jones","WithCoverage"],"segment_spread":{"risk-enrichment":1,"full-stack-insurer":1,"broker-ops":1,"compliance":1}},{"investor":"Avanta Ventures","company_count":4,"companies":["Blueprint Title","Cowbell","Delos","Kin"],"segment_spread":{"MGA-ops":2,"full-stack-insurer":1,"quote-bind":1}},{"investor":"Lightspeed Venture Partners","company_count":4,"companies":["At-Bay","Herald","Ladder","Nirvana Insurance"],"segment_spread":{"quote-bind":1,"full-stack-insurer":3}}];
+const DOUBLED_DOWN = [{"investor":"Y Combinator","company_count":37,"companies":["Armilla AI","Avallon AI","Axle","Casey","ClaimSorted","CopyCat","Corgi Insurance","Covera","Coverage Cat","Curacel","Fernstone","FurtherAI","Harper","Healia","Hesper AI","Kyber","Momento Seguros","Newfront","Panta","Pasito","Pibit.ai","PolicyFly","Qlo","RiskCube","SafetyWing","Shepherd","Solva","Soteris","Strada","Stream","SuretyNow","Tesora","Tint","Vantel","Veltha","Verdex","Vouch"],"segment_spread":{"intake":2,"broker-ops":7,"full-stack-insurer":3,"claims-fnol":4,"policy-servicing":3,"risk-enrichment":2,"MGA-ops":2,"distribution/embedded":5,"pricing":3,"claims-guidance":3,"fraud":2,"quote-bind":1}},{"investor":"Hudson Structured Capital Management","company_count":28,"companies":["Ascend","Atidot","Battleface","Bold Penguin","Branch","Buckle","Cape Analytics","Corvus Insurance","CyberCube","Dayforward","Doma","Embroker","Inclined Technologies","Insurate","Kin","Ladder","Layr","Meanwhile","Metromile","Modern Life","Mulberry","Parsyl","Polly (fka DealerPolicy)","Renegade Insurance","RiskGenius","TensorFlight","Tu Momento","reThought Insurance"],"segment_spread":{"risk-enrichment":4,"full-stack-insurer":8,"quote-bind":1,"MGA-ops":4,"distribution/embedded":3,"broker-ops":4,"policy-servicing":2,"pricing":1,"other":1}},{"investor":"MTech Capital","company_count":24,"companies":["Adapt","Akur8","Assured","Bold Penguin","Corvus Insurance","Covr","CyberCube","Embroker","INSHUR","Insurify","Irys","Matic","Monitaur","Napo","Openly","Pasito","Pendella","Plum Life","Polly (fka DealerPolicy)","Property Lens","Qumis","Sonant AI","Stere","Thinksurance"],"segment_spread":{"policy-servicing":1,"distribution/embedded":6,"pricing":1,"claims-fnol":1,"quote-bind":2,"MGA-ops":4,"claims-guidance":1,"risk-enrichment":2,"full-stack-insurer":1,"broker-ops":2,"intake":1,"compliance":1,"other":1}},{"investor":"Anthemis","company_count":19,"companies":["AgentSync","Amplify","Branch","Cowbell","EasyHealth","Flock","Hokodo","Insurdata","Kettle","Koffie Financial","Matic","Qover","Raincoat","Reserv","Stable","Stoik","Vouch","YuLife","kWh Analytics"],"segment_spread":{"full-stack-insurer":3,"MGA-ops":4,"distribution/embedded":7,"compliance":1,"pricing":1,"claims-fnol":1,"risk-enrichment":1,"other":1}},{"investor":"ManchesterStory","company_count":19,"companies":["Better.agency","Betterview","COVU","Cowbell","FLORA Insurance","Goose","Kinetic","LimitFi","Matic","Plnar","Plum Life","Powerbroker AI","Rainwalk Pet Insurance","Stitch Studio","Trailblazer","Trussed AI","Verikai","Wisedocs","reThought Insurance"],"segment_spread":{"MGA-ops":4,"distribution/embedded":3,"broker-ops":3,"risk-enrichment":2,"other":3,"claims-guidance":2,"policy-servicing":1,"compliance":1}},{"investor":"IA Capital Group","company_count":16,"companies":["Afficiency","Axio","Boost Insurance","Clearcover","Delos","Delos Insurance Solutions","Frontier Risk","Marble","Matic","Scription","Snapsheet","Sure","Testudo","The Demex Group","The Zebra","reThought Insurance"],"segment_spread":{"distribution/embedded":6,"full-stack-insurer":1,"risk-enrichment":2,"pricing":2,"MGA-ops":3,"claims-fnol":1,"other":1}},{"investor":"Altai Ventures","company_count":14,"companies":["Authentic","AutoComplete","Comeryx","CommonPoint","Ennabl","EvolutionIQ","Gail","LeapEasy","Modern Life","Newfront","Propeller Bonds","Rainbow","Reserv","Upfort"],"segment_spread":{"broker-ops":4,"claims-guidance":2,"claims-fnol":1,"MGA-ops":2,"distribution/embedded":3,"quote-bind":2}},{"investor":"Munich Re Ventures","company_count":14,"companies":["Acko","Amplify","At-Bay","Azos","Dayforward","Empathy","Faye","Functional Finance","INSHUR","Insify","ManyPets","Next Insurance","Stoik","Ticker"],"segment_spread":{"claims-guidance":1,"MGA-ops":1,"pricing":1,"full-stack-insurer":9,"distribution/embedded":1,"policy-servicing":1}},{"investor":"MS&AD Ventures","company_count":13,"companies":["Armilla AI","Artificial Labs","Assured Allies","Cowbell","Fairmatic","INSHUR","Laka","Marble","Mulberri","Optifino","Socotra","Vouch","Wagmo"],"segment_spread":{"full-stack-insurer":2,"MGA-ops":3,"distribution/embedded":4,"quote-bind":1,"policy-servicing":1,"pricing":1,"risk-enrichment":1}},{"investor":"American Family Ventures","company_count":13,"companies":["Branch","Clearcover","Comeryx","Elysian","Gradient AI","Hover","LeaseLock","Ledgebrook","Optifino","Pathwork","Qumis","Sana","Turtlemint"],"segment_spread":{"full-stack-insurer":3,"broker-ops":1,"MGA-ops":2,"claims-fnol":1,"intake":1,"distribution/embedded":3,"risk-enrichment":2}},{"investor":"Brewer Lane Ventures","company_count":12,"companies":["Cape Analytics","Cowbell","EasyHealth","Empathy","Ennabl","EvolutionIQ","Herald","Hi Marley","Ladder","Novella","Sixfold","Socotra"],"segment_spread":{"risk-enrichment":2,"MGA-ops":1,"distribution/embedded":1,"claims-guidance":2,"broker-ops":2,"quote-bind":1,"policy-servicing":2,"full-stack-insurer":1}},{"investor":"Greycroft","company_count":10,"companies":["Amplify","Armilla AI","Boost Insurance","Branch","Clearcover","CyberFortress","EnterMedicare","FairClaims","Pie Insurance","Stable"],"segment_spread":{"MGA-ops":1,"full-stack-insurer":4,"distribution/embedded":3,"other":1,"claims-guidance":1}},{"investor":"Eos Venture Partners","company_count":10,"companies":["Bamboo Insurance","Buckle","Champ Titles","CyberSmart","Elpha Secure","Mulberri","Players Health","Ticker","Westhill","Yarowa"],"segment_spread":{"MGA-ops":2,"full-stack-insurer":1,"claims-guidance":3,"risk-enrichment":1,"quote-bind":1,"distribution/embedded":1,"pricing":1}},{"investor":"Markd","company_count":9,"companies":["Assureful","COVU","Cake (Cake Insure/Cake M&A)","CrashBay","Indemn","Irys","Ledgebrook","Pinpoint Predictive","Scription"],"segment_spread":{"broker-ops":3,"risk-enrichment":1,"quote-bind":1,"MGA-ops":1,"pricing":1,"claims-guidance":1,"other":1}},{"investor":"Nationwide Ventures","company_count":8,"companies":["Betterview","EasyHealth","Hover","Insurify","Matic","Next Insurance","Snapsheet","Socotra"],"segment_spread":{"distribution/embedded":3,"claims-fnol":1,"full-stack-insurer":1,"risk-enrichment":2,"policy-servicing":1}},{"investor":"Gaingels","company_count":8,"companies":["Betterview","Blueprint Title","Boost Insurance","Branch","Embroker","Nava Benefits","Super (HomeServe-style home warranty)","Upfort"],"segment_spread":{"full-stack-insurer":1,"MGA-ops":1,"quote-bind":2,"risk-enrichment":1,"distribution/embedded":1,"broker-ops":1,"other":1}},{"investor":"Intact Ventures","company_count":7,"companies":["Acko","Arqu","Comeryx","Quandri","Shepherd","Snapsheet","Urban Jungle"],"segment_spread":{"MGA-ops":2,"claims-fnol":1,"full-stack-insurer":2,"broker-ops":2}},{"investor":"Insight Partners","company_count":7,"companies":["Corvus Insurance","CoverForce","DigitalOwl","Insurely","Pasito","Socotra","Tractable"],"segment_spread":{"policy-servicing":2,"MGA-ops":1,"risk-enrichment":2,"claims-guidance":1,"quote-bind":1}},{"investor":"Acrew Capital","company_count":7,"companies":["At-Bay","Branch","Kettle","Pie Insurance","Stable","Stream Claims","Vellum"],"segment_spread":{"full-stack-insurer":3,"pricing":1,"other":1,"bordereaux":1,"claims-guidance":1}},{"investor":"Andreessen Horowitz","company_count":6,"companies":["FurtherAI","Hyperexponential","Segura","Stoik","Tesora","XBuild"],"segment_spread":{"intake":1,"pricing":2,"full-stack-insurer":1,"distribution/embedded":1,"claims-guidance":1}},{"investor":"Opera Tech Ventures","company_count":6,"companies":["Arbol","Hokodo","Insify","Insurely","Stoik","Wrisk"],"segment_spread":{"distribution/embedded":2,"full-stack-insurer":3,"risk-enrichment":1}},{"investor":"Emergence Capital","company_count":5,"companies":["AIUC (Artificial Intelligence Underwriting Company)","Federato","Harper","Hi Marley","Pace"],"segment_spread":{"broker-ops":1,"policy-servicing":1,"intake":1,"triage":1,"other":1}},{"investor":"Alumni Ventures","company_count":5,"companies":["Corgi Insurance","Nava Benefits","Nirvana Insurance","Qumis","ResiQuant"],"segment_spread":{"full-stack-insurer":2,"broker-ops":2,"risk-enrichment":1}},{"investor":"Index Ventures","company_count":5,"companies":["Alan","Ascend","Empathy","Metromile","Newfront"],"segment_spread":{"broker-ops":2,"claims-guidance":1,"full-stack-insurer":2}},{"investor":"State Farm Ventures","company_count":5,"companies":["Cape Analytics","Elpha Secure","HOMEE","Hover","Snapsheet"],"segment_spread":{"risk-enrichment":2,"claims-fnol":1,"quote-bind":1,"claims-guidance":1}},{"investor":"Crystal Venture Partners","company_count":5,"companies":["Advance","Bright Harbor","Novella","Sixfold","WithCoverage"],"segment_spread":{"broker-ops":2,"claims-guidance":1,"risk-enrichment":1,"policy-servicing":1}},{"investor":"Foundation Capital","company_count":4,"companies":["Agentero","Fairmatic","Fulcrum","Tesora"],"segment_spread":{"pricing":2,"broker-ops":2}},{"investor":"Khosla Ventures","company_count":4,"companies":["At-Bay","Cape Analytics","Jones","WithCoverage"],"segment_spread":{"risk-enrichment":1,"full-stack-insurer":1,"broker-ops":1,"compliance":1}},{"investor":"Avanta Ventures","company_count":4,"companies":["Blueprint Title","Cowbell","Delos","Kin"],"segment_spread":{"MGA-ops":2,"full-stack-insurer":1,"quote-bind":1}},{"investor":"Lightspeed Venture Partners","company_count":4,"companies":["At-Bay","Herald","Ladder","Nirvana Insurance"],"segment_spread":{"quote-bind":1,"full-stack-insurer":3}},{"investor":"Bain Capital Ventures","company_count":4,"companies":["Corvus Insurance","Enservio","Hi Marley","Reserv"],"segment_spread":{"policy-servicing":1,"claims-fnol":1,"MGA-ops":1,"claims-guidance":1}},{"investor":"Valor Equity Partners","company_count":4,"companies":["AgentSync","Counterpart","Kettle","Nirvana Insurance"],"segment_spread":{"compliance":1,"pricing":1,"MGA-ops":1,"full-stack-insurer":1}},{"investor":"Menlo Ventures","company_count":4,"companies":["Hover","Insurdata","Sure","reThought Insurance"],"segment_spread":{"risk-enrichment":2,"distribution/embedded":1,"MGA-ops":1}},{"investor":"MassMutual Ventures","company_count":4,"companies":["Embroker","Gradient AI","Insurify","Policygenius"],"segment_spread":{"MGA-ops":1,"distribution/embedded":2,"risk-enrichment":1}},{"investor":"Liberty Mutual Strategic Ventures","company_count":4,"companies":["Blueprint Title","HOMEE","LeaseLock","Snapsheet"],"segment_spread":{"claims-fnol":1,"distribution/embedded":1,"quote-bind":1,"claims-guidance":1}},{"investor":"Accel","company_count":4,"companies":["Acko","Insify","Shift Technology","The Zebra"],"segment_spread":{"distribution/embedded":1,"full-stack-insurer":2,"fraud":1}},{"investor":"8VC","company_count":4,"companies":["Optifino","Rainbow","Socotra","WithCoverage"],"segment_spread":{"MGA-ops":1,"distribution/embedded":1,"broker-ops":1,"policy-servicing":1}},{"investor":"Battery Ventures","company_count":4,"companies":["Fairmatic","Hyperexponential","Liberate","Next Insurance"],"segment_spread":{"full-stack-insurer":1,"pricing":2,"policy-servicing":1}},{"investor":"BrokerTech Ventures (BTV)","company_count":3,"companies":["CogniSure","FurtherAI","Highwing"],"segment_spread":{"intake":2,"broker-ops":1}},{"investor":"Gradient Ventures","company_count":3,"companies":["Axle","Meanwhile","Openly"],"segment_spread":{"risk-enrichment":1,"full-stack-insurer":2}},{"investor":"Costanoa Ventures","company_count":3,"companies":["Assured","Pathwork","Shepherd"],"segment_spread":{"MGA-ops":1,"claims-fnol":1,"intake":1}},{"investor":"Greenlight Re","company_count":3,"companies":["Battleface","Players Health","Shepherd"],"segment_spread":{"MGA-ops":2,"distribution/embedded":1}},{"investor":"Spark Capital","company_count":3,"companies":["Comulate","Shepherd","Stream Claims"],"segment_spread":{"MGA-ops":1,"broker-ops":1,"claims-guidance":1}},{"investor":"Susa Ventures","company_count":3,"companies":["Ascend","Newfront","Shepherd"],"segment_spread":{"MGA-ops":1,"broker-ops":2}},{"investor":"Founders Fund","company_count":3,"companies":["Newfront","Poetic","Qumis"],"segment_spread":{"broker-ops":2,"compliance":1}},{"investor":"Nyca Partners","company_count":3,"companies":["Embroker","Tint","Westhill"],"segment_spread":{"distribution/embedded":1,"MGA-ops":1,"claims-guidance":1}},{"investor":"QED Investors","company_count":3,"companies":["EasyHealth","Kin","Tint"],"segment_spread":{"distribution/embedded":2,"full-stack-insurer":1}},{"investor":"Creandum","company_count":3,"companies":["Laka","SafetyWing","YuLife"],"segment_spread":{"distribution/embedded":2,"full-stack-insurer":1}},{"investor":"Mundi Ventures","company_count":3,"companies":["Hokodo","SafetyWing","Wrisk"],"segment_spread":{"distribution/embedded":3}},{"investor":"Aquiline Technology Growth","company_count":3,"companies":["Cape Analytics","Corvus Insurance","Fairmatic"],"segment_spread":{"risk-enrichment":1,"MGA-ops":1,"pricing":1}},{"investor":"Pivot Investment Partners","company_count":3,"companies":["Cape Analytics","Cowbell","Snapsheet"],"segment_spread":{"risk-enrichment":1,"MGA-ops":1,"claims-fnol":1}},{"investor":"FirstMark Capital","company_count":3,"companies":["Ascend","Authentic","EvolutionIQ"],"segment_spread":{"claims-guidance":1,"distribution/embedded":1,"broker-ops":1}},{"investor":"Northwestern Mutual Future Ventures","company_count":3,"companies":["Ladder","Meanwhile","Modern Life"],"segment_spread":{"full-stack-insurer":2,"broker-ops":1}},{"investor":"CommerzVentures","company_count":3,"companies":["Artificial Labs","Flock","ManyPets"],"segment_spread":{"MGA-ops":1,"full-stack-insurer":1,"quote-bind":1}},{"investor":"Notion Capital","company_count":3,"companies":["Hokodo","Stable","YuLife"],"segment_spread":{"distribution/embedded":2,"other":1}},{"investor":"Flourish Ventures","company_count":3,"companies":["Kin","Reserv","Vellum"],"segment_spread":{"claims-fnol":1,"full-stack-insurer":1,"bordereaux":1}},{"investor":"LocalGlobe","company_count":3,"companies":["Laka","Testudo","YuLife"],"segment_spread":{"distribution/embedded":1,"pricing":1,"full-stack-insurer":1}},{"investor":"FinTLV","company_count":3,"companies":["Akur8","Corvus Insurance","Next Insurance"],"segment_spread":{"pricing":1,"MGA-ops":1,"full-stack-insurer":1}},{"investor":"Allianz X","company_count":3,"companies":["Next Insurance","Openly","Pie Insurance"],"segment_spread":{"full-stack-insurer":3}},{"investor":"Caffeinated Capital","company_count":3,"companies":["Federato","Qumis","Rainbow"],"segment_spread":{"broker-ops":1,"MGA-ops":1,"triage":1}},{"investor":"Commerce Ventures","company_count":3,"companies":["Authentic","Kin","Liberate"],"segment_spread":{"distribution/embedded":1,"full-stack-insurer":1,"policy-servicing":1}},{"investor":"Thrive Capital","company_count":3,"companies":["Modern Life","Nava Benefits","Pace"],"segment_spread":{"broker-ops":2,"intake":1}},{"investor":"Bessemer Venture Partners","company_count":3,"companies":["InRisk Labs","Shift Technology","Sixfold"],"segment_spread":{"risk-enrichment":1,"full-stack-insurer":1,"fraud":1}}];
+
+const fmtM = v => v >= 1000 ? `$${(v/1000).toFixed(1)}B` : `$${Math.round(v)}M`;
+const LABELS = {};
+[...STAGE_ORDER, ...CROSSCUT].forEach(([k,l1]) => LABELS[k] = l1);
+const shortLabel = k => LABELS[k] || k;
+
+function renderStats(){
+  const totalCap = Object.values(BY_STAGE).reduce((a,b)=>a+b.capital,0)/1e6;
+  const totalCos = Object.values(BY_STAGE).reduce((a,b)=>a+b.count,0);
+  const totalFunded = Object.values(BY_STAGE).reduce((a,b)=>a+b.funded_count,0);
+  const el = document.getElementById('headline-stats');
+  const stats = [
+    [fmtM(totalCap), 'disclosed capital raised, per company', `Money raised as stated in each company's funding text. £/€ rounds converted at a flat ~1.27/1.08; valuations, acquisition prices and lending commitments are excluded — "$200M Series D at $2.2B valuation" counts $200M. A floor, not a census: ${100-Math.round(100*totalFunded/totalCos)}% of companies disclose no amount at all.`],
+    [totalCos, 'companies tracked', null],
+    [Math.round(100*totalFunded/totalCos)+'%', 'have any disclosed funding amount', null],
+    [TOP_INVESTORS.length, 'investors with 3+ portfolio companies shown', null],
+  ];
+  el.innerHTML = stats.map(([b,s,note])=>`<div class="stat"><b class="mono">${b}${note?` <button class="dmark" aria-label="note">i<span class="dpop">${note}</span></button>`:''}</b><span>${s}</span></div>`).join('');
+}
+
+// The 16 workflow-step tags rolled up onto the Workflow Evidence Map's participants.
+// [id, participant, what they do (the map's own verbs), steps, noun for prose]
+const TIERS = [
+  ["distribute","Retail broker & distribution","collect · market · bind · service",["broker-ops","quote-bind","distribution/embedded"],"distribution"],
+  ["underwrite","Underwriter & MGA","triage · assess · price · bind — admitted or E&S",["intake","triage","risk-enrichment","pricing","MGA-ops"],"underwriting"],
+  ["administer","Policy in force","servicing · compliance · bordereaux",["policy-servicing","compliance","bordereaux"],"policy administration"],
+  ["claims","Claims adjuster","FNOL · investigate · resolve",["claims-fnol","claims-guidance","fraud"],"claims"],
+];
+const CROSSCUT_TIERS = [
+  ["newcarrier","Full-stack insurer","new carrier — owns the whole chain",["full-stack-insurer"],"new carriers"],
+  ["other","Other","uncategorized",["other"],"other"],
+];
+const ALL_TIERS = [...TIERS, ...CROSSCUT_TIERS];
+const TIER_OF = {}, TIER_LABEL = {};
+ALL_TIERS.forEach(([id,l,,steps]) => { TIER_LABEL[id]=l; steps.forEach(s => TIER_OF[s]=id); });
+const stepMeta = s => STAGE_ORDER.concat(CROSSCUT).find(x => x[0]===s) || [s, s, ''];
+const tierTotal = steps => steps.reduce((a,s) => {
+  const b = BY_STAGE[s] || {capital:0,count:0,funded_count:0};
+  return {capital:a.capital+b.capital, count:a.count+b.count, funded_count:a.funded_count+b.funded_count};
+}, {capital:0,count:0,funded_count:0});
+const tierSpread = spread => { const t={}; Object.entries(spread).forEach(([s,n]) => { const id=TIER_OF[s]||'other'; t[id]=(t[id]||0)+n; }); return t; };
+
+function renderChain(list, containerId, crosscut){
+  // one scale for chain and crosscut, so the full-stack bar is honestly bigger than any tier of the chain
+  const allMax = Math.max(...ALL_TIERS.map(([,,,s]) => tierTotal(s).capital), 1);
+  const el = document.getElementById(containerId);
+  el.innerHTML = list.map(([id,l1,l2,steps], i) => {
+    const t = tierTotal(steps);
+    const stepMax = Math.max(...steps.map(s => (BY_STAGE[s]||{capital:0}).capital), 1);
+    const subs = steps.map(s => {
+      const b = BY_STAGE[s] || {capital:0,count:0};
+      const [,sl1,sl2] = stepMeta(s);
+      return `<div class="bar-row">
+        <div class="lbl">${sl1} <span style="color:var(--faint)">${sl2}</span></div>
+        <div class="bar-track"><div class="bar-fill${crosscut?' crosscut':''}" style="width:${Math.max(2,100*b.capital/stepMax)}%"></div></div>
+        <div class="val mono">${fmtM(b.capital/1e6)}</div>
+        <div class="cnt mono">${b.count} cos</div>
+      </div>`;
+    }).join('');
+    const arrow = (!crosscut && i < list.length-1) ? `<div class="chain-arrow">↓</div>` : '';
+    return `<div class="tier${crosscut?' crosscut':''}" data-tier="${id}">
+      <div class="tier-row" role="button" tabindex="0" aria-expanded="false">
+        <div class="lbl">${l1}<small>${l2}</small></div>
+        <div class="bar-track"><div class="bar-fill${crosscut?' crosscut':''}" style="width:${Math.max(2,100*t.capital/allMax)}%"></div></div>
+        <div class="val mono">${fmtM(t.capital/1e6)}</div>
+        <div class="cnt mono">${t.count} cos</div>
+      </div>
+      <div class="sub-rows">${subs}</div>
+    </div>${arrow}`;
+  }).join('');
+  el.querySelectorAll('.tier-row').forEach(r => {
+    const toggle = () => { const t=r.parentElement; t.classList.toggle('open'); r.setAttribute('aria-expanded', t.classList.contains('open')); };
+    r.addEventListener('click', toggle);
+    r.addEventListener('keydown', e => { if (e.key==='Enter' || e.key===' '){ e.preventDefault(); toggle(); } });
+  });
+}
+
+function renderFunnel(){
+  const order = ['Pre-Seed','Seed','Series A','Series B','Series C','Series D','Series E','Series F','Series G','IPO/public','Round not stated','Nothing disclosed'];
+  const present = order.filter(k => FUNNEL[k]);
+  const max = Math.max(...present.map(k=>FUNNEL[k].count), 1);
+  // the two catch-alls are different things: a figure with no round name vs. nothing at all
+  const NOTES = {
+    'Round not stated': 'A dollar figure is stated but no round is named — e.g. "~$320M raised" or "$5M strategic". The money is disclosed; the stage isn\'t.',
+    'Nothing disclosed': 'No dollar figure anywhere in the funding text. Counted as a company, contributes $0 to every total on this page.',
+  };
+  document.getElementById('funnel-bars').innerHTML = present.map(k => {
+    const f = FUNNEL[k];
+    const pct = Math.max(3, 100*f.count/max);
+    const note = NOTES[k] ? `<button class="dmark" aria-label="what this bucket means">i<span class="dpop">${NOTES[k]}</span></button>` : '';
+    return `<div class="funnel-row">
+      <div class="lbl">${k}${note}</div>
+      <div class="funnel-track"><div class="funnel-fill" style="width:${pct}%"></div></div>
+      <div class="val mono">${f.count} cos</div>
+      <div class="cnt mono">${fmtM(f.capital/1e6)}</div>
+    </div>`;
+  }).join('');
+}
+
+function renderInvestors(){
+  document.getElementById('inv-count').textContent = `top ${TOP_INVESTORS.length} of 700+ distinct investors`;
+  document.getElementById('inv-table').innerHTML = TOP_INVESTORS.map(inv => {
+    const spread = tierSpread(inv.segment_spread);
+    const [topSeg, topN] = Object.entries(spread).sort((a,b)=>b[1]-a[1])[0];
+    const conc = topN / inv.company_count;
+    const isConc = conc >= 0.6 && inv.company_count >= 3;
+    return `<tr>
+      <td class="wrap-ok">${inv.investor}</td>
+      <td class="n">${inv.company_count}</td>
+      <td>${TIER_LABEL[topSeg]||topSeg} <span style="color:var(--faint)">(${topN}/${inv.company_count})</span></td>
+      <td>${isConc ? '<span class="tag conc">concentrated</span>' : '<span class="tag gen">generalist</span>'}</td>
+    </tr>`;
+  }).join('');
+}
+
+function renderDoubledDown(){
+  const curated = DOUBLED_DOWN.filter(d => {
+    const [,topN] = Object.entries(tierSpread(d.segment_spread)).sort((a,b)=>b[1]-a[1])[0];
+    return topN / d.company_count >= 0.6 && d.company_count >= 3;
+  }).sort((a,b)=>b.company_count-a.company_count).slice(0, 16);
+  document.getElementById('dd-grid').innerHTML = curated.map(d => {
+    const [topSeg, topN] = Object.entries(tierSpread(d.segment_spread)).sort((a,b)=>b[1]-a[1])[0];
+    const shown = d.companies.slice(0,7);
+    const more = d.companies.length - shown.length;
+    return `<div class="dd-card">
+      <div class="name">${d.investor}</div>
+      <div class="meta">${topN}/${d.company_count} bets in <b style="color:var(--green)">${TIER_LABEL[topSeg]||topSeg}</b></div>
+      <div class="chips">${shown.map(c=>`<span class="chip">${c}</span>`).join('')}${more>0?`<span class="chip more">+${more} more</span>`:''}</div>
+    </div>`;
+  }).join('');
+}
+
+function renderCallout(){
+  const total = Object.values(BY_STAGE).reduce((a,b)=>a+b.capital,0);
+  const nc = tierTotal(CROSSCUT_TIERS[0][3]).capital;
+  const pct = Math.round(100*nc/total);
+  const chain = TIERS.map(([,,,steps,noun]) => [noun, tierTotal(steps).capital]).sort((a,b)=>b[1]-a[1]);
+  const thin = STAGE_ORDER.filter(([k]) => k!=='other')
+    .map(([k,l1,l2]) => [`${l1} ${l2}`, (BY_STAGE[k]||{capital:0}).capital])
+    .sort((a,b)=>a[1]-b[1]).slice(0,3).map(([l])=>l);
+  document.getElementById('chain-callout').textContent =
+    `${pct}% of disclosed capital (${fmtM(nc/1e6)}) went to building new carriers — a bet on the whole chain rather than on any one stage of it. Along the chain itself, ${chain.map(([n,c])=>`${n} drew ${fmtM(c/1e6)}`).join(', ')}. The thinnest steps are ${thin.join(', ')} — still nearly empty.`;
+}
+
+renderStats(); renderChain(TIERS, 'chain-tiers', false); renderChain(CROSSCUT_TIERS, 'crosscut-tiers', true);
+renderFunnel(); renderInvestors(); renderDoubledDown(); renderCallout();
+
+// ---- disclosure kit: shared click/keyboard behavior for .dmark popovers ----
+document.addEventListener('click', e => {
+  const m = e.target.closest('.dmark');
+  document.querySelectorAll('.dmark.open').forEach(el => { if (el !== m) el.classList.remove('open'); });
+  if (m){ m.classList.toggle('open'); e.stopPropagation(); }
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.querySelectorAll('.dmark.open').forEach(el => el.classList.remove('open'));
+});
+</script>

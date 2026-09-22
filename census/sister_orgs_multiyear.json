@@ -1,0 +1,94 @@
+{
+  "pass_date": "2026-09-22",
+  "task": "Identify sister regional/vertical insurtech community organizations to InsurTech NY, and pull multi-year census data (startup maps, sponsor/exhibitor lists, competition winners, accelerator cohorts) where accessible.",
+  "orgs": [
+    {
+      "name": "InsurTech NY",
+      "type": "regional community (NYC-based, national conference draw)",
+      "status": "real, active, already-known baseline for this project",
+      "new_data_this_pass": "own multi-year event history (2019-2026), competition winners/finalists (2020-2026), 2026 sponsor list, and a recovered 2023 static NYC map (50 companies) distinct from the already-merged current 142-company map",
+      "coverage": "GOOD - see insurtechny_events_multiyear.json, insurtechny_competition_winners_multiyear.json, insurtechny_nyc_map_2023_archive.json",
+      "file": "insurtechny_events_multiyear.json, insurtechny_competition_winners_multiyear.json, insurtechny_nyc_map_2023_archive.json"
+    },
+    {
+      "name": "InsurTech America network (Hartford / Chicago / Atlanta / New England / Florida / Carolinas)",
+      "type": "6-chapter regional community network",
+      "status": "REAL and CONFIRMED - all 6 chapter sites exist and are live, founded/led by Stacey Brown (InsurTech Hartford founded 2016, expanded via Chicago/Atlanta/New England/Florida/Carolinas). This is a SEPARATE network from InsurTech NY, not a rebrand of it.",
+      "startup_directory": "none - no chapter publishes a company map/directory like InsurTech NY's",
+      "multiyear_census_mechanism": "InsurTech Hartford's annual 'Innovation Challenge' (presented with ACORD) - winner/finalist lists recovered for 2020, 2021, 2022, 2024 (2019, 2023 not found)",
+      "coverage": "PARTIAL - Hartford chapter only; Chicago/Atlanta/New England/Florida/Carolinas challenge histories not found in this pass",
+      "file": "insurtechamerica_network_challenges.json"
+    },
+    {
+      "name": "Global Insurance Accelerator (GIA)",
+      "type": "accelerator, Des Moines IA",
+      "status": "REAL, ACTIVE, founded 2014 - the original/oldest US insurtech-focused accelerator; ~85 alumni claimed",
+      "multiyear_census_mechanism": "annual cohort (~5-7 companies/year since 2014)",
+      "coverage": "PARTIAL - portfolio page is JS-rendered and not scrapeable by fetch/curl; only scattered press-covered cohorts recovered (2014-15, 2016-17, 2024). Years 2017-2023, 2025, 2026 rosters exist but were not recovered.",
+      "file": "gia_desmoines_cohorts.json"
+    },
+    {
+      "name": "Silicon Valley Insurance Accelerator (SVIA)",
+      "type": "accelerator/membership org, San Mateo CA",
+      "status": "REAL but appears to have CLOSED its main operations (per search result) - founded 2016, ran through ~2023-2024 based on available signal",
+      "multiyear_census_mechanism": "claimed 400+ startups showcased across its run, but no itemized roster found",
+      "coverage": "NONE - portfolio page returned only event-logistics boilerplate, no company names",
+      "file": "plugandplay_svia_and_regional_meetups.json"
+    },
+    {
+      "name": "Plug and Play Insurtech",
+      "type": "accelerator batches, Sunnyvale CA (part of Plug and Play Tech Center) + regional programs (Singapore/APAC, Europe)",
+      "status": "REAL, VERY ACTIVE, high volume (10-35+ insurtechs per batch, multiple batches/year)",
+      "multiyear_census_mechanism": "numbered batches (e.g. 'Insurtech Batch 20' SV 2026, 'Insurtech Batch 5' Singapore) - functionally a multi-year, multi-region cohort census",
+      "coverage": "MOSTLY GATED - press releases cite aggregate counts, rarely name individual insurtech companies. Only 2 companies recovered by name (AppliedAI, Zopper). Full batch rosters live on plugandplay.com behind bot-detection.",
+      "file": "plugandplay_svia_and_regional_meetups.json"
+    },
+    {
+      "name": "gener8tor Insurance & Wealth Accelerator (fka OnRamp Insurance Accelerator)",
+      "type": "accelerator, Minneapolis/St. Paul MN, backed by Allianz Life + Securian Financial",
+      "status": "REAL, ACTIVE, founded 2019, ~6 cohorts run through 2024",
+      "coverage": "PARTIAL - 4 of ~6 years recovered (2020, 2021, 2022, 2024); 2019 and 2023 not found; unclear if it ran in 2025/2026",
+      "scope_caveat": "branded 'Insurance & Wealth' - roughly half the recovered names are wealth-management/fintech, not insurance-core",
+      "file": "gener8tor_onramp_cohorts.json"
+    },
+    {
+      "name": "Scout InsurTech",
+      "type": "community/conference + seasonal startup-scouting program, Columbus OH",
+      "status": "REAL, ACTIVE - CEO Chris Luiz, annual conference (next: May 2026), overlaps geographically with InsurTech Ohio",
+      "multiyear_census_mechanism": "seasonal numbered cohorts (F6S lists 'Scout Insurtech S24', implying dozens of prior seasons) naming 'top 20 emerging startups' per cycle - this IS a genuine multi-year census structure",
+      "coverage": "NONE - could not get past F6S's bot-detection wall to see the actual S24 roster or any other season",
+      "file": "plugandplay_svia_and_regional_meetups.json"
+    },
+    {
+      "name": "InsurTech Denver / InsurTech ATX (Austin) / InsurTech Ohio",
+      "type": "regional meetup communities",
+      "status": "all REAL and ACTIVE, unaffiliated with InsurTech America or InsurTech NY",
+      "coverage": "NONE - none publish a startup directory or company census; events/newsletter content only",
+      "file": "plugandplay_svia_and_regional_meetups.json"
+    },
+    {
+      "name": "Bermuda insurtech community",
+      "type": "N/A - does not exist as an independent org",
+      "status": "NOT A REAL STANDALONE ORG - Bermuda's insurtech engagement runs through the Bermuda Business Development Agency (BDA), a government economic-development body, which partners directly with InsurTech NY's Competition (sponsors a 'Bermuda BDA Winner' category) rather than running its own community/census.",
+      "coverage": "N/A",
+      "file": "bermuda_insurtech_note.json"
+    },
+    {
+      "name": "InsurTech Georgia",
+      "type": "candidate checked, not confirmed as distinct from InsurTech Atlanta",
+      "status": "SEARCH DID NOT SURFACE a distinctly-named 'InsurTech Georgia' org separate from InsurTech Atlanta (part of the InsurTech America / Stacey Brown network, see above). Likely the user's 'InsurTech Georgia' candidate name = InsurTech Atlanta.",
+      "coverage": "N/A - folded into InsurTech Atlanta entry above"
+    },
+    {
+      "name": "MetLife Digital Accelerator (powered by Techstars) / Nationwide accelerator",
+      "type": "single-corporate accelerator, not a community org",
+      "status": "MetLife's program is REAL (Techstars-run, Cary NC, 10 startups/cohort, $120K each) but is a private corporate accelerator, not a public community-facing org with an ongoing directory. Nationwide's accelerator: no community-facing program with public cohort data found.",
+      "coverage": "NOT PURSUED FURTHER - out of scope vs. the community/directory-style orgs this task targets; flagging for awareness only, no file built"
+    }
+  ],
+  "summary_counts": {
+    "sister_orgs_confirmed_real_and_active": 11,
+    "sister_orgs_with_any_recoverable_company_level_data": 6,
+    "sister_orgs_with_zero_recoverable_data": 5
+  }
+}

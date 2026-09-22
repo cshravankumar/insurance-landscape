@@ -1,0 +1,5148 @@
+{
+ "companies": [
+  {
+   "name": "FurtherAI",
+   "url": "https://www.furtherai.com",
+   "what": "AI teammates that automate insurance workflows: submission intake, underwriting audits, claims handling, policy comparison (YC S2024)",
+   "workflow_step": "intake",
+   "buyer": "MGA",
+   "stage": "$25M Series A, Oct 2025 (led by Andreessen Horowitz); $30M total",
+   "investors": [
+    "Andreessen Horowitz",
+    "BrokerTech Ventures (BTV)",
+    "Nexus Venture Partners",
+    "Xceedance",
+    "Y Combinator"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.furtherai.com/blog/%20furtherai-announces-25m-series-a-from-andreessen-horowitz-to-transform-insurance-workflows-with-ai-automating-busywork",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Harper",
+   "url": "https://www.harperinsure.com",
+   "what": "Fully AI-native commercial insurance brokerage (YC W25) handling 1,000+ customers/month vs 20-30 for human broker teams; founded by Dakotah Rice",
+   "workflow_step": "broker-ops",
+   "buyer": "consumer",
+   "stage": "$47M Series A, Feb 2026 (led by Emergence Capital)",
+   "investors": [
+    "10X Founders",
+    "Antler",
+    "Emergence Capital",
+    "Fellows Fund",
+    "Lobster Capital",
+    "Outset Capital",
+    "Peak XV Partners",
+    "Pioneer Fund",
+    "Y Combinator"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.harperinsure.com/news/series-a-announcement",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Corgi Insurance",
+   "url": "https://www.corgi.insure",
+   "what": "AI-native full-stack insurance platform (carrier), started in trucking and expanding into new verticals; fastest insurtech markup of 2026 ($1.3B -> $2.6B -> reported $4B in 8 weeks)",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "$108M Jan 2026 + $106M Series B1 led by TCV, May 2026 at $2.6B valuation",
+   "investors": [
+    "8188 Capital",
+    "Alumni Ventures",
+    "Audeo Ventures",
+    "Contrary",
+    "Fellows Fund",
+    "First Order Fund",
+    "GSBackers",
+    "Glade Brook Capital Partners",
+    "Kindred Ventures",
+    "Leblon Capital",
+    "Nordstar",
+    "Oliver Jung",
+    "Phosphor Capital",
+    "Prime Capital",
+    "Quadri Ventures",
+    "Repeat VC",
+    "SV Angel",
+    "Seven Stars",
+    "TCV",
+    "Vocal Ventures",
+    "Y Combinator",
+    "Zone 2 Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "ClaimSorted",
+   "url": "https://www.claimsorted.com",
+   "what": "AI-native third-party administrator (TPA) — insurers outsource claims handling, AI automation with human oversight (YC S2024, London)",
+   "workflow_step": "claims-fnol",
+   "buyer": "carrier",
+   "stage": "$13.3M Seed, Oct 2025 (led by Atomico); $16M total",
+   "investors": [
+    "Atomico",
+    "Eurazeo",
+    "Start Ventures Capital",
+    "Y Combinator",
+    "firstminute capital"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://fintech.global/2025/10/13/insurtech-claimsorted-secures-13-3m-seed-round/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Vantel",
+   "url": "https://www.ycombinator.com/companies/vantel",
+   "what": "AI operating system for commercial insurance brokerages — automates policy analysis, data entry, documentation, billing (YC W2025)",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "$2M Seed, 2025",
+   "investors": [
+    "Ericsson Ventures",
+    "Inception Fund",
+    "Rebel Fund",
+    "Y Combinator"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.ycombinator.com/companies/vantel",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "CopyCat",
+   "url": "https://www.runcopycat.com",
+   "what": "AI agents for insurance brokers — turns quotes/documents into proposals and coverage reviews, automates CSR tasks (YC W2025)",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "$0.5M YC standard deal, Mar 2025 (led by Y Combinator)",
+   "investors": [
+    "Y Combinator"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.crunchbase.com/organization/copycat-a82b",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Strada",
+   "url": "https://www.getstrada.com",
+   "what": "AI voice/email/SMS/chat agents for insurance front office — policy servicing and claims intake for carriers, MGAs, brokers (YC S2023)",
+   "workflow_step": "policy-servicing",
+   "buyer": "carrier",
+   "stage": "~$4M raised; YC S2023",
+   "investors": [
+    "Glenn Ficarra",
+    "Jason Fotter",
+    "John Requa",
+    "Y Combinator"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Axle",
+   "url": "https://www.axle.insure",
+   "what": "'Plaid for insurance' — universal API for insurance data and coverage verification; clears $100B+ coverage/year (YC W2023)",
+   "workflow_step": "risk-enrichment",
+   "buyer": "embedded-partner",
+   "stage": "$17.5M Series A, Aug 2026 (led by Base10 Partners); $21.5M total",
+   "investors": [
+    "BLH Ventures",
+    "Base10 Partners",
+    "Contrary Capital",
+    "Gradient Ventures",
+    "Plaid early-team angels",
+    "Rebel Fund",
+    "Soma Capital",
+    "Stage 2 Capital",
+    "Y Combinator"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.prnewswire.com/news-releases/axle-raises-17-5m-series-a-to-connect-insurance-carriers-to-the-real-economy-302847934.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Shepherd",
+   "url": "https://www.withshepherd.com",
+   "what": "Tech-enabled MGU underwriting commercial construction, energy, and AI/data-center infrastructure insurance (YC W2021)",
+   "workflow_step": "MGA-ops",
+   "buyer": "broker",
+   "stage": "$42M Series B, Mar 2026 (led by Intact Private Capital); $67M total",
+   "investors": [
+    "Costanoa Ventures",
+    "Era Ventures",
+    "Greenlight Re",
+    "Intact Private Capital",
+    "Intact Ventures",
+    "Intact Ventures / Intact Private Capital",
+    "Spark Capital",
+    "Susa Ventures",
+    "Y Combinator"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.prnewswire.com/news-releases/shepherd-raises-42m-series-b-to-power-the-insurance-behind-ai-infrastructure-boom-302723122.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Pibit.ai",
+   "url": "https://www.pibit.ai",
+   "what": "Converts loss-run files and submission documents into structured underwriting insights for carriers and MGAs (YC W2021)",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "$7M Series A, Nov 2025 (led by Stellaris Venture Partners)",
+   "investors": [
+    "Arali Ventures",
+    "Stellaris Venture Partners",
+    "Y Combinator"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.thesaasnews.com/news/pibit-ai-raises-7-million-in-series-a/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Vouch",
+   "url": "https://www.vouch.us",
+   "what": "Business insurance for startups (D&O, E&O, cyber, AI coverage); launched own carrier (YC S2019)",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "$18.5M Series D (first close), Feb 2025 (led by Allegis Capital); $225M total",
+   "investors": [
+    "645 Ventures",
+    "Allegis Group",
+    "Anthemis",
+    "MS&AD Ventures",
+    "Redpoint Ventures",
+    "Ribbit Capital",
+    "SVB Capital",
+    "SiriusPoint",
+    "Sound Ventures",
+    "Y Combinator"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.prnewswire.com/news-releases/vouch-expands-insurance-capabilities-with-startsure-acquisition-and-announces-series-d-financing-led-by-allegis-capital-302376174.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Newfront",
+   "url": "https://www.newfront.com",
+   "what": "Tech-enabled commercial insurance brokerage (serves 20% of US unicorns, 150+ public companies) (YC W2018)",
+   "workflow_step": "broker-ops",
+   "buyer": "consumer",
+   "stage": "$200M Series D, Apr 2022 (led by Goldman Sachs Asset Management); $300M total; Acquired by WTW (Willis Towers Watson); announced 2025-12-10, deal value ~$1.3B (upfront + contingent consideration), deal completed 2026-01-28",
+   "investors": [
+    "Altai Ventures",
+    "B Capital",
+    "Bloomberg Beta",
+    "Founders Fund",
+    "Goldman Sachs Asset Management",
+    "Index Ventures",
+    "Meritech Capital",
+    "PruVen Capital",
+    "Susa Ventures",
+    "XYZ Venture Capital",
+    "Y Combinator"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.reinsurancene.ws/tag/newfront/",
+   "funding_refreshed": "2026-09-22",
+   "status": "acquired"
+  },
+  {
+   "name": "Coverage Cat",
+   "url": "https://www.coveragecat.com",
+   "what": "AI-native personal-lines P&C brokerage optimizing coverage limits and premiums for high-earning households (YC S2022)",
+   "workflow_step": "distribution/embedded",
+   "buyer": "consumer",
+   "stage": "$4.5M total ($4M Series A + seed)",
+   "investors": [
+    "FoundersX Ventures",
+    "Goodwater Capital",
+    "Olive Tree Capital",
+    "Pioneer Fund",
+    "Resolute Ventures",
+    "Roadrunner Ventures",
+    "Team Ignite Ventures",
+    "Y Combinator"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.crunchbase.com/organization/coverage-cat",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Tesora",
+   "url": "https://tesora.ai",
+   "what": "AI agents for actuaries at P&C carriers/reinsurers/MGAs — ingests loss runs/SOVs/SERFF filings, builds and deploys raters with audit trail (YC S2025)",
+   "workflow_step": "pricing",
+   "buyer": "carrier",
+   "stage": "Seed, 2025 (Foundation Capital)",
+   "investors": [
+    "10vc",
+    "Andreessen Horowitz",
+    "DeVC",
+    "Foundation Capital",
+    "Skarlo",
+    "Y Combinator"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://tesora.ai/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Armilla AI",
+   "url": "https://www.armilla.ai",
+   "what": "MGA and Lloyd's coverholder for AI liability insurance and AI model performance warranties (YC W2022, Toronto)",
+   "workflow_step": "MGA-ops",
+   "buyer": "broker",
+   "stage": "$7.5M across 3 rounds; capacity from Lloyd's, Swiss Re, Chaucer, Axis",
+   "investors": [
+    "Betaworks Ventures",
+    "C2 Ventures",
+    "Chaucer",
+    "Differential Ventures",
+    "Global Founders Capital",
+    "Greycroft",
+    "Lloyd's (capacity backing)",
+    "MS&AD Ventures",
+    "Morgan Creek Digital",
+    "Mozilla Ventures",
+    "Y Combinator"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://fintech.global/2026/01/23/armilla-ai-raises-25m-to-expand-ai-liability-coverage/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Tint",
+   "url": "https://www.tint.ai",
+   "what": "Embedded insurance infrastructure API — underwriting software, carrier access, compliance for tech platforms (Deel, Guesty, Outdoorsy)",
+   "workflow_step": "distribution/embedded",
+   "buyer": "embedded-partner",
+   "stage": "$25M Series A, Feb 2022 (led by QED Investors); $30M total",
+   "investors": [
+    "Deciens Capital",
+    "Nyca Partners",
+    "QED Investors",
+    "Webb Investment Network",
+    "Y Combinator"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.tint.ai/newsroom/tint-secures-25m-series-a-qed-investors",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "SafetyWing",
+   "url": "https://safetywing.com",
+   "what": "Travel medical and health insurance for digital nomads and remote teams (Nomad Insurance, Remote Health) (YC W2018)",
+   "workflow_step": "distribution/embedded",
+   "buyer": "consumer",
+   "stage": "$35M Series B, Apr 2022; $52M total",
+   "investors": [
+    "CE Innovation Capital",
+    "Creandum",
+    "Farmhouse Capital",
+    "Kinnevik",
+    "Mundi Ventures",
+    "Y Combinator",
+    "byFounders"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://pitchbook.com/profiles/company/226107-91",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Stream",
+   "url": "https://www.ycombinator.com/companies/stream",
+   "what": "AI claims workbench converting claim PDFs into automated workflows and risk signals (YC S2022)",
+   "workflow_step": "claims-guidance",
+   "buyer": "carrier",
+   "stage": "$5.3M Seed, Nov 2024 (led by Spark Capital); $6.8M total",
+   "investors": [
+    "Y Combinator"
+   ],
+   "funding_source": "https://www.stream.claims/post/stream-raises-5-3m-seed-round-bringing-total-funding-to-6-8m",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "PolicyFly",
+   "url": "https://www.policyfly.com",
+   "what": "Policy administration platform letting insurers sell and manage specialty insurance lines quickly (YC W2022)",
+   "workflow_step": "policy-servicing",
+   "buyer": "carrier",
+   "stage": "$7M Seed, Jul 2024 (led by Bain Capital Ventures)",
+   "investors": [
+    "Y Combinator"
+   ],
+   "funding_source": "https://www.policyfly.com/news/every-submission",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Curacel",
+   "url": "https://www.curacel.co",
+   "what": "AI claims processing and fraud-detection infrastructure for insurers in Africa (YC W2022, Lagos)",
+   "workflow_step": "fraud",
+   "buyer": "carrier",
+   "stage": "$3M Seed, Feb 2023; $3.95M total",
+   "investors": [
+    "Y Combinator"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://techcrunch.com/2023/02/14/nigerias-curacel-raises-funding-to-power-insurance-offerings-and-expand-into-north-africa/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "RiskCube",
+   "url": "https://www.ycombinator.com/companies/riskcube",
+   "what": "Insurance broker for AI, robotics, and space startups with rapid certificate-of-insurance issuance (YC F2024)",
+   "workflow_step": "distribution/embedded",
+   "buyer": "consumer",
+   "stage": "$0.5M YC standard deal, Dec 2024 (led by Y Combinator)",
+   "investors": [
+    "Y Combinator"
+   ],
+   "funding_source": "https://www.crunchbase.com/organization/riskcube-ai",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "SuretyNow",
+   "url": "https://www.suretynow.com",
+   "what": "Online surety bond platform for contractors and compliance bonds (YC W2024)",
+   "workflow_step": "quote-bind",
+   "buyer": "consumer",
+   "stage": "$0.5M YC standard deal, Apr 2024 (led by Y Combinator)",
+   "investors": [
+    "Y Combinator"
+   ],
+   "funding_source": "https://startupintros.com/orgs/suretynow",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Healia",
+   "url": "https://www.healia.com",
+   "what": "Health insurance product for dual-income families — employers fund spouse-plan out-of-pocket costs, ~$10K saved per enrollee (YC W2024)",
+   "workflow_step": "distribution/embedded",
+   "buyer": "embedded-partner",
+   "stage": "$14M Series A, Jul 2026 (led by 111 West Capital); $18M total",
+   "investors": [
+    "Y Combinator"
+   ],
+   "funding_source": "https://www.prnewswire.com/news-releases/healia-launches-with-18m-to-cut-healthcare-costs-for-dual-income-families-302836132.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Momento Seguros",
+   "url": "https://www.ycombinator.com/companies/momento",
+   "what": "Licensed auto insurance carrier for Mexico's largely uninsured vehicle market (YC W2022)",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "$10.25M Series A, Aug 2025 (led by Hedosophia and American Family Ventures)",
+   "investors": [
+    "Y Combinator"
+   ],
+   "funding_source": "https://www.gunder.com/en/news-insights/client-news/mexico-based-auto-insurer-momento-seguros-raises-dollar10m-series-a",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Soteris",
+   "url": "https://www.soteris.co",
+   "what": "Machine-learning pricing system for personal auto insurers (YC S2019)",
+   "workflow_step": "pricing",
+   "buyer": "carrier",
+   "stage": "$8M Seed, Jul 2025 (led by Spider Capital); $8.2M total",
+   "investors": [
+    "Y Combinator"
+   ],
+   "funding_source": "https://www.prweb.com/releases/yc-backed-soteris-comes-out-of-stealth-to-help-pc-insurers-make-millions-more-from-the-book-they-already-have-302886169.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Casey",
+   "url": "https://www.ycombinator.com/companies/casey",
+   "what": "AI-native commercial insurance brokerage automating operational backend work (YC F2025)",
+   "workflow_step": "broker-ops",
+   "buyer": "consumer",
+   "stage": "$0.5M Pre-Seed, Dec 2025 (led by Y Combinator)",
+   "investors": [
+    "Y Combinator"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.vcbacked.co/company/casey",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Fernstone",
+   "url": "https://www.ycombinator.com/companies/fernstone",
+   "what": "AI-native full-stack brokerage for construction and trades businesses; manages risk for 100+ businesses (YC F2025)",
+   "workflow_step": "broker-ops",
+   "buyer": "consumer",
+   "stage": "$1.5M Pre-Seed, Jan 2026",
+   "investors": [
+    "Y Combinator"
+   ],
+   "funding_source": "https://www.trysignalbase.com/news/funding/fernstone-secures-15m-pre-seed-funding",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Solva",
+   "url": "https://www.ycombinator.com/companies/solva",
+   "what": "Domain-specific AI for complex insurance claims handling (YC S2025)",
+   "workflow_step": "claims-guidance",
+   "buyer": "carrier",
+   "stage": "$6M Seed, Aug 2025 (led by First Round Capital)",
+   "investors": [
+    "Y Combinator"
+   ],
+   "funding_source": "https://startupmafia.eu/fintech-funding-solva-secures-6m-to-rebuild-insurance-claims-with-ai-backed-by-paul-graham",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Avallon AI",
+   "url": "https://www.ycombinator.com/companies/avallon-ai",
+   "what": "AI agents automating claims operations — handles calls and documents end to end (YC P2025)",
+   "workflow_step": "claims-fnol",
+   "buyer": "TPA",
+   "stage": "$4.6M Seed, Nov 2025 (led by Frontline Ventures)",
+   "investors": [
+    "Y Combinator"
+   ],
+   "funding_source": "https://www.claimsjournal.com/news/national/2025/11/10/333639.htm",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Verdex",
+   "url": "https://www.ycombinator.com/companies/verdex",
+   "what": "AI insurance adjuster using satellite imagery to verify agricultural claims (YC W2026)",
+   "workflow_step": "claims-guidance",
+   "buyer": "carrier",
+   "stage": "$0.5M Pre-Seed, Mar 2026 (led by Y Combinator)",
+   "investors": [
+    "Y Combinator"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.vcbacked.co/company/verdex",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Panta",
+   "url": "https://www.ycombinator.com/companies/panta",
+   "what": "Tech-enabled commercial brokerage combining AI workflows with licensed brokers (YC W2026)",
+   "workflow_step": "broker-ops",
+   "buyer": "consumer",
+   "stage": "$5.2M Seed, Jul 2026",
+   "investors": [
+    "Y Combinator"
+   ],
+   "funding_source": "https://pantainsure.com/news/panta-raises-5-2m/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Hesper AI",
+   "url": "https://www.ycombinator.com/companies/hesper-ai",
+   "what": "AI agents investigating P&C claims end-to-end — fraud detection and coverage verification (YC F2026)",
+   "workflow_step": "fraud",
+   "buyer": "carrier",
+   "stage": "YC F2026",
+   "investors": [
+    "Y Combinator"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Covera",
+   "url": "https://www.ycombinator.com/companies/covera",
+   "what": "AI agents for insurance brokers — submission intake, quoting, claims management (YC F2026)",
+   "workflow_step": "intake",
+   "buyer": "broker",
+   "stage": "YC F2026",
+   "investors": [
+    "Y Combinator"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Veltha",
+   "url": "https://www.ycombinator.com/companies/veltha",
+   "what": "AI-native third-party administrator for workers' compensation claims (YC F2026)",
+   "workflow_step": "claims-fnol",
+   "buyer": "carrier",
+   "stage": "YC F2026",
+   "investors": [
+    "Y Combinator"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Qlo",
+   "url": "https://www.ycombinator.com/companies/qlo",
+   "what": "AI agents automating commercial insurance underwriting workflows and risk decisions (YC S2026)",
+   "workflow_step": "pricing",
+   "buyer": "carrier",
+   "stage": "YC S2026",
+   "investors": [
+    "Y Combinator"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Pasito",
+   "url": "https://www.pasito.com",
+   "what": "AI agents for benefits delivery serving carriers, brokers, and benefits vendors (YC S2022)",
+   "workflow_step": "policy-servicing",
+   "buyer": "broker",
+   "stage": "$21M Series A, Feb 2026 (led by Insight Partners; Y Combinator, MTech Capital); YC S2022",
+   "investors": [
+    "Insight Partners",
+    "MTech Capital",
+    "Y Combinator"
+   ],
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Cape Analytics",
+   "url": "https://capeanalytics.com",
+   "what": "Geospatial AI property intelligence (roof condition, defensible space) for underwriting",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "~$75M raised; acquired by Moody's (announced Jan 2025)",
+   "investors": [
+    "Aquiline Technology Growth",
+    "Brewer Lane Ventures",
+    "Cincinnati Insurance",
+    "Formation 8",
+    "Hudson Structured Capital Management",
+    "Khosla Ventures",
+    "Moody's (acquirer)",
+    "Pivot Investment Partners",
+    "State Auto Labs",
+    "State Farm Ventures",
+    "The Hartford",
+    "XL Innovate"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Cowbell",
+   "url": "https://cowbell.insure",
+   "what": "Adaptive cyber insurance for SMEs with continuous AI underwriting",
+   "workflow_step": "MGA-ops",
+   "buyer": "consumer (SME insureds via brokers)",
+   "stage": "Series C $60M from Zurich Insurance Group, Jul 2024 ($202M total)",
+   "investors": [
+    "Anthemis",
+    "Avanta Ventures",
+    "Brewer Lane Ventures",
+    "MS&AD Ventures",
+    "ManchesterStory",
+    "NYCA Partners",
+    "Permira",
+    "Pivot Investment Partners",
+    "Prosperity7 Ventures",
+    "PruVen Capital",
+    "Viola Ventures",
+    "Zurich Insurance Group"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "EasyHealth",
+   "url": "https://easyhealth.com",
+   "what": "Medicare distribution/agency platform using data analytics on member outcomes",
+   "workflow_step": "distribution/embedded",
+   "buyer": "consumer",
+   "stage": "Series A $135M ($35M equity + $100M debt), Nov 2021",
+   "investors": [
+    "Anthemis",
+    "Brewer Lane Ventures",
+    "Healthy Ventures",
+    "Nationwide Ventures",
+    "Operator Partners",
+    "QED Investors",
+    "Victory Park Capital"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Empathy",
+   "url": "https://empathy.com",
+   "what": "Bereavement and estate-settlement support platform distributed through life insurers and employers",
+   "workflow_step": "claims-guidance",
+   "buyer": "carrier",
+   "stage": "Series C $72M led by Adams Street Partners, May 2025 ($162M total)",
+   "investors": [
+    "Adams Street Partners",
+    "Aflac Ventures",
+    "Aleph",
+    "Allianz Life Ventures",
+    "Brewer Lane Ventures",
+    "Citi Impact Fund",
+    "Entree Capital",
+    "Entrée Capital",
+    "General Catalyst",
+    "Index Ventures",
+    "Latitude",
+    "LionTree",
+    "MetLife",
+    "Munich Re",
+    "Munich Re Ventures",
+    "New York Life",
+    "Securian",
+    "SemperVirens",
+    "TIAA Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Ennabl",
+   "url": "https://ennabl.com",
+   "what": "Data intelligence platform for insurance brokerages (book-of-business analytics, producer intel)",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "Series A $8M led by Brewer Lane, Jul 2023; Series A-II $2.1M 2025",
+   "investors": [
+    "Altai Ventures",
+    "Brewer Lane Ventures",
+    "Vine Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "EvolutionIQ",
+   "url": "https://evolutioniq.com",
+   "what": "AI claims-guidance platform (next-best-action) for disability, injury and workers' comp claims",
+   "workflow_step": "claims-guidance",
+   "buyer": "carrier",
+   "stage": "~$60M raised; acquired by CCC Intelligent Solutions for ~$730M, Dec 2024",
+   "investors": [
+    "Altai Ventures",
+    "Brewer Lane Ventures",
+    "First Round Capital",
+    "FirstMark Capital"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Herald",
+   "url": "https://heraldai.com",
+   "what": "Unified API connecting brokers/digital agencies to commercial carriers for quote-bind",
+   "workflow_step": "quote-bind",
+   "buyer": "broker",
+   "stage": "Series A $12M co-led by Lightspeed + Brewer Lane, Oct 2024",
+   "investors": [
+    "Afore Capital",
+    "Brewer Lane Ventures",
+    "Lightspeed Venture Partners",
+    "Underscore VC"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Hi Marley",
+   "url": "https://himarley.com",
+   "what": "SMS/texting communication platform purpose-built for insurance carriers to talk with policyholders during claims",
+   "workflow_step": "policy-servicing",
+   "buyer": "carrier",
+   "stage": "Series B $25M led by Emergence Capital, Mar 2021 (~$42M total)",
+   "investors": [
+    "Bain Capital Ventures",
+    "Brewer Lane Ventures",
+    "Emergence Capital",
+    "Greenspring Associates",
+    "True Ventures",
+    "Underscore VC"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Ladder",
+   "url": "https://ladderlife.com",
+   "what": "Fully digital term life insurance company (instant underwriting, flexible coverage)",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "Series D $100M at $900M valuation, Oct 2021",
+   "investors": [
+    "Allianz Life Ventures",
+    "Brewer Lane Ventures",
+    "Canaan Partners",
+    "Hudson Structured Capital Management",
+    "Lightspeed Venture Partners",
+    "Northwestern Mutual",
+    "Northwestern Mutual Future Ventures",
+    "OMERS Growth Equity",
+    "RRE Ventures",
+    "Thomvest Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Novella",
+   "url": "https://novella.insure",
+   "what": "AI-powered wholesale E&S insurance broker pairing human brokers with AI 'super producer' agents",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "$21M round led by Brewer Lane Ventures, May 2026",
+   "investors": [
+    "Arch (insurer)",
+    "Avid Ventures",
+    "Blank Ventures",
+    "Box Group",
+    "Brewer Lane Ventures",
+    "Crystal Venture Partners",
+    "SV Angel",
+    "Verissimo Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "AgentSync",
+   "url": "https://agentsync.io",
+   "what": "Producer licensing, appointment and compliance management infrastructure",
+   "workflow_step": "compliance",
+   "buyer": "carrier",
+   "stage": "Series B $75M at $1.2B valuation, Dec 2021; +$50M Series B extension Oct 2023",
+   "investors": [
+    "Anthemis",
+    "Atreides Management",
+    "Craft Ventures",
+    "Tiger Global",
+    "Valor Equity Partners"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Branch",
+   "url": "https://ourbranch.com",
+   "what": "Bundled home + auto insurance carrier (reciprocal exchange), instant-bind from just an address",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "Series C $147M at $1.05B valuation led by Weatherford Capital, Jun 2022",
+   "investors": [
+    "Acrew Capital",
+    "AmFam Ventures",
+    "American Family Ventures",
+    "Anthemis",
+    "Gaingels",
+    "Greycroft",
+    "Hudson Structured Capital Management",
+    "Narya",
+    "SignalFire",
+    "Tower IV",
+    "Weatherford Capital"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Flock",
+   "url": "https://flockcover.com",
+   "what": "Real-time-data commercial motor fleet insurance (MGA) incentivizing safer driving",
+   "workflow_step": "MGA-ops",
+   "buyer": "consumer (commercial fleets)",
+   "stage": "Series B $38M led by Octopus Ventures, Feb 2023",
+   "investors": [
+    "Anthemis",
+    "CommerzVentures",
+    "Dig Ventures",
+    "Foresight Ventures",
+    "Octopus Ventures",
+    "Social Capital"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Hokodo",
+   "url": "https://hokodo.co",
+   "what": "B2B trade credit / payment-terms insurance and BNPL for merchants",
+   "workflow_step": "distribution/embedded",
+   "buyer": "embedded-partner (B2B merchants)",
+   "stage": "Series B $40M led by Notion Capital, Jun 2022",
+   "investors": [
+    "Anthemis",
+    "Korelya Capital",
+    "Mosaic Ventures",
+    "Mundi Ventures",
+    "Notion Capital",
+    "Opera Tech Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Kettle",
+   "url": "https://ourkettle.com",
+   "what": "Reinsurance MGA using deep-learning wildfire/catastrophe models to underwrite climate risk (started with California wildfire)",
+   "workflow_step": "pricing",
+   "buyer": "carrier",
+   "stage": "Series A $25M led by Acrew Capital, Nov 2021",
+   "investors": [
+    "Acrew Capital",
+    "Anthemis",
+    "DCVC",
+    "Homebrew",
+    "Lowercarbon Capital",
+    "True Ventures",
+    "Valor",
+    "Valor Equity Partners"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Koffie Financial",
+   "url": "https://koffieinsurance.com",
+   "what": "Digital MGA for trucking/transportation insurance rewarding safety tech",
+   "workflow_step": "MGA-ops",
+   "buyer": "consumer (trucking fleets)",
+   "stage": "Series A $11M led by Anthemis, Jul 2022 ($15.5M total)",
+   "investors": [
+    "Anthemis",
+    "Breakout Capital",
+    "CP Overture",
+    "Lerer Hippeau",
+    "Plug and Play Ventures",
+    "Two Lanterns Venture Partners"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "kWh Analytics",
+   "url": "https://kwhanalytics.com",
+   "what": "Data-driven insurance for renewable energy (solar revenue puts, property cover)",
+   "workflow_step": "MGA-ops",
+   "buyer": "consumer (renewable asset owners)",
+   "stage": "Series B $20M led by Lacuna Sustainable Investments, Feb 2022",
+   "investors": [
+    "9Yards Capital",
+    "Anthemis",
+    "ENGIE",
+    "Lacuna Sustainable Investments",
+    "Outrun Ventures",
+    "PROfounders Capital"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Matic",
+   "url": "https://matic.com",
+   "what": "Embedded home/auto insurance marketplace inside mortgage servicers, lenders, banks",
+   "workflow_step": "distribution/embedded",
+   "buyer": "embedded-partner",
+   "stage": "Series B ext. $20M co-led by IA Capital + Cultivation Capital, Oct 2023; ~$30M round Jan 2025 (~$81M total)",
+   "investors": [
+    "Allstate Strategic Ventures",
+    "Anthemis",
+    "Assurity Ventures",
+    "Bayshore Capital",
+    "Clocktower Technology Ventures",
+    "Cultivation Capital",
+    "Fenway Summer",
+    "IA Capital Group",
+    "Intuit Ventures",
+    "MTech Capital",
+    "ManchesterStory",
+    "Nationwide Ventures",
+    "TruStage Ventures",
+    "Venice Investments"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Qover",
+   "url": "https://qover.com",
+   "what": "Embedded insurance orchestration platform (APIs + operations) powering insurance programs for brands across 32 European countries",
+   "workflow_step": "distribution/embedded",
+   "buyer": "embedded-partner",
+   "stage": "Series C $30M, 2023",
+   "investors": [
+    "Alven",
+    "Anthemis",
+    "Cathay Innovation",
+    "Kreos Capital",
+    "Portag3 Ventures",
+    "Prime Ventures",
+    "Zurich Global Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Raincoat",
+   "url": "https://withraincoat.com",
+   "what": "Parametric climate/disaster insurance infrastructure distributed via banks, insurers, governments",
+   "workflow_step": "distribution/embedded",
+   "buyer": "embedded-partner",
+   "stage": "Seed $4.5M led by Anthemis 2022; +$11M (Anthemis, Two Sigma Ventures) 2023",
+   "investors": [
+    "305 Ventures",
+    "Anthemis",
+    "Banco Popular",
+    "Consorcio",
+    "Divergent Capital",
+    "SoftBank SB Opportunity Fund",
+    "Two Sigma Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Reserv",
+   "url": "https://reserv.com",
+   "what": "AI-native third-party administrator handling end-to-end P&C claims for carriers, MGAs, captives, and brokers; ~$100M ARR",
+   "workflow_step": "claims-fnol",
+   "buyer": "carrier",
+   "stage": "Series B $25M led by Flourish Ventures, Jun 2025; +$16M QBE-led extension ($41M round, ~$71M total)",
+   "investors": [
+    "Accelerant",
+    "Accenture Ventures",
+    "Altai Ventures",
+    "Anthemis",
+    "Bain Capital Ventures",
+    "Flourish Ventures",
+    "KKR",
+    "QBE Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "YuLife",
+   "url": "https://yulife.com",
+   "what": "Gamified group life insurance + wellbeing platform sold through employers",
+   "workflow_step": "distribution/embedded",
+   "buyer": "consumer (employers/group benefits)",
+   "stage": "Series C $120M at $800M valuation led by Dai-ichi Life, Jul 2022",
+   "investors": [
+    "Anthemis",
+    "Creandum",
+    "Dai-ichi Life",
+    "Eurazeo",
+    "Latitude",
+    "LocalGlobe",
+    "MMC Ventures",
+    "Notion Capital",
+    "OurCrowd",
+    "Target Global"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Insurdata",
+   "url": "https://insurdata.io",
+   "what": "Building-level property exposure data (geocoding, first-floor height) for re/insurers",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "$3M Seed, Apr 2019 (led by Anthemis and Menlo Ventures (co-leads)); $4M total; Acquired by Big Ticket Inc. (May 2022); operates as wholly owned subsidiary",
+   "investors": [
+    "Anthemis",
+    "Menlo Ventures"
+   ],
+   "funding_source": "https://www.intelligentinsurer.com/insurance/insurtech-start-up-insurdata-raises-3m-in-seed-funding-18093",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Akur8",
+   "url": "https://akur8.com",
+   "what": "Machine-learning actuarial pricing and reserving platform (transparent GLM automation)",
+   "workflow_step": "pricing",
+   "buyer": "carrier",
+   "stage": "Series C $120M led by One Peak, Sep 2024 ($180M total)",
+   "investors": [
+    "BlackFin Capital Partners",
+    "FinTLV",
+    "Guidewire Software",
+    "MTech Capital",
+    "One Peak",
+    "Partners Group"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Assured",
+   "url": "https://assured.claims",
+   "what": "AI-native FNOL and claims processing SaaS for P&C carriers",
+   "workflow_step": "claims-fnol",
+   "buyer": "carrier",
+   "stage": "Equity round, Mar 2025 (ICONIQ Growth, Kleiner Perkins), amount undisclosed; ~$1B valuation",
+   "investors": [
+    "Browder Capital",
+    "Costanoa Ventures",
+    "ICONIQ Growth",
+    "Kleiner Perkins",
+    "MTech Capital"
+   ],
+   "funding_source": "https://www.bloomberg.com/news/articles/2025-03-04/iconiq-kleiner-perkins-back-insurance-startup-assured-at-1-billion-valuation",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Bold Penguin",
+   "url": "https://boldpenguin.com",
+   "what": "Commercial insurance exchange/quoting platform connecting agents and carriers",
+   "workflow_step": "quote-bind",
+   "buyer": "broker",
+   "stage": "$32M Series B, Sep 2019 (led by Hudson Structured Capital Management and Lockton); $50M total; Acquired by American Family Insurance (announced Jan 14, 2021; terms undisclosed)",
+   "investors": [
+    "American Family (acquirer)",
+    "Hudson Structured Capital Management",
+    "MTech Capital"
+   ],
+   "funding_source": "https://www.prnewswire.com/news-releases/bold-penguin-closes-its-series-b-to-bring-total-funding-over-50-million-300923395.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Corvus Insurance",
+   "url": "https://corvusinsurance.com",
+   "what": "Smart cyber insurance MGA with dynamic risk scanning of policyholders; acquired by Travelers (~$435M, Jan 2024)",
+   "workflow_step": "MGA-ops",
+   "buyer": "consumer (via brokers)",
+   "stage": "Acquired by Travelers for ~$435M, Jan 2024 (prior Series C $100M led by Insight Partners, 2021)",
+   "investors": [
+    ".406 Ventures",
+    "Aquiline",
+    "Aquiline Technology Growth",
+    "Bain Capital Ventures",
+    "FinTLV",
+    "Hudson Structured Capital Management",
+    "Insight Partners",
+    "MTech Capital",
+    "Obvious Ventures",
+    "Telstra Ventures",
+    "Travelers"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Covr",
+   "url": "https://getcovr.com",
+   "what": "AI claims decision-support tool for P&C insurers, starting with homeowners",
+   "workflow_step": "claims-guidance",
+   "buyer": "carrier",
+   "stage": "$2.5M Seed, Jun 2025 (led by MTech Capital)",
+   "investors": [
+    "MTech Capital"
+   ],
+   "funding_source": "https://www.covrglobal.com/seed-round-funding",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "CyberCube",
+   "url": "https://cybcube.com",
+   "what": "Cyber risk aggregation modeling and underwriting analytics for re/insurers and brokers",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "$50M growth round led by Morgan Stanley Tactical Value, Dec 2022 ($100M+ total)",
+   "investors": [
+    "ForgePoint Capital",
+    "Forgepoint Capital",
+    "Hudson Structured Capital Management",
+    "MTech Capital",
+    "Morgan Stanley (growth round)",
+    "Morgan Stanley Tactical Value",
+    "Scott Stephenson (angel)",
+    "Stone Point Capital (individuals)"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Embroker",
+   "url": "https://embroker.com",
+   "what": "Digital commercial insurance brokerage/MGA for startups and businesses (D&O, E&O, cyber)",
+   "workflow_step": "MGA-ops",
+   "buyer": "consumer (SMBs)",
+   "stage": "Series C $100M led by FTV Capital, Jun 2021 ($140M total)",
+   "investors": [
+    "Bee Partners",
+    "Canaan Partners",
+    "FTV Capital",
+    "Gaingels",
+    "Hudson Structured Capital Management",
+    "MTech Capital",
+    "MassMutual Ventures",
+    "Nyca Partners",
+    "Tola Capital"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "INSHUR",
+   "url": "https://inshur.com",
+   "what": "Embedded auto insurance for rideshare/on-demand delivery drivers (Uber, Amazon Flex partners)",
+   "workflow_step": "MGA-ops",
+   "buyer": "consumer (rideshare drivers)",
+   "stage": "$19M led by Viola Growth, Oct 2024 ($78.5M total since 2019)",
+   "investors": [
+    "JVP",
+    "MS&AD Ventures",
+    "MTech Capital",
+    "Munich Re Ventures",
+    "Trinity Capital",
+    "Viola FinTech",
+    "Viola Fintech",
+    "Viola Growth"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Insurify",
+   "url": "https://insurify.com",
+   "what": "AI virtual agent and comparison marketplace for auto/home insurance quotes",
+   "workflow_step": "distribution/embedded",
+   "buyer": "consumer",
+   "stage": "Series B $100M led by Motive Partners, Sep 2021 ($128M total)",
+   "investors": [
+    "Fort Ross Ventures",
+    "Hearst Ventures",
+    "MTech Capital",
+    "MassMutual Ventures",
+    "Moneta VC",
+    "Motive Partners",
+    "Nationwide",
+    "Nationwide Ventures",
+    "Viola FinTech",
+    "Viola Growth"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Napo",
+   "url": "https://napo.pet",
+   "what": "Digital pet insurance MGA (UK) with AI-automated claims",
+   "workflow_step": "MGA-ops",
+   "buyer": "consumer",
+   "stage": "Series B £12M led by Mercia Ventures, Feb 2025 (~£30M total)",
+   "investors": [
+    "Companion Fund",
+    "DN Capital",
+    "Helvetia Venture Fund",
+    "MTech Capital",
+    "Mercia Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Openly",
+   "url": "https://openly.com",
+   "what": "Tech-enabled premium homeowners insurer distributed exclusively via independent agents",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer (via independent agents)",
+   "stage": "Series D $100M led by Eden Global Partners, Sep 2023; later $193M growth financing (Eden Global, Allianz X)",
+   "investors": [
+    "Advance Venture Partners",
+    "Allianz X",
+    "Clocktower Technology Ventures",
+    "Eden Global Partners",
+    "Gradient Ventures",
+    "MTech Capital",
+    "Obvious Ventures",
+    "Trinity Capital"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Polly (fka DealerPolicy)",
+   "url": "https://polly.co",
+   "what": "Embedded auto insurance marketplace inside the car-dealership purchase process",
+   "workflow_step": "distribution/embedded",
+   "buyer": "embedded-partner (auto dealers)",
+   "stage": "Series C $110M led by Goldman Sachs Asset Management, Jul 2021 (~$186M total)",
+   "investors": [
+    "3L Capital",
+    "FreshTracks Capital",
+    "Goldman Sachs Asset Management",
+    "Hudson Structured Capital Management",
+    "MTech Capital"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Qumis",
+   "url": "https://qumis.ai",
+   "what": "Attorney-trained AI for commercial policy analysis and coverage intelligence (brokers, coverage lawyers)",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "Seed $4.3M led by MTech Capital, Feb 2026 ($6.75M total)",
+   "investors": [
+    "Also Capital",
+    "Alumni Ventures",
+    "American Family Ventures",
+    "Caffeinated Capital",
+    "Founders Fund",
+    "Lux Capital",
+    "MTech Capital"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Sonant AI",
+   "url": "https://sonant.ai",
+   "what": "AI voice agents/receptionist for independent P&C insurance agencies (intake, quote capture, AMS updates)",
+   "workflow_step": "intake",
+   "buyer": "broker",
+   "stage": "Seed (~$4.7M total), Sep 2025",
+   "investors": [
+    "MTech Capital",
+    "Start Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Thinksurance",
+   "url": "https://thinksurance.de",
+   "what": "Multi-carrier commercial insurance advisory/placement platform for brokers (Germany)",
+   "workflow_step": "quote-bind",
+   "buyer": "broker",
+   "stage": "Series C ~$24M, Jun 2023 (~$38.6M total)",
+   "investors": [
+    "Columbia Lake Partners",
+    "Eight Roads Ventures",
+    "F-Prime Capital",
+    "Kli Capital",
+    "MTech Capital"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Stere",
+   "url": "https://stere.io",
+   "what": "Marketplace connecting embedded-insurance programs and MGAs with capacity providers",
+   "workflow_step": "distribution/embedded",
+   "buyer": "MGA",
+   "stage": "$5M Seed+, Sep 2022 (led by Vida Capital); $7M total",
+   "investors": [
+    "MTech Capital"
+   ],
+   "funding_source": "https://www.artemis.bm/news/stere-raises-5m-from-alternatives-re-insurance-investor-vida-capital/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Irys",
+   "url": "https://irysinsurtech.com",
+   "what": "AI-native, open-API agency management system / command center for agents, brokers and MGAs",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "$12.5M Seed, Oct 2025 (led by Markd); $16M total",
+   "investors": [
+    "Ansay & Associates",
+    "Deepwork Capital",
+    "Florida Opportunity Fund",
+    "HICO Ventures",
+    "JMG Capital",
+    "MTech Capital",
+    "Markd"
+   ],
+   "funding_source": "https://www.prnewswire.com/news-releases/investors-back-irys-insurtech-with-12-5-million-to-reinvent-insurance-software-302581215.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Pendella",
+   "url": "https://pendella.com",
+   "what": "White-label life/disability insurance automation platform + licensed agency for enterprise partners",
+   "workflow_step": "distribution/embedded",
+   "buyer": "embedded-partner",
+   "stage": "$2.7M Seed, Apr 2023 (led by Naples Technology Ventures); $7.9M total",
+   "investors": [
+    "MTech Capital"
+   ],
+   "funding_source": "https://finance.yahoo.com/news/pendella-technology-completes-2-7m-150000161.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Monitaur",
+   "url": "https://monitaur.ai",
+   "what": "AI/ML model governance and compliance SaaS for insurers and regulated industries",
+   "workflow_step": "compliance",
+   "buyer": "carrier",
+   "stage": "$6M Series A, May 2024 (led by Cultivation Capital)",
+   "investors": [
+    "MTech Capital"
+   ],
+   "funding_source": "https://www.monitaur.ai/press-releases/monitaur-the-leading-model-governance-platform-for-highly-regulated-industries-raises-series-a",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Property Lens",
+   "url": "https://propertylens.com",
+   "what": "Property history and risk reports (claims, permits, hazards) for homebuyers and insurers",
+   "workflow_step": "risk-enrichment",
+   "buyer": "consumer",
+   "stage": "Early stage (MTech-backed)",
+   "investors": [
+    "MTech Capital"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Adapt",
+   "url": "https://adaptinsurance.ai",
+   "what": "Domain-specific AI infrastructure layer for U.S. P&C insurance workflows",
+   "workflow_step": "other",
+   "buyer": "carrier",
+   "stage": "Early stage (MTech-backed)",
+   "investors": [
+    "MTech Capital"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Plum Life",
+   "url": "https://helloplum.com",
+   "what": "Digital life insurance BGA distributing through independent agents/advisors",
+   "workflow_step": "distribution/embedded",
+   "buyer": "broker",
+   "stage": "$5.3M Seed, Mar 2022 (led by ManchesterStory); $7.75M total",
+   "investors": [
+    "MTech Capital",
+    "ManchesterStory"
+   ],
+   "funding_source": "https://www.businesswire.com/news/home/20220302005283/en/Plum-Life-Secures-$5.3-Million-in-Seed-Round-to-Accelerate-Growth-of-its-Agent-Only-Digital-Life-Insurance-Platform",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Clearcover",
+   "url": "https://clearcover.com",
+   "what": "Digital-first auto insurance carrier with API-driven distribution and fast claims",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "Series D $200M, 2021 (~$1B valuation)",
+   "investors": [
+    "American Family Ventures",
+    "Cox Enterprises",
+    "Eldridge",
+    "Greycroft",
+    "IA Capital Group",
+    "OMERS Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Delos Insurance Solutions",
+   "url": "https://delosinsurance.com",
+   "what": "Wildfire-science MGA writing homeowners policies in wildfire-exposed California using satellite imagery risk selection",
+   "workflow_step": "risk-enrichment",
+   "buyer": "MGA",
+   "stage": "Series A $9M, Oct 2024",
+   "investors": [
+    "Blue Bear Capital",
+    "Generation Space",
+    "HSBC Asset Management",
+    "IA Capital Group"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "The Demex Group",
+   "url": "https://thedemexgroup.com",
+   "what": "Parametric stop-loss reinsurance for severe convective storm losses, built on weather and claims data",
+   "workflow_step": "pricing",
+   "buyer": "carrier",
+   "stage": "Series A $10.25M, Sep 2024",
+   "investors": [
+    "Blue Bear Capital",
+    "Congruent Ventures",
+    "IA Capital Group",
+    "MetaProp",
+    "Moxxie Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Frontier Risk",
+   "url": "https://frontierrisk.com",
+   "what": "Tech-enabled MGA and risk platform for cannabis and THC-beverage businesses",
+   "workflow_step": "MGA-ops",
+   "buyer": "MGA",
+   "stage": "Seed+ $3M, Jan 2025 (total $6.1M)",
+   "investors": [
+    "Casa Verde Capital",
+    "Euclid Ventures",
+    "IA Capital Group",
+    "ICC Holdings / Illinois Casualty",
+    "Venturion Capital"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Snapsheet",
+   "url": "https://snapsheetclaims.com",
+   "what": "Virtual claims appraisal, claims management SaaS and claims payments for auto/P&C carriers",
+   "workflow_step": "claims-fnol",
+   "buyer": "carrier",
+   "stage": "$5M strategic from State Farm, Jul 2023 (~$100M+ total)",
+   "investors": [
+    "IA Capital Group",
+    "Intact Ventures",
+    "Liberty Mutual",
+    "Liberty Mutual Strategic Ventures",
+    "Nationwide",
+    "Nationwide Ventures",
+    "Ping An Global Voyager Fund",
+    "Pivot Investment Partners",
+    "State Farm",
+    "State Farm Ventures",
+    "Tola Capital",
+    "USAA"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Sure",
+   "url": "https://sureapp.com",
+   "what": "End-to-end embedded insurance infrastructure SaaS letting brands launch insurance programs",
+   "workflow_step": "distribution/embedded",
+   "buyer": "embedded-partner",
+   "stage": "Series C $100M, Oct 2021 ($550M valuation)",
+   "investors": [
+    "Declaration Partners",
+    "Expanding Capital",
+    "FTAC Ventures",
+    "IA Capital Group",
+    "Kinnevik",
+    "Menlo Ventures",
+    "W. R. Berkley Corporation",
+    "WndrCo"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "The Zebra",
+   "url": "https://thezebra.com",
+   "what": "Auto and home insurance comparison marketplace",
+   "workflow_step": "distribution/embedded",
+   "buyer": "consumer",
+   "stage": "Series D $150M, 2021 (unicorn)",
+   "investors": [
+    "Accel",
+    "IA Capital Group",
+    "Silverton Partners",
+    "Weatherford Capital"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Afficiency",
+   "url": "https://afficiency.com",
+   "what": "API platform that builds and distributes digital life insurance products through partner channels",
+   "workflow_step": "distribution/embedded",
+   "buyer": "carrier",
+   "stage": "Series A $7M, Apr 2022",
+   "investors": [
+    "IA Capital Group",
+    "Impression Ventures",
+    "SBLI",
+    "Western & Southern Financial Group"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Testudo",
+   "url": "https://testudo.co",
+   "what": "Data-driven MGA underwriting generative-AI liability on Lloyd's capacity, using a proprietary AI-lawsuit dataset",
+   "workflow_step": "pricing",
+   "buyer": "MGA",
+   "stage": "Pre-seed/seed (2024); underwriting live Jan 2026, $9.25M capacity with Atrium/QBE/Hiscox",
+   "investors": [
+    "A100x",
+    "Charlie Songhurst",
+    "IA Capital Group",
+    "Josh Buckley",
+    "LocalGlobe"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Axio",
+   "url": "https://axio.com",
+   "what": "Cyber risk quantification platform used for underwriting and insurability decisions",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "Series B $23M, 2022 (led by Temasek/ISTARI)",
+   "investors": [
+    "IA Capital Group",
+    "NFP Ventures",
+    "Temasek/ISTARI"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Bamboo Insurance",
+   "url": "https://bambooinsurance.com",
+   "what": "Homeowners and dwelling-fire MGA focused on California; majority acquired by White Mountains in 2023",
+   "workflow_step": "MGA-ops",
+   "buyer": "consumer",
+   "stage": "Series A $16M, 2022; White Mountains control investment Oct 2023 (~$75M raised)",
+   "investors": [
+    "Eos Venture Partners",
+    "White Mountains"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Buckle",
+   "url": "https://buckleup.com",
+   "what": "Insurance carrier/MGA platform for gig-economy rideshare and delivery drivers, underwriting on gig data instead of credit",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "Series B $60M, Oct 2021 (~$115M total incl. debt); Buckle Services, LLC (Buckle Corp's operating subsidiary) filed for Chapter 7 bankruptcy in the District of Delaware; carrier subsidiary Gateway Insurance was severely impaired by Vesttoo-related reinsurance fraud losses (surplus down to ~$2.5M as of 12/31/2024)",
+   "investors": [
+    "Eldridge",
+    "Eos Venture Partners",
+    "Hudson Structured Capital Management",
+    "Siguler Guff",
+    "Volery Capital Partners"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://coverager.com/buckle-files-for-chapter-7-bankruptcy/",
+   "funding_refreshed": "2026-09-22",
+   "status": "shut_down"
+  },
+  {
+   "name": "Champ Titles",
+   "url": "https://champtitles.com",
+   "what": "Digital vehicle title and registration suite for state DMVs and carriers, speeding total-loss claim settlement",
+   "workflow_step": "claims-guidance",
+   "buyer": "carrier",
+   "stage": "$55M Series D, Dec 2025 (led by W. R. Berkley Corporation, Point72 Ventures, and ORIX Corporation USA (co-led))",
+   "investors": [
+    "Eos Venture Partners",
+    "Guidewire Software",
+    "Point72 Ventures",
+    "Rev1 Ventures",
+    "W. R. Berkley Corporation"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.ohiotechnews.com/champ-55-million-series-c/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "CyberSmart",
+   "url": "https://cybersmart.co.uk",
+   "what": "SME cyber hygiene, compliance certification and bundled cyber cover (UK)",
+   "workflow_step": "risk-enrichment",
+   "buyer": "consumer",
+   "stage": "£12.75M Series B, Feb 2023 (led by Oxx)",
+   "investors": [
+    "British Patient Capital",
+    "Eos Venture Partners",
+    "IQ Capital",
+    "Legal & General Capital",
+    "Oxx",
+    "Seedcamp",
+    "Solano Partners",
+    "Winton Ventures"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.itsecurityguru.org/2023/02/24/cybersmart-raises-12-75m-in-series-b-funding-round/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Elpha Secure",
+   "url": "https://elphasecure.com",
+   "what": "SMB cyber insurance MGA that bundles proprietary security software with the policy",
+   "workflow_step": "quote-bind",
+   "buyer": "MGA",
+   "stage": "$20M Series A, Oct 2022 (led by Canapi Ventures)",
+   "investors": [
+    "AXIS Capital",
+    "Canapi Ventures",
+    "Eos Venture Partners",
+    "Fermat Capital Management",
+    "State Farm Ventures",
+    "Stone Point Ventures",
+    "The Hartford STAG Ventures"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.businesswire.com/news/home/20221006005343/en/Elpha-Secure-Raises-%2420-Million-in-Series-A-Funding-Led-by-Canapi-Ventures",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Mulberri",
+   "url": "https://mulberri.io",
+   "what": "Business insurance quote/bind and risk platform purpose-built for PEOs and brokers, pivoting to GenAI OS for commercial insurance",
+   "workflow_step": "distribution/embedded",
+   "buyer": "embedded-partner",
+   "stage": "$6.75M Series A, Dec 2023 (led by Eos Venture Partners); $10.75M total",
+   "investors": [
+    "Altamont Capital Partners",
+    "Eos Venture Partners",
+    "Hanover Technology Management",
+    "MS&AD Ventures"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.businesswire.com/news/home/20231207837375/en/AI-Driven-Embedded-Insurance-Platform-Mulberri-Announces-$6.75-Million-Series-A-Led-By-Eos-Venture-Partners",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Players Health",
+   "url": "https://playershealth.com",
+   "what": "Sports insurance and risk management platform for youth athletic organizations",
+   "workflow_step": "MGA-ops",
+   "buyer": "MGA",
+   "stage": "$60M Series C, Dec 2024 (led by Bluestone Equity Partners)",
+   "investors": [
+    "Bluestone Equity Partners",
+    "Eos Venture Partners",
+    "Greenlight Re",
+    "RPM Ventures",
+    "Will Ventures"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://insider.fitt.co/press-release/players-health-closes-60-million-series-c-led-by-bluestone-equity-partners/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Ticker",
+   "url": "https://ticker.co.uk",
+   "what": "UK connected/telematics motor insurance MGA for high-cost segments (novice, van drivers)",
+   "workflow_step": "pricing",
+   "buyer": "consumer",
+   "stage": "Series A, 2021 (led by Eos); launched 2019 with Munich Re backing",
+   "investors": [
+    "Abacai (capacity partner)",
+    "Eos Venture Partners",
+    "Munich Re Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Westhill",
+   "url": "https://westhillglobal.com",
+   "what": "Digital managed-repair marketplace connecting carriers, contractors and policyholders after property claims",
+   "workflow_step": "claims-guidance",
+   "buyer": "carrier",
+   "stage": "$13.5M Preferred round (CB Insights tags it Series A-IV), May 2023 (led by Unnamed strategic investor (Eos Venture Partners, Luge Capital, Nyca Partners also participated))",
+   "investors": [
+    "Eos Venture Partners",
+    "Luge Capital",
+    "Nyca Partners",
+    "Service Provider Capital"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.globenewswire.com/news-release/2023/05/18/2672037/0/en/Westhill-Secures-a-13-5M-round-to-Build-the-Future-of-Managed-Repair.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Yarowa",
+   "url": "https://yarowa.com",
+   "what": "Swiss B2B marketplace/transaction platform for claims services, used by 80+ insurers to order vendors (repair, experts)",
+   "workflow_step": "claims-guidance",
+   "buyer": "carrier",
+   "stage": "$12.7M Series A, Jul 2022 (led by Eos Venture Partners)",
+   "investors": [
+    "Eos Venture Partners"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://eosvc.com/category/yarowa/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "COVU",
+   "url": "https://covu.com",
+   "what": "AI-native services platform that runs servicing/operations for independent insurance agencies",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "$10M Series A extension, Feb 2025 (led by Benhamou Global Ventures); $32M total",
+   "investors": [
+    "Benhamou Global Ventures",
+    "ManchesterStory",
+    "Markd"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://coverager.com/covu-expands-series-a-by-10-million/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Pinpoint Predictive",
+   "url": "https://pinpoint.ai",
+   "what": "Deep-learning behavioral risk scores giving P&C insurers earliest loss predictions on quotes and prospects",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "Series A, Oct 2024 (total raised $23M+), led by Markd",
+   "investors": [
+    "Guidewire Ventures",
+    "Jazz Venture Partners",
+    "Markd",
+    "Navigate Ventures",
+    "Seraph Group",
+    "Verstra Ventures"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://pinpoint.ai/press-release/pinpoint-announces-close-of-series-a-raise/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Indemn",
+   "url": "https://indemn.ai",
+   "what": "Conversational-AI (LLM agent) platform for quoting and binding insurance through natural dialogue",
+   "workflow_step": "quote-bind",
+   "buyer": "carrier",
+   "stage": "$1.9M Pre-seed, Jan 2024 (led by Markd)",
+   "investors": [
+    "AfterWork Ventures",
+    "Everywhere Ventures",
+    "Markd"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.insurancejournal.com/news/east/2024/02/01/758902.htm",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Ledgebrook",
+   "url": "https://ledgebrook.com",
+   "what": "E&S specialty MGA giving wholesale brokers fast quoting; tech-forward underwriting",
+   "workflow_step": "MGA-ops",
+   "buyer": "wholesaler",
+   "stage": "$65M Series C, Jun 2025 (led by The Stephens Group); $114.8M total",
+   "investors": [
+    "American Family Ventures",
+    "Brand Foundry Ventures",
+    "Duquesne Family Office",
+    "Markd",
+    "The Stephens Group"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.insurancejournal.com/news/east/2025/06/25/829079.htm",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Assureful",
+   "url": "https://assureful.com",
+   "what": "Usage-based product liability insurance for e-commerce sellers with live sales-data underwriting",
+   "workflow_step": "pricing",
+   "buyer": "consumer",
+   "stage": "$1.5M Pre-seed, Oct 2023 (led by Markd)",
+   "investors": [
+    "Markd"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://coverager.com/assureful-raises-1-5-million/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Cake (Cake Insure/Cake M&A)",
+   "url": "https://gocake.com",
+   "what": "Marketplace/platform for insurance agency succession — buying and selling agency books",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "$1.3M Pre-seed, Feb 2024 (led by Markd)",
+   "investors": [
+    "Markd"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://coverager.com/cake-raises-1-3-million/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "CrashBay",
+   "url": "https://crashbay.com",
+   "what": "Digital marketplace connecting collision-repair shops with insurers and fleets (claims repair sourcing)",
+   "workflow_step": "claims-guidance",
+   "buyer": "carrier",
+   "stage": "$1.25M Seed, Apr 2024 (led by Markd)",
+   "investors": [
+    "Markd"
+   ],
+   "funding_source": "https://www.prnewswire.com/news-releases/crashbay-the-first-collision-repair-marketplace-secures-funding-to-transform-how-consumers-insurance-companies-and-repairers-connect-302106156.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Scription",
+   "url": "https://scription.co",
+   "what": "Subscription maintenance program for commercial foodservice equipment (warranty-like risk product; insurance-adjacent)",
+   "workflow_step": "other",
+   "buyer": "consumer",
+   "stage": "$7.8M Seed, May 2025 (led by IA Capital Group); $10.3M total",
+   "investors": [
+    "IA Capital Group",
+    "Markd"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.prnewswire.com/news/scription/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Rainbow",
+   "url": "https://userainbow.com",
+   "what": "Specialty program MGU with admitted BOP for restaurants and other small-business verticals",
+   "workflow_step": "MGA-ops",
+   "buyer": "MGA",
+   "stage": "$8M Series A, Jan 2025 (led by Zigg Capital); $20M total",
+   "investors": [
+    "8VC",
+    "Altai Ventures",
+    "Arch Capital Group",
+    "Buckley Ventures",
+    "Caffeinated Capital",
+    "Habitat Partners",
+    "Zigg Capital"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://userainbow.com/press-releases/rainbow-raises-8m-series-a-to-expand-tailored-small-business-insurance",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Authentic",
+   "url": "https://authenticinsurance.com",
+   "what": "Captive-in-a-box / MGA-in-a-box platform letting SaaS firms, franchises and associations launch insurance programs",
+   "workflow_step": "distribution/embedded",
+   "buyer": "embedded-partner",
+   "stage": "$11M Series A, May 2024; $16.5M total",
+   "investors": [
+    "Altai Ventures",
+    "Clocktower",
+    "Commerce Ventures",
+    "Core Innovation Capital",
+    "FirstMark Capital",
+    "MGV",
+    "Slow Ventures",
+    "Upper90"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://coverager.com/authentic-raises-11-million/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Modern Life",
+   "url": "https://modernlife.com",
+   "what": "AI-powered life insurance brokerage giving advisors instant quoting and digital case management across 30+ carriers",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "$20M Series A, Nov 2025 (led by Thrive Capital); $35M total",
+   "investors": [
+    "Allegis",
+    "Altai Ventures",
+    "Hudson Structured Capital Management",
+    "New York Life Ventures",
+    "Northwestern Mutual Future Ventures",
+    "Thrive Capital"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://fintech.global/2025/11/20/ai-powered-brokerage-modern-life-secures-20m-funding/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "AutoComplete",
+   "url": "https://autocomplete.com",
+   "what": "Embedded point-of-sale auto insurance inside car-dealership workflows",
+   "workflow_step": "distribution/embedded",
+   "buyer": "embedded-partner",
+   "stage": "Growth capital raise (Presidio-advised); lead Bain Ventures + FM Capital + dealer groups (AutoNation, Ken Garff et al.)",
+   "investors": [
+    "Altai Ventures",
+    "AutoNation",
+    "Bain Ventures",
+    "FM Capital",
+    "Ken Garff Automotive Group"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.autoremarketing.com/te/dealer-groups-invest-in-autocompletes-ai-tech-platform-for-auto-insurance/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Upfort",
+   "url": "https://upfort.com",
+   "what": "Cyber security + cyber insurance platform for SMBs distributed via brokers and carriers",
+   "workflow_step": "quote-bind",
+   "buyer": "broker",
+   "stage": "$8M Series A, Oct 2023",
+   "investors": [
+    "Altai Ventures",
+    "Aquila Capital Partners",
+    "Chaos Ventures",
+    "Cyber Mentor Fund",
+    "Eniac Ventures",
+    "Fika Ventures",
+    "Gaingels",
+    "SYN Ventures"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://axios.com/2023/10/26/cyber-insurance-startup-upfort-funding",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Comeryx",
+   "url": "https://comeryx.com",
+   "what": "AI-native MGA for small-business artisan contractors in E&S; automated quote-bind-issue (founded by Pie co-founder Dax Craig)",
+   "workflow_step": "MGA-ops",
+   "buyer": "wholesaler",
+   "stage": "$7.5M Seed, Feb 2026 (led by Altai Ventures)",
+   "investors": [
+    "Altai Ventures",
+    "American Family Ventures",
+    "Arch Capital Group",
+    "Boulder Ventures",
+    "Echelon",
+    "Intact Ventures"
+   ],
+   "funding_source": "https://www.comeryx.com/news/comeryx-launch-announcement",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Propeller Bonds",
+   "url": "https://propellerbonds.com",
+   "what": "Fully automated surety-bond MGA with instant online quote, approval and issuance",
+   "workflow_step": "quote-bind",
+   "buyer": "broker",
+   "stage": "$6.4M Seed, Jan 2023; Acquired by Arch Capital Group (early 2024; terms undisclosed); founders still run the business",
+   "investors": [
+    "Altai Ventures"
+   ],
+   "funding_source": "https://www.prnewswire.com/news-releases/insurtech-startup-propeller-bonds-raises-6-4m-in-seed-funding-301717920.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "LeapEasy",
+   "url": "https://leapeasy.com",
+   "what": "Embedded security-deposit replacement and lease-guaranty MGA for rental housing",
+   "workflow_step": "distribution/embedded",
+   "buyer": "embedded-partner",
+   "stage": "$37.35M Strategic minority investment, Sep 2025 (led by Community Financial System, Inc.)",
+   "investors": [
+    "Altai Ventures"
+   ],
+   "funding_source": "https://www.businesswire.com/news/home/20250908730739/en/Community-Financial-System-Inc.-Announces-Investment-in-Leap-Holdings-Inc.",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "CommonPoint",
+   "url": "https://commonpoint.com",
+   "what": "TPA placement and claims-oversight platform for risk managers, carriers and MGAs",
+   "workflow_step": "claims-guidance",
+   "buyer": "carrier",
+   "stage": "Early stage (Altai portfolio/incubation)",
+   "investors": [
+    "Altai Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Gail",
+   "url": "https://gail.ai",
+   "what": "Conversational AI assistants and workflow automation for insurance agencies (also banking/lending)",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "$8.2M Seed, May 2025 (led by HTwenty; Act One Ventures (co-leads))",
+   "investors": [
+    "Altai Ventures"
+   ],
+   "funding_source": "https://www.meetgail.com/en/blog/gail-raises-an-8-2m-seed",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Bright Harbor",
+   "url": "https://brightharbor.com",
+   "what": "Tech-enabled disaster recovery service guiding survivors through insurance claims, FEMA and SBA processes",
+   "workflow_step": "claims-guidance",
+   "buyer": "consumer",
+   "stage": "Seed $10M, 2025 (Crystal invested pre-seed)",
+   "investors": [
+    "Congruent Ventures",
+    "Crystal Venture Partners",
+    "Draft Ventures",
+    "Everywhere Ventures",
+    "Jetstream Venture Fund",
+    "Kindergarten Ventures",
+    "Knight Ventures",
+    "Lowercarbon Capital"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Sixfold",
+   "url": "https://sixfold.ai",
+   "what": "AI risk-analysis copilot for underwriters — ingests submissions and surfaces risk signals aligned to each carrier's appetite",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "$30M Series B, Jan 2026 (led by Brewer Lane Ventures)",
+   "investors": [
+    "Bessemer Venture Partners",
+    "Brewer Lane Ventures",
+    "Crystal Venture Partners",
+    "Guidewire",
+    "Salesforce Ventures",
+    "Scale Venture Partners"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://fintech.global/2026/01/30/insurtech-firm-sixfold-secures-30m-to-advance-ai-underwriting/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "At-Bay",
+   "url": "https://www.at-bay.com",
+   "what": "Full-stack cyber insurance provider (MGA) combining coverage with active security monitoring for businesses",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "broker",
+   "stage": "Series D $185M (2021) + $20M extension (2022), ~$1.35B valuation",
+   "investors": [
+    "Acrew Capital",
+    "Glilot Capital",
+    "Glilot Capital Partners",
+    "ION Crossover Partners",
+    "Icon Ventures",
+    "Khosla Ventures",
+    "Lightspeed",
+    "Lightspeed Venture Partners",
+    "M12",
+    "Munich Re Ventures",
+    "Qumra Capital",
+    "entree capital"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Stoik",
+   "url": "https://stoik.io",
+   "what": "Cyber insurance MGA for European SMEs sold through brokers, bundled with prevention, MDR, and in-house incident response (CERT)",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "broker",
+   "stage": "Series B EUR 25M / $27M (Oct 2024) led by Alven",
+   "investors": [
+    "Alven",
+    "Andreessen Horowitz",
+    "Anthemis",
+    "Cyber Integrity Capital",
+    "Munich Re Ventures",
+    "Opera Tech Ventures",
+    "Tokio Marine HCC International",
+    "Impala"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Next Insurance",
+   "url": "https://www.nextinsurance.com",
+   "what": "Digital small-business insurer (GL, workers comp, commercial auto), acquired by Munich Re/ERGO for $2.6B (2025)",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "$265M strategic round (2023) from Allstate and Allianz X; acquired by Munich Re 2025",
+   "investors": [
+    "Allianz X",
+    "Allstate",
+    "Battery Ventures",
+    "CapitalG",
+    "ERGO",
+    "FinTLV",
+    "Group 11",
+    "Munich Re Ventures",
+    "Nationwide Ventures",
+    "Zeev Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Acko",
+   "url": "https://www.acko.com",
+   "what": "Indian full-stack digital insurer (auto, health, embedded)",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "Series E $255M (Oct 2021) led by General Atlantic and Multiples; ~$120M follow-on 2023-24",
+   "investors": [
+    "Accel",
+    "Amazon",
+    "CPP Investments",
+    "Elevation Capital",
+    "General Atlantic",
+    "Intact Ventures",
+    "Lightspeed",
+    "Multiples Alternate Asset Management",
+    "Munich Re Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "ManyPets",
+   "url": "https://manypets.com",
+   "what": "UK/US pet insurance provider (formerly Bought By Many)",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "Series D $350M (2021) led by EQT Growth, $2B+ valuation",
+   "investors": [
+    "CommerzVentures",
+    "EQT Growth",
+    "Munich Re Ventures",
+    "Octopus Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Faye",
+   "url": "https://www.withfaye.com",
+   "what": "D2C travel insurance with AI-automated claims paid in minutes",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "Series C $50M (Aug 2026) led by Madrona, ~$500M valuation",
+   "investors": [
+    "BRM",
+    "F2 Venture Capital",
+    "Lumir Ventures",
+    "Madrona",
+    "Munich Re Ventures",
+    "Portage",
+    "Viola Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Insify",
+   "url": "https://www.insify.nl",
+   "what": "Digital business insurance (MGA) for freelancers and SMEs across Europe",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "Series A EUR 15M (2021) led by Accel + EUR 10M extension (2023)",
+   "investors": [
+    "Accel",
+    "Fly Ventures",
+    "Frontline Ventures",
+    "Munich Re Ventures",
+    "Nico Rosberg",
+    "Opera Tech Ventures",
+    "Visionaries Club"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Amplify",
+   "url": "https://www.getamplify.com",
+   "what": "Digital platform for cash-value/permanent life insurance (tax-efficient wealth building)",
+   "workflow_step": "distribution/embedded",
+   "buyer": "consumer",
+   "stage": "Series B $20M (Jun 2024) co-led by Crosslink Capital and Anthemis",
+   "investors": [
+    "Anthemis",
+    "Conversion Capital",
+    "Crosslink Capital",
+    "Evolution Ventures",
+    "Foxe Capital",
+    "Greycroft",
+    "Moneta Ventures",
+    "Munich Re Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Azos",
+   "url": "https://azos.com.br",
+   "what": "Brazilian digital life insurance MGA/insurer",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "broker",
+   "stage": "$24M Series C, Mar 2026 (led by Kaszek; Kevin Efrusy (co-leads))",
+   "investors": [
+    "Kaszek",
+    "Maya Capital",
+    "Munich Re Ventures",
+    "Prosus Ventures"
+   ],
+   "funding_source": "https://www.revistacobertura.com.br/noticias/seguros-gerais/menos-de-um-ano-apos-serie-b-azos-levanta-r125-milhoes-em-rodada-serie-c-co-liderada-por-kaszek-e-kevin-efrusy/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Functional Finance",
+   "url": "https://www.functionalfi.com",
+   "what": "Financial operations platform for insurance: billing, premium collection, financing, disbursements",
+   "workflow_step": "policy-servicing",
+   "buyer": "MGA",
+   "stage": "$20M Series A, Sep 2024 (led by Walkabout Ventures); $28M total",
+   "investors": [
+    "Munich Re Ventures"
+   ],
+   "funding_source": "https://www.globenewswire.com/news-release/2024/09/19/2949207/0/en/Functional-Finance-Secures-20M-Series-A-Funding-Led-by-Walkabout-Ventures.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Elysian",
+   "url": "https://elysian.is",
+   "what": "AI-native TPA for commercial insurance claims",
+   "workflow_step": "claims-fnol",
+   "buyer": "carrier",
+   "stage": "Seed $6M (Sep 2025) led by Portage",
+   "investors": [
+    "American Family Ventures",
+    "Portage",
+    "TenOneTen Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Pathwork",
+   "url": "https://www.pathwork.com",
+   "what": "AI-powered distribution/underwriting workflow platform for life and health insurance brokers and carriers",
+   "workflow_step": "intake",
+   "buyer": "broker",
+   "stage": "Seed $3.5M (Sep 2025) led by Costanoa",
+   "investors": [
+    "American Family Ventures",
+    "Costanoa Ventures",
+    "Logos Fund",
+    "Meridian Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Optifino",
+   "url": "https://optifino.com",
+   "what": "AI digital BGA comparing permanent life insurance products across carriers for agents and advisors",
+   "workflow_step": "distribution/embedded",
+   "buyer": "broker",
+   "stage": "Series A (Jun 2025)",
+   "investors": [
+    "8VC",
+    "Aflac Ventures",
+    "American Family Ventures",
+    "Connecticut Innovations",
+    "FJ Labs",
+    "HOF Capital",
+    "Innovest Holdings",
+    "MS&AD Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Gradient AI",
+   "url": "https://www.gradientai.com",
+   "what": "Predictive analytics/ML for insurance underwriting and claims (workers comp, group health, P&C)",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "Series C $56M (Jul 2023) led by Centana Growth Partners",
+   "investors": [
+    "American Family Ventures",
+    "Centana Growth Partners",
+    "Forte Ventures",
+    "MassMutual Ventures",
+    "Sandbox Insurtech Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Sana",
+   "url": "https://www.sanabenefits.com",
+   "what": "Health insurance/level-funded plans for small businesses",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "~$60M Series B era (2022); total $107M+",
+   "investors": [
+    "American Family Ventures",
+    "Gigafund",
+    "Trust Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "LeaseLock",
+   "url": "https://leaselock.com",
+   "what": "Lease insurance replacing security deposits, embedded in property management systems",
+   "workflow_step": "distribution/embedded",
+   "buyer": "embedded-partner",
+   "stage": "Series B $52M (2021)",
+   "investors": [
+    "American Family Ventures",
+    "Liberty Mutual Strategic Ventures",
+    "Moderne Ventures",
+    "SoftBank Ventures Asia",
+    "Westerly Winds",
+    "Wildcat Venture Partners"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Turtlemint",
+   "url": "https://www.turtlemint.com",
+   "what": "Indian insurance-agent platform to quote and bind policies digitally",
+   "workflow_step": "distribution/embedded",
+   "buyer": "broker",
+   "stage": "Series E $120M (2022) led by Amansa Capital",
+   "investors": [
+    "Amansa Capital",
+    "American Family Ventures",
+    "Jungle Ventures",
+    "Marshall Wace",
+    "Nexus Venture Partners",
+    "Sequoia Capital India",
+    "Vitruvian Partners"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Policygenius",
+   "url": "https://www.policygenius.com",
+   "what": "Online insurance marketplace (life, disability, home/auto); acquired by Zinnia (2023)",
+   "workflow_step": "distribution/embedded",
+   "buyer": "consumer",
+   "stage": "Series E $125M (2022) led by KKR; acquired 2023",
+   "investors": [
+    "AXA Venture Partners",
+    "Brighthouse Financial",
+    "KKR",
+    "MassMutual Ventures",
+    "Norwest Venture Partners",
+    "Revolution Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Betterview",
+   "url": "https://www.betterview.com",
+   "what": "Property intelligence/aerial-imagery risk platform for P&C underwriting; acquired by Nearmap (Dec 2023)",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "Acquired by Nearmap (agreement announced Dec 5 2023, terms undisclosed)",
+   "investors": [
+    "EMC Insurance",
+    "Gaingels",
+    "Maiden Re",
+    "ManchesterStory",
+    "Nationwide Ventures",
+    "Nearmap (acquirer)"
+   ],
+   "funding_source": "https://www.globenewswire.com/news-release/2023/01/26/2596262/0/en/Betterview-Secures-New-Round-of-Funding.html",
+   "funding_refreshed": "2026-09-22",
+   "status": "acquired"
+  },
+  {
+   "name": "Urban Jungle",
+   "url": "https://www.myurbanjungle.com",
+   "what": "UK digital home/renters insurance for young consumers",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "~GBP 16M Series A+ (2022)",
+   "investors": [
+    "Eka Ventures",
+    "Intact Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Arqu",
+   "url": "https://www.arqu.co",
+   "what": "Tech-enabled wholesale brokerage/risk data platform for large complex commercial risks",
+   "workflow_step": "broker-ops",
+   "buyer": "wholesaler",
+   "stage": "$10M Series A, Sep 2024 (led by Crosslink Capital)",
+   "investors": [
+    "Crosslink Capital",
+    "Intact Ventures"
+   ],
+   "funding_source": "https://www.crosslinkcapital.com/news/arqu-secures-10m-in-series-a-funding-to-accelerate-transformation-in-wholesale-insurance/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Kin",
+   "url": "https://www.kin.com",
+   "what": "Direct-to-consumer homeowners insurance for catastrophe-prone states using ML on property data",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "Series E $50M (2025) led by QED Investors and Activate Capital, $2B valuation",
+   "investors": [
+    "Activate Capital",
+    "Allegis NL Capital",
+    "Alpha Edison",
+    "August Capital",
+    "Avanta Ventures",
+    "Commerce Ventures",
+    "Flourish Ventures",
+    "Geodesic Capital",
+    "Hudson Structured Capital Management",
+    "PROOF.VC",
+    "QED Investors"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Delos",
+   "url": "https://www.getdelos.com",
+   "what": "Wildfire-science MGA writing homeowners insurance in wildfire-exposed California areas",
+   "workflow_step": "MGA-ops",
+   "buyer": "consumer",
+   "stage": "seed (~$7M, 2022)",
+   "investors": [
+    "Avanta Ventures",
+    "IA Capital Group"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Blueprint Title",
+   "url": "https://www.blueprinttitle.com",
+   "what": "Title insurance and closing platform; acquired underwriter Southwest Land Title to control the stack",
+   "workflow_step": "quote-bind",
+   "buyer": "embedded-partner",
+   "stage": "Series B $16M (2021) led by Forte Ventures",
+   "investors": [
+    "Avanta Ventures",
+    "Bull City Venture Partners",
+    "Forte Ventures",
+    "Forté Ventures",
+    "Gaingels",
+    "Greenlight Re Innovations",
+    "Liberty Mutual Strategic Ventures",
+    "Mouro Capital",
+    "Mucker Capital",
+    "Santander InnoVentures",
+    "Tribeca Early Stage Partners"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Hover",
+   "url": "https://hover.to",
+   "what": "3D property measurement from smartphone photos, used for claims estimation and underwriting",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "Series D $60M (2021)",
+   "investors": [
+    "American Family Ventures",
+    "GV",
+    "Home Depot Ventures",
+    "Menlo Ventures",
+    "Nationwide Ventures",
+    "Standard Industries",
+    "State Farm Ventures",
+    "Travelers"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "HOMEE",
+   "url": "https://www.homee.com",
+   "what": "On-demand property repair network used for insurance claims restoration",
+   "workflow_step": "claims-guidance",
+   "buyer": "carrier",
+   "stage": "$12M Series C, Oct 2024 (led by W.R. Berkley Corporation); $75M total",
+   "investors": [
+    "Ferguson Ventures",
+    "Liberty Mutual Strategic Ventures",
+    "State Farm Ventures"
+   ],
+   "funding_source": "https://www.homee.com/blog-posts/homee-raises-12-million-in-series-c-funding",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Pace",
+   "url": "https://withpace.com",
+   "what": "Agentic AI that replaces insurance BPO/back-office work — submissions intake, claims intake, data entry — for carriers and brokers (customers: Prudential, The Mutual Group, Newfront, WTW)",
+   "workflow_step": "intake",
+   "buyer": "carrier",
+   "stage": "$46M Series B, May 2026 (after $10M Series A led by Sequoia, Jan 2026)",
+   "investors": [
+    "Emergence Capital",
+    "Pruven Capital",
+    "Sequoia Capital",
+    "Thrive Capital"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "WithCoverage",
+   "url": "https://sequoiacap.com/companies/withcoverage/",
+   "what": "Flat-fee AI-enabled commercial insurance brokerage / risk-management team for fast-growing businesses; founded by JD Ross (Opendoor) and Max Brenner",
+   "workflow_step": "broker-ops",
+   "buyer": "consumer (commercial insurance buyers — it is itself the broker)",
+   "stage": "$42M Series B, Jan 2026",
+   "investors": [
+    "8VC",
+    "Antifund",
+    "Crystal Venture Partners",
+    "Khosla Ventures",
+    "Sequoia Capital"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Hyperexponential",
+   "url": "https://www.hyperexponential.com",
+   "what": "Pricing decision intelligence platform (hx Renew) for specialty and commercial (re)insurance actuaries and underwriters",
+   "workflow_step": "pricing",
+   "buyer": "carrier",
+   "stage": "$73M Series B, Jan 2024",
+   "investors": [
+    "Andreessen Horowitz",
+    "Battery Ventures",
+    "Highland Europe"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Segura",
+   "url": "https://latamlist.com/segura-raises-8m-seed-round/",
+   "what": "WhatsApp-first AI platform connecting insurers and their broker networks for insurance distribution in Latin America (3,000+ brokerages)",
+   "workflow_step": "distribution/embedded",
+   "buyer": "carrier",
+   "stage": "$8M Seed, May 2026 (led by Andreessen Horowitz, Kaszek (co-led))",
+   "investors": [
+    "Almeida Braga family (Icatu)",
+    "Anderson Thees",
+    "Andreessen Horowitz",
+    "Assaf Wand (angel, ex-Hippo CEO)",
+    "Big Bets",
+    "Fersen Lambranho",
+    "Kaszek",
+    "Marcelo Blay (Minuto Seguros, angel)"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://latamlist.com/segura-raises-8m-seed-round/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Federato",
+   "url": "https://www.federato.ai",
+   "what": "RiskOps AI underwriting platform for P&C — aligns portfolio strategy with underwriter triage and risk selection",
+   "workflow_step": "triage",
+   "buyer": "carrier",
+   "stage": "$100M Series D, Nov 2025 (led by Growth Equity at Goldman Sachs Alternatives); $180M total",
+   "investors": [
+    "Caffeinated Capital",
+    "Emergence Capital",
+    "Goldman Sachs Alternatives (Growth Equity)",
+    "Pear VC",
+    "StepStone Group"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.businesswire.com/news/home/20251118957886/en/Federato-Raises-$100-Million-Series-D-Led-by-Growth-Equity-at-Goldman-Sachs-Alternatives",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "AIUC (Artificial Intelligence Underwriting Company)",
+   "url": "https://aiuc.com",
+   "what": "Standards, audits and insurance policies for enterprise AI-agent deployment risk — a 'confidence infrastructure' / trust stack for AI agents; founded by ex-Anthropic Rune Kvist",
+   "workflow_step": "other",
+   "buyer": "carrier (and enterprises deploying AI agents)",
+   "stage": "$40M Series A, Sep 2026 (led by Ribbit Capital); $55M total",
+   "investors": [
+    "Ben Mann (Anthropic co-founder, angel)",
+    "Emergence",
+    "Emergence Capital",
+    "NFDG (Nat Friedman)",
+    "Nat Friedman (NFDG)",
+    "Terrain"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.finsmes.com/2026/09/artificial-intelligence-underwriting-company-raises-40m-in-series-a-funding.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "InRisk Labs",
+   "url": "https://indianstartupnews.com/funding/ahmedabad-based-insurtech-startup-inrisk-labs-raises-27-million-from-bessemer-northpoint-capital-12242611",
+   "what": "Ahmedabad-based insurtech whose subsidiary EarthRe holds an IFSCA reinsurance licence — building tech-driven reinsurance capacity from India",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "carrier (cedents buying reinsurance)",
+   "stage": "$27M Series A, Aug 2026 (led by Bessemer Venture Partners, Northpoint Capital (co-led))",
+   "investors": [
+    "Bessemer Venture Partners",
+    "Northpoint Capital"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://indianstartupnews.com/funding/ahmedabad-based-insurtech-startup-inrisk-labs-raises-27-million-from-bessemer-northpoint-capital-12242611",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Jones",
+   "url": "https://www.getjones.com",
+   "what": "Vertical AI agents for insurance verification — collects and verifies COIs, endorsements and policies for real estate and construction firms",
+   "workflow_step": "compliance",
+   "buyer": "other (real estate owners/GCs buying compliance software; adjacent buyer, primary market is insurance compliance)",
+   "stage": "$15M Series B, Jan 2025 (led by NewSpring Capital); $38M total",
+   "investors": [
+    "Camber Creek",
+    "Hetz Ventures",
+    "JLL Spark",
+    "Khosla Ventures",
+    "NewSpring Capital"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://getjones.com/blog/15m-series-b-announcement-2025/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Alan",
+   "url": "https://alan.com",
+   "what": "French full-stack health insurance carrier + digital health platform (reimbursements, telehealth) with 1M+ members; an insurance carrier, not a health-system play",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer (employers/employees, freelancers, retirees)",
+   "stage": "€480M Series G, Jun 2026 (led by Prosus)",
+   "investors": [
+    "Antoine Griezmann (angel)",
+    "Belfius",
+    "Greenoaks",
+    "Index Ventures",
+    "Kaaf",
+    "SH",
+    "Tobi Lütke (angel)"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.newswire.ca/news-releases/alan-announces-a-eur480-million-financing-round-to-make-prevention-insurance-the-new-global-standard-in-healthcare-815416208.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Counterpart",
+   "url": "https://yourcounterpart.com",
+   "what": "AI-driven management liability MGA (D&O, EPL, fiduciary, crime) for small businesses; founded by Tanner Hackett; Felicis's main insurance holding",
+   "workflow_step": "MGA-ops",
+   "buyer": "broker (distributes via brokers; paper from Markel et al.)",
+   "stage": "$50M Series C, Apr 2026 (led by Valor Equity Partners); $106M total",
+   "investors": [
+    "Felicis",
+    "Valor Equity Partners",
+    "Vy Capital"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://coverager.com/counterpart-raises-50-million/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Agentero",
+   "url": "https://agentero.com",
+   "what": "Digital insurance network/platform for independent agencies — matches agents' book data to carrier appetite for new and cross-sell opportunities; Foundation Capital's main insurance holding",
+   "workflow_step": "broker-ops",
+   "buyer": "broker (independent agencies)",
+   "stage": "$13.5M Series A, 2021 (led by Alma Mundi Ventures); $25.5M total",
+   "investors": [
+    "Alma Mundi Ventures",
+    "Financial Venture Studio",
+    "Foundation Capital",
+    "Two Culture Capital",
+    "Union Square Ventures"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://coverager.com/agentero-launches-ai-appetite-checker-to-help-insurance-agents-instantly-identify-the-right-carriers-for-every-risk/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Comulate",
+   "url": "https://www.comulate.com",
+   "what": "Accounting automation and revenue intelligence for insurance brokerages (commission reconciliation, back-office AI)",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "$20M Series B, Feb 2025 (led by BOND and Workday Ventures (co-led))",
+   "investors": [
+    "BOND",
+    "Jonathan Crystal (angel)",
+    "Neo",
+    "Qasar Younis (Applied Intuition, angel)",
+    "Spark Capital",
+    "Workday Ventures",
+    "Zach Perret (Plaid, angel)"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://techcrunch.com/2025/02/11/insurance-cos-stand-to-lose-billions-from-disasters-like-the-la-fires-comulate-raises-20m-to-build-tech-to-help-them-work-more-smoothly/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Fintary",
+   "url": "https://fintech.global/2025/11/10/ai-insurtech-fintary-secures-10m-series-a-funding/",
+   "what": "AI platform automating insurance commission reconciliation and financial ops",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "$10M Series A, Nov 2025 (led by Infinity Ventures); $12.8M total",
+   "investors": [
+    "Infinity Ventures",
+    "Sierra Ventures"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://fintech.global/2025/11/10/ai-insurtech-fintary-secures-10m-series-a-funding/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Stitch Studio",
+   "url": "https://fintech.global/2025/07/11/ai-powered-insurtech-stitch-studio-raises-3m-seed-round/",
+   "what": "AI-powered workflows that plug into insurers' existing systems",
+   "workflow_step": "other",
+   "buyer": "carrier",
+   "stage": "$3M Seed, Jul 2025 (led by ManchesterStory)",
+   "investors": [
+    "ManchesterStory"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://fintech.global/2025/07/11/ai-powered-insurtech-stitch-studio-raises-3m-seed-round/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Liberate",
+   "url": "https://techcrunch.com/2025/10/15/liberate-bags-50m-at-300m-valuation-to-bring-ai-deeper-into-insurance-back-offices/",
+   "what": "Reasoning/voice AI agents automating sales, servicing and claims for carriers and agencies",
+   "workflow_step": "policy-servicing",
+   "buyer": "carrier",
+   "stage": "$50M Series B, Oct 2025 (led by Battery Ventures); $72M total",
+   "investors": [
+    "Battery Ventures",
+    "Canapi Ventures",
+    "Commerce Ventures",
+    "Eclipse",
+    "Redpoint Ventures"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://techcrunch.com/2025/10/15/liberate-bags-50m-at-300m-valuation-to-bring-ai-deeper-into-insurance-back-offices/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Nirvana Insurance",
+   "url": "https://fintech.global/2026/01/30/insurtech-funding-reaches-420m-in-january-as-us-firms-secure-mega-deals/",
+   "what": "AI/telematics-powered commercial trucking and fleet insurance platform",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "$100M Series D (extension), Dec 2025 (led by Valor Equity Partners)",
+   "investors": [
+    "Alumni Ventures",
+    "General Catalyst",
+    "Lightspeed Venture Partners",
+    "Valor Equity Partners"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.finsmes.com/2025/12/nirvana-raises-100m-in-series-d-funding.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Fulcrum",
+   "url": "https://fintech.global/2026/01/30/insurtech-funding-reaches-420m-in-january-as-us-firms-secure-mega-deals/",
+   "what": "Back-office automation platform for insurance brokers",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "$25M Seed + Series A, Jan 2026 (led by CRV)",
+   "investors": [
+    "CRV",
+    "Foundation Capital",
+    "South Park Commons"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.finsmes.com/2026/01/fulcrum-raises-25m-in-combined-seed-and-series-a-funding.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "XBuild",
+   "url": "https://fintech.global/2026/01/30/insurtech-funding-reaches-420m-in-january-as-us-firms-secure-mega-deals/",
+   "what": "AI-native estimating/proposal platform for roofing and insurance restoration contractors",
+   "workflow_step": "claims-guidance",
+   "buyer": "consumer",
+   "stage": "$19M Series A, Jan 2026 (led by N47)",
+   "investors": [
+    "Andreessen Horowitz",
+    "N47",
+    "Rackhouse Ventures"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.finsmes.com/2026/01/xbuild-raises-19m-in-series-a-funding.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Mantas",
+   "url": "https://fintech.global/2026/01/30/insurtech-funding-reaches-420m-in-january-as-us-firms-secure-mega-deals/",
+   "what": "Parametric insurance for cloud-service downtime",
+   "workflow_step": "other",
+   "buyer": "consumer",
+   "stage": "$1.77M Seed, Jan 2026",
+   "investors": [
+    "Nuwa Capital",
+    "OQAL Angel Syndicate",
+    "Plus VC",
+    "Suhail Ventures"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.finsmes.com/2026/01/mantas-raises-1-77m-in-seed-funding.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Wrisk",
+   "url": "https://fintech.global/2026/01/30/insurtech-funding-reaches-420m-in-january-as-us-firms-secure-mega-deals/",
+   "what": "Embedded car insurance platform white-labeled by auto OEMs (BMW, Volvo, Mercedes-Benz, JLR, Stellantis)",
+   "workflow_step": "distribution/embedded",
+   "buyer": "embedded-partner",
+   "stage": "£12M Series B, Jul 2025 (led by Mundi Ventures; Opera Tech Ventures (co-leads))",
+   "investors": [
+    "Allianz",
+    "Alma Mundi Ventures",
+    "Mundi Ventures",
+    "Opera Tech Ventures",
+    "QBN Capital",
+    "Volution"
+   ],
+   "funding_source": "https://www.wrisk.co/blog/wrisk-secures-series-b-funding-to-drive-further-growth",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Igloo",
+   "url": "https://fintech.global/2026/01/30/insurtech-funding-reaches-420m-in-january-as-us-firms-secure-mega-deals/",
+   "what": "Embedded insurance distribution across Southeast Asia",
+   "workflow_step": "distribution/embedded",
+   "buyer": "embedded-partner",
+   "stage": "$5M Strategic investment, Jan 2026 (led by Tokio Marine)",
+   "investors": [
+    "Tokio Marine"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://fintech.global/2026/01/30/insurtech-funding-reaches-420m-in-january-as-us-firms-secure-mega-deals/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Lassie",
+   "url": "https://fintech.global/2026/03/06/insurtech-funding-tops-1bn-in-february-as-ai-investment-surges/",
+   "what": "Prevention-first European pet insurer with AI-led claims automation",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "$75M Series C, Feb 2026 (led by Balderton Capital)",
+   "investors": [
+    "Balderton Capital",
+    "Felix Capital",
+    "Inventure",
+    "Passion Capital",
+    "Stena Sessan"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://fintech.global/2026/03/06/insurtech-funding-tops-1bn-in-february-as-ai-investment-surges/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "mea platform",
+   "url": "https://fintech.global/2026/03/06/insurtech-funding-tops-1bn-in-february-as-ai-investment-surges/",
+   "what": "AI-native platform automating end-to-end operational processes for carriers and brokers",
+   "workflow_step": "policy-servicing",
+   "buyer": "carrier",
+   "stage": "$50M Growth equity, Feb 2026 (led by Scottish Equity Partners (SEP))",
+   "investors": [
+    "Scottish Equity Partners (SEP)"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://fintech.global/2026/03/06/insurtech-funding-tops-1bn-in-february-as-ai-investment-surges/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Indigo",
+   "url": "https://fintech.global/2026/03/06/insurtech-funding-tops-1bn-in-february-as-ai-investment-surges/",
+   "what": "Vertically integrated AI-driven medical professional liability (malpractice) insurer",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "$50M Series B, Feb 2026 (led by Rubicon Founders / Town Hall Ventures (co-leads))",
+   "investors": [
+    "Optum Ventures",
+    "Rubicon Founders",
+    "Town Hall Ventures"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://fintech.global/2026/03/06/insurtech-funding-tops-1bn-in-february-as-ai-investment-surges/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Artificial Labs",
+   "url": "https://fintech.global/2026/03/06/insurtech-funding-tops-1bn-in-february-as-ai-investment-surges/",
+   "what": "Algorithmic underwriting and digital contract/placement platform for London Market insurers and brokers",
+   "workflow_step": "quote-bind",
+   "buyer": "carrier",
+   "stage": "$45M Series B, Feb 2026 (led by CommerzVentures)",
+   "investors": [
+    "6 Degrees Capital",
+    "Augmentum Fintech",
+    "CommerzVentures",
+    "FOM",
+    "FOMCAP IV",
+    "MS&AD Ventures",
+    "Move Capital Fund I",
+    "TrueSight Ventures"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://fintech.global/2026/03/06/insurtech-funding-tops-1bn-in-february-as-ai-investment-surges/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "ManageMy",
+   "url": "https://fintech.global/2026/03/06/insurtech-funding-tops-1bn-in-february-as-ai-investment-surges/",
+   "what": "Platform for insurers to sell, service, underwrite and manage policies digitally",
+   "workflow_step": "policy-servicing",
+   "buyer": "carrier",
+   "stage": "$20M Series B, Feb 2026 (led by Ventura Capital / OCVC (co-leads)); $45M total",
+   "investors": [
+    "BNF",
+    "OCVC",
+    "Ventura Capital"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.finsmes.com/2026/02/managemy-raises-45m-in-funding.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Equal Parts",
+   "url": "https://fintech.global/2026/02/11/insurtech-platform-equal-parts-bags-23m-series-a-funding/",
+   "what": "Acquires and consolidates independent insurance agencies onto a tech platform",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "$23M Series A, Feb 2026 (led by Inspired Capital); $50M total",
+   "investors": [
+    "Equal Ventures",
+    "Genius Ventures",
+    "Inspired Capital",
+    "Max Ventures"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://fintech.global/2026/02/11/insurtech-platform-equal-parts-bags-23m-series-a-funding/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Advance",
+   "url": "https://fintech.global/2026/03/06/insurtech-funding-tops-1bn-in-february-as-ai-investment-surges/",
+   "what": "Insurance-native payments and trust-account infrastructure: premium collection, segregation, reconciliation, carrier remittance, commissions",
+   "workflow_step": "policy-servicing",
+   "buyer": "broker",
+   "stage": "$8.55M Seed, Dec 2025 (led by nvp Capital)",
+   "investors": [
+    "Assaf Wand (angel, ex-Hippo CEO)",
+    "Crystal Venture Partners",
+    "Crystal Ventures",
+    "Mensch Capital",
+    "Mensch Capital Partners",
+    "Vesey Ventures",
+    "nvp Capital"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://coverager.com/advance-raises-8-55-million-seed-round/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "General Magic",
+   "url": "https://coverager.com/general-magic-raises-7-2-million/",
+   "what": "AI agent platform handling routine coordination work in insurance operations",
+   "workflow_step": "policy-servicing",
+   "buyer": "carrier",
+   "stage": "$7.2M Seed, Feb 2026 (led by Radical Ventures); $8.4M total",
+   "investors": [
+    "Aidan Gomez (angel)",
+    "Brendan O'Driscoll (angel)",
+    "Comma Capital",
+    "Radical Ventures",
+    "a16z Speedrun"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.globenewswire.com/news-release/2026/02/24/3243637/0/en/General-Magic-Raises-Oversubscribed-US-7-2M-to-Cut-Insurance-Quote-Time-to-3-Minutes.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Coverflow",
+   "url": "https://www.finsmes.com/2025/07/coverflow-raises-4-8m-in-seed-funding.html",
+   "what": "AI that ingests/extracts policy documents for brokers — summaries and coverage-gap detection",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "$4.8M Seed, Jul 2025 (led by AIX Ventures)",
+   "investors": [
+    "AIX Ventures",
+    "Afore Capital",
+    "Founder Collective"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.finsmes.com/2025/07/coverflow-raises-4-8m-in-seed-funding.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Coverwatch",
+   "url": "https://coverwatch.com/press/coverwatch-raises-4-5m-pre-seed",
+   "what": "Flat-fee AI commercial insurance broker that continuously monitors client risk and rebids coverage",
+   "workflow_step": "distribution/embedded",
+   "buyer": "consumer",
+   "stage": "$4.5M Pre-seed, Jul 2026 (led by CoFound / Restive Ventures)",
+   "investors": [
+    "CoFound",
+    "KFund",
+    "Liquid 2 Ventures",
+    "Restive Ventures"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://coverager.com/coverwatch-raises-4-5-million/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Boost Insurance",
+   "url": "https://coverager.com/boost-raises-20-million/",
+   "what": "Insurance-as-a-service infrastructure: white-label products, compliance, and reinsurance capacity for embedded programs and MGAs",
+   "workflow_step": "distribution/embedded",
+   "buyer": "embedded-partner",
+   "stage": "Series B $20M (2021)",
+   "investors": [
+    "Coatue",
+    "Conversion Capital",
+    "Fin VC",
+    "Gaingels",
+    "Greycroft",
+    "Hack VC",
+    "IA Capital Group",
+    "Norwest Venture Partners",
+    "RRE Ventures"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Nava Benefits",
+   "url": "https://coverager.com/nava-benefits-raises-40-million/",
+   "what": "Modern employee benefits brokerage with AI 'benefits HQ' and a search engine across 600+ benefit providers",
+   "workflow_step": "broker-ops",
+   "buyer": "consumer",
+   "stage": "$30M Series C, Oct 2025 (led by Thrive Capital); $90.2M total; Acquired by Alliant Insurance Services (announced Aug 18, 2026; terms not disclosed)",
+   "investors": [
+    "Alumni Ventures",
+    "GV",
+    "Gaingels",
+    "Glynn Capital",
+    "Pascal Ventures",
+    "People Tech Partners",
+    "Quiet Capital",
+    "Thrive Capital"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.insurancebusinessmag.com/us/news/benefits/alliant-acquires-ai-benefits-platform-nava-in-tech-consolidation-push-586657.aspx",
+   "funding_refreshed": "2026-09-22",
+   "status": "acquired"
+  },
+  {
+   "name": "Super (HomeServe-style home warranty)",
+   "url": "https://coverager.com/super-raises-50-million/",
+   "what": "Subscription home warranty/care plans (insurance-adjacent warranty product)",
+   "workflow_step": "other",
+   "buyer": "consumer",
+   "stage": "$50M Series C, May 2021 (led by Wells Fargo Strategic Capital); $80M total",
+   "investors": [
+    "AAA - Auto Club Group",
+    "Asahi Kasei",
+    "Gaingels",
+    "Wells Fargo Strategic Capital"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.hellosuper.com/news/super-series-c",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Socotra",
+   "url": "https://www.socotra.com",
+   "what": "Cloud-native core policy administration platform for carriers and MGAs",
+   "workflow_step": "policy-servicing",
+   "buyer": "carrier",
+   "stage": "$50M Series C, Mar 2022 (led by Insight Partners); $98M total",
+   "investors": [
+    "8VC",
+    "Brewer Lane Ventures",
+    "Insight Partners",
+    "MS&AD Ventures",
+    "Nationwide Ventures",
+    "Portage Ventures"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.socotra.com/series-c-announcement/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Fairmatic",
+   "url": "https://www.fairmatic.com",
+   "what": "AI/telematics-driven commercial fleet auto insurance with continuous risk-based savings",
+   "workflow_step": "pricing",
+   "buyer": "consumer",
+   "stage": "$46M Series B, Mar 2023 (led by Battery Ventures); $88M total",
+   "investors": [
+    "Aquiline Technology Growth",
+    "Battery Ventures",
+    "Bill Tai",
+    "Bridge Bank",
+    "Foundation Capital",
+    "Jerry Yang",
+    "MS&AD Ventures",
+    "Oren Zeev"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.insurancebusinessmag.com/us/news/breaking-news/fairmatic-raises-46-million-in-latest-funding-round-439845.aspx",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Wagmo",
+   "url": "https://wagmo.io",
+   "what": "Pet wellness and pet insurance sold as an employee benefit",
+   "workflow_step": "distribution/embedded",
+   "buyer": "consumer",
+   "stage": "Series B (2023) + Series B-II (Jan 2024); Series A $14M (2021)",
+   "investors": [
+    "Curql",
+    "Erie Strategic Ventures",
+    "Female Founders Fund",
+    "MS&AD Ventures",
+    "Revolution"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Laka",
+   "url": "https://laka.co",
+   "what": "Collective (pay-what-claims-cost) bicycle and green-mobility insurer across Europe",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "$10.4M Series B, Jul 2025 (led by Shift4Good / MS&AD Ventures)",
+   "investors": [
+    "1818 Ventures",
+    "Achmea Innovation Fund",
+    "Autotech Ventures",
+    "Creandum",
+    "LocalGlobe",
+    "MS&AD Ventures",
+    "Motive Partners",
+    "Ponooc",
+    "Porsche Ventures",
+    "Republic",
+    "Shift4Good"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://laka.co/gb/blog/all/laka-raises-10-4-million-series-b-to-accelerate-path-to-profitability-and-to-drive-growth-as-europes-leading-green-mobility-insurer/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Meanwhile",
+   "url": "https://meanwhile.bm",
+   "what": "First regulated Bitcoin-denominated life insurer (premiums, values, claims all in BTC)",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "$82M Growth round, Oct 2025 (led by Bain Capital Crypto / Haun Ventures); $122M total",
+   "investors": [
+    "Apollo",
+    "Bain Capital Crypto",
+    "Framework Ventures",
+    "Fulgur Ventures",
+    "Gradient Ventures",
+    "Hudson Structured Capital Management",
+    "Haun Ventures",
+    "Northwestern Mutual Future Ventures",
+    "Pantera Capital",
+    "Sam Altman",
+    "Stillmark",
+    "Wences Casares"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.businesswire.com/news/home/20251007203460/en/Meanwhile-the-First-Regulated-Bitcoin-Life-Insurer-Raises-$82M-to-Meet-Strong-Demand-for-Inflation-Proof-Savings-and-Retirement-Products",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Assured Allies",
+   "url": "https://www.assuredallies.com",
+   "what": "ML-driven successful-aging programs and next-gen long-term-care insurance products for carriers",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "$42.5M Series B, Mar 2023 (led by FinTLV Ventures / Harel Insurance); $65M total",
+   "investors": [
+    "Akilia Partners",
+    "Core Innovation Capital",
+    "EquiTrust Life",
+    "FinTLV Ventures",
+    "Hamilton Lane funds",
+    "Harel Insurance",
+    "Lumir Ventures",
+    "MS&AD Ventures",
+    "New Era Capital Partners",
+    "Poalim Equity",
+    "Samsung Next"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.assuredallies.com/pr/assured-allies-raises-42-5m-series-b-to-continue-its-reinvention-of-the-retirement-savings-and-insurance-industry/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Marble",
+   "url": "https://www.marblepay.com",
+   "what": "Consumer digital wallet and rewards/loyalty program for managing insurance policies",
+   "workflow_step": "distribution/embedded",
+   "buyer": "consumer",
+   "stage": "$4.2M Seed extension (\"seed plus\"), May 2023 (led by Distributed Ventures); $6.7M total",
+   "investors": [
+    "Fintech Ventures Fund",
+    "HU Investments",
+    "IA Capital Group",
+    "MS&AD Ventures",
+    "Reciprocal Ventures",
+    "The Takoma Group"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.globenewswire.com/news-release/2023/05/08/2663580/0/en/Marble-Secures-4-2-Million-Seed-Plus-Helping-Them-Launch-Latest-Features-Insurance-Journal.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Arbol",
+   "url": "https://www.arbol.io",
+   "what": "Parametric climate/weather insurance platform paying out on data triggers (agriculture, energy, property)",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "$60M Series B, Apr 2024 (led by Giant Ventures / Opera Tech Ventures); $69.2M total",
+   "investors": [
+    "Giant Ventures",
+    "Mubadala Capital",
+    "Opera Tech Ventures"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.prnewswire.com/news-releases/arbol-raises-60-million-in-series-b-funding-to-scale-parametric-insurance-responding-to-increasing-climate-risk-302131746.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Insurely",
+   "url": "https://www.insurely.com",
+   "what": "Open-insurance data platform giving carriers and banks real-time access to customers' insurance and pension data",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "€19M Series A (led by Insight Partners)",
+   "investors": [
+    "Alfvén & Didrikson",
+    "Insight Partners",
+    "Luminar Ventures",
+    "Neptunia Invest",
+    "Opera Tech Ventures",
+    "Philian"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://coverager.com/insurely-raises-e19-million/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Ascend",
+   "url": "https://www.useascend.com",
+   "what": "Billing, premium finance, and carrier-payables automation for insurance agencies and brokers",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "$30M Series A, Jan 2022 (led by Index Ventures)",
+   "investors": [
+    "Distributed Ventures",
+    "First Round Capital",
+    "FirstMark Capital",
+    "Hudson Structured Capital Management",
+    "Index Ventures",
+    "NFP",
+    "Susa Ventures",
+    "XYZ Ventures"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.finsmes.com/2022/01/ascend-raises-30m-in-series-a-secures-250m-lending-commitment-info.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Atidot",
+   "url": "https://www.atidot.com",
+   "what": "AI/ML analytics that help life insurers monetize in-force policy data (lapse, upsell, pricing)",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "$5M Series A, Mar 2018 (led by Vertex Ventures Israel)",
+   "investors": [
+    "Hudson Structured Capital Management"
+   ],
+   "funding_source": "https://www.prnewswire.com/news-releases/atidot-raises-5m-series-a-to-bring-big-data-and-predictive-analytics-to-life-insurers-appoints-martin-snow-as-vice-president-and-cdo-678148443.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Battleface",
+   "url": "https://www.battleface.com",
+   "what": "Embedded/modular travel insurance MGA with API distribution",
+   "workflow_step": "distribution/embedded",
+   "buyer": "embedded-partner",
+   "stage": "Series A ~$12M (2022)",
+   "investors": [
+    "Drive Capital",
+    "Greenlight Re",
+    "Hudson Structured Capital Management"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Dayforward",
+   "url": "https://www.dayforward.com",
+   "what": "Digital-first life insurance carrier for modern families",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "$25M Series B, Jan 2023 (led by AXA Venture Partners); $45M total",
+   "investors": [
+    "AXA Venture Partners",
+    "Hudson Structured Capital Management",
+    "Munich Re Ventures"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.finsmes.com/2023/01/dayforward-raises-25m-in-funding.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Inclined Technologies",
+   "url": "https://www.inclined.com",
+   "what": "Platform letting whole-life policyholders access cash value via lending marketplace",
+   "workflow_step": "policy-servicing",
+   "buyer": "consumer",
+   "stage": "$8M Series B, 2024 (led by Hudson Structured Capital Management (HSCM Ventures)); $24.5M total",
+   "investors": [
+    "Hudson Structured Capital Management"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://coverager.com/inclined-raised-15-million/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Insurate",
+   "url": "https://www.insurate.com",
+   "what": "Data-science-driven workers compensation underwriting for higher-hazard industries",
+   "workflow_step": "pricing",
+   "buyer": "broker",
+   "stage": "$4.5M Seed, Oct 2021 (led by HSCM Ventures)",
+   "investors": [
+    "Hudson Structured Capital Management"
+   ],
+   "funding_source": "https://www.insurancejournal.com/news/national/2021/10/06/635646.htm",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Layr",
+   "url": "https://www.layr.com",
+   "what": "AI platform automating small-business insurance placement and servicing for agents",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "$10M Post-Series A round (unlabeled), Nov 2023 (led by Cota Capital); $25M total",
+   "investors": [
+    "Hudson Structured Capital Management"
+   ],
+   "funding_source": "https://www.globenewswire.com/news-release/2023/11/01/2770846/0/en/Layr-Secures-10-Million-Investment-to-Bridge-the-Small-Business-Insurance-Tech-Gap-for-Brokers.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Metromile",
+   "url": "https://www.metromile.com",
+   "what": "Pay-per-mile telematics auto insurer",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "$160M SPAC PIPE, Feb 2021 (led by Social Capital); $293M total; Lemonade (all-stock, closed Jul 28 2022, ~$500M equity value / ~$200M net of cash)",
+   "investors": [
+    "Hudson Structured Capital Management",
+    "Index Ventures",
+    "Lemonade (acquirer)",
+    "NEA"
+   ],
+   "funding_source": "https://finledger.com/articles/metromile-to-go-public-via-spac-in-1-3-billion-deal/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Tu Momento",
+   "url": "https://tumomento.mx",
+   "what": "Digital-first auto insurance carrier in Mexico",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "$10.25M Series A, Sep 2025 (led by Hedosophia; American Family Ventures (co-leads)); $20.75M total",
+   "investors": [
+    "Hudson Structured Capital Management"
+   ],
+   "funding_source": "https://contxto.com/en/funding/momento-seguros-raises-us10-25-million-in-series-a/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Mulberry",
+   "url": "https://www.getmulberry.com",
+   "what": "Embedded product protection / extended warranty platform for retailers",
+   "workflow_step": "distribution/embedded",
+   "buyer": "embedded-partner",
+   "stage": "$22M Series B, Oct 2021 (led by Commerce Ventures)",
+   "investors": [
+    "Hudson Structured Capital Management"
+   ],
+   "funding_source": "https://www.globenewswire.com/news-release/2021/10/13/2313494/0/en/Mulberry-Closes-22-Million-Series-B-Financing-Round-to-Transform-the-Product-Protection-Experience-for-Shoppers-and-Retailers.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Parsyl",
+   "url": "https://www.parsyl.com",
+   "what": "Sensor/data-powered cargo insurance and risk management MGA for food and health supply chains",
+   "workflow_step": "MGA-ops",
+   "buyer": "broker",
+   "stage": "$20M Series C (led by The Lightsmith Group); $66M total",
+   "investors": [
+    "Flexport Ventures",
+    "GLP Capital Partners",
+    "Hudson Structured Capital Management",
+    "Lineage Ventures",
+    "Luna"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://coverager.com/parsyl-raises-20-million/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Renegade Insurance",
+   "url": "https://renegadeinsurance.com",
+   "what": "Marketplace and tooling for independent P&C agents",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "Early stage",
+   "investors": [
+    "Hudson Structured Capital Management"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "reThought Insurance",
+   "url": "https://www.rethoughtinsurance.com",
+   "what": "Tech-driven commercial flood MGA for insurers and reinsurers",
+   "workflow_step": "MGA-ops",
+   "buyer": "broker",
+   "stage": "$15.5M Series A",
+   "investors": [
+    "Hudson Structured Capital Management",
+    "ManchesterStory",
+    "Telstra Ventures",
+    "ArcTern Ventures",
+    "IA Capital Group",
+    "Menlo Ventures",
+    "Streamlined Ventures"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://coverager.com/rethought-raises-15-5-million-series-a/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "RiskGenius",
+   "url": "https://www.riskgenius.com",
+   "what": "AI analysis of policy language, terms, and coverages",
+   "workflow_step": "policy-servicing",
+   "buyer": "carrier",
+   "stage": "Acquired by Bold Penguin (announced Oct 2020, terms undisclosed; Bold Penguin itself acquired by American Family Jan 2021)",
+   "investors": [
+    "Bold Penguin (acquirer)",
+    "Hudson Structured Capital Management"
+   ],
+   "funding_source": "https://www.artemis.bm/news/hudson-structured-leads-investment-round-for-insurtech-riskgenius/",
+   "funding_refreshed": "2026-09-22",
+   "status": "acquired"
+  },
+  {
+   "name": "TensorFlight",
+   "url": "https://tensorflight.com",
+   "what": "AI/imagery-based near-real-time property data extraction for underwriting",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "Acquired by Nearmap (asset purchase agreement completed Oct 2024, terms undisclosed)",
+   "investors": [
+    "Hudson Structured Capital Management"
+   ],
+   "funding_source": "https://www.nearmap.com/newsroom/nearmap-completes-asset-purchase-agreement-for-tensorflight",
+   "funding_refreshed": "2026-09-22",
+   "status": "acquired"
+  },
+  {
+   "name": "Doma",
+   "url": "https://www.doma.com",
+   "what": "Instant underwriting for title insurance and digital real-estate closings",
+   "workflow_step": "other",
+   "buyer": "embedded-partner",
+   "stage": "$300M SPAC PIPE, Jul 2021; Title Resources Group / Centerbridge take-private at $6.29 per share cash (announced Mar 28 2024, closed Sep 27 2024)",
+   "investors": [
+    "Hudson Structured Capital Management"
+   ],
+   "funding_source": "https://investor.doma.com/news-releases/news-release-details/doma-closes-previously-announced-go-private-transaction",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Wisedocs",
+   "url": "https://www.wisedocs.ai",
+   "what": "AI medical-record review and summarization for insurance claims, legal, and IME firms",
+   "workflow_step": "claims-guidance",
+   "buyer": "TPA",
+   "stage": "$9.5M Series A, Jan 2024 (led by Information Venture Partners)",
+   "investors": [
+    "Information Venture Partners",
+    "ManchesterStory",
+    "Thomson Reuters Ventures"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://coverager.com/manchesterstory-backs-wisedocs/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Better.agency",
+   "url": "https://better.agency",
+   "what": "Sales-driven agency management system (AMS/CRM) for insurance agencies",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "$8M Series A, May 2022 (led by Teamworthy Ventures); $10M total; Acquired by GloveBox (announced 2024-12)",
+   "investors": [
+    "ManchesterStory"
+   ],
+   "funding_source": "https://www.globenewswire.com/news-release/2022/05/02/2433630/0/en/better-agency-raises-8-million-in-series-a-financing.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Goose",
+   "url": "https://www.getgoose.com",
+   "what": "Mobile-first, self-serve simple insurance products",
+   "workflow_step": "distribution/embedded",
+   "buyer": "consumer",
+   "stage": "$4M Series A, Feb 2023 (led by Axis Insurance Managers)",
+   "investors": [
+    "ManchesterStory"
+   ],
+   "funding_source": "https://www.carriermanagement.com/news/2023/02/16/245385.htm",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Kinetic",
+   "url": "https://www.wearkinetic.com",
+   "what": "Wearable tech that reduces workplace injuries and workers-comp losses; paired insurance program",
+   "workflow_step": "other",
+   "buyer": "broker",
+   "stage": "$11.25M Series A, Nov 2020 (led by Crosslink Capital); $17.4M total",
+   "investors": [
+    "ManchesterStory"
+   ],
+   "funding_source": "https://www.globenewswire.com/news-release/2020/11/10/2123889/0/en/KINETIC-Secures-11-25-Million-Series-A-Funding-Adds-Prologis-Ventures-to-Its-Investor-List.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Plnar",
+   "url": "https://www.plnar.co",
+   "what": "Smartphone-based 3D interior modeling for property claims and underwriting",
+   "workflow_step": "claims-guidance",
+   "buyer": "carrier",
+   "stage": "$3.5M Series A, Dec 2020 (led by Dallas Venture Capital); $7.4M total",
+   "investors": [
+    "ManchesterStory"
+   ],
+   "funding_source": "https://www.prnewswire.com/news-releases/dallas-venture-capital-dvc-invests-3-5-million-in-plnars-series-a-round-301191625.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Powerbroker AI",
+   "url": "https://www.powerbroker.ai",
+   "what": "AI that formalizes and scales specialty practice groups inside agencies",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "Early stage (2024-25)",
+   "investors": [
+    "ManchesterStory"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Rainwalk Pet Insurance",
+   "url": "https://www.rainwalk.com",
+   "what": "Pet insurance platform, including embedded/white-label distribution",
+   "workflow_step": "MGA-ops",
+   "buyer": "embedded-partner",
+   "stage": "$4M Seed, Apr 2024 (led by ManchesterStory)",
+   "investors": [
+    "ManchesterStory"
+   ],
+   "funding_source": "https://rainwalkpetinsurance.com/seed-funding/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Trailblazer",
+   "url": "https://www.trailblazertech.com",
+   "what": "API-first, microservices core systems (policy admin) for small insurers",
+   "workflow_step": "policy-servicing",
+   "buyer": "carrier",
+   "stage": "Early stage",
+   "investors": [
+    "ManchesterStory"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.finsmes.com/2022/11/trailblazer-technology-receives-investment-from-manchesterstory.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Trussed AI",
+   "url": "https://www.trussed.ai",
+   "what": "Automated regulatory/policy compliance guardrails for GenAI and agentic apps in insurance",
+   "workflow_step": "compliance",
+   "buyer": "carrier",
+   "stage": "Early stage (2024-25)",
+   "investors": [
+    "ManchesterStory"
+   ],
+   "funding_as_of": "2026-09-09"
+  },
+  {
+   "name": "Verikai",
+   "url": "https://www.verikai.com",
+   "what": "Predictive risk scoring from behavioral/consumer data for insurance underwriting",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "$6M Series A, Jul 2020 (led by ManchesterStory); Acquired by American Financial Group (closed Dec 2021; ~$120M cash + up to $50M earnout)",
+   "investors": [
+    "ManchesterStory"
+   ],
+   "funding_source": "https://www.businesswire.com/news/home/20220118006231/en/American-Financial-Group-Inc.-Announces-Purchase-of-Verikai-Inc.",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "FLORA Insurance",
+   "url": "https://www.flora.insure",
+   "what": "Insurance for women's health and fertility (IVF, diagnostics)",
+   "workflow_step": "MGA-ops",
+   "buyer": "consumer",
+   "stage": "$5M Seed, Apr 2026 (led by ManchesterStory); $6.5M total",
+   "investors": [
+    "ManchesterStory"
+   ],
+   "funding_source": "https://www.prnewswire.com/news-releases/flora-fertility-closes-5m-usd-seed-round-to-accelerate-first-of-its-kind-fertility-insurance-platform-302738805.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "LimitFi",
+   "url": "https://www.limitfi.com",
+   "what": "Connects banks, lenders, and asset managers to insurance ecosystem solutions",
+   "workflow_step": "other",
+   "buyer": "carrier",
+   "stage": "$3.75M Seed, Jun 2021 (led by ManchesterStory)",
+   "investors": [
+    "ManchesterStory"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.reinsurancene.ws/credit-insurtech-limitfi-closes-seed-funding-round/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "ResiQuant",
+   "url": "https://www.resiquant.ai",
+   "what": "AI property risk assessment (vision-based construction/vulnerability data) for carriers in climate-exposed regions",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "$4M Seed, Mar 2025 (led by LDV Capital)",
+   "investors": [
+    "Alumni Ventures",
+    "Foothill Ventures",
+    "LDV Capital",
+    "Pear VC"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.resiquant.ai/resources/news/resiquant-announces-4m-seed-financing",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Pie Insurance",
+   "url": "https://www.pieinsurance.com",
+   "what": "Full-stack workers' comp insurer/MGA for small businesses; automated quoting and data-driven pricing",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "$315M Series D, Sep 2022 (led by Centerbridge Partners / Allianz X); $625M total",
+   "investors": [
+    "Acrew Capital",
+    "Allianz X",
+    "Centerbridge Partners",
+    "Gallatin Point Capital",
+    "Greycroft",
+    "SVB Capital",
+    "White Mountains Insurance Group"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.prnewswire.com/news-releases/pie-insurance-announces-315-million-series-d-round-of-funding-301629133.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Stable",
+   "url": "https://stableprice.com",
+   "what": "Parametric/index-based insurance against untraded commodity price volatility for food and agriculture businesses",
+   "workflow_step": "other",
+   "buyer": "consumer",
+   "stage": "$46.5M Series A, Oct 2021 (led by Greycroft)",
+   "investors": [
+    "Acrew Capital",
+    "Anthemis",
+    "Ascot",
+    "Continental Grain",
+    "Greycroft",
+    "Notion Capital",
+    "Syngenta"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.crunchbase.com/organization/stable",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "CyberFortress",
+   "url": "https://cyberfortress.com",
+   "what": "Cyber/downtime insurance for small online businesses (later pivoted toward backup/recovery services)",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "$3M Seed, Sep 2019 (led by Greycroft / LiveOak Venture Partners); $14.2M total",
+   "investors": [
+    "Greycroft",
+    "LiveOak Venture Partners"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://coverager.com/cyberfortress-raises-3-million/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "FairClaims",
+   "url": "https://fairclaims.com",
+   "what": "Online dispute resolution/arbitration platform used to resolve insurance claims disputes without court",
+   "workflow_step": "claims-guidance",
+   "buyer": "carrier",
+   "stage": "$1.8M Seed, Jul 2017; Permanently closed (platform shutdown Feb 2026)",
+   "investors": [
+    "Greycroft"
+   ],
+   "funding_source": "https://techcrunch.com/2017/07/12/fairclaims-raises-1-8-million-to-be-a-virtual-judge-judy/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "EnterMedicare",
+   "url": "https://entermedicare.com",
+   "what": "Medicare plan navigation and enrollment for seniors (insurance distribution via employers/partners)",
+   "workflow_step": "distribution/embedded",
+   "buyer": "consumer",
+   "stage": "Assets acquired by Hub International (Jun 2021, terms undisclosed)",
+   "investors": [
+    "Greycroft"
+   ],
+   "funding_source": "https://www.prnewswire.com/news-releases/hub-international-acquires-the-assets-of-california-based-entermedicare-inc-301307610.html",
+   "funding_refreshed": "2026-09-22",
+   "status": "acquired"
+  },
+  {
+   "name": "Enservio",
+   "url": "https://www.enservio.com",
+   "what": "Contents valuation and claims payments software for property insurers (legacy BCV insurance deal; acquired by Solera 2016)",
+   "workflow_step": "claims-guidance",
+   "buyer": "carrier",
+   "stage": "Acquired by Solera Holdings (announced Jul 2016, terms undisclosed)",
+   "investors": [
+    "Bain Capital Ventures",
+    "Matrix Partners"
+   ],
+   "funding_source": "https://www.prnewswire.com/news-releases/solera-to-acquire-enservio-the-market-leader-in-property-contents-software-and-services-for-the-insurance-and-homeowner-marketplace-300300372.html",
+   "funding_refreshed": "2026-09-22",
+   "status": "acquired"
+  },
+  {
+   "name": "Vellum",
+   "url": "https://www.vellumins.com",
+   "what": "AI data/analytics platform that ingests, validates, and aggregates MGA and reinsurance transaction data (bordereaux) for carriers and reinsurers",
+   "workflow_step": "bordereaux",
+   "buyer": "carrier",
+   "stage": "$7M Seed, Oct 2023 (led by Acrew Capital)",
+   "investors": [
+    "1Sharpe Ventures",
+    "Acrew Capital",
+    "Endurance",
+    "Fin Capital",
+    "Flourish Ventures",
+    "Vera Equity"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://insurtechdigital.com/articles/insurance-data-startup-vellum-exits-stealth-after-7m-round",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Stream Claims",
+   "url": "https://www.stream.claims",
+   "what": "AI medical document review for workers' comp claims: chronologies, summaries, dedup of medical records for adjusters",
+   "workflow_step": "claims-guidance",
+   "buyer": "carrier",
+   "stage": "$5.3M Seed, Oct 2024 (led by Spark Capital); $6.8M total",
+   "investors": [
+    "Acrew Capital",
+    "Spark Capital",
+    "TTV Capital"
+   ],
+   "funding_as_of": "2026-09-09",
+   "funding_source": "https://www.stream.claims/post/stream-raises-5-3m-seed-round-bringing-total-funding-to-6-8m",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Poetic",
+   "url": "",
+   "what": "AI agents for underwriting, compliance and fraud ops; deployed at AIG, SoFi, Chime (ITC/II census sweep)",
+   "workflow_step": "compliance",
+   "buyer": "carrier",
+   "stage": "$50M Seed, Jun 2026 (led by Kleiner Perkins)",
+   "investors": [
+    "Kleiner Perkins",
+    "OpenAI",
+    "Founders Fund"
+   ],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://thenextweb.com/news/poetic-openai-50m-enterprise-automation-underwriting",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Cytora",
+   "url": "https://cytora.com",
+   "what": "Commercial submission digitization / risk processing for carriers, agentic AI; being acquired by Applied Systems (2025)",
+   "workflow_step": "intake",
+   "buyer": "carrier",
+   "stage": "$25M Series B, 2025 (led by EQT Ventures); $43M total; Acquired by Applied Systems, announced Sep 9, 2025 (deal price undisclosed; one outlet estimated a $300M+ deal, unconfirmed - excluded from amount fields as acquisition price)",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://coverager.com/applied-systems-acquires-cytora/",
+   "funding_refreshed": "2026-09-22",
+   "status": "acquired"
+  },
+  {
+   "name": "Roots Automation",
+   "url": "https://www.rootsautomation.com",
+   "what": "Agentic 'digital coworkers' platform for insurers (UW + claims ops)",
+   "workflow_step": "MGA-ops",
+   "buyer": "carrier",
+   "stage": "$22.2M Series B, Jun 2024 (led by Harbert Growth Partners); $57.4M total",
+   "investors": [
+    "Harbert Growth Partners"
+   ],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.prnewswire.com/news-releases/roots-automation-raises-22-2-million-to-unlock-the-value-held-within-unstructured-data-across-insurance-with-ai-302250212.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Send Technology",
+   "url": "https://send.technology",
+   "what": "Commercial & specialty underwriting workbench (UK); Federato competitor",
+   "workflow_step": "MGA-ops",
+   "buyer": "carrier",
+   "stage": "£9M Series A, Nov 2022 (led by Breega / Mercia)",
+   "investors": [
+    "Breega",
+    "Mercia"
+   ],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.insurancebusinessmag.com/uk/news/technology/send-technology-solutions-raises-9-million-in-series-a-funding-428071.aspx",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Convr",
+   "url": "https://convr.com",
+   "what": "AI underwriting document intelligence (d3 platform) for commercial P&C carriers",
+   "workflow_step": "intake",
+   "buyer": "carrier",
+   "stage": "$15.2M Series B, Nov 2019 (led by Palm Drive Capital); $18M total",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://convr.com/news/series-b-funding-announcement",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "CogniSure",
+   "url": "https://cognisure.ai",
+   "what": "Submission & loss-run extraction API for brokers/carriers; direct Pibit competitor",
+   "workflow_step": "intake",
+   "buyer": "broker",
+   "stage": "Seed; BrokerTech Ventures-backed (same investor as FurtherAI)",
+   "investors": [
+    "BrokerTech Ventures (BTV)"
+   ],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Insurance Quantified",
+   "url": "https://www.insurancequantified.com",
+   "what": "Submission ingestion + underwriting workbench; absorbed Groundspeed; Two Sigma-incubated",
+   "workflow_step": "intake",
+   "buyer": "carrier",
+   "stage": "Growth-stage; Two Sigma-backed",
+   "investors": [
+    "Two Sigma"
+   ],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.theinsurer.com/ti/news/insurance-quantified-acquires-pc-tech-provider-groundspeed-analytics/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Indico Data",
+   "url": "https://indicodata.ai",
+   "what": "Intelligent document processing for commercial UW intake and claims",
+   "workflow_step": "intake",
+   "buyer": "carrier",
+   "stage": "~$55M raised",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "BluePond.ai",
+   "url": "https://bluepond.ai",
+   "what": "GenAI submission intake, policy checking and servicing for specialty brokers/MGAs",
+   "workflow_step": "intake",
+   "buyer": "MGA",
+   "stage": "$3.05M Pre-Seed (led by BrokerTech Ventures)",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.crunchbase.com/organization/bluepond-ai",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Feathery",
+   "url": "https://www.feathery.io",
+   "what": "No-code AI intake/forms and underwriting workflows for insurers, MGAs, brokers",
+   "workflow_step": "intake",
+   "buyer": "carrier",
+   "stage": "$30M Series A, Jul 2026 (led by Portage Ventures (co-led with Index Ventures))",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.cbinsights.com/company/feathery",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "DigitalOwl",
+   "url": "https://www.digitalowl.com",
+   "what": "GenAI medical-record analysis for life/disability underwriting and claims",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "$45M+; Insight Partners-backed",
+   "investors": [
+    "Insight Partners"
+   ],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Nettle",
+   "url": "https://nettle.ai",
+   "what": "Agentic AI risk assessment for commercial insurance (UK)",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "£1.45M Pre-Seed, Apr 2025 (led by Project A)",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://insurance-edge.net/2025/04/08/nettle-secures-1-45m-in-pre-seed-funding-round/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Inaza",
+   "url": "https://www.inaza.com",
+   "what": "AI data platform spanning underwriting and claims for MGAs, carriers, TPAs",
+   "workflow_step": "MGA-ops",
+   "buyer": "MGA",
+   "stage": "Seed (ITC 2025 exhibitor)",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Multimodal",
+   "url": "https://www.multimodal.dev",
+   "what": "AI agents for insurance and financial document workflows",
+   "workflow_step": "MGA-ops",
+   "buyer": "carrier",
+   "stage": "Seed; ITC 2025 State Farm pitch finalist",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Symphony (voice AI)",
+   "url": "",
+   "what": "Voice AI to train, augment and automate insurance ops at top P&C carriers",
+   "workflow_step": "MGA-ops",
+   "buyer": "carrier",
+   "stage": "Seed; ITC 2025 State Farm pitch finalist",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Five Sigma",
+   "url": "https://www.fivesigmalabs.com",
+   "what": "AI-native claims management + 'Clive' multi-agent AI claims adjuster",
+   "workflow_step": "claims-guidance",
+   "buyer": "carrier",
+   "stage": "$2M Series A extension, Jan 2022; $20M total",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.getlatka.com/companies/five-sigma",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Owl.co",
+   "url": "https://owl.co",
+   "what": "AI claims intelligence / continuous claims monitoring for disability & P&C carriers",
+   "workflow_step": "claims-guidance",
+   "buyer": "carrier",
+   "stage": "$30M Series B, Nov 2021; $32.6M total",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.businesswire.com/news/home/20211103005282/en/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "omni:us",
+   "url": "https://omnius.com",
+   "what": "Agentic claims automation in production at Allianz, AXA, MS Amlin (Berlin)",
+   "workflow_step": "claims-fnol",
+   "buyer": "carrier",
+   "stage": "~$45M raised; Acquired by Adesso (announced Aug 2026); deal terms not disclosed",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.eu-startups.com/",
+   "funding_refreshed": "2026-09-22",
+   "status": "acquired"
+  },
+  {
+   "name": "CLARA Analytics",
+   "url": "https://claraanalytics.com",
+   "what": "AI casualty / workers-comp claims guidance",
+   "workflow_step": "claims-guidance",
+   "buyer": "carrier",
+   "stage": "$60M+ through Series C",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Kyber",
+   "url": "https://www.askkyber.com",
+   "what": "AI claims correspondence/notices for P&C carriers; Guidewire ClaimCenter integration (YC)",
+   "workflow_step": "claims-fnol",
+   "buyer": "carrier",
+   "stage": "Seed/A; YC-backed; ITC 2025 State Farm pitch finalist alum",
+   "investors": [
+    "Y Combinator"
+   ],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.ycombinator.com/companies/kyber",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Agentech",
+   "url": "https://www.agentech.com",
+   "what": "AI 'digital coworkers' for claims desk adjusters",
+   "workflow_step": "claims-fnol",
+   "buyer": "TPA",
+   "stage": "$3M Seed, Oct 2024 (led by FortySix Capital)",
+   "investors": [
+    "FortySix Capital",
+    "Cortado Ventures"
+   ],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.businesswire.com/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "MarvelX AI",
+   "url": "",
+   "what": "AI agents for claims handling and customer support",
+   "workflow_step": "claims-fnol",
+   "buyer": "carrier",
+   "stage": "€5.3M Seed, May 2025",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.eu-startups.com/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Sprout.ai",
+   "url": "https://sprout.ai",
+   "what": "Claims automation (UK), health + P&C",
+   "workflow_step": "claims-fnol",
+   "buyer": "carrier",
+   "stage": "£5.4M Series A, Oct 2023",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://tech.eu/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Qantev",
+   "url": "https://qantev.com",
+   "what": "AI claims automation for health/life insurers (Paris)",
+   "workflow_step": "claims-guidance",
+   "buyer": "carrier",
+   "stage": "€30M Series B, Oct 2024",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://techcrunch.com/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Shift Technology",
+   "url": "https://www.shift-technology.com",
+   "what": "Established AI decisioning: claims fraud, claims automation, underwriting risk",
+   "workflow_step": "fraud",
+   "buyer": "carrier",
+   "stage": "$220M Series D, May 2021 (led by Advent International)",
+   "investors": [
+    "Advent International",
+    "Accel",
+    "Bessemer Venture Partners"
+   ],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.prnewswire.com/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Tractable",
+   "url": "https://tractable.ai",
+   "what": "Established computer-vision damage assessment for auto/property claims",
+   "workflow_step": "claims-guidance",
+   "buyer": "carrier",
+   "stage": "$65M Series E, Jul 2023 (led by SoftBank Vision Fund 2)",
+   "investors": [
+    "SoftBank Vision Fund 2",
+    "Insight Partners"
+   ],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.prnewswire.com/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Quandri",
+   "url": "https://quandri.io",
+   "what": "AI digital workers for insurance brokerages: renewal intelligence, policy checking",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "$12M Series A, Jul 2025 (led by Framework Venture Partners); $20M total",
+   "investors": [
+    "Framework Venture Partners",
+    "Intact Ventures"
+   ],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.biv.com/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Outmarket AI",
+   "url": "https://outmarket.ai",
+   "what": "AI platform for commercial insurance brokers and wholesalers",
+   "workflow_step": "broker-ops",
+   "buyer": "wholesaler",
+   "stage": "$17M Series A, May 2026; $21.7M total",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.prnewswire.com/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Gaya",
+   "url": "https://www.gaya.ai",
+   "what": "AI copilot that auto-fills carrier portals for insurance agencies",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "Seed; ITC 2026 exhibitor",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "ReFocus AI",
+   "url": "https://www.refocusai.com",
+   "what": "AI renewals/retention automation for agencies",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "Seed",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "InsurGrid",
+   "url": "https://www.insurgrid.com",
+   "what": "AI intake, loss-run collection and quote comparison for brokers",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "Seed; Acquired by Helium Ventures (Jan 2026); deal value not disclosed",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://pulse2.com/",
+   "funding_refreshed": "2026-09-22",
+   "status": "acquired"
+  },
+  {
+   "name": "Zocks",
+   "url": "https://zocks.io",
+   "what": "AI client-intelligence for advisors, expanding into life-insurance producers",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "$45M Series B, Jan 2026 (led by Lightspeed Venture Partners); $58.8M total",
+   "investors": [
+    "Motive"
+   ],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.businesswire.com/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "TrustLayer",
+   "url": "https://trustlayer.io",
+   "what": "Automated COI / insurance verification",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "$15.1M funding round, Aug 2021",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.stpetecatalyst.com/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Semsee",
+   "url": "https://www.semsee.com",
+   "what": "Multi-carrier small-commercial quoting for agents",
+   "workflow_step": "quote-bind",
+   "buyer": "broker",
+   "stage": "~$16M raised; Acquired by iBynd (Mar 2026) to build end-to-end digital infrastructure for commercial insurance distribution",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://coverager.com/",
+   "funding_refreshed": "2026-09-22",
+   "status": "acquired"
+  },
+  {
+   "name": "Limit",
+   "url": "https://www.limit.com",
+   "what": "AI-powered wholesale insurance brokerage (Novella competitor)",
+   "workflow_step": "broker-ops",
+   "buyer": "wholesaler",
+   "stage": "VC-backed; Acquired by McGowan Companies (Sept 2025); Limit was formerly Apollo Brokers (rebranded 2022), described as a 'digital wholesale broker'",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.prnewswire.com/",
+   "funding_refreshed": "2026-09-22",
+   "status": "acquired"
+  },
+  {
+   "name": "CoverForce",
+   "url": "https://coverforce.com",
+   "what": "API quoting/bind infrastructure connecting agencies to commercial carriers",
+   "workflow_step": "quote-bind",
+   "buyer": "broker",
+   "stage": "$13M Series A, Mar 2025 (led by Insight Partners); $18M total",
+   "investors": [
+    "Insight Partners"
+   ],
+   "source": "conference-census-2026-09",
+   "funding_source": "https://www.prnewswire.com/news-releases/coverforce-secures-13-million-in-series-a-funding-led-by-insight-partners-to-build-infrastructure-and-connectivity-between-insurance-carriers-and-agencies-302392405.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Canopy Connect",
+   "url": "https://usecanopy.com",
+   "what": "Insurance data intake/verification APIs (consumer-permissioned)",
+   "workflow_step": "quote-bind",
+   "buyer": "broker",
+   "stage": "~$6.5M raised",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "XILO",
+   "url": "https://www.xilo.io",
+   "what": "AI quoting intake forms for independent agencies",
+   "workflow_step": "quote-bind",
+   "buyer": "broker",
+   "stage": "$7.2M, Feb 2025",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://fintech.global/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "ZestyAI",
+   "url": "https://zesty.ai",
+   "what": "Property/climate risk AI models (wildfire, hail) — Cape competitor",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "~$33M+ raised + growth round",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Chestnut",
+   "url": "https://www.chestnut.dev",
+   "what": "AI-native OS for insurance distribution ops: carrier/agent management, compensation",
+   "workflow_step": "distribution/embedded",
+   "buyer": "carrier",
+   "stage": "Seed; ITC 2025 State Farm pitch finalist",
+   "investors": [],
+   "source": "conference-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Ushur",
+   "url": "https://ushur.com",
+   "what": "CX/workflow automation heavily sold to insurers (claims status, service, intake); ITC Vegas fixture 2021-2026",
+   "workflow_step": "policy-servicing",
+   "buyer": "carrier",
+   "stage": "$50M Series C, Feb 2023 (led by Third Point Ventures)",
+   "investors": [
+    "Third Point Ventures"
+   ],
+   "source": "itc-multiyear-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.finsmes.com/2023/02/ushur-raises-50m-in-series-c-funding.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Balto",
+   "url": "https://www.balto.ai",
+   "what": "Real-time AI call guidance for insurance contact centers and agencies",
+   "workflow_step": "policy-servicing",
+   "buyer": "carrier",
+   "stage": "$37.5M Series B, Aug 2021 (led by Stripes); $52M total",
+   "investors": [],
+   "source": "itc-multiyear-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.finsmes.com/2021/08/balto-raises-37-5m-in-series-b-funding.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Charlee.ai",
+   "url": "https://www.charlee.ai",
+   "what": "Predictive claims intelligence / litigation early-warning for P&C",
+   "workflow_step": "claims-guidance",
+   "buyer": "carrier",
+   "stage": "Seed; ITC Vegas 2025-2026",
+   "investors": [],
+   "source": "itc-multiyear-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Floatbot.AI",
+   "url": "https://floatbot.ai",
+   "what": "Agentic voice/chat AI for FNOL, collections, agent assist",
+   "workflow_step": "claims-fnol",
+   "buyer": "carrier",
+   "stage": "ITC Vegas 2025-2026",
+   "investors": [],
+   "source": "itc-multiyear-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Nomad Data",
+   "url": "https://www.nomad-data.com",
+   "what": "Data sourcing + document AI for insurers",
+   "workflow_step": "intake",
+   "buyer": "carrier",
+   "stage": "$1.6M, Jun 2021",
+   "investors": [],
+   "source": "itc-multiyear-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.alleywatch.com/?s=Nomad+Data",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Agenzee",
+   "url": "https://agenzee.com",
+   "what": "Producer license & appointment compliance SaaS (AgentSync competitor)",
+   "workflow_step": "compliance",
+   "buyer": "broker",
+   "stage": "ITC Vegas 2025-2026",
+   "investors": [],
+   "source": "itc-multiyear-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "weav.ai",
+   "url": "https://weav.ai",
+   "what": "Agentic AI workflows for P&C underwriting and submissions",
+   "workflow_step": "MGA-ops",
+   "buyer": "carrier",
+   "stage": "ITC Vegas 2024-2026",
+   "investors": [],
+   "source": "itc-multiyear-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Bay6.ai",
+   "url": "https://bay6.ai",
+   "what": "Agentic insurance ops platform",
+   "workflow_step": "MGA-ops",
+   "buyer": "MGA",
+   "stage": "ITC Vegas 2025-2026",
+   "investors": [],
+   "source": "itc-multiyear-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Superagent AI",
+   "url": "",
+   "what": "AI agents for retail insurance agencies",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "ITC Vegas 2025-2026",
+   "investors": [],
+   "source": "itc-multiyear-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Mav",
+   "url": "https://www.hiremav.com",
+   "what": "AI SMS/conversation layer for insurance distribution",
+   "workflow_step": "distribution/embedded",
+   "buyer": "broker",
+   "stage": "ITC Vegas 2025-2026",
+   "investors": [],
+   "source": "itc-multiyear-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Meera AI",
+   "url": "https://meera.ai",
+   "what": "Conversational AI outreach for carriers and agencies",
+   "workflow_step": "distribution/embedded",
+   "buyer": "carrier",
+   "stage": "ITC Vegas 2025-2026",
+   "investors": [],
+   "source": "itc-multiyear-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "IntellectAI",
+   "url": "https://www.intellectai.com",
+   "what": "Underwriting workbench + AI suite (arm of Intellect Design, public India)",
+   "workflow_step": "MGA-ops",
+   "buyer": "carrier",
+   "stage": "Established vendor; ITC Vegas 2025-2026",
+   "investors": [],
+   "source": "itc-multiyear-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Jarus Technologies",
+   "url": "https://www.jarustech.com",
+   "what": "AI-native policy admin / core systems",
+   "workflow_step": "policy-servicing",
+   "buyer": "carrier",
+   "stage": "ITC Vegas 2023-2026",
+   "investors": [],
+   "source": "itc-multiyear-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "InsureVision",
+   "url": "https://www.insurevision.ai",
+   "what": "Video/driving-risk AI for auto insurers",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "$2.7M Seed, Mar 2025 (led by Rethink Ventures)",
+   "investors": [],
+   "source": "itc-multiyear-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://fintech.global/2025/03/07/insurevision-raises-2-7m-to-transform-insurance-risk-pricing-with-contextual-driving-data/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "BitSight",
+   "url": "https://www.bitsight.com",
+   "what": "Cyber risk ratings used by carriers to underwrite and monitor cyber insurance policies",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "$165.1M raised (Series D+); Boston",
+   "investors": [],
+   "source": "insurtechny-map-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "SecurityScorecard",
+   "url": "https://securityscorecard.com",
+   "what": "Cyber risk ratings platform, widely used in cyber underwriting and portfolio monitoring",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "$50M Growth funding (type unconfirmed), Mar 2025",
+   "investors": [],
+   "source": "insurtechny-map-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOYXh5bjhsV0J4T3RjM09JVVhHRFlwNnFQUVNwTWlzZG94Y1N5c0tFd3Z6M2ZWNTB2T28wTUZOTXdfRlVxb2JVVW43Q1pydDFXYk14VHJTTlZCNnVWamlDdWxfNmNXUHJqZHZEN05teENjbTg3cC02aFZKVjJiZ2Q5V2RPeUVWNjJVd3dYbGxxQy1tdlBOS0ZRN1ZfYXI",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Kalepa",
+   "url": "https://www.kalepa.com",
+   "what": "AI risk-analysis copilot ('Copilot') for commercial underwriters — submission triage and risk appetite matching",
+   "workflow_step": "MGA-ops",
+   "buyer": "carrier",
+   "stage": "$14M Series A, Sep 2021",
+   "investors": [],
+   "source": "insurtechny-map-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5oZUNlaFItSXJjSjZfd3U3QkdtSXJudUl4N0Z3LUNMR0RORFhycXdNNktMSzZjQ3QycGNWQ2xOcFd0bzZRemZHbDQ0V09qeTRlS0dTTlNwUVA1UE0",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Skopenow",
+   "url": "https://skopenow.com",
+   "what": "OSINT/digital-footprint investigation platform used in claims fraud and SIU investigations",
+   "workflow_step": "claims-guidance",
+   "buyer": "carrier",
+   "stage": "$2.5M raised",
+   "investors": [],
+   "source": "insurtechny-map-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Habit Analytics",
+   "url": "https://www.habitanalytics.com",
+   "what": "Usage-based / telematics data analytics for auto insurance underwriting and pricing",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "$6.09M Series A; Unconfirmed — likely defunct",
+   "investors": [],
+   "source": "insurtechny-map-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_refreshed": "2026-09-22",
+   "status": "shut_down"
+  },
+  {
+   "name": "Hyperscience",
+   "url": "https://www.hyperscience.com",
+   "what": "Intelligent document processing widely deployed by carriers for claims/underwriting intake automation",
+   "workflow_step": "intake",
+   "buyer": "carrier",
+   "stage": "$439M raised (Series E)",
+   "investors": [],
+   "source": "insurtechny-map-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Unqork",
+   "url": "https://unqork.com",
+   "what": "No-code enterprise app platform heavily adopted by carriers for policy admin and claims apps",
+   "workflow_step": "policy-servicing",
+   "buyer": "carrier",
+   "stage": "$365M raised (Series C)",
+   "investors": [],
+   "source": "insurtechny-map-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Coherent",
+   "url": "https://www.coherent.global",
+   "what": "Spreadsheet-to-API rules/decision engine used by insurers for actuarial and underwriting logic deployment",
+   "workflow_step": "MGA-ops",
+   "buyer": "carrier",
+   "stage": "$75M Series B, Apr 2022 (led by Maverick Capital)",
+   "investors": [],
+   "source": "insurtechny-map-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.finsmes.com/2022/04/coherent-raises-75m-in-series-b-funding.html",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "WorkFusion",
+   "url": "https://www.workfusion.com",
+   "what": "AI/RPA automation (incl. AML/KYC) sold into insurance and financial services back-office ops",
+   "workflow_step": "policy-servicing",
+   "buyer": "carrier",
+   "stage": "$45M Series G, Sep 2025; Acquired by UiPath, announced Feb 2026 (~$189.5M purchase price per SEC filing)",
+   "investors": [],
+   "source": "insurtechny-map-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOUVh5RnZLc0wzaEpibmNQOGdEMFh3OUtwV3p4RndJNXJmUWE2UTBRNTF6Tmw0NXhlM0pJN092S3lyRHR5Wl9UdVVIUUNScFpfcVNBemE1ckxPeVVEQXZ3R3NxQWRlMHZJYV9ETXM2Q3ZJUVhYUmE1RVQ1VXFTc0xFWWFBSmtjNE5zODNOdkk0blQ4TnBO",
+   "funding_refreshed": "2026-09-22",
+   "status": "acquired"
+  },
+  {
+   "name": "Novidea",
+   "url": "https://www.novidea.com",
+   "what": "Cloud broker/MGA management platform (policy admin, data, agency management)",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "$30M Series C extension, Apr 2024 (led by HarbourVest Partners)",
+   "investors": [],
+   "source": "insurtechny-map-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQd1Vwb3RHTURhYnJBV0lGdDBhdmwxYTJYYWJOVHBCcXRnOE5yaTM5T01RTTZGUm16WVBaQU15SlpoQm51LUJPUVE1Yi1vODdjN3VHZU4zN19WcldsT3ZWd0FFMnE4bDNmQnUxb29oNnhSaTRCUmM5SG9HTzE5SHRPTEJZemxjTVhUN1l2SkJR",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Cover Genius",
+   "url": "https://www.covergenius.com",
+   "what": "Embedded insurance distribution infrastructure (XCover) for e-commerce and travel platforms",
+   "workflow_step": "distribution/embedded",
+   "buyer": "embedded-partner",
+   "stage": "$80M Series E, May 2024 (led by Spark Capital); $245M total",
+   "investors": [],
+   "source": "insurtechny-map-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://coverager.com/cover-genius-raises-100-million",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Slice Labs",
+   "url": "https://slice.is",
+   "what": "On-demand / embedded insurance infrastructure-as-a-service (policy admin for MGAs)",
+   "workflow_step": "distribution/embedded",
+   "buyer": "MGA",
+   "stage": "$20M Series A (extension), Sep 2018; $35.5M total",
+   "investors": [],
+   "source": "insurtechny-map-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://obj.ca/ottawas-slice-labs-lands-us20m-amid-push-to-upend/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Parametrix",
+   "url": "https://www.parametrixinsurance.com",
+   "what": "Parametric cloud-outage insurance for businesses dependent on cloud/SaaS uptime",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "$27M Series B, Dec 2025 (led by Mundi Ventures, FirstMark Capital, Hannover Digital Investments); $45M total",
+   "investors": [],
+   "source": "insurtechny-map-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://coverager.com/parametrix-raises-27-million",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Floodbase",
+   "url": "https://floodbase.com",
+   "what": "Satellite-based flood data and parametric flood insurance triggers",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "$5M Series A, Feb 2025 (led by Ecosystem Integrity Fund); $17M total",
+   "investors": [],
+   "source": "insurtechny-map-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://coverager.com/floodbase-raises-5-million",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "The Guarantors",
+   "url": "https://www.theguarantors.com",
+   "what": "Embedded lease/security-deposit insurance for renters, distributed via property managers",
+   "workflow_step": "distribution/embedded",
+   "buyer": "embedded-partner",
+   "stage": "$120M Series C",
+   "investors": [],
+   "source": "insurtechny-map-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Coverdash",
+   "url": "https://www.coverdash.com",
+   "what": "Embedded small-commercial insurance API for SMB platforms and marketplaces",
+   "workflow_step": "distribution/embedded",
+   "buyer": "embedded-partner",
+   "stage": "$13.5M Series A, Feb 2024 (led by Nyca Partners); $16M total",
+   "investors": [],
+   "source": "insurtechny-map-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://coverager.com/?s=Coverdash",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Blue Marble Microinsurance",
+   "url": "https://www.bluemarblemicro.com",
+   "what": "Parametric microinsurance for underserved markets (climate, health)",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "Series B; N/A disclosed",
+   "investors": [],
+   "source": "insurtechny-map-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.reinsurancene.ws/mapfre-joins-blue-marbles-owner-consortium-through-investment/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Wingsure",
+   "url": "https://wingsure.com",
+   "what": "Parametric agricultural insurance and weather-risk platform",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "Seed",
+   "investors": [],
+   "source": "insurtechny-map-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Kinetic Insurance",
+   "url": "https://www.helloki.com",
+   "what": "Wearables-driven workers' comp risk platform and insurance for industrial/frontline workers",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "carrier",
+   "stage": "$11.25M Series A, Nov 2020 (led by Crosslink Capital); $19.4M total",
+   "investors": [],
+   "source": "insurtechny-map-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://coverager.com/trinity-capital-backs-kinetic",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Vault",
+   "url": "https://www.vault.inc",
+   "what": "Captive insurance formation and management platform (SPCs for businesses)",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "Unfunded/bootstrapped",
+   "investors": [],
+   "source": "insurtechny-map-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "LineSlip Solutions",
+   "url": "https://www.lineslip.com",
+   "what": "Policy-comparison and coverage-analytics platform for commercial brokers and risk managers",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "$5.6M Series A, Mar 2023",
+   "investors": [],
+   "source": "insurtechny-map-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://coverager.com/lineslip-solutions-raises-5-6-million",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Certificial",
+   "url": "https://www.certificial.com",
+   "what": "Real-time COI (certificate of insurance) verification network for brokers/carriers",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "$15M Series B, Jul 2023 (led by Nyca Partners); $20.8M total",
+   "investors": [],
+   "source": "insurtechny-map-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://coverager.com/certificial-raises-15-million",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Maptycs",
+   "url": "https://www.maptycs.com",
+   "what": "Insurance program analytics and risk-visualization platform for corporate risk managers/brokers",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "Unfunded/bootstrapped",
+   "investors": [],
+   "source": "insurtechny-map-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Vindati",
+   "url": "https://www.vindati.com",
+   "what": "Small commercial underwriting platform/rating engine for carriers and MGAs",
+   "workflow_step": "MGA-ops",
+   "buyer": "carrier",
+   "stage": "Unfunded/bootstrapped",
+   "investors": [],
+   "source": "insurtechny-map-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "NeuralMetrics",
+   "url": "https://www.neuralmetrics.com",
+   "what": "Agentic AI underwriting co-pilots for commercial P&C; live at 4 of the top 10 US commercial insurers incl. Stillwater",
+   "workflow_step": "MGA-ops",
+   "buyer": "carrier",
+   "stage": "Angel round, size undisclosed",
+   "investors": [],
+   "source": "insurtech-insights-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Relativity6",
+   "url": "https://relativity6.com",
+   "what": "'Marvin' LLM industry-classification engine for underwriting/appetite matching, used by 60+ carriers and MGAs",
+   "workflow_step": "MGA-ops",
+   "buyer": "carrier",
+   "stage": "$5.25M Seed, Apr 2022; $8.47M total",
+   "investors": [
+    "Fin Capital"
+   ],
+   "source": "insurtech-insights-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://coverager.com/relativity6-raises-5-25-million",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "ForMotiv",
+   "url": "https://www.formotiv.com",
+   "what": "Behavioral-biometrics AI ('digital polygraph') for underwriting risk and fraud detection from mouse/keystroke intent data",
+   "workflow_step": "fraud",
+   "buyer": "carrier",
+   "stage": "$9.7M raised; partners with FRISS",
+   "investors": [],
+   "source": "insurtech-insights-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Instnt",
+   "url": "https://instnt.org",
+   "what": "AI underwrites identity-fraud exposure and wraps it as insurance; reinsured by both Munich Re and Swiss Re",
+   "workflow_step": "full-stack-insurer",
+   "buyer": "consumer",
+   "stage": "VC-backed",
+   "investors": [],
+   "source": "insurtech-insights-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "FortifyData",
+   "url": "https://fortifydata.com",
+   "what": "AI cyber-risk scoring platform feeding underwriters, partnered with AdvantageGo",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "$7.03M raised",
+   "investors": [],
+   "source": "insurtech-insights-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Ecopia AI",
+   "url": "https://ecopiatech.com",
+   "what": "Geospatial AI building/property intelligence for underwriting (178M+ buildings mapped); used by Openly",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "Growth-stage",
+   "investors": [],
+   "source": "insurtech-insights-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Attestiv",
+   "url": "https://attestiv.com",
+   "what": "AI deepfake/media-tampering detection for claims and underwriting fraud; partners with ReSource Pro, Insurity, PCMS",
+   "workflow_step": "fraud",
+   "buyer": "carrier",
+   "stage": "$2M Seed, Mar 2020 (led by Castle Island Ventures)",
+   "investors": [],
+   "source": "insurtech-insights-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://coverager.com/attestiv-launches-to-validate-authenticity-of-digital-media",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Highwing",
+   "url": "https://www.highwing.io",
+   "what": "AI-enabled open data platform for commercial brokers/MGAs (submission and placement workflow); clients incl. Travelers, The Hartford",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "$4M Seed, Nov 2020 (led by BrokerTech Ventures / BRP Group (Baldwin Risk Partners))",
+   "investors": [
+    "BrokerTech Ventures (BTV)"
+   ],
+   "source": "insurtech-insights-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://coverager.com/highwing-raises-4m",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Kayna",
+   "url": "",
+   "what": "Embedded-insurance API infrastructure connecting SaaS platforms to carriers for point-of-sale distribution",
+   "workflow_step": "distribution/embedded",
+   "buyer": "embedded-partner",
+   "stage": "$1.7M Seed, Mar 2026 (led by Delta Partners); $2.9M total",
+   "investors": [],
+   "source": "sister-orgs-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://coverager.com/kayna-raises-1-7-million",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Gigaforce",
+   "url": "https://gigaforce.com",
+   "what": "AI-driven claims subrogation automation platform",
+   "workflow_step": "claims-guidance",
+   "buyer": "carrier",
+   "stage": "InsurTech NY 2021 finalist",
+   "investors": [],
+   "source": "sister-orgs-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "MotionsCloud",
+   "url": "",
+   "what": "AI photo-based auto/property damage assessment for claims adjusters",
+   "workflow_step": "claims-fnol",
+   "buyer": "carrier",
+   "stage": "$2M, Apr 2022 (led by SOSV and Net Insurance (co-lead))",
+   "investors": [],
+   "source": "sister-orgs-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://motionscloud.com/blog/motionscloud-secured-investment-to-automate-insurance-claims-inspections/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Hosta Labs",
+   "url": "https://www.hostalabs.com",
+   "what": "AI-generated floor plans and property data capture from photos, used by underwriters (Cambridge, MA)",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "$11.5M Series A, Nov 2021 (led by Eclipse Ventures); $15M total",
+   "investors": [],
+   "source": "sister-orgs-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://datadrivenaec.com/tools/hosta-ai",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Bees360",
+   "url": "",
+   "what": "Drone/aerial property inspection data capture for underwriting",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "InsurTech Hartford 2022 winner ($10K, The Hartford)",
+   "investors": [],
+   "source": "sister-orgs-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "PainWorth",
+   "url": "https://painworth.com",
+   "what": "AI personal-injury claims valuation tool for adjusters and plaintiff attorneys",
+   "workflow_step": "claims-guidance",
+   "buyer": "carrier",
+   "stage": "$1.7M Seed, Jan 2022 (led by 2048 Ventures)",
+   "investors": [],
+   "source": "sister-orgs-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://betakit.com/painworth-secures-2-1-million-cad-to-settle-personal-injury-claims-faster/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Riskfuel",
+   "url": "https://www.riskfuel.com",
+   "what": "Deep-learning derivative/risk valuation models replacing slow Monte Carlo pricing for insurers and banks",
+   "workflow_step": "pricing",
+   "buyer": "carrier",
+   "stage": "gener8tor/OnRamp 2021 cohort",
+   "investors": [],
+   "source": "sister-orgs-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Riskwolf",
+   "url": "https://www.riskwolf.com",
+   "what": "Parametric climate/weather risk data infrastructure for insurers and reinsurers structuring parametric triggers",
+   "workflow_step": "risk-enrichment",
+   "buyer": "carrier",
+   "stage": "InsurTech NY 2021 finalist",
+   "investors": [],
+   "source": "sister-orgs-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Waterlily",
+   "url": "https://www.waterlily.ai",
+   "what": "AI-driven long-term-care insurance planning platform for agents and consumers",
+   "workflow_step": "distribution/embedded",
+   "buyer": "consumer",
+   "stage": "$7M Seed, Jan 2025 (led by Brewer Lane Ventures); $9.2M total",
+   "investors": [],
+   "source": "sister-orgs-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.insightpartners.com/ideas/waterlily-secures-7m-in-seed-funding-led-by-brewer-lane-ventures/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Otonomi",
+   "url": "",
+   "what": "Parametric trade-credit/cargo insurance infrastructure",
+   "workflow_step": "MGA-ops",
+   "buyer": "MGA",
+   "stage": "$5M Series A, Oct 2025 (led by Consortium: Hivemind Capital, Rothschild & Co Asset Management, ATX Venture Partners, Portline Capital, Cyberport); $8.4M total",
+   "investors": [],
+   "source": "sister-orgs-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.hongkongmaritimehub.com/otonomis-cargo-delay-insurance-gains-traction-with-investors/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Redkik",
+   "url": "",
+   "what": "Parametric supply-chain/cargo insurance platform",
+   "workflow_step": "MGA-ops",
+   "buyer": "MGA",
+   "stage": "$3.3M Seed, Feb 2022 (led by Greenlight Re Innovations and MS&AD Ventures (co-led))",
+   "investors": [],
+   "source": "sister-orgs-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://tech.eu/2022/02/09/finnish-startup-kicks-in-3-3-million-to-disrupt-cargo-insurance/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Loadsure",
+   "url": "https://loadsure.net",
+   "what": "API-based freight/cargo insurance-as-a-service",
+   "workflow_step": "MGA-ops",
+   "buyer": "MGA",
+   "stage": "$11M Series A, Mar 2022 (led by MMC Ventures)",
+   "investors": [],
+   "source": "sister-orgs-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.loadsure.net/company/investor-relations",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Finaeo",
+   "url": "https://www.finaeo.com",
+   "what": "Life-insurance distribution/CRM automation platform for agents and carriers (Canada)",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "InsurTech NY 2020 finalist + gener8tor 2020 cohort (cross-validated)",
+   "investors": [],
+   "source": "sister-orgs-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Digisure",
+   "url": "",
+   "what": "Embedded protection-plan/warranty infrastructure",
+   "workflow_step": "distribution/embedded",
+   "buyer": "embedded-partner",
+   "stage": "$13.1M Pre-Series A, Aug 2021; $20M total; Ceased operations Feb 23, 2024 after being unable to raise further capital; not acquired.",
+   "investors": [],
+   "source": "sister-orgs-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://coverager.com/insurtech-digisure-ceases-operations/",
+   "funding_refreshed": "2026-09-22",
+   "status": "shut_down"
+  },
+  {
+   "name": "Ahoy! Insurance",
+   "url": "https://ahoy.insure",
+   "what": "Digital marine/boat insurance MGA",
+   "workflow_step": "MGA-ops",
+   "buyer": "MGA",
+   "stage": "$9M Seed, Nov 2021 (led by Saban Capital Group)",
+   "investors": [],
+   "source": "sister-orgs-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://beinsure.com/news/ahoy-insurance-marine-insurtech-florida/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "ClaimPartner",
+   "url": "",
+   "what": "Claims-management software for public adjusters and policyholders",
+   "workflow_step": "claims-guidance",
+   "buyer": "broker",
+   "stage": "InsurTech NY 2024 finalist",
+   "investors": [],
+   "source": "sister-orgs-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Circle Engage (formerly Trusty Care)",
+   "url": "",
+   "what": "Medicare plan-comparison API embedded into brokers'/advisors' workflows",
+   "workflow_step": "distribution/embedded",
+   "buyer": "broker",
+   "stage": "$6M Note round, Jun 2022 (led by Joshua Mailman Foundation); $14.3M total",
+   "investors": [],
+   "source": "sister-orgs-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://cultivationcapital.com/trusty-care-raises-6m/",
+   "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "AppliedAI (Opus)",
+   "url": "",
+   "what": "AI that automates insurance operations end-to-end (underwriting/claims routing) to cut loss ratios",
+   "workflow_step": "MGA-ops",
+   "buyer": "carrier",
+   "stage": "Plug and Play Insurtech Batch 20, Silicon Valley 2026",
+   "investors": [],
+   "source": "sister-orgs-census-2026-09",
+   "funding_as_of": "2026-09-22"
+  },
+  {
+   "name": "Zopper",
+   "url": "",
+   "what": "Large-scale embedded warranty/insurance distribution platform (India), partnered with 6+ insurers",
+   "workflow_step": "distribution/embedded",
+   "buyer": "embedded-partner",
+   "stage": "$25M Series D, Nov 2024 (led by Elevation Capital and Dharana Capital (co-led)); $125M total",
+   "investors": [],
+   "source": "sister-orgs-census-2026-09",
+   "funding_as_of": "2026-09-22",
+   "funding_source": "https://www.moneycontrol.com/news/business/startup/b2b-insurtech-firm-zopper-raises-25-million-in-series-d-funding-round-12878831.html",
+   "funding_refreshed": "2026-09-22"
+  }
+ ]
+}

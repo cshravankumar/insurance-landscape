@@ -1,0 +1,25 @@
+{
+  "source": "Wayback Machine capture 2023-06-09T17:34:16Z of https://www.insurtechny.com/wp-content/uploads/2022/02/NYC-InsurTech-Startup-Map.png",
+  "recovery_method": "Image capture found via redirect chain from a later (2026-05-20) capture of insurtechny.com/new-york-city-insurtech-startups-map/ (the legacy static-image version of the NYC map, distinct from the current JS-rendered 142-company version). Downloaded PNG (960x540) and read the numbered legend directly (visually legible, not OCR-guessed).",
+  "coverage": "full - all 50 numbered companies on the legend are readable",
+  "caveat": "This is a single point-in-time snapshot (2023-06). No other year's image (2021, 2022, 2024, 2025) was recoverable via Wayback - CDX for this asset only returned this one capture.",
+  "company_count": 50,
+  "companies": [
+    "SmartAsset", "Planck", "Boost", "Bolt Solutions", "Montoux",
+    "SecurityScorecard", "Inshur", "OnSiteIQ", "Pillar Technologies", "Policy Genius",
+    "WorldCover", "Unqork", "Socure", "Spruce", "Kasisto",
+    "Akur8", "Founder Shield", "Vericred", "Wrapbook", "Dayforward",
+    "Mulberry", "Kindur", "Carefull", "Waffle Labs", "Retirable",
+    "Leo", "Nayya", "Thimble", "Pawlicy Advisor", "Slice Labs",
+    "Broker Buddha", "Oscar Health", "Jetty", "Clyde", "Jones",
+    "Lemonade", "Roots Automation", "Justworks", "Floss Bar", "Assurely",
+    "Fabric", "Zipari", "Clover Health", "Buckle Insurance", "Namely",
+    "Hyperscience", "Rhino", "Attune", "The Guarantors", "Afficiency"
+  ],
+  "diff_vs_current_142_and_309_dataset": {
+    "already_in_309_dataset": ["Akur8", "Dayforward", "Inshur", "Jones", "The Guarantors"],
+    "already_merged_from_current_142_map_per_SOURCES/README": ["SecurityScorecard", "Unqork", "Vericred", "Slice Labs", "Hyperscience"],
+    "not_in_309_dataset_and_insurance_core": ["Policy Genius", "WorldCover", "Pillar Technologies", "Pawlicy Advisor", "Broker Buddha", "Zipari", "Buckle Insurance", "Attune", "Thimble", "Lemonade", "Clover Health", "Oscar Health", "Founder Shield", "Carefull", "Retirable", "Kindur", "OnSiteIQ", "Mulberry", "Clyde", "Rhino", "Fabric", "Roots Automation", "Assurely"],
+    "not_in_309_dataset_but_out_of_scope_or_adjacent": ["SmartAsset (personal finance, not insurance-core)", "Boost (unclear)", "Bolt Solutions (checkout/fraud, not insurance)", "Montoux (life/annuity actuarial software - borderline insurance-core, notable miss)", "Socure (identity verification, horizontal)", "Spruce (real estate title/closing, adjacent)", "Kasisto (conversational AI banking, not insurance)", "Wrapbook (payroll for production industry, not insurance)", "Waffle Labs (unclear/likely fintech)", "Leo (unclear)", "Nayya (benefits navigation - health/benefits adjacent per exclusion rule)", "Justworks (HR/PEO, explicitly excluded per existing SOURCES.md logic)", "Namely (HR, explicitly excluded per existing SOURCES.md logic)", "Floss Bar (dental care, not insurance)", "Jetty (renters deposit/insurance-adjacent fintech)", "Invive/other health names excluded same way as prior InsurTech NY pass"]
+  }
+}

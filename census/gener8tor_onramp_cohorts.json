@@ -1,0 +1,17 @@
+{
+  "org": "gener8tor Insurance & Wealth Accelerator (formerly 'OnRamp Insurance Accelerator')",
+  "backers": "Allianz Life + Securian Financial, run by gener8tor (Minneapolis/St. Paul, MN)",
+  "founded": 2019,
+  "description": "$100K investment per startup, 3-month cohort, 5 companies/year (2024 announcement was the 6th cohort).",
+  "coverage": "PARTIAL - 4 of ~6 cohort years recovered via press releases/blog coverage; 2019 (inaugural) and 2023 rosters not found in this pass; 2025/2026 not yet run or not found.",
+  "cohorts": {
+    "2024": ["FutureMoney", "Multimodal", "Sora Finance", "One Eleven Financial Wellness", "Waterlily"],
+    "2022": ["Botdoc", "ForwardLane", "Manifest", "Nestimate", "White Swan"],
+    "2021": ["Riskfuel", "Rocket Dollar", "Truelytics", "Unscrambl"],
+    "2020": ["Trusty.care", "Trust Stamp", "Peacefully", "Finaeo"],
+    "2019": "not recovered - press exists (Insurance Journal, 2019-04-23) announcing the call for applications but not the resulting roster",
+    "2023": "not recovered in this pass",
+    "2025_2026": "not confirmed to have run / not found"
+  },
+  "scope_note": "This program is branded 'Insurance & Wealth' - several portfolio companies are wealth-management/fintech rather than insurance-core (Rocket Dollar, Sora Finance, One Eleven Financial Wellness, ForwardLane). Apply the same insurance-core filter as the rest of this pass before treating any as a 'miss'."
+}

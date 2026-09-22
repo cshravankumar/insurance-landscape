@@ -1,0 +1,767 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>US P&amp;C Market Map</title>
+<style>
+  :root {
+    --paper: #f6f7f8;
+    --card: #ffffff;
+    --ink: #1a2430;
+    --muted: #5b6b7a;
+    --faint: #8a97a3;
+    --line: #dde2e7;
+    --accent: #9a3324;
+    --accent-soft: #f3e4e1;
+    --mono-ink: #23303c;
+    --tier-bg: #eef1f3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #10161d;
+      --card: #171f28;
+      --ink: #e6eaee;
+      --muted: #93a1ae;
+      --faint: #6d7b88;
+      --line: #2a343f;
+      --accent: #d9826f;
+      --accent-soft: #33211d;
+      --mono-ink: #c9d2da;
+      --tier-bg: #1d2733;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #10161d;
+    --card: #171f28;
+    --ink: #e6eaee;
+    --muted: #93a1ae;
+    --faint: #6d7b88;
+    --line: #2a343f;
+    --accent: #d9826f;
+    --accent-soft: #33211d;
+    --mono-ink: #c9d2da;
+    --tier-bg: #1d2733;
+  }
+  :root[data-theme="light"] {
+    --paper: #f6f7f8;
+    --card: #ffffff;
+    --ink: #1a2430;
+    --muted: #5b6b7a;
+    --faint: #8a97a3;
+    --line: #dde2e7;
+    --accent: #9a3324;
+    --accent-soft: #f3e4e1;
+    --mono-ink: #23303c;
+    --tier-bg: #eef1f3;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    font-size: 15px;
+  }
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 28px 96px; }
+
+  /* ---------- header ---------- */
+  header { padding: 56px 0 8px; }
+  .eyebrow {
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin-bottom: 14px;
+  }
+  h1 {
+    font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    font-size: clamp(30px, 4.5vw, 44px); font-weight: 500; line-height: 1.12;
+    margin: 0 0 14px; text-wrap: balance; max-width: 20ch;
+  }
+  .lede { color: var(--muted); max-width: 62ch; margin: 0 0 6px; font-size: 16px; }
+  .asof { color: var(--faint); font-size: 12.5px; }
+
+  /* ---------- headline stats ---------- */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); margin: 30px 0 0; }
+  .stat { background: var(--card); padding: 16px 18px; }
+  .stat b { display: block; font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace; font-size: 21px; font-weight: 600; letter-spacing: -0.01em; }
+  .stat span { color: var(--muted); font-size: 12px; line-height: 1.35; display: block; margin-top: 3px; }
+
+  /* ---------- premium flow bars ---------- */
+  .flow { margin: 34px 0 0; }
+  .flow h2 { margin-bottom: 4px; }
+  .flow p.note { color: var(--muted); font-size: 13px; margin: 0 0 18px; max-width: 68ch; }
+  .bar-row { display: grid; grid-template-columns: 168px 1fr 78px; align-items: center; gap: 12px; margin-bottom: 9px; }
+  .bar-row .lbl { font-size: 13px; color: var(--ink); text-align: right; }
+  .bar-row .lbl small { display: block; color: var(--faint); font-size: 11px; }
+  .bar-track { background: var(--tier-bg); height: 22px; position: relative; }
+  .bar-fill { position: absolute; inset: 0 auto 0 0; background: var(--accent); opacity: 0.85; }
+  .bar-fill.sub { background: var(--muted); opacity: 0.55; }
+  .bar-row .val { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 13px; font-variant-numeric: tabular-nums; color: var(--mono-ink); }
+
+  /* ---------- nav ---------- */
+  nav.toc {
+    position: sticky; top: 0; z-index: 5;
+    background: var(--paper); border-bottom: 1px solid var(--line);
+    margin: 40px -28px 0; padding: 10px 28px;
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  nav.toc a {
+    font-size: 12px; color: var(--muted); text-decoration: none;
+    border: 1px solid var(--line); padding: 4px 10px; border-radius: 999px;
+    background: var(--card); white-space: nowrap;
+  }
+  nav.toc a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ---------- sections ---------- */
+  section { padding-top: 52px; }
+  .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; border-bottom: 2px solid var(--ink); padding-bottom: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+  h2 {
+    font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    font-size: 25px; font-weight: 500; margin: 0; text-wrap: balance;
+  }
+  .sec-count { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 12.5px; color: var(--accent); white-space: normal; max-width: 100%; }
+  .sec-intro { color: var(--muted); font-size: 14px; max-width: 74ch; margin: 6px 0 22px; }
+
+  h3 {
+    font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); font-weight: 600; margin: 26px 0 10px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  h3::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  h3 .tag { color: var(--accent); letter-spacing: 0; text-transform: none; font-weight: 500; }
+
+  .cos { display: grid; grid-template-columns: repeat(auto-fill, minmax(232px, 1fr)); gap: 6px; }
+  .co { background: var(--card); border: 1px solid var(--line); padding: 8px 11px; font-size: 13px; line-height: 1.35; }
+  .co b { font-weight: 600; }
+  .co em { display: block; font-style: normal; color: var(--muted); font-size: 11.5px; margin-top: 1px; }
+  .co .fig { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; color: var(--accent); font-size: 11px; font-variant-numeric: tabular-nums; }
+  .co.you { border-left: 3px solid var(--accent); }
+
+  .dir {
+    margin-top: 22px; background: var(--accent-soft); border-left: 3px solid var(--accent);
+    padding: 12px 16px; font-size: 13px; color: var(--ink); max-width: 100%;
+  }
+  .dir b { color: var(--accent); }
+
+  /* ---------- directory table ---------- */
+  .tbl-wrap { overflow-x: auto; border: 1px solid var(--line); margin-top: 18px; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 13px; background: var(--card); }
+  th { text-align: left; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding: 10px 14px; border-bottom: 2px solid var(--ink); }
+  td { padding: 9px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td.mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 12px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  tr:last-child td { border-bottom: none; }
+
+  footer { margin-top: 64px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--faint); font-size: 12px; max-width: 78ch; }
+
+  a { color: var(--accent); }
+  @media (max-width: 640px) {
+    .bar-row { grid-template-columns: 110px 1fr 70px; }
+    .bar-row .lbl { font-size: 11.5px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  /* ---- disclosure kit: shared across all five pages in this repo ---- */
+  .dmark{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;
+    background:var(--tier-bg,var(--line));color:var(--muted);font:600 9px/1 ui-monospace,monospace;
+    cursor:help;border:none;padding:0;margin-left:5px;vertical-align:middle;position:relative}
+  .dmark:hover,.dmark:focus-visible,.dmark.open{background:var(--accent,#9a3324);color:#fff;outline:none}
+  .dmark .dpop{display:none;position:absolute;z-index:30;left:50%;bottom:calc(100% + 7px);transform:translateX(-50%);
+    width:max-content;max-width:250px;background:var(--ink);color:var(--paper,var(--card));font-size:11.5px;line-height:1.45;
+    padding:8px 11px;border-radius:7px;box-shadow:0 6px 18px rgba(0,0,0,.22);text-align:left;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-weight:400}
+  .dmark.open > .dpop{display:block}
+  .dpop::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--ink)}
+  details.mnote{margin:10px 0 22px}
+  details.mnote summary{cursor:pointer;color:var(--muted);font-size:12px;font-weight:600;list-style:none;
+    display:flex;align-items:center;gap:6px;user-select:none}
+  details.mnote summary::before{content:"▸";font-size:9px;color:var(--faint);transition:transform .15s;display:inline-block}
+  details.mnote[open] summary::before{transform:rotate(90deg)}
+  details.mnote summary::-webkit-details-marker{display:none}
+  details.mnote .mnote-body{color:var(--muted);font-size:12.5px;padding:8px 2px 0 15px;max-width:72ch;line-height:1.55}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Reference · US Property &amp; Casualty</div>
+  <h1>US P&amp;C market participants</h1>
+  <p class="lede">Carriers, reinsurers, brokers, MGAs, and service providers in the $1.05 trillion US P&amp;C market. Each section describes their role and lists companies, ownership relationships, and directories for further research.</p>
+
+  <div class="stats">
+    <div class="stat"><b>$1.05T<button class="dmark" aria-label="sourcing">i<span class="dpop">Figures: 2024 statutory data (NAIC via S&amp;P Global), Conning 2025 MGA Study, AM Best 2025 Surplus Lines Report, Gallagher Re fronting report, Business Insurance Top 100. Compiled July 2026.</span></button></b><span>2024 direct written premium, first year over $1T</span></div>
+    <div class="stat"><b>~2,600</b><span>licensed P&amp;C carriers (top 10 hold 47.6%)</span></div>
+    <div class="stat"><b>1,100+</b><span>MGAs / program administrators, $114B premium</span></div>
+    <div class="stat"><b>~39,000</b><span>independent retail agencies (Big “I” count)</span></div>
+    <div class="stat"><b>202</b><span>domestic surplus lines insurers, up from 148 in 2018</span></div>
+    <div class="stat"><b>~25</b><span>fronting carriers</span></div>
+  </div>
+</header>
+
+<div class="flow">
+  <h2>Premium by segment and distribution channel</h2>
+  <p class="note">These categories overlap: E&amp;S, MGA, and fronting premium are included in the $1.05T total. The figures below show their reported size and growth; do not add the rows together.</p>
+  <div class="bar-row"><div class="lbl">Personal lines<small>+12.1% YoY</small></div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="val">$535B</div></div>
+  <div class="bar-row"><div class="lbl">Commercial lines<small>+4.0% YoY</small></div><div class="bar-track"><div class="bar-fill" style="width:94%"></div></div><div class="val">$502B</div></div>
+  <div class="bar-row"><div class="lbl">E&amp;S / surplus lines<small>+12.3% · 7th yr double-digit</small></div><div class="bar-track"><div class="bar-fill sub" style="width:24%"></div></div><div class="val">$130B</div></div>
+  <div class="bar-row"><div class="lbl">MGA channel<small>+16% YoY</small></div><div class="bar-track"><div class="bar-fill sub" style="width:21%"></div></div><div class="val">$114B</div></div>
+  <div class="bar-row"><div class="lbl">Fronted premium<small>+26% YoY</small></div><div class="bar-track"><div class="bar-fill sub" style="width:3.4%"></div></div><div class="val">$18B</div></div>
+</div>
+
+<nav class="toc">
+  <a href="#carriers">Carriers</a>
+  <a href="#reinsurers">Reinsurers</a>
+  <a href="#brokers">Retail brokers</a>
+  <a href="#wholesale">Wholesalers</a>
+  <a href="#mgas">MGAs &amp; programs</a>
+  <a href="#altrisk">Alt risk &amp; niches</a>
+  <a href="#claims">Claims &amp; TPAs</a>
+  <a href="#periphery">Finance &amp; other services</a>
+  <a href="#tech">Software &amp; data</a>
+  <a href="#ai">AI-native vendors</a>
+  <a href="#advisory">Advisors &amp; ratings</a>
+  <a href="#directories">Directories &amp; rankings</a>
+</nav>
+
+<!-- ================= CARRIERS ================= -->
+<section id="carriers">
+  <div class="sec-head"><h2>Carriers</h2><div class="sec-count">~2,600 licensed · top 125 groups = 89.5% of premium</div></div>
+  <p class="sec-intro">The top 10 groups write less than half the market. In commercial lines it's even flatter: Travelers is #1 with just 5.2% share, and AIG ranks sixth at 2.8%. Other participants include regional insurers, mutuals, specialty and E&amp;S carriers, and fronting companies.</p>
+
+  <h3>Personal lines carriers <span class="tag">— auto, home, and other personal coverage</span></h3>
+  <div class="cos">
+    <div class="co"><b>State Farm</b> <span class="fig">$109B · 10.2%</span><em>largest US insurer, mutual</em></div>
+    <div class="co"><b>Progressive</b> <span class="fig">7.1%</span><em>auto insurer with a growing commercial-auto business</em></div>
+    <div class="co"><b>Berkshire Hathaway / GEICO</b> <span class="fig">5.9%</span><em>plus National Indemnity, BH Specialty</em></div>
+    <div class="co"><b>Allstate</b> <span class="fig">5.3%</span><em>auto + home, agent-driven</em></div>
+    <div class="co"><b>USAA</b> <span class="fig">3.4%</span><em>military-affiliated reciprocal</em></div>
+    <div class="co"><b>Liberty Mutual</b> <span class="fig">4.1%</span><em>mutual; personal + global commercial</em></div>
+    <div class="co"><b>Farmers</b> <span class="fig">2.7%</span><em>Zurich-owned exchange</em></div>
+    <div class="co"><b>American Family</b><em>mutual, Midwest business + CONNECT</em></div>
+    <div class="co"><b>Nationwide</b><em>mutual; exited some personal lines, big commercial/E&amp;S</em></div>
+    <div class="co"><b>Erie Insurance</b><em>reciprocal exchange, mid-Atlantic business</em></div>
+    <div class="co"><b>Auto-Owners</b><em>mutual, agent-only, 26 states</em></div>
+    <div class="co"><b>Amica</b><em>mutual, direct, service-led</em></div>
+    <div class="co"><b>Mercury General</b><em>CA-centric auto</em></div>
+    <div class="co"><b>Kemper</b><em>specialty/non-standard auto</em></div>
+    <div class="co"><b>Plymouth Rock</b><em>Northeast auto/home</em></div>
+    <div class="co"><b>NJM</b><em>NJ mutual, WC + personal</em></div>
+    <div class="co"><b>PURE</b><em>high-net-worth reciprocal (Tokio Marine)</em></div>
+    <div class="co"><b>Chubb PRS &amp; AIG Private Client</b><em>high-net-worth coverage; PCS is the AIG business spun out to Stone Point</em></div>
+    <div class="co"><b>AAA clubs: Auto Club Enterprises / CSAA / Auto Club Group</b> <span class="fig">~$20B combined</span><em>three distinct insurers at NAIC #24, #26, #42 — combined premium exceeds Cincinnati’s</em></div>
+    <div class="co"><b>COUNTRY Financial</b> <span class="fig">$3.6B</span><em>IL mutual: auto/home/farm + crop AIP</em></div>
+    <div class="co"><b>Shelter Insurance</b> <span class="fig">$2.9B</span><em>MO regional mutual</em></div>
+    <div class="co"><b>MAPFRE USA</b> <span class="fig">$2.7B</span><em>#1 auto in Massachusetts; Spanish parent</em></div>
+    <div class="co"><b>Farm bureau carriers</b> <span class="fig">$15B+ combined</span><em>Iowa FB, Southern FB, Texas FB, Tennessee, Kentucky, NC, Alfa — state-loyal personal/farm books</em></div>
+  </div>
+
+  <h3>National commercial majors <span class="tag">— national and international businesses</span></h3>
+  <div class="cos">
+    <div class="co you"><b>Travelers</b> <span class="fig">#1 commercial · $26.2B · 5.2%</span><em>largest commercial writer</em></div>
+    <div class="co you"><b>Chubb</b><em>large-account and specialty insurance</em></div>
+    <div class="co you"><b>Liberty Mutual</b><em>global risk solutions + Ironshore E&amp;S</em></div>
+    <div class="co you"><b>Zurich North America</b><em>large corporate, construction</em></div>
+    <div class="co you"><b>AIG</b> <span class="fig">#6 commercial · 2.8%</span><em>Lexington = flagship E&amp;S arm</em></div>
+    <div class="co you"><b>CNA</b><em>Loews-owned, professional liability depth</em></div>
+    <div class="co you"><b>The Hartford</b><em>small commercial leader + middle market</em></div>
+    <div class="co you"><b>AXA XL</b><em>large corporate + Indian Harbor E&amp;S</em></div>
+    <div class="co you"><b>Berkshire Hathaway Specialty</b><em>specialty insurance business established in 2013</em></div>
+    <div class="co you"><b>Allianz Commercial</b><em>AGCS merged with corporate book</em></div>
+    <div class="co"><b>FM</b><em>mutual; engineering-led property (fka FM Global)</em></div>
+    <div class="co"><b>Sompo International</b><em>Japanese parent; acquired Aspen 2025</em></div>
+    <div class="co"><b>Tokio Marine</b><em>owns Philadelphia, HCC, Safety National, PURE</em></div>
+    <div class="co"><b>QBE North America</b><em>Australian parent, specialty programs</em></div>
+    <div class="co"><b>Starr</b><em>Greenberg's post-AIG vehicle</em></div>
+    <div class="co"><b>Munich Re Specialty NA</b><em>primary specialty arm of the reinsurer</em></div>
+    <div class="co"><b>Swiss Re Corporate Solutions</b><em>large corporate primary</em></div>
+    <div class="co"><b>Great American (AFG)</b><em>50+ specialty niches, Cincinnati-based</em></div>
+    <div class="co"><b>Old Republic</b><em>trucking, D&amp;O, title</em></div>
+    <div class="co"><b>Intact US</b><em>Canadian #1; bought OneBeacon specialty</em></div>
+    <div class="co"><b>Arch Insurance</b><em>Bermuda group's US specialty arm</em></div>
+    <div class="co"><b>Everest Insurance</b><em>reinsurer's primary build-out</em></div>
+    <div class="co"><b>Axis</b><em>specialty repositioned, E&amp;S heavy</em></div>
+    <div class="co"><b>Fairfax group</b><em>Crum &amp; Forster, Allied World, Zenith, Odyssey</em></div>
+    <div class="co"><b>MS&amp;AD</b> <span class="fig">$3.0B US</span><em>Mitsui Sumitomo/Aioi — third Japanese major; owns Transverse fronting</em></div>
+    <div class="co"><b>Brookfield Wealth Solutions</b> <span class="fig">$3.7B</span><em>American National + Argo/Colony (Argo no longer standalone)</em></div>
+  </div>
+
+  <h3>Middle-market &amp; regional commercial <span class="tag">— regional and middle-market businesses</span></h3>
+  <div class="cos">
+    <div class="co"><b>Cincinnati Insurance</b><em>agent-loyal, expanding E&amp;S + large account</em></div>
+    <div class="co"><b>The Hanover</b><em>independent agency middle market</em></div>
+    <div class="co"><b>Selective</b><em>NJ-based, mid-Atlantic business</em></div>
+    <div class="co"><b>W.R. Berkley</b> <span class="fig">#20 all lines · $11B</span><em>60+ decentralized units (Nautilus, Admiral…)</em></div>
+    <div class="co"><b>EMC Insurance</b><em>Iowa mutual</em></div>
+    <div class="co"><b>Federated Insurance</b><em>direct-to-niche (auto dealers, contractors)</em></div>
+    <div class="co"><b>Sentry</b><em>Wisconsin mutual, dealer/trucking niches</em></div>
+    <div class="co"><b>Acuity</b><em>Wisconsin mutual</em></div>
+    <div class="co"><b>Amerisure</b><em>construction/manufacturing mutual</em></div>
+    <div class="co"><b>Westfield</b><em>Ohio mutual + new specialty arm</em></div>
+    <div class="co"><b>Encova</b><em>Motorists + BrickStreet merger</em></div>
+    <div class="co"><b>Utica National</b><em>NY mutual</em></div>
+    <div class="co"><b>Penn National</b><em>PA mutual</em></div>
+    <div class="co"><b>Frankenmuth</b><em>Michigan mutual</em></div>
+    <div class="co"><b>Church Mutual</b><em>religious institutions niche</em></div>
+    <div class="co"><b>Society Insurance</b><em>hospitality niche</em></div>
+    <div class="co"><b>West Bend</b><em>Wisconsin mutual</em></div>
+    <div class="co"><b>Donegal</b><em>PA-based regional group</em></div>
+    <div class="co"><b>Central Insurance</b><em>Ohio regional</em></div>
+    <div class="co"><b>ICW Group</b><em>California WC-led</em></div>
+    <div class="co"><b>Grange Insurance</b> <span class="fig">$1.6B</span><em>OH mutual</em></div>
+    <div class="co"><b>IAT Insurance Group</b> <span class="fig">$2.2B</span><em>Kellogg family-owned: trucking, surety, programs</em></div>
+    <div class="co"><b>GNY (Greater New York Mutual)</b> <span class="fig">$1.3B</span><em>habitational real estate CMP</em></div>
+    <div class="co"><b>Western National / FCCI / Arbella</b><em>$1.2–1.3B regional mutuals (MN, FL, New England)</em></div>
+  </div>
+
+  <h3>Specialty &amp; E&amp;S carriers <span class="tag">— specialist classes and non-admitted coverage</span></h3>
+  <div class="cos">
+    <div class="co"><b>Kinsale</b> <span class="fig">$1.9B · +19%</span><em>pure E&amp;S insurer using technology in underwriting</em></div>
+    <div class="co"><b>RLI</b><em>niche specialty, 25+ straight years of underwriting profit</em></div>
+    <div class="co"><b>Markel</b> <span class="fig">#22 all lines</span><em>specialty insurer; Evanston is its E&amp;S arm</em></div>
+    <div class="co"><b>Skyward Specialty</b><em>2023 IPO, fast-growing niches</em></div>
+    <div class="co"><b>James River</b><em>E&amp;S casualty</em></div>
+    <div class="co"><b>Palomar</b><em>CAT specialty (quake, hurricane) + fronting</em></div>
+    <div class="co"><b>Bowhead Specialty</b><em>2024 IPO; casualty/professional, AmFam-backed</em></div>
+    <div class="co"><b>Ategrity</b><em>2025 IPO, E&amp;S for SMEs</em></div>
+    <div class="co"><b>Global Indemnity</b><em>small-account E&amp;S</em></div>
+    <div class="co"><b>Argo</b><em>US E&amp;S (Colony); now Brookfield-owned</em></div>
+    <div class="co"><b>AmTrust</b><em>small commercial/WC, privately held</em></div>
+    <div class="co"><b>Hiscox USA</b><em>small business + cyber, London parent</em></div>
+    <div class="co"><b>Beazley</b> <span class="fig">→ Zurich, £8.1B</span><em>cyber leader; all-cash Zurich takeover EU-cleared Jul 2026</em></div>
+    <div class="co"><b>Ascot US</b><em>CPPIB-backed specialty</em></div>
+    <div class="co"><b>Vantage Risk</b><em>2020 class Bermuda startup</em></div>
+    <div class="co"><b>SiriusPoint</b><em>hybrid (re)insurer, program-heavy</em></div>
+    <div class="co"><b>Fidelis / MGU Pine Walk</b><em>bifurcated carrier-MGU model</em></div>
+    <div class="co"><b>Coaction Specialty</b><em>fka ProSight</em></div>
+    <div class="co"><b>Lloyd's syndicates</b> <span class="fig">92 active in US E&amp;S</span><em>$20.8B US surplus lines via Beazley, Brit, Inigo, IQUW…</em></div>
+    <div class="co"><b>Medical professional liability</b><em>The Doctors Company ($1.5B), MedPro (Berkshire), Coverys, ProAssurance</em></div>
+    <div class="co"><b>Core Specialty</b> <span class="fig">$1.5B E&amp;S</span><em>StarStone relaunch; took Argo's professional lines renewals</em></div>
+  </div>
+
+  <h3>E&amp;S arms of the majors <span class="tag">— subsidiaries and their parent groups</span></h3>
+  <div class="cos">
+    <div class="co"><b>Lexington</b><em>AIG</em></div>
+    <div class="co"><b>Westchester</b><em>Chubb</em></div>
+    <div class="co"><b>Scottsdale</b><em>Nationwide</em></div>
+    <div class="co"><b>Steadfast</b><em>Zurich</em></div>
+    <div class="co"><b>Indian Harbor</b><em>AXA XL</em></div>
+    <div class="co"><b>Ironshore</b><em>Liberty Mutual</em></div>
+    <div class="co"><b>Nautilus</b><em>W.R. Berkley</em></div>
+    <div class="co"><b>Evanston</b><em>Markel</em></div>
+    <div class="co"><b>Houston Casualty</b><em>Tokio Marine HCC</em></div>
+    <div class="co"><b>Northfield</b><em>Travelers</em></div>
+    <div class="co"><b>Navigators</b><em>The Hartford</em></div>
+  </div>
+
+  <h3>Workers' comp specialists &amp; state funds</h3>
+  <div class="cos">
+    <div class="co"><b>Employers Holdings</b><em>small-business WC</em></div>
+    <div class="co"><b>AMERISAFE</b><em>high-hazard WC</em></div>
+    <div class="co"><b>Pie Insurance</b><em>insurtech WC for SMEs</em></div>
+    <div class="co"><b>AF Group</b><em>Accident Fund family; sale to Enstar/Sixth Street announced — also a top-10 front</em></div>
+    <div class="co"><b>NYSIF / Washington L&amp;I</b> <span class="fig">$1.7B / $2.1B</span><em>the two largest state funds by premium</em></div>
+    <div class="co"><b>Safety National</b><em>excess WC (Tokio Marine)</em></div>
+    <div class="co"><b>Texas Mutual</b><em>largest state-chartered WC fund</em></div>
+    <div class="co"><b>Pinnacol</b><em>Colorado fund</em></div>
+    <div class="co"><b>SAIF</b><em>Oregon fund</em></div>
+    <div class="co"><b>Zenith</b><em>Fairfax WC specialist</em></div>
+  </div>
+
+  <h3>Coastal / residual / insurtech carriers <span class="tag">— coastal and residual property markets, plus digital carriers</span></h3>
+  <div class="cos">
+    <div class="co"><b>Citizens (FL)</b><em>state insurer of last resort, top-10 HO writer nationally</em></div>
+    <div class="co"><b>California FAIR Plan / TWIA / LA Citizens</b><em>residual property markets</em></div>
+    <div class="co"><b>Universal / Heritage / American Coastal / HCI-TypTap / Slide</b><em>the Florida specialist cohort</em></div>
+    <div class="co"><b>Tower Hill / Florida Peninsula / Frontline</b> <span class="fig">$1.2–1.6B each</span><em>more FL/Southeast HO writers, incl. reciprocals</em></div>
+    <div class="co"><b>Kin</b><em>direct-to-consumer coastal HO insurtech</em></div>
+    <div class="co"><b>Lemonade</b><em>renters→multi-line, AI-branded</em></div>
+    <div class="co"><b>Root</b><em>telematics auto</em></div>
+    <div class="co"><b>Hippo</b><em>HO insurtech; owns Spinnaker fronting</em></div>
+    <div class="co"><b>Branch / Openly / Steadily / Clearcover</b><em>digital personal-lines cohort</em></div>
+    <div class="co"><b>Corgi</b> <span class="fig">$4B val · founded 2024</span><em>AI-native commercial insurer + claims/TPA platform; 3 rounds in 8 weeks (2026)</em></div>
+    <div class="co"><b>MGT Insurance</b> <span class="fig">A− · $21.6M Series B</span><em>AI-native small-commercial carrier built on CM Select (ex-Church Mutual); agent-distributed BOP; MGT Specialty E&amp;S arm</em></div>
+    <div class="co"><b>NEXT Insurance</b><em>SME digital; now ERGO NEXT — Munich Re acquisition closed July 2025</em></div>
+  </div>
+
+  <h3>Fronting carriers <span class="tag">— Gallagher Re's 25-carrier composite: $33.1B GWP at YE2025</span></h3>
+  <div class="cos">
+    <div class="co"><b>Accelerant</b> <span class="fig">$1B+ · 2025 IPO</span><em>risk exchange model, MGA network</em></div>
+    <div class="co"><b>State National</b> <span class="fig">$1B+</span><em>fronting carrier owned by Markel</em></div>
+    <div class="co"><b>Sutton National</b> <span class="fig">$1B+</span><em>fronting carrier</em></div>
+    <div class="co"><b>MS Transverse</b> <span class="fig">$1B+</span><em>Mitsui Sumitomo-owned</em></div>
+    <div class="co"><b>Clear Blue</b> <span class="fig">#77 all lines</span><em>pure-play front</em></div>
+    <div class="co"><b>Accredited</b><em>Onex-owned</em></div>
+    <div class="co"><b>Fortegra</b><em>Tiptree-owned, programs + warranty</em></div>
+    <div class="co"><b>Obsidian</b><em>Genstar-backed</em></div>
+    <div class="co"><b>Spinnaker</b><em>Hippo-owned</em></div>
+    <div class="co"><b>Trisura US</b><em>Canadian-listed</em></div>
+    <div class="co"><b>Concert</b><em>hybrid front</em></div>
+    <div class="co"><b>Incline P&amp;C</b><em>Texas-based</em></div>
+    <div class="co"><b>Knight Specialty</b><em>Hankey Group</em></div>
+    <div class="co"><b>Core Specialty</b><em>StarStone relaunch, hybrid</em></div>
+    <div class="co"><b>Palomar Launch</b><em>fronting arm of Palomar</em></div>
+    <div class="co"><b>Falls Lake</b><em>James River's program arm</em></div>
+    <div class="co"><b>Skyward Specialty</b> <span class="fig">#5 front · +48%</span><em>specialty insurance and a top-10 fronting business</em></div>
+    <div class="co"><b>AF Group</b> <span class="fig">#8 front</span><em>$1B+ program GWP alongside its WC book</em></div>
+    <div class="co"><b>Benchmark</b><em>ex-Trean; Altaris-owned</em></div>
+    <div class="co"><b>Everspan</b><em>Ambac's program platform</em></div>
+    <div class="co"><b>Southlake Specialty</b><em>commercial-auto-heavy front</em></div>
+    <div class="co"><b>National Summit</b><em>ReAlign Group</em></div>
+    <div class="co"><b>Kestrel Group</b><em>merged with Maiden, Nasdaq-listed 2025</em></div>
+    <div class="co"><b>Emerald Bay</b><em>Bain Capital-backed, launched 2024</em></div>
+    <div class="co"><b>Topa / Ag Workers</b><em>the small end of the composite</em></div>
+    <div class="co"><b>Dellwood</b><em>2024 launch by ex-AIG execs, $250M+ capital (RenRe/Starr-backed)</em></div>
+  </div>
+  <div class="dir"><b>Directories and reports:</b> NAIC Financial Data Repository & AM Best's directory provide carrier records; S&amp;P Capital IQ Pro has the group-level premium tables. Gallagher Re's annual fronting report lists the fronting carriers in its annual study. The top-4 fronts hold 43% of that segment.</div>
+</section>
+
+<!-- ================= REINSURERS ================= -->
+<section id="reinsurers">
+  <div class="sec-head"><h2>Reinsurers &amp; reinsurance brokers</h2><div class="sec-count">capacity behind the carriers and fronts</div></div>
+  <p class="sec-intro">Reinsurance supports fronting arrangements and many MGA programs; available terms affect the business they can write. Top cessions from fronting carriers in 2023 went to Lloyd's, Swiss Re, Berkshire, and Munich Re.</p>
+  <h3>Reinsurers</h3>
+  <div class="cos">
+    <div class="co"><b>Munich Re</b><em>world #1</em></div>
+    <div class="co"><b>Swiss Re</b><em>world #2</em></div>
+    <div class="co"><b>Hannover Re</b><em>global reinsurer</em></div>
+    <div class="co"><b>Berkshire (NICO / Gen Re)</b><em>reinsurance through NICO and Gen Re</em></div>
+    <div class="co"><b>SCOR</b><em>French global</em></div>
+    <div class="co"><b>Everest Group</b><em>Bermuda/US (renamed from Everest Re 2023)</em></div>
+    <div class="co"><b>RenaissanceRe</b><em>property CAT + ILS vehicles (DaVinci)</em></div>
+    <div class="co"><b>Arch Re / Odyssey Re (Fairfax) / PartnerRe (Covéa)</b><em>the next tier; TransRe now sits inside Berkshire via Alleghany</em></div>
+    <div class="co"><b>MS Re (MS Amlin) / MAPFRE Re / Sompo Intl / China Re–Chaucer / AXIS Re</b> <span class="fig">$2.4–6.8B GPW each</span><em>mid-sized reinsurance groups</em></div>
+    <div class="co"><b>Nephila (Markel) / Fermat / Stone Ridge</b><em>ILS &amp; cat-bond capital</em></div>
+  </div>
+  <h3>Reinsurance brokers</h3>
+  <div class="cos">
+    <div class="co you"><b>Guy Carpenter</b><em>Marsh McLennan</em></div>
+    <div class="co"><b>Aon Reinsurance Solutions</b><em>#1 by revenue</em></div>
+    <div class="co"><b>Gallagher Re</b><em>built from Willis Re acquisition</em></div>
+    <div class="co"><b>Howden Re</b><em>expanded through the TigerRisk acquisition</em></div>
+    <div class="co"><b>Lockton Re / Acrisure Re / BMS Re</b><em>challenger tier</em></div>
+  </div>
+</section>
+
+<!-- ================= RETAIL BROKERS ================= -->
+<section id="brokers">
+  <div class="sec-head"><h2>Retail brokers &amp; agencies</h2><div class="sec-count">4 global giants · ~30 national platforms · ~39,000 agencies</div></div>
+  <p class="sec-intro">Retail distribution includes four global brokers, large public and private-equity-backed groups, acquisition-led firms, and approximately 39,000 independent agencies. PE-backed buyers do ~72% of the 750–850 agency acquisitions each year. 2024 US brokerage revenue shown where known.</p>
+  <h3>Global tier</h3>
+  <div class="cos">
+    <div class="co you"><b>Marsh McLennan</b> <span class="fig">$12.7B US · +18%</span><em>includes McGriff, MMA, Victor</em></div>
+    <div class="co"><b>Aon</b> <span class="fig">~$7.5B US</span><em>incl. NFP (acquired 2024)</em></div>
+    <div class="co"><b>Gallagher</b> <span class="fig">~$7.1B US</span><em>acquiring AssuredPartners</em></div>
+    <div class="co"><b>WTW</b><em>the fourth global</em></div>
+  </div>
+  <h3>Public &amp; mega-platform tier</h3>
+  <div class="cos">
+    <div class="co"><b>Brown &amp; Brown</b><em>public; acquiring Accession/Risk Strategies</em></div>
+    <div class="co"><b>Alliant</b> <span class="fig">$5.0B · +30%</span><em>largest private broker; recruits producers from other firms</em></div>
+    <div class="co"><b>Hub International</b> <span class="fig">$3.8B</span><em>Hellman &amp; Friedman/Altas; serial acquirer</em></div>
+    <div class="co"><b>Acrisure</b> <span class="fig">$2.7B restated · −19%</span><em>acquisition-led broker; BI revised its reported 2024 revenue downward</em></div>
+    <div class="co"><b>Lockton</b> <span class="fig">$2.9B · +23%</span><em>largest family-owned broker; has recruited Marsh teams</em></div>
+    <div class="co"><b>USI</b> <span class="fig">$2.8B</span><em>KKR/CDPQ-backed</em></div>
+    <div class="co"><b>AssuredPartners</b> <span class="fig">$2.8B</span><em>now inside Gallagher — $13.45B deal closed Aug 2025</em></div>
+    <div class="co"><b>Alera Group</b> <span class="fig">$1.4B</span><em>PE-backed national, benefits-heavy + P&amp;C</em></div>
+    <div class="co"><b>OneDigital</b> <span class="fig">$1.0B</span><em>benefits-led, building P&amp;C retail</em></div>
+    <div class="co"><b>Baldwin Group</b> <span class="fig">$1.4B</span><em>public (fka BRP)</em></div>
+    <div class="co"><b>EPIC</b><em>Carlyle-backed</em></div>
+    <div class="co"><b>IMA Financial</b><em>employee-owned, growing fast</em></div>
+  </div>
+  <h3>Acquisition-led brokers <span class="tag">— reported growth and acquisitions</span></h3>
+  <div class="cos">
+    <div class="co"><b>BroadStreet Partners</b> <span class="fig">$1.7B · 39 deals H1'25</span><em>most active acquirer in the country</em></div>
+    <div class="co"><b>Risk Strategies</b> <span class="fig">$1.7B</span><em>Accession; → Brown &amp; Brown</em></div>
+    <div class="co"><b>Higginbotham</b> <span class="fig">$905M · +21%</span><em>Texas, employee-owned</em></div>
+    <div class="co"><b>Trucordia</b> <span class="fig">$908M</span><em>fka PCF Insurance</em></div>
+    <div class="co"><b>World Insurance</b><em>top-3 buyer by deal count</em></div>
+    <div class="co"><b>Inszone</b> <span class="fig">+59%</span><em>fastest grower in the Top 100</em></div>
+    <div class="co"><b>Alkeme</b> <span class="fig">+58%</span><em>West-coast roll-up</em></div>
+    <div class="co"><b>Keystone Agency Partners</b> <span class="fig">+42%</span><em>Bain-backed</em></div>
+    <div class="co"><b>Hilb Group / Patriot Growth / Foundation Risk / King</b><em>the rest of the PE cohort</em></div>
+    <div class="co"><b>Leavitt / INSURICA / TrueNorth / Holmes Murphy / Heffernan</b><em>large independents (Woodruff Sawyer → Aon, closed Apr 2025)</em></div>
+    <div class="co"><b>High Street / Cottingham &amp; Butler / CBIZ / IOA / Relation / Cross / CAC Group</b> <span class="fig">$280–560M each</span><em>BI ranks #24–35 </em></div>
+    <div class="co"><b>Newfront</b> <span class="fig">$235M</span><em>VC-backed tech-native retail broker</em></div>
+    <div class="co"><b>Unison (Oswald + RCM&amp;D) / Hylant / Liberty Company / M3 / Lawley / Marshall &amp; Sterling</b><em>the $100–235M independents, BI #38–49</em></div>
+    <div class="co"><b>Goosehead / TWFG</b><em>public personal-lines franchise models</em></div>
+    <div class="co"><b>SIAA / Smart Choice / Keystone Insurers / Renaissance</b><em>networks aggregating thousands of small agencies</em></div>
+  </div>
+  <div class="dir"><b>Directories and reports:</b> Business Insurance Top 100 Brokers (annual, July), Insurance Journal Top 100 P/C Agencies, Big “I” Agency Universe Study (~39,000 agencies), OPTIS Partners &amp; MarshBerry quarterly M&amp;A reports for who's buying whom.</div>
+</section>
+
+<!-- ================= WHOLESALE ================= -->
+<section id="wholesale">
+  <div class="sec-head"><h2>Wholesale brokers</h2><div class="sec-count">access to E&amp;S markets — a quarter of commercial premium</div></div>
+  <p class="sec-intro">Retail agents who can't place a risk in the admitted market go through wholesalers to reach E&amp;S carriers and Lloyd's. The list includes large wholesale groups and smaller specialist firms.</p>
+  <div class="cos">
+    <div class="co"><b>Amwins</b><em>#1 wholesaler, ~$40B placed; owns underwriting arm</em></div>
+    <div class="co"><b>RT Specialty</b> <span class="fig">$30B+ placed</span><em>Ryan Specialty — founded by Pat Ryan after Aon</em></div>
+    <div class="co"><b>CRC Group</b><em>TIH name retired 2025 (McGriff retail went to Marsh McLennan); incl. Starwind, absorbed ARC Excess May 2025</em></div>
+    <div class="co"><b>RPS</b><em>Gallagher's wholesale arm</em></div>
+    <div class="co"><b>Burns &amp; Wilcox</b><em>H.W. Kaufman, family-owned</em></div>
+    <div class="co"><b>Jencap</b><em>national wholesale/MGA platform</em></div>
+    <div class="co"><b>Bridge Specialty</b><em>Brown &amp; Brown's wholesale arm</em></div>
+    <div class="co"><b>One80 Intermediaries</b><em>Risk Strategies' specialty arm</em></div>
+    <div class="co"><b>XPT Specialty / Novatae (World) / USG / Brown &amp; Riding</b><em>independent tier (ARC → CRC 2025; Socius → RT Specialty 2023)</em></div>
+    <div class="co"><b>Maximum Independent / XS Brokers / Arlington/Roe</b> <span class="fig">$290–410M placed</span><em>BI's wholesaler census #8–10 </em></div>
+  </div>
+  <div class="dir"><b>Directories and reports:</b> WSIA member directory (wholesale &amp; surplus lines association) — association members. Insurance Journal publishes an annual Top 50 wholesalers ranking.</div>
+</section>
+
+<!-- ================= MGAs ================= -->
+<section id="mgas">
+  <div class="sec-head"><h2>MGAs, MGUs &amp; program administrators</h2><div class="sec-count">1,100+ entities · $114B premium · +16% YoY</div></div>
+  <p class="sec-intro">MGAs underwrite under authority delegated by carriers or fronting companies. Conning counts 850+ from statutory filings plus ~250 below the reporting threshold; globally there are 2,500+ MGA enterprises. 60% of US MGA premium comes from shops under $500M. Independent MGAs (46.6% of premium) write more premium than carrier-owned MGAs. The largest MGA groups by global revenue are owned by brokers — Brown &amp; Brown ($1B+ MGA revenue, world #1), TIH/CRC, Amwins, Ryan Specialty, and Gallagher are the top five. Further AI sells software to companies in this segment.</p>
+  <h3>Scaled MGA platforms</h3>
+  <div class="cos">
+    <div class="co you"><b>Victor (incl. ICAT)</b><em>Marsh McLennan-owned MGU</em></div>
+    <div class="co"><b>Starr Specialty Agency</b> <span class="fig">$2.1B · #1</span><em>largest non-exclusive US MGA per AM Best</em></div>
+    <div class="co"><b>Private Client Select</b> <span class="fig">$1.3B</span><em>HNW MGU spun out of AIG, Stone Point-backed</em></div>
+    <div class="co"><b>Velocity Risk</b> <span class="fig">$550M</span><em>CAT-property MGA, Oaktree-owned</em></div>
+    <div class="co"><b>Tradesman Program Managers</b><em>NY construction casualty — top-10 fronted MGA</em></div>
+    <div class="co"><b>Midwestern Insurance Alliance</b> <span class="fig">$670M</span><em>independent WC program administrator</em></div>
+    <div class="co"><b>Millennial Specialty (Baldwin)</b><em>Baldwin Group is a top-10 global MGA operation via MSI</em></div>
+    <div class="co"><b>Bamboo / Swyfft / Openly / Hippo</b><em>homeowners insurtech MGAs — top-15 of Aon's fronted-MGA ranking</em></div>
+    <div class="co"><b>Amwins Underwriting</b><em>programs arm of the #1 wholesaler</em></div>
+    <div class="co"><b>Ryan Specialty Underwriting Managers</b><em>28+ MGUs incl. recent acquisitions</em></div>
+    <div class="co"><b>Dual North America</b><em>Howden's MGA, top-5 globally</em></div>
+    <div class="co"><b>CFC</b><em>London tech-led MGA, big US cyber/SME book</em></div>
+    <div class="co"><b>Arrowhead / Orchid / AmRisc</b><em>Brown &amp; Brown National Programs — B&amp;B is the world's #1 MGA group by revenue ($1B+)</em></div>
+    <div class="co"><b>SageSure</b><em>coastal HO, tech-forward</em></div>
+    <div class="co"><b>K2 Insurance Services</b><em>multi-program holdco</em></div>
+    <div class="co"><b>Novacore</b> <span class="fig">$1.5B+ premium</span><em>fka NSM Insurance US; New Mountain-backed, 20+ programs</em></div>
+    <div class="co"><b>Amynta Group</b><em>30+ MGA/warranty businesses, ex-AmTrust units</em></div>
+    <div class="co"><b>Specialty Program Group</b><em>Hub International's programs/wholesale arm</em></div>
+    <div class="co"><b>Bishop Street Underwriters</b><em>RedBird-backed MGA aggregator</em></div>
+    <div class="co"><b>Kentro / Nexus Underwriting</b><em>now part of Brown &amp; Brown</em></div>
+    <div class="co"><b>Distinguished Programs</b><em>real estate/hospitality niches</em></div>
+    <div class="co"><b>Applied Underwriters</b><em>WC-led insurer and program business</em></div>
+    <div class="co"><b>Starwind Specialty</b><em>CRC Group programs</em></div>
+    <div class="co"><b>Glatfelter</b><em>AIG-owned, public entity/emergency services</em></div>
+    <div class="co"><b>Euclid</b><em>fast-growing specialty program group</em></div>
+  </div>
+  <h3>Insurtech MGAs <span class="tag">— tech-first underwriters on fronted paper</span></h3>
+  <div class="cos">
+    <div class="co"><b>Coalition</b><em>largest cyber MGA, active-security model</em></div>
+    <div class="co"><b>At-Bay</b><em>cyber MGA</em></div>
+    <div class="co"><b>Cowbell</b><em>SME cyber</em></div>
+    <div class="co"><b>Resilience</b><em>cyber for mid-market</em></div>
+    <div class="co"><b>Corvus</b><em>cyber; acquired by Travelers 2024</em></div>
+    <div class="co"><b>Vouch</b><em>startups/tech E&amp;O</em></div>
+    <div class="co"><b>Counterpart</b><em>small-business management liability</em></div>
+    <div class="co"><b>Shepherd</b><em>construction casualty</em></div>
+    <div class="co"><b>Kettle</b><em>wildfire reinsurance/ML</em></div>
+    <div class="co"><b>Boost / Sure</b><em>embedded-insurance infrastructure MGAs</em></div>
+  </div>
+  <div class="dir"><b>Directories and reports:</b> Conning's annual MGA census (based on statutory filings and estimates), Target Markets Program Administrators Association (TMPAA) member directory (~500 program shops), Insurance Journal's MGA directory, and MGAA for the UK equivalents. Also: Accelerant fronts for 200+ member MGAs; its member list is another source.</div>
+</section>
+
+<!-- ================= ALT RISK & NICHES ================= -->
+<section id="altrisk">
+  <div class="sec-head"><h2>Alternative risk &amp; specialist markets</h2><div class="sec-count">captives, crop, mortgage, title, and other specialist lines</div></div>
+  <p class="sec-intro">Captives, crop insurance, mortgage and financial coverage, title insurance, and other specialist markets have distinct providers and distribution arrangements. Some are included in the P&amp;C premium total; adjacent markets are identified separately below.</p>
+
+  <h3>Captives &amp; alternative risk transfer <span class="tag">— captive managers and alternative structures</span></h3>
+  <div class="cos">
+    <div class="co you"><b>Marsh Captive Solutions</b><em>world's largest captive manager</em></div>
+    <div class="co"><b>Aon / Artex (Gallagher) / SRS / WTW</b><em>with Marsh, ~90% of top-10 captive count</em></div>
+    <div class="co"><b>Brown &amp; Brown</b><em>1,000+ captive/ART structures after absorbing Risk Strategies' captives unit</em></div>
+    <div class="co"><b>Davies / USA Risk / Innovative Captive Strategies (Holmes Murphy) / Hylant</b><em>ranks 6–10 and challengers</em></div>
+    <div class="co"><b>Captive Resources</b><em>largest group-captive consultant (not a manager) — billions in member premium</em></div>
+    <div class="co"><b>~230 risk retention groups</b><em>member-owned liability carriers (healthcare, transport)</em></div>
+    <div class="co"><b>Vermont / Cayman / Bermuda domiciles</b><em>~7,000 captives globally; VT alone licenses 600+</em></div>
+    <div class="co"><b>Public entity pools / JPAs</b><em>self-insured municipal risk, state by state</em></div>
+  </div>
+
+  <h3>Crop insurance <span class="tag">— 12 USDA-approved providers listed</span></h3>
+  <div class="cos">
+    <div class="co"><b>RCIS</b> <span class="fig">~$2.5–3B · top 2</span><em>Zurich's crop unit </em></div>
+    <div class="co"><b>Chubb (Rain and Hail)</b><em>the other top-2 AIP</em></div>
+    <div class="co"><b>AgriSompo</b> <span class="fig">~18% share</span><em>absorbed ARMtech + Diversified</em></div>
+    <div class="co"><b>QBE (NAU Country) / Great American (AFG) / ProAg (Tokio Marine) / Hudson (Fairfax) / Farmers Mutual Hail</b><em>the mid-tier AIPs</em></div>
+    <div class="co"><b>COUNTRY / AFBIS / Palomar Crop / Precision Risk (Clear Blue-fronted)</b><em>the small end </em></div>
+  </div>
+
+  <h3>Mortgage, financial &amp; title <span class="tag">— mortgage and financial coverage, plus title insurance</span></h3>
+  <div class="cos">
+    <div class="co"><b>MGIC / Radian / Essent / Enact / Arch MI</b><em>private mortgage insurers (Radian = #125 in the NAIC table)</em></div>
+    <div class="co"><b>Assured Guaranty</b><em>financial guaranty survivor</em></div>
+    <div class="co"><b>FNF / First American / Old Republic / Stewart</b><em>title insurance big four (adjacent ~$15B market)</em></div>
+  </div>
+
+  <h3>Specialty personal &amp; embedded niches</h3>
+  <div class="cos">
+    <div class="co"><b>Assurant</b><em>lender-placed, mobile/device, renters — top-30 carrier</em></div>
+    <div class="co"><b>Hagerty</b><em>collector-car specialist, $1B+ premium, public</em></div>
+    <div class="co"><b>Neptune Flood</b><em>largest private flood insurtech (vs. NFIP)</em></div>
+    <div class="co"><b>Wright Flood</b><em>Brown &amp; Brown's NFIP write-your-own</em></div>
+    <div class="co"><b>Trupanion / Nationwide pet / Embrace</b><em>pet insurance, double-digit growth</em></div>
+    <div class="co"><b>Allianz Partners / AIG Travel Guard / Seven Corners</b><em>travel insurance</em></div>
+    <div class="co"><b>Amynta / Fortegra / Assurant</b><em>warranty &amp; service contracts — insurance-adjacent premium</em></div>
+  </div>
+</section>
+
+<!-- ================= CLAIMS ================= -->
+<section id="claims">
+  <div class="sec-head"><h2>Claims, TPAs &amp; adjusting</h2><div class="sec-count">North America = largest TPA region globally</div></div>
+  <p class="sec-intro">Self-insureds, carriers, MGAs, and programs all outsource claims handling. The list includes independent providers and insurer-owned businesses.</p>
+  <div class="cos">
+    <div class="co"><b>Sedgwick</b><em>~30k employees, Carlyle-backed</em></div>
+    <div class="co you"><b>Gallagher Bassett</b><em>Gallagher's TPA</em></div>
+    <div class="co"><b>Crawford &amp; Co / Broadspire</b><em>public; adjusting + TPA</em></div>
+    <div class="co"><b>CorVel</b><em>public, WC managed care</em></div>
+    <div class="co"><b>ESIS</b><em>Chubb's TPA</em></div>
+    <div class="co"><b>Helmsman</b><em>Liberty Mutual's TPA</em></div>
+    <div class="co"><b>Davies Group</b><em>UK-based consolidator, acquisitive in US</em></div>
+    <div class="co"><b>Charles Taylor</b><em>specialty/marine heritage</em></div>
+    <div class="co"><b>PMA Management (Old Republic)</b><em>major WC/casualty TPA for self-insureds &amp; captives</em></div>
+    <div class="co"><b>CCMSI / TRISTAR / Athens / NARS</b><em>independent TPA tier</em></div>
+    <div class="co"><b>Engle Martin / Eberl / Alacrity / Pilot</b><em>field &amp; CAT adjusting firms</em></div>
+    <div class="co"><b>Paradigm / Enlyte (Mitchell·Genex)</b><em>WC medical management</em></div>
+  </div>
+</section>
+
+<!-- ================= PERIPHERY ================= -->
+<section id="periphery">
+  <div class="sec-head"><h2>Finance, claims services &amp; other participants</h2><div class="sec-count">financing, recovery, capital, and support services</div></div>
+  <p class="sec-intro">These firms finance premiums, acquire run-off liabilities, provide claims-related services, manage capital, or support insurance operations. They participate beyond the sale and underwriting of a policy.</p>
+  <div class="cos">
+    <div class="co"><b>Premium finance</b> <span class="fig">~$50B+/yr financed</span><em>IPFS ($17B+ alone), FIRST (Wintrust), AFCO, Agile, US Premium Finance</em></div>
+    <div class="co"><b>Run-off / legacy acquirers</b> <span class="fig">~$1T global reserves</span><em>Enstar (Sixth Street), RiverStone, Compre, R&amp;Q Legacy, Marco, Premia</em></div>
+    <div class="co"><b>Salvage &amp; total-loss auctions</b> <span class="fig">Copart ~$4.2B rev</span><em>Copart, IAA (RB Global), LKQ parts network</em></div>
+    <div class="co"><b>Restoration networks</b> <span class="fig">~$80B industry</span><em>BELFOR, SERVPRO, ServiceMaster, First Onsite, Contractor Connection (Crawford)</em></div>
+    <div class="co"><b>Medical cost containment</b><em>Enlyte (Mitchell·Genex·Coventry), One Call, MedRisk, Paradigm, ExamWorks, Rising</em></div>
+    <div class="co"><b>Litigation funding</b> <span class="fig">~$15B+ AUM</span><em>Burford, Omni Bridgeway — litigation finance</em></div>
+    <div class="co"><b>Insurance defense counsel</b><em>Wilson Elser, Lewis Brisbois, Kennedys, Goldberg Segalla — insurance defense panels</em></div>
+    <div class="co"><b>Subrogation &amp; recovery</b> <span class="fig">~$10B+/yr arbitrated</span><em>Arbitration Forums (industry utility), Sedgwick subro, Praxis</em></div>
+    <div class="co"><b>Public adjusters</b><em>policyholder-side: Adjusters International, Greenspan, Alex N. Sill</em></div>
+    <div class="co"><b>Major-loss adjusting &amp; forensics</b><em>McLarens, Charles Taylor, Crawford GTS; forensics: Envista, Rimkus, EFI Global, S-E-A</em></div>
+    <div class="co"><b>Premium audit</b><em>Afirm, EXL/Overland, Davies — WC and GL premium audits</em></div>
+    <div class="co"><b>PEO workers' comp channel</b> <span class="fig">~4.5M worksite employees</span><em>Insperity, ADP TotalSource, TriNet, Justworks</em></div>
+    <div class="co"><b>Embedded orchestrators</b> <span class="fig">$70B+ GWP by 2030 proj.</span><em>Cover Genius, bolttech, Sure, Trellis, Matic</em></div>
+    <div class="co"><b>Reciprocal exchange builders</b><em>SageSure (SURE, Elevate, Auros), Kin's network, TRUE — property insurance reciprocal exchanges</em></div>
+    <div class="co"><b>MGA incubators</b><em>Mission Underwriters (27+ launches, Accelerant-backed), Bishop Street</em></div>
+    <div class="co"><b>Guaranty funds</b><em>NCIGF + 50 state P&amp;C guaranty associations — the insolvency backstop</em></div>
+    <div class="co"><b>Insurance BPO &amp; staffing</b><em>ReSource Pro (~10k staff), Patra, WAHVE, Jacobson Group</em></div>
+    <div class="co"><b>Structured settlements</b> <span class="fig">~$6B+/yr</span><em>Ringler, Arcadia, Sage — structured payments for casualty settlements</em></div>
+    <div class="co"><b>Stamping offices &amp; Lloyd's US</b><em>SLTX, SLA of California, FSLSO + Lloyd's America coverholder infrastructure</em></div>
+    <div class="co"><b>General-account asset managers</b> <span class="fig">$500B+ third-party</span><em>Conning, NEAM (Berkshire), BlackRock FIG, DWS</em></div>
+  </div>
+</section>
+
+<!-- ================= TECH ================= -->
+<section id="tech">
+  <div class="sec-head"><h2>Software, data &amp; analytics</h2><div class="sec-count">~$134B US/Canada insurance IT spend by 2029</div></div>
+  <p class="sec-intro">The companies below supply policy and agency systems, risk data, pricing tools, claims software, and payments services. Guidewire and Duck Creek are prominent in carrier systems; Applied and Vertafore supply agency management software; Verisk and LexisNexis provide insurance data.</p>
+  <h3>Core systems &amp; agency software</h3>
+  <div class="cos">
+    <div class="co"><b>Guidewire</b><em>carrier core-systems leader</em></div>
+    <div class="co"><b>Duck Creek</b><em>#2 core, Vista-owned</em></div>
+    <div class="co"><b>Sapiens / Majesco / Insurity / Origami Risk</b><em>the challenger core tier</em></div>
+    <div class="co"><b>Applied Systems + EZLynx</b><em>agency management software</em></div>
+    <div class="co"><b>Vertafore</b><em>agency management software (Roper)</em></div>
+    <div class="co"><b>Zywave</b><em>broker content/analytics</em></div>
+    <div class="co"><b>Salesforce FSC</b><em>insurance CRM</em></div>
+  </div>
+  <h3>Data, risk &amp; claims tech</h3>
+  <div class="cos">
+    <div class="co"><b>Verisk</b><em>ISO forms, Xactware — the industry utility</em></div>
+    <div class="co"><b>LexisNexis Risk Solutions</b><em>personal-lines risk data</em></div>
+    <div class="co"><b>Moody's Insurance (RMS)</b><em>CAT models</em></div>
+    <div class="co"><b>Cotality</b><em>fka CoreLogic, property data</em></div>
+    <div class="co"><b>CCC Intelligent Solutions</b><em>auto claims network</em></div>
+    <div class="co"><b>ZestyAI / Cape Analytics / Nearmap-Betterview / Arturo</b><em>property intelligence from aerial imagery</em></div>
+    <div class="co"><b>Akur8 / hyperexponential / Earnix</b><em>pricing &amp; rating platforms</em></div>
+    <div class="co"><b>Snapsheet / Five Sigma</b><em>claims platforms</em></div>
+    <div class="co"><b>One Inc / Ascend</b><em>insurance payments</em></div>
+    <div class="co"><b>Herald / Semsee / Tarmika (Applied)</b><em>commercial quoting APIs</em></div>
+  </div>
+</section>
+
+<!-- ================= AI ================= -->
+<section id="ai">
+  <div class="sec-head"><h2>AI software and service providers</h2><div class="sec-count">insurance AI spend growing 25%+ per year</div></div>
+  <p class="sec-intro">These companies offer AI tools and services to MGAs (61% already use AI, only 36% have a formal budget), wholesalers, retail brokers, and carrier underwriting desks. 76% of US insurers have generative AI in production somewhere.</p>
+  <div class="cos">
+    <div class="co"><b>Further AI</b><em>AI tools for broker and MGA operations — clients incl. Accelerant &amp; Novacore</em></div>
+    <div class="co"><b>Broker-operations AI providers ('25–26 funding)</b><em>Fulcrum ($25M), Outmarket AI ($17M), WithCoverage ($42M), Pace ($46M B), Notch ($30M), Zywave Apex</em></div>
+    <div class="co"><b>Novella</b> <span class="fig">$21M</span><em>AI-native wholesale brokerage for E&amp;S — carrier-appetite matching</em></div>
+    <div class="co"><b>Artificial Labs / mea / Optalitix / Taktile</b><em>UK cohort: A2A broker-underwriter agents (AgLabs), input mgmt, spreadsheet→API pricing, decisioning</em></div>
+    <div class="co"><b>Claimence</b><em>AI for D&amp;O claims review &amp; coverage determination</em></div>
+    <div class="co"><b>Federato</b><em>AI underwriting workbench ("RiskOps")</em></div>
+    <div class="co"><b>Sixfold</b><em>generative AI risk analysis for underwriters</em></div>
+    <div class="co"><b>Kalepa</b><em>underwriting copilot</em></div>
+    <div class="co"><b>Cytora</b><em>commercial risk digitization</em></div>
+    <div class="co"><b>Gradient AI</b><em>underwriting/claims ML, group benefits + P&amp;C</em></div>
+    <div class="co"><b>Shift Technology</b><em>fraud &amp; claims decisioning</em></div>
+    <div class="co"><b>Tractable</b><em>computer-vision damage estimation</em></div>
+    <div class="co"><b>EvolutionIQ</b><em>claims guidance; acquired by CCC</em></div>
+    <div class="co"><b>CLARA Analytics</b><em>casualty claims AI</em></div>
+    <div class="co"><b>Roots Automation</b><em>“digital coworkers” for insurance ops</em></div>
+    <div class="co"><b>Indico Data</b><em>unstructured submission intake</em></div>
+    <div class="co"><b>Convr</b><em>commercial submission clearance</em></div>
+    <div class="co"><b>Planck</b><em>SME risk data; acquired by Applied</em></div>
+    <div class="co"><b>Liberate</b><em>voice/agentic automation for insurance</em></div>
+    <div class="co"><b>Charlee.ai / Owl.co / Verikai / Carpe Data</b><em>claims &amp; risk-data specialists</em></div>
+  </div>
+  <div class="callout"><b>Potential customers:</b> approximately 1,100 MGAs, 200 E&amp;S carriers, hundreds of regional mutuals, and 39,000 agencies. These counts describe overlapping markets, not a verified customer list. Carriers ranked #30–300 write roughly $50M–$5B each and also purchase strategy, actuarial, and technology services from firms such as Oliver Wyman.</div>
+</section>
+
+<!-- ================= ADVISORY ================= -->
+<section id="advisory">
+  <div class="sec-head"><h2>Advisors, ratings &amp; industry bodies</h2><div class="sec-count">consulting, ratings, research, and associations</div></div>
+  <h3>Consultants &amp; actuarial</h3>
+  <div class="cos">
+    <div class="co you"><b>Oliver Wyman</b><em>Marsh McLennan sibling — IAM/PCAP, actuarial</em></div>
+    <div class="co"><b>McKinsey / BCG / Bain</b><em>strategy tier</em></div>
+    <div class="co"><b>Deloitte / EY / PwC / KPMG</b><em>audit-anchored insurance practices</em></div>
+    <div class="co"><b>Milliman</b><em>largest independent actuarial firm</em></div>
+    <div class="co"><b>WTW ICT</b><em>insurance consulting &amp; technology</em></div>
+    <div class="co"><b>Accenture / Cognizant / EXL / Genpact / WNS</b><em>ops, BPO &amp; tech transformation</em></div>
+    <div class="co"><b>Pinnacle / Perr&amp;Knight</b><em>boutique actuarial</em></div>
+  </div>
+  <h3>M&amp;A advisory &amp; research</h3>
+  <div class="cos">
+    <div class="co"><b>MarshBerry / Reagan Consulting / OPTIS Partners</b><em>agency M&amp;A specialists — acquisition research and advice</em></div>
+    <div class="co"><b>Piper Sandler / Waller Helms / Insurance Advisory Partners</b><em>insurance investment banking</em></div>
+    <div class="co"><b>Conning / Dowling &amp; Partners / ALIRT</b><em>industry research houses</em></div>
+  </div>
+  <h3>Ratings &amp; associations</h3>
+  <div class="cos">
+    <div class="co"><b>AM Best</b><em>the insurance rating agency; its directory ≈ the carrier census</em></div>
+    <div class="co"><b>S&amp;P / Moody's / Fitch / KBRA / Demotech</b><em>Demotech rates the Florida specialists</em></div>
+    <div class="co"><b>NAIC</b><em>regulator collective; statutory data source of record</em></div>
+    <div class="co"><b>APCIA / NAMIC / Big “I” / CIAB / WSIA / TMPAA / RIMS / PLUS</b><em>trade bodies — each membership roll is a segment directory</em></div>
+  </div>
+</section>
+
+<!-- ================= DIRECTORIES ================= -->
+<section id="directories">
+  <div class="sec-head"><h2>Directories and rankings by segment</h2><div class="sec-count">sources for expanding and checking the company lists</div></div>
+  <p class="sec-intro">Sources differ in scope: some list association members, some rank larger firms, and others use regulatory filings. Check each source’s inclusion rules and date before treating a list as complete.</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Segment</th><th>Source</th><th>Coverage</th></tr>
+    <tr><td><b>Carriers</b> (all ~2,600)</td><td>NAIC financial statements; AM Best directory; S&amp;P Capital IQ Pro</td><td class="mono">statutory filings</td></tr>
+    <tr><td><b>Carrier rankings</b></td><td>NAIC Market Share Report (annual, free PDF, top 125 by line)</td><td class="mono">top 125 groups</td></tr>
+    <tr><td><b>MGAs</b></td><td>Conning annual MGA census; TMPAA member directory; Insurance Journal MGA directory</td><td class="mono">850+ / ~500 / self-listed</td></tr>
+    <tr><td><b>Fronting carriers</b></td><td>Gallagher Re annual fronting-market report</td><td class="mono">~25 in the report</td></tr>
+    <tr><td><b>E&amp;S carriers</b></td><td>AM Best annual Surplus Lines Report (with WSIA); 15 state stamping-office reports</td><td class="mono">202 domestic + alien</td></tr>
+    <tr><td><b>Retail brokers</b></td><td>Business Insurance Top 100; Insurance Journal Top 100 agencies</td><td class="mono">top 100 by revenue</td></tr>
+    <tr><td><b>Agencies</b> (all ~39,000)</td><td>Big “I” Agency Universe Study; state DOI producer license databases</td><td class="mono">census-level</td></tr>
+    <tr><td><b>Wholesalers</b></td><td>WSIA member directory</td><td class="mono">WSIA members</td></tr>
+    <tr><td><b>M&amp;A / who owns whom</b></td><td>OPTIS Partners &amp; MarshBerry quarterly deal reports</td><td class="mono">reported deals</td></tr>
+    <tr><td><b>Insurtechs</b></td><td>Gallagher Re Global InsurTech Report (quarterly); Houlihan Lokey InsurTech update</td><td class="mono">funded companies</td></tr>
+  </table></div>
+</section>
+
+<footer>
+  <b>Sources and coverage (v4).</b> Market-size and concentration figures were compared with NAIC and S&amp;P Global data. Segment figures use reports from Conning, AM Best, Gallagher Re, Aon, and Business Insurance. Company lists were compared with the relevant rankings and directories in July 2026. Reported coverage includes the NAIC top 23 and approximately 90%+ of top-100 groups by premium; brokers through roughly rank 50 of the BI Top 100; 10 wholesalers in BI’s list; 12 USDA-approved crop providers; and the 25 carriers in Gallagher Re’s 2026 fronting composite ($33.1B GWP), plus newer entrants. Ownership updates recorded here include AssuredPartners→Gallagher (closed Aug 2025), Woodruff Sawyer→Aon, NEXT→ERGO NEXT (Munich Re), Argo→Brookfield Wealth Solutions, TransRe→Berkshire, ARC→CRC, Socius→RT, Orchid→Brown &amp; Brown, and ICAT→Victor. Figures refer to different reporting periods and may change. Name changes include NSM→Novacore, PCF→Trucordia, BRP→Baldwin, and Trean→Benchmark; check the company history before counting a renamed firm as a new entrant.
+</footer>
+</div>
+<script>
+document.addEventListener('click', e => {
+  const m = e.target.closest('.dmark');
+  document.querySelectorAll('.dmark.open').forEach(el => { if (el !== m) el.classList.remove('open'); });
+  if (m){ m.classList.toggle('open'); e.stopPropagation(); }
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.querySelectorAll('.dmark.open').forEach(el => el.classList.remove('open'));
+});
+</script>

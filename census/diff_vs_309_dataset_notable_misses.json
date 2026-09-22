@@ -1,0 +1,48 @@
+{
+  "method": "Read all 309 'name' fields from /Users/shravan/Desktop/appetite-probe/insurtech-dataset.json, lowercased, and diffed against every company name recovered across all new sources this pass (InsurTech NY events/competition/2026 sponsors/2023 map, InsurTech America-Hartford Innovation Challenge, Global Insurance Accelerator, gener8tor/OnRamp, Plug and Play). Did not edit the dataset file itself, per instructions.",
+  "headline_numbers": {
+    "total_unique_candidate_names_checked": 204,
+    "already_in_309_dataset": 22,
+    "not_in_309_dataset_total": 182,
+    "not_in_309_dataset_by_source": {
+      "insurtechny_competition_2020_2026": 65,
+      "insurtechny_2026_sponsors": 35,
+      "insurtechny_2023_static_map": 35,
+      "insurtechamerica_hartford_innovation_challenge": 17,
+      "global_insurance_accelerator": 12,
+      "gener8tor_onramp": 16,
+      "plug_and_play": 2
+    },
+    "caveat": "The 182 'not in dataset' figure is NOT the same as '182 insurance-core misses'. A large fraction are: (a) already-excluded categories per the project's existing exclusion logic (HR/PEO like Justworks/Namely, health-tech/benefits like Nayya/Healthee/Youth Health Tech, pure fintech/wealth like Rocket Dollar/Sora Finance), (b) conference sponsors that are law firms, payroll/BPO vendors, or non-insurance tech vendors (Troutman is a law firm; Truist is a bank; Clark Hill is a law firm), (c) very early-stage/low-signal competition entrants with almost no public footprint beyond one pitch-deck mention, or (d) companies whose product category is ambiguous from the source alone (e.g. 'Boost', 'Leo', 'Vaartani' - single-word names with no further description recovered)."
+  },
+  "top_20_notable_insurance_core_misses": [
+    {"name": "Kayna", "source": "InsurTech NY 2022 winner", "what": "Embedded-insurance API infrastructure - connects SaaS platforms to carriers for point-of-sale distribution. Real, funded, well-known in embedded-insurance infra space."},
+    {"name": "Gigaforce", "source": "InsurTech NY 2021 finalist", "what": "AI-driven claims subrogation automation platform - direct insurance-workflow-AI player, closest analog in this list to FurtherAI's claims/subrogation angle."},
+    {"name": "MotionsCloud", "source": "GIA 2016-17 cohort + InsurTech Hartford 2021 finalist (cross-validated across two independent censuses, 5 years apart)", "what": "AI photo-based auto/property damage assessment for claims adjusters."},
+    {"name": "Hosta AI / Hosta Labs", "source": "InsurTech Hartford 2020 winner + InsurTech NY 2021 finalist", "what": "AI-generated floor plans and property data capture from photos, used by underwriters (Cambridge, MA)."},
+    {"name": "Bees360", "source": "InsurTech Hartford 2022 winner ($10K from The Hartford)", "what": "Drone/aerial property inspection data capture for underwriting."},
+    {"name": "PainWorth", "source": "InsurTech Hartford 2021 winner (Travelers category)", "what": "AI personal-injury claims valuation tool for adjusters and plaintiff attorneys."},
+    {"name": "Riskfuel", "source": "gener8tor/OnRamp 2021 cohort", "what": "Deep-learning derivative/risk valuation models used by insurers and banks to replace slow Monte Carlo pricing."},
+    {"name": "Riskwolf", "source": "InsurTech NY 2021 finalist", "what": "Parametric climate/weather risk data infrastructure for insurers and reinsurers structuring parametric triggers."},
+    {"name": "Waterlily", "source": "gener8tor 2024 cohort", "what": "AI-driven long-term-care insurance planning platform for agents and consumers - funded, notable in LTC insurtech niche."},
+    {"name": "Otonomi", "source": "InsurTech NY 2022 finalist + InsurTech Hartford 2021 Judges' Favorite winner (cross-validated)", "what": "Parametric trade-credit/cargo insurance infrastructure."},
+    {"name": "Redkik", "source": "InsurTech NY 2022 finalist", "what": "Parametric supply-chain/cargo insurance platform."},
+    {"name": "Loadsure", "source": "InsurTech NY 2020 VC Investor winner", "what": "API-based freight/cargo insurance-as-a-service."},
+    {"name": "Vellum Insurance", "source": "InsurTech NY 2023 finalist", "what": "Life-insurance new-business/data infrastructure platform for carriers - accelerates underwriting data flow."},
+    {"name": "Finaeo", "source": "InsurTech NY 2020 finalist + gener8tor 2020 cohort (cross-validated)", "what": "Life-insurance distribution/CRM automation platform for agents and carriers (Canada)."},
+    {"name": "Digisure", "source": "InsurTech NY 2020 finalist", "what": "Embedded protection-plan/warranty infrastructure."},
+    {"name": "Ahoy! Insurance", "source": "InsurTech Hartford 2022 winner ($10K from Launc[H]artford/EMC)", "what": "Digital marine/boat insurance MGA."},
+    {"name": "ClaimPartner", "source": "InsurTech NY 2024 finalist (headline name)", "what": "Claims-management software for public adjusters and policyholders."},
+    {"name": "Trusty.care", "source": "gener8tor 2020 cohort", "what": "Medicare plan-comparison API embedded into brokers'/advisors' workflows."},
+    {"name": "AppliedAI (product: 'Opus')", "source": "Plug and Play Insurtech Batch 20, Silicon Valley 2026", "what": "AI that automates insurance operations end-to-end (underwriting/claims routing) to cut loss ratios - the single most direct FurtherAI-style competitor found in this entire pass."},
+    {"name": "Zopper", "source": "Plug and Play Insurtech Batch 5, Singapore/APAC", "what": "Large-scale embedded warranty/insurance distribution platform (India), partnered with 6+ insurers - notable for scale, not just novelty."}
+  ],
+  "adjacent_out_of_scope_examples_not_counted_as_gaps": [
+    "Justworks, Namely (HR/PEO - already excluded per existing project logic)",
+    "Nayya, Healthee, Youth Health Tech, Patientory (health-tech/benefits navigation)",
+    "Rocket Dollar, Sora Finance, One Eleven Financial Wellness, ForwardLane (wealth-management/fintech, not insurance-core)",
+    "Matterport (public 3D-spatial-data company - broader proptech, not insurance-core, already very well known so not really a 'miss' either way)",
+    "Troutman, Clark Hill (law firms sponsoring the conference, not startups)",
+    "Truist (bank sponsor, not a startup)"
+  ]
+}

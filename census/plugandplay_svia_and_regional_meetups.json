@@ -1,0 +1,27 @@
+{
+  "plug_and_play_insurtech": {
+    "location": "Sunnyvale, CA (part of Plug and Play Tech Center)",
+    "status": "real, active, high-volume - CB Insights ranked it the most active startup accelerator globally 2020-2022 by deal count",
+    "cohort_structure": "Multiple batches per year across many verticals (insurtech is one of 15 'industry programs'); batch sizes cited in press range from 10 to 35+ insurtech companies per batch, several batches/year, plus regional programs (Singapore/APAC, Europe)",
+    "coverage": "MOSTLY GATED for company-level rosters. Press releases about each new batch almost never name the insurtech-specific companies - they cite aggregate batch size (e.g. '150+ startups across 15 programs') and highlight one or two flagship names.",
+    "companies_recovered": [
+      {"name": "AppliedAI", "batch": "Insurtech Batch 20, Silicon Valley 2026", "what": "AI product 'Opus' for insurance operations - automates manual processes and routes decisions to reduce loss ratios. Direct insurance-workflow-AI competitor to FurtherAI."},
+      {"name": "Zopper", "batch": "Insurtech Batch 5, Singapore/APAC", "what": "Full-stack embedded insurtech - extended warranty and damage protection plans for home appliances/smartphones, partnered with 6+ insurers. India-based, large/notable."}
+    ],
+    "honesty_note": "The full batch rosters live behind plugandplay.com's own site (batch pages), which returned bot-detection / JS-shell content to WebFetch. Could not pull complete batch lists in this pass - would need a browser-rendering tool, not plain fetch."
+  },
+  "svia_silicon_valley_insurance_accelerator": {
+    "location": "San Mateo, CA",
+    "founded": 2016,
+    "status": "CLOSED main operations per one search result ('SVIA has closed its main operations, though the search results also show their website is still active') - treat as historical/inactive, not a current source of new cohorts.",
+    "claimed_scale": "60+ webinars, 400+ thought leaders/innovators/startups showcased across all events over its run",
+    "coverage": "NONE - portfolio/companies page (sviaccelerator.com/portfolio/) returned only event-logistics content (hotel info, nav menus), no company names. No cohort roster recovered.",
+    "recommendation": "If this org matters to appetite-probe later, its historical startup showcase would need Wayback recovery of sviaccelerator.com's now-defunct program pages, not the live site."
+  },
+  "regional_meetup_only_orgs_no_directory_found": [
+    {"name": "InsurTech Denver", "url": "insurtechdenver.org", "status": "real, active - events/newsletter/video content", "directory": "none found - not affiliated with the InsurTech America (Stacey Brown) network"},
+    {"name": "InsurTech ATX (Austin)", "url": "insurtechatx.com", "status": "real, active - grew from a 2016 meetup to 600-700 members, ~10 events/year", "directory": "none found - community/events only, though press (TheInsurer) notes 'MGA momentum, cyber crossover' as a local theme"},
+    {"name": "InsurTech Ohio", "url": "insurtechoh.io", "status": "real, active - quarterly mixers in Columbus/Cleveland/Cincinnati, 40-60 people each", "directory": "none found"},
+    {"name": "Scout InsurTech", "url": "scoutinsurtech.com", "status": "real, active - Columbus, OH based; CEO Chris Luiz; runs an annual conference (May 2026) and a startup-scouting program that names 'the top 20 emerging startups' per season (site refers to 'Scout Insurtech S24' on F6S, implying a seasonal/numbered cohort akin to a batch accelerator)", "directory": "COULD NOT ACCESS - the F6S cohort page (f6s.com/scout-insurtech-s24) returned a bot-detection/cookie wall, not company data. This IS a genuine multi-year census mechanism (season-numbered, S24 implies dozens of prior seasons) but was not penetrable in this pass."}
+  ]
+}

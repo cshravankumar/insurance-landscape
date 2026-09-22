@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insurance Landscape</title>
+<meta name="description" content="Who's who in US P&C insurance, how the work actually flows, and where insurtech capital went — five linked, sourced maps.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{--paper:#f3f4f7;--card:#ffffff;--ink:#141b2d;--muted:#5a6478;--faint:#8b93a3;--line:#dde1e8;--gold:#a9772e;--track:#eceef2}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#11151f;--card:#171d29;--ink:#e8eaef;--muted:#98a1b3;--faint:#6c7488;--line:#2a3140;--gold:#d3a45c;--track:#1e2531}}
+  :root[data-theme="dark"]{--paper:#11151f;--card:#171d29;--ink:#e8eaef;--muted:#98a1b3;--faint:#6c7488;--line:#2a3140;--gold:#d3a45c;--track:#1e2531}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans",-apple-system,sans-serif;font-size:15.5px;line-height:1.5}
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px 80px}
+  header{padding:56px 0 8px}
+  .eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:12px}
+  h1{font-family:"Fraunces",Georgia,serif;font-size:clamp(30px,4.6vw,46px);font-weight:500;line-height:1.08;margin:0 0 14px;max-width:16ch;text-wrap:balance}
+  .lede{color:var(--muted);max-width:60ch;font-size:16.5px;margin:0 0 30px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+  a.card{display:block;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--gold);padding:18px 18px 16px;color:inherit;text-decoration:none;transition:transform .12s}
+  a.card:hover{transform:translateY(-2px)}
+  a.card b{display:block;font-family:"Fraunces",Georgia,serif;font-size:19px;font-weight:500;margin-bottom:6px}
+  a.card span{color:var(--muted);font-size:13.5px;display:block}
+  a.card .n{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--faint);margin-top:10px;display:block}
+  .chain{margin:34px 0 0;padding:16px 18px;border-left:3px solid var(--gold);background:var(--card);font-size:14px;color:var(--muted);max-width:70ch}
+  .chain b{color:var(--ink)}
+  footer{margin-top:52px;padding-top:16px;border-top:1px solid var(--line);color:var(--faint);font-size:12.5px;max-width:72ch}
+  footer a{color:var(--gold)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">Insurance Landscape · US P&amp;C</div>
+  <h1>Who's out there, how the work flows, and where the money went</h1>
+  <p class="lede">Five linked maps built from public sources, each with its sourcing one click away. Start with the market map if you want the players; the workflow map if you want the process; the capital pages if you want the money.</p>
+</header>
+
+<div class="grid">
+  <a class="card" href="pc-market-map.html"><b>Market Map</b><span>Every participant type in the $1.05T US P&amp;C market — carriers, reinsurers, brokers, wholesalers, MGAs, fronts, claims, and the periphery — named, sized, and audited against canonical censuses.</span><i class="n">reference · ~500 companies</i></a>
+  <a class="card" href="pc-workflow-map.html"><b>Workflow Evidence Map</b><span>Six roles, 158 tasks with cited evidence, and an automation grade per stage: what a broker, underwriter, MGA, and adjuster actually do all day, and which parts AI has reached.</span><i class="n">evidence · 6 roles × 158 tasks</i></a>
+  <a class="card" href="insurtech-graph.html"><b>Investor Graph</b><span>332 insurance startups and their investors as a browsable directory — click an investor to light up its portfolio, click a company for who backs it.</span><i class="n">directory · 332 startups</i></a>
+  <a class="card" href="capital-flow.html"><b>Capital Flow</b><span>Disclosed funding laid along the value chain — broker → underwriter → policy in force → claims — plus the investors who concentrated in one tier versus spread across all of them.</span><i class="n">analysis · $13B+ disclosed</i></a>
+  <a class="card" href="capital-timeline.html"><b>Capital Timeline</b><span>The same data with a time axis: when the money arrived, into which tier, from which investors — cross-filterable, drillable to the company.</span><i class="n">analysis · 2016–2026</i></a>
+</div>
+
+<div class="chain"><b>How the five fit together.</b> The market map is the roster. The workflow map is the spine — its participants and stages are the categories every other page uses. The investor graph is the startup layer sitting on that spine. The two capital pages put dollars on it.</div>
+
+<footer>
+  Sources, method, and the data behind every page are in the <a href="https://github.com/cshravankumar/insurance-landscape">repository</a>: <code>insurtech-dataset.json</code> (one record per company, with a source URL and verification date on each funding figure), <code>census/</code> (the exhibitor and directory lists the roster was audited against), and <code>analysis/</code> (the parser, the capital analysis, and a weekly freshness probe). Figures are best-effort readings of public announcements — floors, not audited totals. Compiled 2026-09.
+</footer>
+</div>
+</body>
+</html>

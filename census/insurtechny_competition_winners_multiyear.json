@@ -1,0 +1,46 @@
+{
+  "source": "insurtechny.com/competition/ live page, pulled 2026-09-22, cross-confirmed against 50 Wayback captures 2020-07-24 to 2025-07-23",
+  "description": "InsurTech NY's 'Global Early-Stage InsurTech Startup Competition' - annual pitch competition at the Spring Conference. $200K prize pool split Carrier/Broker Prize ($100K) and Investor Prize ($100K). Eligibility: <$250K recurring revenue, sells to/serves insurers, brokers, or risk management orgs.",
+  "coverage": "full 2020-2026 (7 years) for winners; finalist lists present for most years but not guaranteed complete for every category/year",
+  "years": {
+    "2026": {"carrier_broker_winner": "Navwise", "investor_winner": "Trajan"},
+    "2025": {
+      "carrier_broker_winner": "Jump Point AI",
+      "investor_winner": "Sunereum Labs",
+      "other_finalists": ["Athlete", "ButFor", "Curant AI", "Novo AI", "Settwiz", "Simfuni", "Superagent", "Visada"]
+    },
+    "2024": {
+      "finalist_headline": "ClaimPartner",
+      "other_finalists": ["Anansi", "Past Post - Legado Digital", "Sonant", "Strada", "Juniper", "Strala", "Further AI"],
+      "note": "Further AI = FurtherAI, already in the 309-company dataset; category winners not distinguished on the current page for this year"
+    },
+    "2023": {
+      "carrier_broker_winner": "Samos",
+      "investor_winner": "Qumis",
+      "other_finalists": ["Vellum Insurance", "Vecto", "Youth Health Tech", "Wuuii", "Invive", "Lukango", "FutureProof"]
+    },
+    "2022": {
+      "winners": ["Kayna", "Journey Sports"],
+      "other_finalists": ["Octamile", "Redkik", "Otonomi", "InsurX Global", "Mitigrate", "Stream", "Firebreak", "Futura Genetics", "Mi Compa Seguros"]
+    },
+    "2021": {
+      "carrier_broker_winner": "Healthee",
+      "angel_investor_winner": "One Click Estimate",
+      "other_finalists": ["Bubble", "Consumer Optix", "Gigaforce", "Hosta AI", "Lisa InsurTech", "Phalanx", "Patientory", "Riskwolf", "Vaartani"]
+    },
+    "2020": {
+      "carrier_broker_winner": "Tide Foundation",
+      "vc_investor_winner": "Loadsure",
+      "angel_investor_winner": "Delos",
+      "bermuda_bda_winner": "Remitrix",
+      "early_stage_1st": "Agilius",
+      "early_stage_2nd": "Protosure",
+      "early_stage_3rd": "Sigo",
+      "growth_stage_1st": "Matterport",
+      "growth_stage_2nd": "Dead Happy",
+      "growth_stage_3rd": "Weather Check",
+      "other_finalists": ["CoverHero", "ClaimSpace", "Digisure", "DockFlow", "Finaeo", "Healthy Health", "StartSure", "Coastal Risk", "SafeKeep"]
+    }
+  },
+  "bermuda_note": "2020 had a dedicated 'Bermuda BDA Winner' category (Remitrix) - confirms InsurTech NY partners with the Bermuda Business Development Agency on this competition (per PR Newswire release, 'InsurTech NY and the Bermuda Business Development Agency Join Forces for Early-Stage InsurTech Competition'). This is the extent of Bermuda-specific census data found - no independent Bermuda insurtech org with its own multi-year cohort list was found (see sister_orgs_multiyear.json)."
+}

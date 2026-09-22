@@ -1,0 +1,50 @@
+{
+  "source": "insurtechny.com/events/ (live page, pulled 2026-09-22) + insurtechny.com/competition/ (live page) + Wayback CDX confirmation",
+  "coverage": "full for 2019-2026 conference/event names and dates; full for 2020-2026 competition winners/finalists",
+  "notes": [
+    "The live /events/ page itself lists every past event 2019-2026 with dates (InsurTech NY keeps a complete self-published archive, so no Wayback recovery was needed for the event list itself).",
+    "Wayback CDX confirmed 50 captures of /competition/ from 2020-07-24 through 2025-07-23, corroborating that the winner history on the live page is not recently rewritten.",
+    "The annual flagship event is the 'InsurTech Spring Conference' (NYC, ~March/April each year) plus a fall 'Demo Day'/'Match Day' for the MGA Lab and Accelerator cohorts."
+  ],
+  "spring_conferences": [
+    {"year": 2026, "name": "The Human Side of Insurance", "date": "2026-03-30"},
+    {"year": 2025, "name": "InsurTech is the New R&D", "date": "2025-04-02"},
+    {"year": 2024, "name": "The AI and Analytics Advantage", "date": null},
+    {"year": 2023, "name": "Competing on Collaboration", "date": null},
+    {"year": 2022, "name": "Digital First or Customer First", "date": "2022-03-07"},
+    {"year": 2021, "name": "Catering to the Customer of 2025", "date": "2021-03-10"},
+    {"year": 2020, "name": "Transforming the Buying Experience", "date": "2020-03-19"}
+  ],
+  "demo_days_and_accelerator_events": [
+    {"year": 2026, "name": "2026 Demo Day", "date": "2026-09-16"},
+    {"year": 2026, "name": "2026 Match Day", "date": "2026-09-17"},
+    {"year": 2025, "name": "2025 Match Demo Day", "date": "2025-11-06"},
+    {"year": 2024, "name": "Accelerator: Demo Day", "date": "2024-11-07"},
+    {"year": 2023, "name": "Demo Day", "date": "2023-11-09"},
+    {"year": 2022, "name": "Demo Day", "date": "2022-11-15"},
+    {"year": 2022, "name": "Accelerator: Selection Day", "date": "2022-09-14"},
+    {"year": 2022, "name": "Accelerator: Education Day", "date": "2022-09-15"}
+  ],
+  "itc_vegas_participation": [
+    {"year": 2025, "date": "2025-10-14"},
+    {"year": 2022, "name": "Insuretech Connect 2022", "date": "2022-09-19"},
+    {"year": 2021, "name": "Insuretech Connect 2021", "date": "2021-10-04"}
+  ],
+  "sponsors_current_2026_conference": {
+    "source": "insurtechny.com/sponsor/, live page pulled 2026-09-22 (represents 2026 Spring Conference)",
+    "coverage": "full for current year only - Wayback has no snapshot of /sponsor/ page prior to 2026 (only capture found is 2026-07-31, i.e. same era as live)",
+    "platinum": ["Samsung"],
+    "gold": ["TrendTracker", "Upstage", "Bound AI", "Adlib", "Cresta", "OutSystems"],
+    "silver": ["Unitary", "Convr", "Earth Daily", "Federato", "Hyperexponential", "SOCOTRA", "FurtherAI", "Indemn", "Equisoft", "EXL", "Cytora"],
+    "bronze": ["Troutman", "e2Value", "Covenir BPO", "Instanda", "Shelf", "Infras", "Intellect AI", "Feathery", "Liberate"],
+    "standard": ["ePayPolicy", "ModoTech", "BriteCore", "Roam", "Insillion", "Clark Hill", "Truist", "PACE", "Fair Warranty", "INTX Insurance Software", "Teqfocus", "Perr & Knight", "PayComp", "Data Logistics", "Bigly", "Hyke", "Reserv", "General Magic", "Frontdesk AI", "ManchesterStory"],
+    "community_partners_note": "18 community partner orgs listed including Caliber, InsurTech America, InsurTech Australia, and various regional associations - not itemized further"
+  },
+  "map_history_finding": {
+    "current_url": "insurtechny.com/insurtech-nyc-startup-map/",
+    "wayback_status": "Only captures found are from 2026 (2026-02-08, 2026-02-12, 2026-03-16, 2026-06-08) - this URL/slug was apparently not crawled by Wayback before 2026, so the JS-rendered 142-company data version has NO recoverable multi-year history via Wayback.",
+    "legacy_static_url": "insurtechny.com/new-york-city-insurtech-startups-map/",
+    "legacy_finding": "This older URL IS a static-image page (title: 'New York City InsurTech Startups map - Join the community!'), embedding a PNG at wp-content/uploads/2022/02/NYC-InsurTech-Startup-Map.png. Wayback has exactly ONE image capture, dated 2023-06-09, recovered and OCR'd manually - see insurtechny_nyc_map_2023_archive.json for the 50 extracted company names. No earlier (2021/2022) or later (2024/2025) image captures exist in Wayback for this asset.",
+    "honesty_note": "This is a genuine 2023 census snapshot (legible numbered map + legend, not reconstructed/guessed), useful for diffing against the current 142-company 2026 map to see 3-year growth/attrition. It is NOT the same as having every year 2021-2025."
+  }
+}

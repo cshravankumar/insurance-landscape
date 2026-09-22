@@ -1,0 +1,739 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>P&amp;C Insurance Workflows</title>
+<style>
+  .explorer { padding-top:32px; }
+  .explorer h1 { max-width:none; margin:12px 0; }
+  .explorer p { color:var(--muted); max-width:70ch; }
+  .explorer .kicker { font-size:11px; text-transform:uppercase; letter-spacing:.14em; color:var(--accent); }
+  .view-nav,.role-nav,.reader-controls { display:flex; flex-wrap:wrap; gap:8px; }
+  .view-nav { margin:26px 0 20px; border-bottom:1px solid var(--line); padding-bottom:12px; }
+  .view-nav a,.role-nav a,.reader-controls button,.related a { display:inline-block; border:1px solid var(--line); border-radius:7px; padding:9px 13px; color:var(--ink); background:var(--card); text-decoration:none; font:inherit; cursor:pointer; }
+  .view-nav a[aria-current],.role-nav a[aria-current] { background:var(--accent); color:var(--paper); border-color:var(--accent); }
+  a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
+  .process { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; border:1px solid var(--line); background:var(--line); border-radius:10px; overflow:hidden; margin:22px 0; }
+  .process div { padding:16px; background:var(--card); }
+  .process small { display:block; color:var(--accent); margin-bottom:8px; }
+  .process b { display:block; font-size:14px; }
+  .process span { display:block; font-size:12px; color:var(--muted); margin-top:7px; }
+  .role-nav { margin:12px 0 18px; }
+  .reader-controls { align-items:center; justify-content:space-between; border-top:1px solid var(--line); padding-top:14px; font-size:12px; }
+  .reader-controls label { display:flex; align-items:center; gap:8px; cursor:pointer; }
+  .enhanced section { padding-top:26px; }
+  .enhanced .pipe { display:block; overflow:visible; counter-reset:stage; }
+  .enhanced .pipe>.arw { display:none; }
+  .enhanced details.stg { min-width:0; max-width:none; width:100%; margin:0 0 10px; border-radius:8px; overflow:hidden; }
+  .enhanced details.stg summary { padding:17px 20px; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:6px 20px; align-items:center; }
+  .enhanced .stg-name { justify-content:flex-start; font-size:15px; }
+  .enhanced .stg-name::before { counter-increment:stage; content:counter(stage,decimal-leading-zero); color:var(--accent); font:12px ui-monospace,monospace; margin-right:12px; }
+  .enhanced .stg-name .car { margin-left:auto; }
+  .enhanced .stg-stat { text-align:right; margin:0; }
+  .enhanced .stg-body { padding:4px 20px 18px; }
+  .enhanced .t { padding:10px 0; }
+  .enhanced .tl { font-size:14px; }
+  .enhanced .stg-name .n,.enhanced section>.sec-head>.sec-count { display:none; }
+  .enhanced:not(.show-automation) section .bar,.enhanced:not(.show-automation) section .g,.enhanced:not(.show-automation) section .inv-dot { display:none; }
+  .automation-key { padding:12px 16px; background:var(--card); border:1px solid var(--line); font-size:12px; margin-top:14px; }
+  .role-context { display:grid; grid-template-columns:2fr 1fr; gap:24px; padding:18px 0 24px; }
+  .role-context p { margin:0; color:var(--muted); }
+  .role-context small { display:block; color:var(--accent); margin-bottom:7px; font-weight:600; }
+  .related { margin:22px 0; padding:20px; background:var(--card); border:1px solid var(--line); border-radius:8px; }
+  .related h3 { margin:0 0 12px; }
+  .related p { color:var(--muted); font-size:13px; }
+  .related a { margin:4px 5px 0 0; font-size:12px; }
+  .reference-notes { margin:24px 0; padding:16px; border:1px solid var(--line); border-radius:8px; }
+  .reference-notes summary { cursor:pointer; font-weight:600; }
+  .reference-notes header { padding-top:16px; }
+  .reference-notes header h1,.reference-notes header>.lede,.reference-notes header>.eyebrow { display:none; }
+  .enhanced footer { margin-top:28px; }
+  [hidden] { display:none !important; }
+  @media(max-width:650px) {
+    .explorer { padding-top:22px; }.process { grid-template-columns:1fr; }.process div { padding:12px 16px; display:grid; grid-template-columns:25px 1fr; gap:0 10px; }.process span { grid-column:2; margin:2px 0; }.process small { margin:0; }
+    .role-context { grid-template-columns:1fr; gap:15px; }.role-nav { display:grid; grid-template-columns:1fr 1fr; }.role-nav a { font-size:12px; }
+    .enhanced details.stg summary { grid-template-columns:1fr; padding:14px; }.enhanced .stg-stat { text-align:left; padding-left:35px; }.enhanced .stg-body { padding:0 14px 14px; }
+  }
+  @media print { .explorer,.related,.reference-notes { display:none !important; }.enhanced section[hidden],.enhanced footer[hidden] { display:block !important; }.enhanced details.stg .stg-body { display:block !important; } }
+</style>
+<style>
+  :root {
+    --paper: #f6f7f8; --card: #ffffff; --ink: #1a2430; --muted: #5b6b7a;
+    --faint: #8a97a3; --line: #dde2e7; --accent: #9a3324; --accent-soft: #f3e4e1;
+    --tier-bg: #eef1f3;
+    --now: #2e8b57; --cop: #c9962a; --hum: #9aa7b2;
+    --now-soft: #e3f1e9; --cop-soft: #f7efdc; --hum-soft: #edf0f2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --paper: #10161d; --card: #171f28; --ink: #e6eaee; --muted: #93a1ae;
+      --faint: #6d7b88; --line: #2a343f; --accent: #d9826f; --accent-soft: #33211d;
+      --tier-bg: #1d2733;
+      --now: #5fbf8f; --cop: #d4b45e; --hum: #7d8b98;
+      --now-soft: #1c2f26; --cop-soft: #2f2917; --hum-soft: #1f2831; }
+  }
+  :root[data-theme="dark"] {
+    --paper: #10161d; --card: #171f28; --ink: #e6eaee; --muted: #93a1ae;
+    --faint: #6d7b88; --line: #2a343f; --accent: #d9826f; --accent-soft: #33211d;
+    --tier-bg: #1d2733;
+    --now: #5fbf8f; --cop: #d4b45e; --hum: #7d8b98;
+    --now-soft: #1c2f26; --cop-soft: #2f2917; --hum-soft: #1f2831;
+  }
+  :root[data-theme="light"] {
+    --paper: #f6f7f8; --card: #ffffff; --ink: #1a2430; --muted: #5b6b7a;
+    --faint: #8a97a3; --line: #dde2e7; --accent: #9a3324; --accent-soft: #f3e4e1;
+    --tier-bg: #eef1f3;
+    --now: #2e8b57; --cop: #c9962a; --hum: #9aa7b2;
+    --now-soft: #e3f1e9; --cop-soft: #f7efdc; --hum-soft: #edf0f2;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--paper); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5; margin: 0; font-size: 15px; }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 28px 96px; }
+  header { padding: 52px 0 8px; }
+  .eyebrow { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin-bottom: 14px; }
+  .eyebrow a { color: var(--accent); }
+  h1 { font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    font-size: clamp(30px, 4.5vw, 42px); font-weight: 500; line-height: 1.12;
+    margin: 0 0 12px; text-wrap: balance; max-width: 24ch; }
+  .lede { color: var(--muted); max-width: 64ch; margin: 0; font-size: 15.5px; }
+
+  /* legend */
+  .legend { display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: center;
+    margin: 24px 0 0; padding: 12px 16px; background: var(--card); border: 1px solid var(--line); font-size: 12.5px; }
+  .legend .sw { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+  .legend b { font-weight: 600; }
+  .legend .inv-dot { color: var(--accent); font-weight: 700; }
+  .legend span.hint { color: var(--faint); }
+
+  /* master chain */
+  .chain-wrap { overflow-x: auto; margin-top: 26px; padding-bottom: 6px; }
+  .chain { display: flex; align-items: center; gap: 0; min-width: 900px; }
+  .cnode { background: var(--card); border: 1px solid var(--line); border-top: 3px solid var(--accent);
+    padding: 12px 14px 10px; min-width: 150px; flex: 1; }
+  .cnode.plain { border-top-color: var(--line); }
+  .cnode h4 { margin: 0 0 2px; font-size: 14px; font-weight: 650; }
+  .cnode h4 a { color: var(--ink); text-decoration: none; }
+  .cnode h4 a:hover { color: var(--accent); }
+  .cnode .sub { color: var(--faint); font-size: 11px; margin-bottom: 8px; }
+  .cstack { display: flex; flex-direction: column; gap: 8px; flex: 1.4; }
+  .carw { color: var(--faint); font-size: 20px; padding: 0 8px; flex: none; }
+  .lane-label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); margin-bottom: 3px; }
+
+  /* automation bar */
+  .bar { display: flex; height: 8px; border-radius: 4px; overflow: hidden; background: var(--tier-bg); }
+  .bar i { display: block; height: 100%; }
+  .bar .bn { background: var(--now); } .bar .bc { background: var(--cop); } .bar .bh { background: var(--hum); }
+  .bar-note { font-size: 10.5px; color: var(--faint); margin-top: 4px; font-variant-numeric: tabular-nums; }
+
+  /* role sections + pipelines */
+  section { padding-top: 50px; }
+  .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+    border-bottom: 2px solid var(--ink); padding-bottom: 10px; margin-bottom: 6px; flex-wrap: wrap; }
+  h2 { font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    font-size: 24px; font-weight: 500; margin: 0; text-wrap: balance; }
+  .sec-count { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 12px; color: var(--accent); white-space: normal; max-width: 100%; }
+  .sec-intro { color: var(--muted); font-size: 13.5px; max-width: 80ch; margin: 6px 0 16px; }
+  .sec-intro b { color: var(--ink); }
+
+  .pipe { display: flex; align-items: stretch; gap: 8px; overflow-x: auto; padding: 4px 2px 10px; }
+  .pipe .arw { align-self: center; color: var(--faint); font-size: 16px; flex: none; }
+  details.stg { background: var(--card); border: 1px solid var(--line); min-width: 172px; max-width: 240px;
+    flex: 1 0 172px; padding: 0; }
+  details.stg summary { list-style: none; cursor: pointer; padding: 11px 12px 10px; }
+  details.stg summary::-webkit-details-marker { display: none; }
+  details.stg summary:hover { background: var(--tier-bg); }
+  .stg-name { font-size: 13px; font-weight: 650; display: flex; justify-content: space-between; align-items: baseline; gap: 6px; }
+  .stg-name .n { color: var(--faint); font-size: 10.5px; font-weight: 400; white-space: nowrap; }
+  .stg-name .car { color: var(--faint); font-size: 10px; transition: transform .15s; }
+  details[open] .stg-name .car { transform: rotate(90deg); }
+  .stg-stat { font-size: 10.5px; color: var(--accent); margin-top: 2px; line-height: 1.3; min-height: 14px; }
+  .stg .bar { margin-top: 8px; }
+  .stg-body { border-top: 1px solid var(--line); padding: 8px 12px 10px; }
+  .t { padding: 5px 0; border-bottom: 1px dashed var(--line); font-size: 12px; line-height: 1.35; }
+  .t:last-child { border-bottom: none; }
+  .t .tl { display: flex; gap: 6px; align-items: baseline; }
+  .t .lbl { flex: 1; }
+  .t .lbl .inv-dot { color: var(--accent); font-weight: 700; }
+  .t .q { color: var(--muted); font-size: 11px; display: block; margin-top: 1px; }
+  .t a { color: var(--faint); text-decoration: none; font-size: 10.5px; }
+  .t a:hover { color: var(--accent); }
+  .g { display: inline-block; width: 9px; height: 9px; border-radius: 3px; flex: none; align-self: center; }
+  .g.n { background: var(--now); } .g.c { background: var(--cop); } .g.h { background: var(--hum); }
+
+  .callout { margin-top: 16px; background: var(--accent-soft); border-left: 3px solid var(--accent);
+    padding: 12px 16px; font-size: 13px; }
+  .callout b { color: var(--accent); }
+
+  /* compact chips + tables (spine, deployments, vendors) */
+  .cos { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 6px; margin-top: 10px; }
+  .co { background: var(--card); border: 1px solid var(--line); padding: 8px 11px; font-size: 13px; line-height: 1.35; }
+  .co b { font-weight: 600; }
+  .co em { display: block; font-style: normal; color: var(--muted); font-size: 11.5px; margin-top: 1px; }
+  .tbl-wrap { overflow-x: auto; border: 1px solid var(--line); margin-top: 12px; }
+  table { border-collapse: collapse; width: 100%; min-width: 680px; font-size: 13px; background: var(--card); }
+  th { text-align: left; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); padding: 9px 12px; border-bottom: 2px solid var(--ink); white-space: nowrap; }
+  td { padding: 8px 12px; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.4; }
+  tr:last-child td { border-bottom: none; }
+  td.mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 11.5px; white-space: nowrap; color: var(--muted); }
+  td.src a { color: var(--faint); text-decoration: none; font-size: 11.5px; }
+  td.src a:hover { color: var(--accent); }
+
+  nav.toc { position: sticky; top: 0; z-index: 5; background: var(--paper);
+    border-bottom: 1px solid var(--line); margin: 34px -28px 0; padding: 10px 28px;
+    display: flex; flex-wrap: wrap; gap: 6px; }
+  nav.toc a { font-size: 12px; color: var(--muted); text-decoration: none;
+    border: 1px solid var(--line); padding: 4px 10px; border-radius: 999px;
+    background: var(--card); white-space: nowrap; }
+  nav.toc a:hover { color: var(--accent); border-color: var(--accent); }
+
+  h3 { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
+    font-weight: 600; margin: 24px 0 10px; display: flex; align-items: center; gap: 10px; }
+  h3::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  h3 .tag { color: var(--accent); letter-spacing: 0; text-transform: none; font-weight: 500; }
+  footer { margin-top: 60px; padding-top: 18px; border-top: 1px solid var(--line);
+    color: var(--faint); font-size: 12px; max-width: 84ch; }
+  a { color: var(--accent); }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .stg-name .car { transition: none; } }
+
+  /* ---- disclosure kit: shared across all five pages in this repo ---- */
+  .dmark{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;
+    background:var(--tier-bg,var(--line));color:var(--muted);font:600 9px/1 ui-monospace,monospace;
+    cursor:help;border:none;padding:0;margin-left:5px;vertical-align:middle;position:relative}
+  .dmark:hover,.dmark:focus-visible,.dmark.open{background:var(--gold,var(--accent,#9a3324));color:#fff;outline:none}
+  .dmark .dpop{display:none;position:absolute;z-index:30;left:50%;bottom:calc(100% + 7px);transform:translateX(-50%);
+    width:max-content;max-width:250px;background:var(--ink);color:var(--paper,var(--card));font-size:11.5px;line-height:1.45;
+    padding:8px 11px;border-radius:7px;box-shadow:0 6px 18px rgba(0,0,0,.22);text-align:left;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-weight:400}
+  .dmark.open > .dpop{display:block}
+  .dpop::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--ink)}
+  details.mnote{margin:10px 0 22px}
+  details.mnote summary{cursor:pointer;color:var(--muted);font-size:12px;font-weight:600;list-style:none;
+    display:flex;align-items:center;gap:6px;user-select:none}
+  details.mnote summary::before{content:"▸";font-size:9px;color:var(--faint);transition:transform .15s;display:inline-block}
+  details.mnote[open] summary::before{transform:rotate(90deg)}
+  details.mnote summary::-webkit-details-marker{display:none}
+  details.mnote .mnote-body{color:var(--muted);font-size:12.5px;padding:8px 2px 0 15px;max-width:72ch;line-height:1.55}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Companion to the <a href="pc-market-map.html">US P&amp;C Market Map</a></div>
+  <h1>P&amp;C insurance workflows</h1>
+  <p class="lede">Tasks across six insurance roles, with sources and an initial assessment of where automation could help. Click a stage to see its tasks. A <span style="color:var(--accent);font-weight:700">●</span> marks follow-up, administration, documentation, and compliance tasks grouped for this review.</p>
+
+  <div class="legend">
+    <span><span class="sw" style="background:var(--now)"></span><b>Automation candidate</b> <span class="hint">extraction, matching, chasing, templated output</span></span>
+    <span><span class="sw" style="background:var(--cop)"></span><b>AI-assisted</b> <span class="hint">AI drafts; a person reviews and decides</span></span>
+    <span><span class="sw" style="background:var(--hum)"></span><b>Human-led</b> <span class="hint">negotiation, relationships, coverage design</span></span>
+    <span><span class="inv-dot">●</span> <b>Support &amp; compliance tasks</b></span>
+  </div>
+
+  <div class="chain-wrap"><div class="chain">
+    <div class="cnode plain"><h4>Client</h4><div class="sub">has a risk</div><div class="bar"><i class="bh" style="width:100%"></i></div></div>
+    <div class="carw">→</div>
+    <div class="cnode"><h4><a href="#broker">Retail broker</a></h4><div class="sub">collect · market · bind · service</div><div class="bar"><i class="bn" style="width:41%"></i><i class="bc" style="width:45%"></i><i class="bh" style="width:14%"></i></div><div class="bar-note">26 tasks · 16 support/compliance</div></div>
+    <div class="carw">→</div>
+    <div class="cstack">
+      <div>
+        <div class="lane-label">Admitted path</div>
+        <div class="cnode"><h4><a href="#uw-admitted">Carrier underwriter</a></h4><div class="sub">triage · assess · price · bind</div><div class="bar"><i class="bn" style="width:48%"></i><i class="bc" style="width:44%"></i><i class="bh" style="width:8%"></i></div><div class="bar-note">27 tasks · 17 support/compliance</div></div>
+      </div>
+      <div>
+        <div class="lane-label">E&amp;S path — a quarter of commercial premium</div>
+        <div class="chain" style="min-width:0">
+          <div class="cnode"><h4><a href="#wholesale">Wholesale broker</a></h4><div class="sub">appetite map · compliance</div><div class="bar"><i class="bn" style="width:55%"></i><i class="bc" style="width:32%"></i><i class="bh" style="width:13%"></i></div><div class="bar-note">28 tasks · 22 support/compliance</div></div>
+          <div class="carw">→</div>
+          <div class="cnode"><h4><a href="#uw-es">E&amp;S underwriter</a> / <a href="#mga">MGA</a></h4><div class="sub">specialty risks · flexible terms · delegated authority</div><div class="bar"><i class="bn" style="width:47%"></i><i class="bc" style="width:38%"></i><i class="bh" style="width:15%"></i></div><div class="bar-note">26 + 25 tasks</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="carw">→</div>
+    <div class="cnode plain"><h4>Policy in force</h4><div class="sub">claims handling when a loss is reported</div><div class="bar"><i class="bh" style="width:100%; opacity:.3"></i></div></div>
+    <div class="carw">→</div>
+    <div class="cnode"><h4><a href="#claims">Claims adjuster</a></h4><div class="sub">FNOL · investigate · resolve</div><div class="bar"><i class="bn" style="width:59%"></i><i class="bc" style="width:27%"></i><i class="bh" style="width:14%"></i></div><div class="bar-note">26 tasks · 19 support/compliance</div></div>
+  </div></div>
+
+  <details class="mnote" style="margin-top:14px"><summary>How to read the bars</summary><div class="mnote-body">Colors show this review's assessment of the listed tasks, not measured time savings or a tested automation rate. Related studies report 40% of underwriter time spent on administration (Accenture, n=434), 74% of agents naming portal re-keying as their main difficulty (Ivans), and about 40% of adjuster time spent on documentation. Accenture's 2025 estimate of <b>65% of underwriting working hours being automatable</b> uses a different measure from this map's task counts.</div></details>
+</header>
+
+<nav class="toc">
+  <a href="#broker">Retail broker</a>
+  <a href="#uw-admitted">Admitted UW</a>
+  <a href="#wholesale">Wholesale</a>
+  <a href="#uw-es">E&amp;S UW</a>
+  <a href="#mga">MGA ops</a>
+  <a href="#claims">Claims</a>
+  <a href="#audit">Documentation &amp; oversight</a>
+  <a href="#deployments">Who's done what</a>
+  <a href="#vendors">Players</a>
+</nav>
+
+<!-- ============ RETAIL BROKER ============ -->
+<section id="broker">
+  <div class="sec-head"><h2>Retail broker account team</h2><div class="sec-count">26 tasks · 16 support/compliance</div></div>
+  <p class="sec-intro"><b>2+ hours of pure re-keying per risk</b> (30+ min per carrier portal × 4+ markets, Ivans n≈1,000) · loss runs take up to 10 days per carrier · thousands of COIs/yr with a 10× renewal-season surge.</p>
+  <div class="pipe">
+    <details class="stg"><summary><div class="stg-name">Renewal strategy <span class="n">2</span><span class="car">▶</span></div><div class="stg-stat">client advice</div><div class="bar"><i class="bh" style="width:100%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g h"></span><span class="lbl">Stewardship &amp; renewal strategy, 90–120 days out</span><a href="https://pcs.marsh.com/ca/en/solutions/stewardship-review.htm">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g h"></span><span class="lbl">Client exposure review — translate business changes into coverage</span><a href="https://www.berryinsurance.com/blog/day-life-commercial-line">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Collect the data <span class="n">3 · ●</span><span class="car">▶</span></div><div class="stg-stat">3–4 weeks of back-and-forth per round</div><div class="bar"><i class="bn" style="width:66%"></i><i class="bc" style="width:34%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Chase loss runs from every carrier<span class="q">up to 10 days each; delays can affect remarketing</span></span><a href="https://www.quotesweep.com/blog/insurance-loss-runs-guide">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Chase client for exposures (payroll, SOVs, schedules)</span><a href="https://www.useindio.com/customer-success/">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Prep ACORD 125/126/130/140 + carrier supplementals</span><a href="https://www1.appliedsystems.com/en-us/news/press-releases/20">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Market it <span class="n">3 · ●</span><span class="car">▶</span></div><div class="stg-stat">74% of agents: re-keying = #1 pain</div><div class="bar"><i class="bn" style="width:34%"></i><i class="bc" style="width:33%"></i><i class="bh" style="width:33%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Re-key the same risk into each carrier portal<span class="q">30+ min each × 4+ carriers; 90% have cut a carrier over friction</span></span><a href="https://riskandinsurance.com/re-keying-and-workflow-friction-are-costing-carriers-placemen">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl">Package submission &amp; pick markets (appetite matching)</span><a href="https://www.craneagency.com/careers-at-crane/commercial-line">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g h"></span><span class="lbl">Follow up with underwriters, answer questions, and negotiate</span><a href="https://ats.rippling.com/texan-insurance/jobs/af43e353-ea95-">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Propose <span class="n">2 · ●</span><span class="car">▶</span></div><div class="stg-stat">normalize forms across carriers</div><div class="bar"><i class="bn" style="width:50%"></i><i class="bc" style="width:50%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Quote comparison grid — form-by-form coverage differences</span><a href="https://sibro.xyz/how-to-create-professional-insurance-quote">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl">Branded client proposal from winning quotes</span><a href="https://ustechautomations.com/resources/blog/automate-best-p">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Bind &amp; check <span class="n">4 · ●</span><span class="car">▶</span></div><div class="stg-stat">900+ checkpoints per policy check</div><div class="bar"><i class="bn" style="width:75%"></i><i class="bc" style="width:25%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl">Request bind, verify binder against agreed terms</span><a href="https://www.efm-agency.com/employment-opportunities/commerci">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Invoice, premium finance, reconcile carrier statements</span><a href="https://www.unland.com/about/employment/commercial-lines-acc">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Track outstanding subjectivities and confirm completion</span><a href="https://pigeonsubjectivities.com/">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Policy-check issued policy vs binder, line by line<span class="q">outsourced versions: 900+ checkpoints, 14–30 day turnarounds</span></span><a href="https://www.patracorp.com/insurance-outsourcing-services/ins">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Service all year <span class="n">5 · ●</span><span class="car">▶</span></div><div class="stg-stat">thousands of COIs · 10× renewal surge</div><div class="bar"><i class="bn" style="width:20%"></i><i class="bc" style="width:80%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> COI issuance + inbound vendor-COI compliance tracking</span><a href="https://www.trustlayer.io/resources/blog-renewal-seasons">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Review contract insurance requirements before certifying</span><a href="https://risk-strategies.com/knowledge-center/article/contrac">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl">Mid-term endorsements + checking them when issued</span><a href="https://www.unland.com/about/employment/commercial-lines-acc">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl">Answer coverage questions, follow up on premiums, and address pending cancellations</span><a href="https://www.berryinsurance.com/blog/day-life-commercial-line">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Coordinate the annual premium audit and resolve disputes</span><a href="https://hotchkissinsurance.com/insights-and-resources/insura">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Document the account <span class="n">3 · ●</span><span class="car">▶</span></div><div class="stg-stat">coverage offered, declined, and agreed</div><div class="bar"><i class="bn" style="width:33%"></i><i class="bc" style="width:67%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Record client interactions and coverage offered or declined in the AMS</span><a href="https://www.resourcepro.com/blog/policy-checking-a-vital-ste">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Comp disclosure (Reg 194-class) + surplus lines affidavits/taxes on E&amp;S placements</span><a href="https://www.elany.org/docs/default-source/compliance-advisor">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl">Claims advocacy: FNOL intake, carrier reporting, status chasing</span><a href="https://www.psafinancial.com/about/life-at-psa/current-openi">src</a></div></div>
+    </div></details>
+  </div>
+</section>
+
+<!-- ============ ADMITTED UW ============ -->
+<section id="uw-admitted">
+  <div class="sec-head"><h2>Carrier underwriter — admitted, middle market</h2><div class="sec-count">27 tasks · 17 support/compliance</div></div>
+  <p class="sec-intro"><b>40% admin · 30% negotiation · 30% actual underwriting</b> (Accenture n=434; 2025 re-survey: still 35% non-core). Account reviews run 2–4 hrs each. <i>Admitted underwriting also involves filed rates and forms, TRIA offers, WC experience modifications, and catastrophe accumulation checks.</i></p>
+  <div class="pipe">
+    <details class="stg"><summary><div class="stg-name">Intake <span class="n">4 · ●</span><span class="car">▶</span></div><div class="stg-stat">support and compliance tasks</div><div class="bar"><i class="bn" style="width:100%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Clear &amp; dedupe the submission; broker-of-record conflicts</span><a href="https://www.patracorp.com/insurance-outsourcing-services/insurance-submission-clearance-services/">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> OFAC screening at submission and at bind</span><a href="https://app.manifest.ly/public/checklists/underwriting-checklist-2">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Producer license/appointment/authority check</span><a href="https://app.manifest.ly/public/checklists/underwriting-checklist-2">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Account/file setup and maintenance</span><a href="https://www.velvetjobs.com/job-descriptions/underwriting-assistant">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Triage <span class="n">1</span><span class="car">▶</span></div><div class="stg-stat">check appetite before detailed review</div><div class="bar"><i class="bn" style="width:100%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl">Appetite/eligibility triage before deep review</span><a href="https://www.federato.ai/platform/submission-triage">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Review the risk <span class="n">6 · ●</span><span class="car">▶</span></div><div class="stg-stat">re-keying = 30–40% of all time</div><div class="bar"><i class="bn" style="width:33%"></i><i class="bc" style="width:67%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Chase broker for missing info<span class="q">70%+ of submissions arrive incomplete; +2–4 weeks</span></span><a href="https://www.boundai.ai/blog/submission-clearance-software-in-insurance-operations">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Order loss runs, MVRs, financials, inspections</span><a href="https://www.zippia.com/underwriting-technician-jobs/skills/">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Re-key ACORDs/SOVs/loss runs into rating systems<span class="q">30–40% of underwriter time is admin (Accenture/McKinsey/Capco)</span></span><a href="https://riskandinsurance.com/wp-content/uploads/2021/12/TI-Accenture_PC_Underwriter_Survey-_vf.pdf">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl">Analyze loss runs; develop open claims for pricing</span><a href="https://www.glassdoor.com/Community/insurance/can-any-underwriters-in-here-give-me-a-brief-day-in-the-life-rundown-of-job-tasks-and-what-your-workload-and-duties-are-like">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl">Verify exposure basis vs actual operations</span><a href="https://sites.hanover.com/linec/docs/minimum-documentation-guide.doc">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl">Line-of-business worksheets &amp; hazard grading<span class="q">2–4 hrs per account; ~80% of the job (practitioner)</span></span><a href="https://app.manifest.ly/public/checklists/underwriting-checklist-2">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Admitted-market checks <span class="n">3 · ●</span><span class="car">▶</span></div><div class="bar"><i class="bn" style="width:33%"></i><i class="bc" style="width:67%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Verify WC experience mod vs NCCI worksheet; class codes, combinability</span><a href="https://www.ncci.com/Articles/Pages/UW_Experience-Rating.aspx">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> CAT accumulation check by zone; facultative reinsurance when over treaty</span><a href="https://www.irmi.com/term/insurance-definitions/facultative-reinsurance">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Mandatory TRIA offer + disclosure; track signed rejection</span><a href="https://content.naic.org/sites/default/files/inline-files/Chapter20_GenExamStandards07-06-22.pdf">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Price &amp; document <span class="n">4 · ●</span><span class="car">▶</span></div><div class="stg-stat">the rationale note is audited</div><div class="bar"><i class="bn" style="width:25%"></i><i class="bc" style="width:75%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl">Rate + schedule credits/debits within the filed plan (±25%), each justified</span><a href="https://sites.hanover.com/linec/docs/minimum-documentation-guide.doc">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Document the underwriting decision and reasons<span class="q">see documentation requirements below</span></span><a href="https://sites.hanover.com/linec/docs/minimum-documentation-guide.doc">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Referral write-ups above authority, reason retained</span><a href="https://app.manifest.ly/public/checklists/underwriting-checklist-2">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl">Issue quote/proposal with subjectivities</span><a href="https://www.velvetjobs.com/job-descriptions/underwriting-assistant">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Negotiate <span class="n">1</span><span class="car">▶</span></div><div class="stg-stat">~30% of underwriter time</div><div class="bar"><i class="bh" style="width:100%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g h"></span><span class="lbl">Win or keep the account with agents/brokers</span><a href="https://insuranceblog.accenture.com/why-underwriters-dont-underwrite-much">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Bind &amp; verify <span class="n">3 · ●</span><span class="car">▶</span></div><div class="stg-stat">automation candidates</div><div class="bar"><i class="bn" style="width:100%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Chase subjectivities to clearance before binder lapses</span><a href="https://selectsystech.com/blog/subjectivity-management-comme">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Check issued policy vs bound terms</span><a href="https://www.velvetjobs.com/job-descriptions/underwriting-assistant">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> State-compliant declination letters with reasons</span><a href="https://app.manifest.ly/public/checklists/underwriting-checklist-2">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Post-bind &amp; renew <span class="n">5 · ●</span><span class="car">▶</span></div><div class="stg-stat">book management, 90–120 days out</div><div class="bar"><i class="bn" style="width:20%"></i><i class="bc" style="width:60%"></i><i class="bh" style="width:20%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Endorsements, cancellations, reinstatements</span><a href="https://www.velvetjobs.com/job-descriptions/underwriting-assistant">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Premium-audit results, endorsements, disputes</span><a href="https://jobs.insurancejobs.com/jobs/keywords/Premium-Audit/">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Loss-control recommendation tracking; act on non-compliance</span><a href="https://davies-group.com/northamerica/how-commercial-loss-co">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl">Renewal book re-review: retain / re-price / non-renew</span><a href="https://winter-dent.com/how-to-prepare-for-your-commercial-i">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g h"></span><span class="lbl">Agency relationships: visits, appetite comms, production reviews<span class="q">~10% of the role</span></span><a href="https://careers.nationwide.com/territory-manager-middle-mark">src</a></div></div>
+    </div></details>
+  </div>
+</section>
+
+<!-- ============ WHOLESALE ============ -->
+<section id="wholesale">
+  <div class="sec-head"><h2>Wholesale E&amp;S broker</h2><div class="sec-count">28 tasks · 22 support/compliance</div></div>
+  <p class="sec-intro">Wholesale brokers <b>identify suitable carriers</b> and handle surplus lines placement requirements. Manual SL tax calc errors: 12–18% of policies; unautomated multi-state filers miss 8–15% of deadlines.</p>
+  <div class="pipe">
+    <details class="stg"><summary><div class="stg-name">Intake <span class="n">3 · ●</span><span class="car">▶</span></div><div class="stg-stat">500+ broker emails/day at one shop</div><div class="bar"><i class="bn" style="width:66%"></i><i class="bc" style="width:34%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Clearance setup, first-in rules, duplicate checks</span><a href="https://builtin.com/job/team-assistant-i/7344927">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Chase retail agent for missing pieces, resubmit whole package</span><a href="https://www.amriscgroup.com/Portals/0/Documents/Resources/Cl">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Re-key ACORDs/SOVs/loss runs into the BMS</span><a href="https://indicodata.ai/underwriting-submission-intake/">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Appetite map <span class="n">2 · ●</span><span class="car">▶</span></div><div class="stg-stat">carrier selection</div><div class="bar"><i class="bc" style="width:50%"></i><i class="bh" style="width:50%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g h"></span><span class="lbl"><span class="inv-dot">●</span> Maintain the live carrier-appetite map: class × state × attachment × this month<span class="q">maintained through broker knowledge and spreadsheets</span></span><a href="https://www.falllinespecialty.com/case-studies/what-insuranc">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Build market list; manage blocking &amp; first-in mechanics</span><a href="https://www.amriscgroup.com/Portals/0/Documents/Resources/Cl">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Package &amp; market <span class="n">2 · ●</span><span class="car">▶</span></div><div class="stg-stat">per-carrier SOV reshaping</div><div class="bar"><i class="bn" style="width:50%"></i><i class="bc" style="width:50%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Repackage per market; write risk narrative; address missing information</span><a href="https://marketing.cochraneco.com/what-makes-a-strong-wholesa">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Track which underwriter has which version; follow-up cadence</span><a href="https://bebee.com/us/jobs/inside-broker-ryan-specialty-metai">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Negotiate <span class="n">3</span><span class="car">▶</span></div><div class="stg-stat">layered &amp; shared placements</div><div class="bar"><i class="bn" style="width:33%"></i><i class="bc" style="width:33%"></i><i class="bh" style="width:34%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g h"></span><span class="lbl">Negotiate terms/pricing/structure with carrier underwriters</span><a href="https://bebee.com/us/jobs/inside-broker-ryan-specialty-metai">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Extract quotes into side-by-side comparison for the retailer</span><a href="https://www.patracorp.com/insurance-outsourcing-services/ins">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Educate the retail agent on E&amp;S forms and restrictions</span><a href="https://www.nationwide.com/excessandsurplus/e-risk/resources">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">SL compliance <span class="n">4 · ●</span><span class="car">▶</span></div><div class="stg-stat">state placement requirements</div><div class="bar"><i class="bn" style="width:75%"></i><i class="bc" style="width:25%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Diligent-search documentation (declinations or export list)</span><a href="https://www.afslaw.com/perspectives/alerts/legislation-intro">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Producing-broker affidavits (ELANY Part C-class)</span><a href="https://www.elany.org/docs/default-source/efs/part-c-instruc">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Verify carrier eligibility per state lists</span><a href="https://www.surplusmanual.com/overview/">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Stamping-office filings within state windows (30d CA / 90d TX / 120d FL)<span class="q">8–15% of deadlines missed without automation</span></span><a href="https://jobs.wahve.com/jb/Surplus-Lines-Tax-Filings-Speciali">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Bind &amp; verify <span class="n">5 · ●</span><span class="car">▶</span></div><div class="stg-stat">manual tax calc: 12–18% error</div><div class="bar"><i class="bn" style="width:100%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Binder + invoice with SL tax and stamping fee calc</span><a href="https://ustechautomations.com/resources/blog/insurance-surpl">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Suspense system: chase carriers for unissued policies/endorsements</span><a href="https://talents.vaia.com/companies/crc-group/broker-assistan">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Policy check vs binder; subjectivity tracking</span><a href="https://www.patracorp.com/insurance-outsourcing-services/ins">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Mid-term transactions; compliant cancellation notices</span><a href="https://builtin.com/job/team-assistant-i/7344927">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Not-bound file closure per E&amp;O procedure</span><a href="https://builtin.com/job/team-assistant-i/7344927">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Renewals &amp; relationships <span class="n">3</span><span class="car">▶</span></div><div class="stg-stat">carrier appetite updates</div><div class="bar"><i class="bc" style="width:67%"></i><i class="bh" style="width:33%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl">Renewal cycle; re-market where incumbent moved</span><a href="https://talents.vaia.com/companies/crc-group/broker-assistan">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> BOR/AOR change mechanics between wholesalers/retailers</span><a href="https://www.amriscgroup.com/Portals/0/Documents/Resources/Cl">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g h"></span><span class="lbl">Maintain carrier relationships and discuss appetite changes</span><a href="https://bebee.com/us/jobs/inside-broker-ryan-specialty-metai">src</a></div></div>
+    </div></details>
+  </div>
+</section>
+
+<!-- ============ E&S UW ============ -->
+<section id="uw-es">
+  <div class="sec-head"><h2>E&amp;S underwriter — specialty carrier</h2><div class="sec-count">26 tasks · 19 support/compliance</div></div>
+  <p class="sec-intro">E&amp;S underwriters handle high submission volumes, with <b>hit ratios often under 10%</b> and greater flexibility over rates and forms. Surplus lines tax calculations and broker licensing are covered in the wholesale-broker section.</p>
+  <div class="pipe">
+    <details class="stg"><summary><div class="stg-name">Intake <span class="n">3 · ●</span><span class="car">▶</span></div><div class="stg-stat">30–45 min/submission if manual</div><div class="bar"><i class="bn" style="width:100%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Clear &amp; dedupe across multiple wholesalers</span><a href="https://www.hyperexponential.com/blog/submission-triage-insu">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> OFAC at quote, bind, renewal</span><a href="https://www.ofac-api.com/industry/insurance">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Verify wholesaler license/appointment</span><a href="https://agentsync.io/blog/insurance-101/maintaining-complian">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Prioritize submissions <span class="n">2 · ●</span><span class="car">▶</span></div><div class="stg-stat">select submissions for review</div><div class="bar"><i class="bc" style="width:100%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl">Decline risks outside the appetite criteria</span><a href="https://www.federato.ai/articles/solving-submission-intake-b">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Prioritize in-appetite queue — volume exceeds capacity daily</span><a href="https://www.hyperexponential.com/blog/submission-triage-insu">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Review the risk <span class="n">5 · ●</span><span class="car">▶</span></div><div class="stg-stat">check documents for inconsistencies</div><div class="bar"><i class="bn" style="width:60%"></i><i class="bc" style="width:40%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Re-key into workbench; cross-check ACORD vs SOV vs schedules</span><a href="https://www.nomad-data.com/doc-chat/clearing-the-submission-">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Normalize 3–5 yrs of loss runs across carrier formats</span><a href="https://sortspoke.com/blog/best-loss-run-processing-tools">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Chase wholesalers for missing pieces</span><a href="https://www.nomad-data.com/doc-chat/clearing-the-submission-">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Independent research beyond the submission — news, litigation, web</span><a href="https://alliant.com/news-resources/podcast-the-exciting-worl">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl">Classify, rate, schedule-mod in the engine</span><a href="https://www.ziprecruiter.com/c/Kinsale-Insurance/Job/Associa">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Structure &amp; price <span class="n">3 · ●</span><span class="car">▶</span></div><div class="stg-stat">coverage terms and exclusions</div><div class="bar"><i class="bc" style="width:33%"></i><i class="bh" style="width:67%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g h"></span><span class="lbl">Coverage architecture: base form, exclusions, sublimits, SIRs</span><a href="https://www.iianc.com/who-we-are/news/2026/04/09/new-article">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g h"></span><span class="lbl">Draft manuscript endorsements for one-off exposures</span><a href="https://roughnotes.com/rnmagazine/search/commercial_lines/03">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Rationale file note + referral packages above authority</span><a href="https://www.linkedin.com/pulse/day-life-underwriter-adriane-">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Quote &amp; negotiate <span class="n">2 · ●</span><span class="car">▶</span></div><div class="stg-stat">quotes, declinations, and negotiations</div><div class="bar"><i class="bn" style="width:50%"></i><i class="bh" style="width:50%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Declination letters with reasons; block resubmission in clearance</span><a href="https://www.ziprecruiter.com/c/Kinsale-Insurance/Job/Associa">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g h"></span><span class="lbl">Multi-round negotiation with the wholesaler</span><a href="https://alliant.com/news-resources/podcast-the-exciting-worl">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Bind &amp; verify <span class="n">3 · ●</span><span class="car">▶</span></div><div class="stg-stat">manuscript forms raise error risk</div><div class="bar"><i class="bn" style="width:100%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Verify bind order vs quote and producer authority</span><a href="https://agentsalliance.com/understanding-underwriting-bindin">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Subjectivity tracking in emails/spreadsheets — chase to clearance</span><a href="https://selectsystech.com/blog/subjectivity-management-comme">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Policy check vs bound spec — edition dates, manuscript attachments</span><a href="https://jobgether.com/offer/6995db7cda7696de2f563f3f-e-s-bus">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Post-bind &amp; renew <span class="n">4</span><span class="car">▶</span></div><div class="stg-stat">renewal pricing and retention</div><div class="bar"><i class="bn" style="width:25%"></i><i class="bc" style="width:50%"></i><i class="bh" style="width:25%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Loss-control inspections vs what the submission claimed</span><a href="https://jobgether.com/offer/6995db7cda7696de2f563f3f-e-s-bus">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Mid-term transactions: endorsements, audits, notices</span><a href="https://www.zippia.com/underwriting-assistant-jobs/job-descr">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl">Re-underwrite the renewal book with updated data</span><a href="https://www.onedigital.com/en-US/articles/loss-control-befor">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g h"></span><span class="lbl">Manage the wholesale producer panel: hit ratios, book quality, visits</span><a href="https://www.ziprecruiter.com/c/Kinsale-Insurance/Job/Associa">src</a></div></div>
+    </div></details>
+  </div>
+</section>
+
+<!-- ============ MGA ============ -->
+<section id="mga">
+  <div class="sec-head"><h2>MGA / program administrator</h2><div class="sec-count">25 tasks · 17 support/compliance</div></div>
+  <p class="sec-intro">MGAs underwrite within authority granted by carriers and report back to them — NAIC #225 mandates <b>semi-annual on-site carrier audits</b>. Bordereaux: 3–5 days per carrier per month. Commission recon: 18 hrs/mo at ~7% error. Aggregate reporting: 2–4 days/mo.</p>
+  <div class="pipe">
+    <details class="stg"><summary><div class="stg-name">Intake <span class="n">2 · ●</span><span class="car">▶</span></div><div class="stg-stat">same risk keyed 2–3×</div><div class="bar"><i class="bn" style="width:100%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Clearance, prior-declination checks, OFAC checks throughout the policy lifecycle</span><a href="https://alessa.com/blog/sanctions-screening-checklist-for-in">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Re-key from broker emails into rating + PAS</span><a href="https://pibit.ai/blog/bordereau-ingestion-automation">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Underwrite in authority <span class="n">3 · ●</span><span class="car">▶</span></div><div class="stg-stat">document decisions and referrals</div><div class="bar"><i class="bc" style="width:100%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl">Check every risk vs binding-authority parameters</span><a href="https://www.getregure.com/glossary/binding-authority/">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Referral packages out-of-authority; chase the carrier's answer</span><a href="https://www.career.com/job/axiscapital/vice-president-progra">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Rationale + peer review per the authority statement</span><a href="https://www.pgbutler.com/external-coverholders-audit/">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Issue &amp; verify <span class="n">2 · ●</span><span class="car">▶</span></div><div class="stg-stat">contractual timeframes</div><div class="bar"><i class="bn" style="width:100%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl">Quotes/binders/policies within binder timeframes; booking &amp; invoicing</span><a href="https://americanspecialty.com/careers/underwriter-technician">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Policy check vs binder; subjectivity chasing</span><a href="https://www.tealhq.com/job/underwriting-technician_7ea1a75d9">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Monthly reporting <span class="n">3 · ●</span><span class="car">▶</span></div><div class="stg-stat">3–5 days per carrier per month</div><div class="bar"><i class="bn" style="width:100%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Bordereaux per carrier: pull, reconcile, reformat per template; variance disputes<span class="q">24–30 finance hrs/mo across 8 carrier formats at one MGA</span></span><a href="https://peakflo.co/blog/insurance-mga-finance-automation">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Commission reconciliation + producer disputes<span class="q">18 hrs/mo, ~7% error, 12 disputes/mo</span></span><a href="https://peakflo.co/blog/insurance-mga-finance-automation">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Fiduciary trust account; net-premium remittance in caps</span><a href="https://centriconsulting.com/news/insights/a-carriers-playbo">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Portfolio watch <span class="n">2 · ●</span><span class="car">▶</span></div><div class="stg-stat">2–4 days/mo on aggregates</div><div class="bar"><i class="bn" style="width:100%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Premium vs EPI/binder cap pacing</span><a href="https://mgaa.co.uk/inari-modern-underwriting-software-how-mg">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Aggregate/CAT accumulation per capacity provider's template</span><a href="https://www.birdseyeview.ai/solutions/for-managing-general-a">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Claims &amp; complaints <span class="n">2 · ●</span><span class="car">▶</span></div><div class="bar"><i class="bc" style="width:100%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> TPA oversight: FNOL forwarding deadlines, service monitoring, over-authority escalation</span><a href="https://content.naic.org/sites/default/files/model-law-225.pdf">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> DOI complaint logging; market-conduct exam support</span><a href="https://content.naic.org/sites/default/files/model-law-225.pdf">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Audit season <span class="n">2 · ●</span><span class="car">▶</span></div><div class="stg-stat">semi-annual, statutory</div><div class="bar"><i class="bc" style="width:100%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Assemble complete sampled files for carrier review</span><a href="https://www.pgbutler.com/external-coverholders-audit/">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Complete corrective actions and record the results</span><a href="https://www.career.com/job/axiscapital/vice-president-progra">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Keep the capacity <span class="n">2</span><span class="car">▶</span></div><div class="stg-stat">renew carrier agreements</div><div class="bar"><i class="bc" style="width:50%"></i><i class="bh" style="width:50%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl">Quarterly program performance reporting to carriers</span><a href="https://www.career.com/job/axiscapital/vice-president-progra">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g h"></span><span class="lbl">Negotiate binding-authority renewal</span><a href="https://www.inari.io/how-mgas-can-strengthen-trust-with-capa">src</a></div></div>
+    </div></details>
+  </div>
+</section>
+
+<!-- ============ CLAIMS ============ -->
+<section id="claims">
+  <div class="sec-head"><h2>Claims adjuster / examiner</h2><div class="sec-count">26 tasks · 19 support/compliance</div></div>
+  <p class="sec-intro"><b>~40% of time on documentation · 150–200 open files per desk · 58% spend &gt;20% of time on pure compliance.</b> ~15% of claims close missing valid subrogation — $15–20B/yr industry-wide. <i>Medicare Section 111 reporting is included below.</i></p>
+  <div class="pipe">
+    <details class="stg"><summary><div class="stg-name">FNOL &amp; setup <span class="n">4 · ●</span><span class="car">▶</span></div><div class="stg-stat">statutory clock starts</div><div class="bar"><i class="bn" style="width:100%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Claim setup; policy-in-force verification</span><a href="https://www.insurancejobs.com/job-description/claims-examine">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Statutory acknowledgment (10 working days, NAIC model), proof logged</span><a href="https://content.naic.org/sites/default/files/model-law-900.pdf">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> ISO ClaimSearch report + match review</span><a href="https://www.prismrisk.gov/services/claims/iso-claimsearch/">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> OFAC on payees before any payment</span><a href="https://www.verisk.com/company/newsroom/iso-claims-database-">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Contact &amp; coverage <span class="n">3 · ●</span><span class="car">▶</span></div><div class="stg-stat">24–48h three-point contact</div><div class="bar"><i class="bc" style="width:100%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Make three-point contact and follow up on unanswered calls</span><a href="https://blog.reduceyourworkerscomp.com/2018/11/18-items-in-y">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl">Coverage analysis: actual forms vs the loss facts</span><a href="https://vcasoftware.com/claims-handling-best-practices/">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> ROR + coverage-position letters citing policy language</span><a href="https://www.sonant.ai/blog/insurance-claims-adjuster-job-des">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Reserve &amp; investigate <span class="n">4 · ●</span><span class="car">▶</span></div><div class="stg-stat">document reserve decisions</div><div class="bar"><i class="bn" style="width:25%"></i><i class="bc" style="width:50%"></i><i class="bh" style="width:25%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Reserves within authority + documented rationale for every change</span><a href="https://www.manifest.ly/use-cases/insurance/claims-auditing-">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g h"></span><span class="lbl">Recorded statements &amp; interviews</span><a href="https://www.insurancejobs.com/job-description/claims-examine">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Chase records, assemble timelines, reconcile inconsistencies</span><a href="https://www.wisedocs.ai/role/claims-adjusters">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl">Vendor management: IAs, engineers, appraisers, counsel — assign, chase, QC</span><a href="https://vcasoftware.com/claims-handling-best-practices/">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Reporting deadlines <span class="n">3 · ●</span><span class="car">▶</span></div><div class="stg-stat">58% spend &gt;20% of time here</div><div class="bar"><i class="bn" style="width:100%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Medicare §111/MSP: beneficiary query, TPOC/ORM reporting, lien resolution before funds release<span class="q"></span></span><a href="https://www.cms.gov/medicare/coordination-benefits-recovery/mandatory-insurer-reporting">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> 45-day status letters while investigation is open</span><a href="https://content.naic.org/sites/default/files/model-law-900.pdf">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> State forms + internal compliance reporting</span><a href="https://riskandinsurance.com/claims-adjusters-spend-too-much">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Resolve <span class="n">3 · ●</span><span class="car">▶</span></div><div class="stg-stat">$15–20B/yr of missed subro</div><div class="bar"><i class="bn" style="width:67%"></i><i class="bh" style="width:33%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g h"></span><span class="lbl">Evaluate &amp; negotiate settlement (bad-faith exposure); committee referrals above authority</span><a href="https://www.insurancejobs.com/job-description/claims-examine">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Payment, releases, settlement-rationale documentation</span><a href="https://www.manifest.ly/use-cases/insurance/claims-auditing-">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Salvage disposition + subrogation identification before closure<span class="q">~15% of claims close missing valid subro</span></span><a href="https://claraanalytics.com/blog/the-hidden-drain-on-casualty">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Litigation <span class="n">2 · ●</span><span class="car">▶</span></div><div class="stg-stat">settlement and litigation decisions</div><div class="bar"><i class="bn" style="width:50%"></i><i class="bh" style="width:50%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g h"></span><span class="lbl">Panel counsel assignment, litigation plan/budget, strategy</span><a href="https://www.irmi.com/articles/expert-commentary/litigation-m">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Line-by-line legal bill review vs billing guidelines</span><a href="https://www.thehartford.com/claims-panel-counsel/billing-gui">src</a></div></div>
+    </div></details>
+    <div class="arw">→</div>
+    <details class="stg"><summary><div class="stg-name">Always on <span class="n">4 · ●</span><span class="car">▶</span></div><div class="stg-stat">~40% of all time: documentation</div><div class="bar"><i class="bn" style="width:50%"></i><i class="bc" style="width:50%"></i></div></summary><div class="stg-body">
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Contemporaneous claim notes — records for review and potential bad-faith disputes<span class="q">~40% of adjuster time</span></span><a href="https://www.sonant.ai/blog/insurance-claims-adjuster-job-des">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Daily diary across 150–200 open files</span><a href="https://www.careerglider.com/blog/day-in-the-life-of-a-claim">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g n"></span><span class="lbl"><span class="inv-dot">●</span> Re-key between CMS, estimating platforms, state portals</span><a href="https://www.onetonline.org/link/summary/13-1031.00?redir=13-">src</a></div></div>
+      <div class="t"><div class="tl"><span class="g c"></span><span class="lbl"><span class="inv-dot">●</span> Captioned large-loss reports to home office, excess carriers, reinsurers; audit-ready closure</span><a href="https://claimsadjusters.co/blog/large-loss-adjusting-service">src</a></div></div>
+    </div></details>
+  </div>
+</section>
+
+<!-- ============ AUDIT SPINE ============ -->
+<section id="audit">
+  <div class="sec-head"><h2>Why the support/compliance work exists</h2><div class="sec-count">requirements and source references</div></div>
+  <p class="sec-intro">The references below describe underwriting and claims records, reasons for decisions, and delegated-authority requirements. Examiners may review underwriting notes, and claim files must support the determination. The applicable requirements depend on the jurisdiction and agreement.</p>
+  <div class="cos">
+    <div class="co"><b>The "underwriting file" is legally defined</b><em>NAIC Ch.20: every input used to select, classify, rate, or terminate must be included in the file</em></div>
+    <div class="co"><b>Examiners read the underwriter's notes</b><em>Standard 4 reviews "underwriter's file or notes on a system log"</em></div>
+    <div class="co"><b>Record reasons for declinations</b><em>valid recorded reasons for every declination; agents' declinations monitored too</em></div>
+    <div class="co"><b>Adverse decisions need stated reasons</b><em>NAIC #670 "specific and accurate reasons"; FCRA adverse-action notices on credit-driven pricing</em></div>
+    <div class="co"><b>Document the reasons for claim decisions</b><em>Standard 5: documentation "sufficient to support or justify the ultimate claim determination"</em></div>
+    <div class="co"><b>Record claim dates</b><em>loss · reported · sufficient-info · accepted/rejected — per claim</em></div>
+    <div class="co"><b>Identify the policy provisions behind a denial</b><em>specific policy provision + appeal instructions, mandated content</em></div>
+    <div class="co"><b>Lloyd’s delegated-authority categories</b><em>Full → Pre-set Rates → No Discretion → Prior Submit (every risk referred)</em></div>
+    <div class="co"><b>Claims declination is rarely delegated</b><em>a coverholder "will very rarely have authority to decline a claim" — refer denials to the authorized decision-maker</em></div>
+    <div class="co"><b>MGA oversight is statutory</b><em>NAIC #225: semi-annual on-site review of underwriting and claims operations</em></div>
+    <div class="co"><b>Fronting carriers review underwriting procedures</b><em>how risks are "selected, priced, referred, and declined" — diligence items</em></div>
+    <div class="co"><b>Bordereaux report premiums, risks, and claims</b><em>premium/risk/claims bordereaux + GPI tracking + aggregate reports by zone</em></div>
+  </div>
+  <div class="callout"><b>When using AI:</b> keep the information and reasons needed to review a decision. Check the relevant recordkeeping requirements before changing a workflow. Allianz’s announced work with Anthropic includes AI decision logging; see the company examples below.</div>
+</section>
+
+<!-- ============ DEPLOYMENTS ============ -->
+<section id="deployments">
+  <div class="sec-head"><h2>Reported AI use in insurance</h2><div class="sec-count">24 deployments, investments, and acquisitions · 2023–2026 · company announcements and secondary reports</div></div>
+  <p class="sec-intro">Examples include intake, triage, claims correspondence, and assistance with underwriting decisions. Investment announcements and acquisitions are listed alongside deployments; they do not establish operational results.</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Who</th><th>Activity or announcement</th><th>With</th><th>When</th><th></th></tr>
+    <tr><td><b>Allianz</b></td><td>Enterprise agents + Claude Code + AI decision logging</td><td>Anthropic</td><td class="mono">Jan '26</td><td class="src"><a href="https://www.allianz.com/en/mediacenter/news/media-releases/260109-allianz-and-anthropic-forge-global-partnership.html">→</a></td></tr>
+    <tr><td><b>AIG</b></td><td>E&amp;S submissions pre-ingested + prioritized; "AIG Assist" multi-agent orchestration live in Lexington middle-market property UW</td><td>Anthropic + Palantir</td><td class="mono">2025–26</td><td class="src"><a href="https://www.carriermanagement.com/features/2025/04/28/274588.htm">→</a></td></tr>
+    <tr><td><b>Travelers</b></td><td>TravelersLLM — proprietary model trained on millions of internal docs for UW analysis &amp; research</td><td>internal</td><td class="mono">2026</td><td class="src"><a href="https://aiinsurerbrief.com/p/aib-21-travelers-builds-its-own-llm-fca-maps-the-agentic-finance-shift">→</a></td></tr>
+    <tr><td><b>Nationwide</b></td><td>$1.5B AI commitment through 2028; target: 90% of employees using AI regularly</td><td>program-wide</td><td class="mono">2025</td><td class="src"><a href="https://aiinsurerbrief.com/p/issue-05-nationwide-1-5b-ai-investment-ai-is-the-new-os-sixfold-1m-ai-uw-submissions-meta-pendant-st">→</a></td></tr>
+    <tr><td><b>Allianz</b></td><td>"Project Nemo": 7 specialized agents (planner, fraud, coverage…) collaborate on straight-through claims; storm food-spoilage claims paid in hours</td><td>internal</td><td class="mono">2025</td><td class="src"><a href="https://aiinsurerbrief.com/p/issue-03-allianz-7-ai-agents-now-collaborate-aon-claims-copilot-world-s-first-large-scale-cyberattac">→</a></td></tr>
+    <tr><td><b>Marsh</b></td><td>Risk Companion + Renewal Companion — client risk data linked to actuarial models; retention/limit scenario modeling</td><td>internal</td><td class="mono">2026</td><td class="src"><a href="https://aiinsurerbrief.com/p/aib-15-aig-multi-agent-uw-claims-operating-model-duck-creek-s-agentic-product-config">→</a></td></tr>
+    <tr><td><b>Aviva</b></td><td>Home quotes inside ChatGPT (~2-min journey); GP medical-report summarizer for life UW</td><td>OpenAI / internal</td><td class="mono">2026</td><td class="src"><a href="https://aiinsurerbrief.com/p/aib-13-ai-moves-into-distribution-aviva-brings-insurance-quotes-to-chatgpt">→</a></td></tr>
+    <tr><td><b>Verisk</b></td><td>Analytics wired into Claude Enterprise via MCP connectors (Underwriting Intelligence, XactRe)</td><td>Anthropic</td><td class="mono">2026</td><td class="src"><a href="https://aiinsurerbrief.com/p/aib-16-corgi-reached-unicorn-status-verisk-gave-claude-an-insurance-brain-markel-ai-underwriting-sta">→</a></td></tr>
+    <tr><td><b>Hippo</b></td><td>Agentic AI across claims: triage, subro screening, SIU flagging, doc review, comms</td><td>internal</td><td class="mono">2026</td><td class="src"><a href="https://aiinsurerbrief.com/p/aib-14-aon-gpt-disciplined-ai-execution-end-to-end-claims-agentic-ai-dxc-ai-workflow-assistant">→</a></td></tr>
+    <tr><td><b>Zurich (AU)</b></td><td>Life UW for mental-health disclosures: 22 days → under 1 day (with UTS)</td><td>UTS</td><td class="mono">2025</td><td class="src"><a href="https://aiinsurerbrief.com/p/issue-02-zurich-accelerated-life-uw-from-rpa-to-agentic-ai-meta-600b-investment-plan">→</a></td></tr>
+    <tr><td><b>Zurich</b></td><td>Submission triage 75→15 min, 98% accuracy, 5 countries in 90 days</td><td>Cytora</td><td class="mono">May '26</td><td class="src"><a href="https://www.theinsurer.com/ti/news/exclusive-zurich-rolls-out-ai-submission-intake-across-">→</a></td></tr>
+    <tr><td><b>Chubb</b></td><td>3M+ claims docs at 85%+ no-touch; first contact 24h→3h</td><td>internal</td><td class="mono">FY25</td><td class="src"><a href="https://about.chubb.com/stories/2025-chubb-letter-to-shareholders.html">→</a></td></tr>
+    <tr><td><b>Allstate</b></td><td>~50,000 claimant messages/day drafted by LLMs</td><td>OpenAI</td><td class="mono">2025</td><td class="src"><a href="https://www.theregister.com/2025/02/13/allstate_insurance_ai_rep/">→</a></td></tr>
+    <tr><td><b>Liberty Mutual</b></td><td>LibertyGPT to 45k staff; quoting engine inside ChatGPT (bindable, 7 states)</td><td>OpenAI</td><td class="mono">'23–26</td><td class="src"><a href="https://www.libertymutualgroup.com/about-lm/news/articles/liberty-mutual-insurance-launche">→</a></td></tr>
+    <tr><td><b>Markel</b></td><td>"Cortex" — AI business unit for hard-to-place casualty; Indico intake</td><td>Bain / Indico</td><td class="mono">Jul '26</td><td class="src"><a href="https://www.reinsurancene.ws/markel-insurance-expands-ai-strategy-with-bain-partnership-la">→</a></td></tr>
+    <tr><td><b>Kinsale</b></td><td>Two frontier-LLM licenses per associate; AI in UW worksheets</td><td>undisclosed</td><td class="mono">2026</td><td class="src"><a href="https://www.fool.com/earnings/call-transcripts/2026/04/24/kinsale-knsl-q1-2026-earnings-tr">→</a></td></tr>
+    <tr><td><b>Hiscox</b></td><td>Lead underwriting model, quote 3 days → 3 minutes (terrorism)</td><td>Google</td><td class="mono">Aug '24</td><td class="src"><a href="https://www.hiscoxgroup.com/news/press-releases/2024/12-08-24">→</a></td></tr>
+    <tr><td><b>Travelers</b></td><td>Bought the cyber UW stack outright ($435M Corvus)</td><td>Corvus</td><td class="mono">Jan '24</td><td class="src"><a href="https://investor.travelers.com/newsroom/press-releases/news-details/2024/Travelers-Complet">→</a></td></tr>
+    <tr><td><b>CCC</b></td><td>Bought claims guidance ($730M EvolutionIQ)</td><td>EvolutionIQ</td><td class="mono">Q1 '25</td><td class="src"><a href="https://www.businesswire.com/news/home/20241220225656/en/CCC-Intelligent-Solutions-Announc">→</a></td></tr>
+    <tr><td><b>RGA</b></td><td>Medical records → underwriting abstract (life); investment + exclusive partnership</td><td>DigitalOwl</td><td class="mono">Jan '24</td><td class="src"><a href="https://www.businesswire.com/news/home/20240109013517/en/RGA-Announces-Strategic-Investmen">→</a></td></tr>
+    <tr><td><b>Marsh McLennan</b></td><td>LenAI to ~90k employees, ~700K queries/week</td><td>OpenAI (private)</td><td class="mono">Nov '23</td><td class="src"><a href="https://www.ciodive.com/news/marsh-mclennan-aws-cloud-migration-generative-ai/748140/">→</a></td></tr>
+    <tr><td><b>Aon</b></td><td>"Claims Copilot" for 1,800 broker-side claims advocates</td><td>internal</td><td class="mono">Nov '25</td><td class="src"><a href="https://aon.mediaroom.com/2025-11-11-Aon-Launches-Claims-Copilot-Bringing-Together-Expert-">→</a></td></tr>
+    <tr><td><b>Zurich NA</b></td><td>Aerial imagery + AI roof scoring in property UW</td><td>Nearmap</td><td class="mono">2025</td><td class="src"><a href="https://www.zurichna.com/media/news-releases/2025/nearmap-and-zurich-advance-property-unde">→</a></td></tr>
+    <tr><td><b>Lemonade</b></td><td>55% of claims fully automated; ~96% of FNOLs no-human (self-reported)</td><td>internal</td><td class="mono">Q4 '25</td><td class="src"><a href="https://www.decerto.com/us/post/ai-claims-processing-the-complete-2026-guide-for-us-carrie">→</a></td></tr>
+  </table></div>
+</section>
+
+<!-- ============ VENDORS ============ -->
+<section id="vendors">
+  <div class="sec-head"><h2>Companies by service and business model</h2><div class="sec-count">see the <a href="insurtech-graph.html">Investor Graph</a> (313 startups), <a href="capital-flow.html">Capital Flow</a>, and the <a href="capital-timeline.html">Capital Timeline</a> — funding mapped onto these same stages, over time</div></div>
+  <p class="sec-intro">Some companies sell software or operational services to carriers, brokers, and MGAs. Others use AI to provide brokerage, underwriting, or claims services themselves. The groups below distinguish what each company sells and where it operates. A company may do both.</p>
+
+  <h3>Software and services <span class="tag">— for carriers, brokers, and MGAs</span></h3>
+  <div class="cos">
+    <div class="co"><b>Intake &amp; digitization</b><em>Cytora (Zurich) &middot; Convr (Crum &amp; Forster, Penn National) &middot; Indico (Markel) &middot; mea (Price Forbes, HDI, BMS) &middot; Pibit (loss runs) &middot; Roots (claims mail: 5 days&rarr;1 hr)</em></div>
+    <div class="co"><b>Triage &amp; prioritization</b><em>Federato (Velocity: 20+ days-to-quote fixed) &middot; Kalepa (Paragon: 30%&rarr;100% inbox, 2&times; bind rate) &middot; Sixfold ("every fact cited to source")</em></div>
+    <div class="co"><b>Risk enrichment &amp; verification</b><em>Planck (Applied) &middot; Nearmap &middot; ZestyAI &middot; Axle ("Plaid for insurance" — coverage verification API, $100B+/yr)</em></div>
+    <div class="co"><b>Pricing infrastructure</b><em>hyperexponential (Aviva: 75% model-build time saved) &middot; Earnix &middot; Akur8 &middot; Optalitix (spreadsheets&rarr;APIs) &middot; Tesora (AI agents for actuaries, YC)</em></div>
+    <div class="co"><b>Quote&ndash;bind connectivity</b><em>Herald (one API, many carriers) &middot; Semsee (reduces portal re-keying for small commercial)</em></div>
+    <div class="co"><b>Broker and MGA operations</b><em>Further AI (Accelerant, Novacore clients) &middot; Patra + ReSource Pro (900-point policy checking) &middot; Fulcrum &middot; Outmarket AI &middot; WithCoverage &middot; Notch &middot; Vantel &middot; CopyCat &middot; Zywave Apex &mdash; policy checking, proposal preparation, and certificate-of-insurance services</em></div>
+    <div class="co"><b>Agent-to-agent coordination</b><em>Artificial Labs' AgLabs — broker and underwriter AI agents clearing submission questions between themselves</em></div>
+    <div class="co"><b>Claims FNOL &amp; servicing</b><em>Liberate (Frontline: 70% autonomous FNOL) &middot; Strada (voice servicing, YC) &middot; Tractable (photo estimates)</em></div>
+    <div class="co"><b>Claims guidance &amp; medical</b><em>EvolutionIQ/CCC &middot; CLARA (litigation risk) &middot; Gradient AI &middot; DigitalOwl (RGA) &middot; Wisedocs</em></div>
+    <div class="co"><b>Fraud &amp; SIU</b><em>Shift Technology ($525K single-claim save) &middot; Clearspeed (voice analytics)</em></div>
+    <div class="co"><b>Bordereaux &amp; MGA finance</b><em>Pibit &middot; Peakflo &middot; Inari — monthly reporting and reconciliation</em></div>
+    <div class="co"><b>Subjectivities, COIs, filings</b><em>Pigeon &middot; TrustLayer &middot; Certificate Hero &middot; InsCipher</em></div>
+    <div class="co"><b>Workbenches</b><em>Send (Duck Creek) &middot; Federato RiskOps — submission to bind incl. bordereaux</em></div>
+  </div>
+
+  <h3>Insurance businesses <span class="tag">— using AI to provide services</span></h3>
+  <div class="cos">
+    <div class="co"><b>Harper</b><em>Licensed retail brokerage using AI, 160+ carriers &mdash; $47M (Emergence, YC W25); brokerage account services</em></div>
+    <div class="co"><b>Novella</b><em>Wholesale brokerage using AI for E&amp;S — matches submissions to carrier appetite ($21M)</em></div>
+    <div class="co"><b>Corgi</b><em>Insurer for startups using AI — $4B valuation, founded 2024</em></div>
+    <div class="co"><b>Vouch</b><em>startup insurer with its own carrier (D&amp;O, E&amp;O, cyber, AI cover)</em></div>
+    <div class="co"><b>ClaimSorted</b><em>TPA using AI — insurers outsource claims to it ($13.3M, Atomico)</em></div>
+    <div class="co"><b>Pace</b><em>AI-based outsourced insurance operations, 250k+ workflows ($46M, Sequoia/Thrive)</em></div>
+    <div class="co"><b>MGAs using AI</b><em>Coalition, At-Bay, Shepherd, Armilla (AI-liability coverholder), Counterpart — underwriting under delegated authority; roster on the Market Map</em></div>
+    <div class="co"><b>Business-model comparison</b><em>These examples show firms selling software and firms providing insurance services using AI. Whether either model performs better is an open question; the company list does not establish an answer.</em></div>
+  </div>
+</section>
+
+<footer>
+  <b>Sources and limitations.</b> The August 2026 review used job descriptions, including junior and support roles; practitioner accounts; audit checklists; and vendor descriptions of customer workflows. References included Lloyd’s Code of Practice and Coverholder Guide, NAIC Market Regulation Handbook Chapter 20 and Model #225, and time-use studies from Accenture, McKinsey, Capgemini, Ivans, and Rising. A subsequent review led to 15 corrections. Automation bars count tasks within each stage; they do not measure hours saved. Some time estimates come from individual practitioners, and vendor performance figures—including Lemonade and Chubb figures—are self-reported. Practitioners still need to check the task descriptions and automation assessments. Companion: the <a href="pc-market-map.html">US P&amp;C Market Map</a>.
+</footer>
+</div>
+<script>
+(() => {
+  const wrap = document.querySelector('.wrap');
+  const originalHeader = wrap.querySelector('header');
+  const originalNav = wrap.querySelector('.toc');
+  const footer = wrap.querySelector('footer');
+  const roles = {
+    broker: ['Retail broker', 'Advises the client, prepares submissions, compares quotes, and services the policy.', 'Clients, wholesalers, and carrier underwriters', 'brokers'],
+    'uw-admitted': ['Admitted underwriter', 'Reviews submissions, sets terms within the filed plan, and decides whether to quote or renew.', 'Retail brokers, internal specialists, and reinsurers', 'carriers'],
+    wholesale: ['Wholesale broker', 'Helps retail brokers find suitable E&S markets, negotiates placements, and handles surplus lines requirements.', 'Retail brokers, E&S underwriters, and MGAs', 'wholesale'],
+    'uw-es': ['E&S underwriter', 'Selects specialty risks, develops coverage terms, and negotiates with wholesale brokers.', 'Wholesale brokers, internal specialists, and reinsurers', 'carriers'],
+    mga: ['MGA team', 'Underwrites within delegated authority and manages policy issuance, reporting, and carrier oversight.', 'Brokers, capacity providers, and claims administrators', 'mgas'],
+    claims: ['Claims team', 'Investigates losses, evaluates coverage, manages claim services, and resolves claims.', 'Policyholders, brokers, counsel, and specialist service providers', 'claims']
+  };
+  const sections = [...wrap.querySelectorAll(':scope > section')];
+  const intro = document.createElement('div'); intro.className='explorer';
+  intro.innerHTML = `<div class="kicker">Insurance work, role by role</div><h1>Who does what in P&amp;C insurance</h1><p>Follow the work from a client’s insurance needs to a claim. Choose a role to explore its activities, the people it works with, and relevant companies.</p>
+    <nav class="view-nav" aria-label="Explore the reference"><a href="#broker" data-view="roles">Workflows</a><a href="#vendors" data-view="vendors">Companies &amp; services</a><a href="#deployments" data-view="deployments">AI examples</a><a href="#audit" data-view="audit">Requirements &amp; sources</a></nav>
+    <div id="workflow-controls"><div class="process" aria-label="Typical insurance process"><div><small>01</small><b>Client</b><span>Identify insurance needs</span></div><div><small>02</small><b>Broker</b><span>Find markets and compare terms</span></div><div><small>03</small><b>Underwriting</b><span>Admitted or E&amp;S placement</span></div><div><small>04</small><b>Policy servicing</b><span>Issue, amend, and renew</span></div><div><small>05</small><b>Claims</b><span>Investigate and resolve losses</span></div></div>
+    <p style="font-size:12px">Admitted placements may go directly from retail broker to carrier. E&amp;S placements may involve a wholesaler or MGA. Select the participant you want to explore.</p>
+    <nav class="role-nav" aria-label="Insurance roles">${Object.entries(roles).map(([id,r])=>`<a href="#${id}">${r[0]}</a>`).join('')}</nav>
+    <div class="reader-controls"><label><input type="checkbox" id="automation-toggle"> Show automation assessment</label><button type="button" id="expand-stages">Expand all stages</button></div>
+    <div class="automation-key" hidden>Green: automation candidate · Amber: AI-assisted · Gray: human-led. These are research assessments, not tested automation rates. Original counts and percentages need reconciliation with the detailed task lists.</div></div>`;
+  wrap.prepend(intro);
+  originalNav.hidden=true;
+  const notes=document.createElement('details');notes.className='reference-notes';
+  notes.innerHTML='<summary>Original overview, estimates, and reading notes</summary>';
+  wrap.insertBefore(notes,footer); notes.append(originalHeader);
+  for(const [id,r] of Object.entries(roles)) {
+    const section=document.getElementById(id);
+    const context=document.createElement('div');context.className='role-context';
+    context.innerHTML=`<div><small>What this role does</small><p>${r[1]}</p></div><div><small>Works with</small><p>${r[2]}</p></div>`;
+    section.querySelector('.sec-head').after(context);
+    const related=document.createElement('aside');related.className='related';
+    related.innerHTML=`<h3>Companies and supporting services</h3><p>See the firms operating in this part of the market, or compare software and service providers by activity.</p><a href="pc-market-map.html#${r[3]}">View ${r[0].toLowerCase()} companies ↗</a><a href="#vendors">Software &amp; service directory</a><a href="#audit">Documentation requirements</a>`;
+    section.append(related);
+    const estimates=section.querySelector(':scope > .sec-intro');
+    const detail=document.createElement('details');detail.className='reference-notes';detail.innerHTML='<summary>Reported workload and research notes</summary>';
+    estimates.before(detail);detail.append(estimates);
+  }
+  const toggle=document.getElementById('automation-toggle');
+  toggle.addEventListener('change',()=>{ document.body.classList.toggle('show-automation',toggle.checked); document.querySelector('.automation-key').hidden=!toggle.checked; });
+  const expand=document.getElementById('expand-stages');
+  let current='broker';
+  function updateExpand(){const items=[...document.getElementById(current).querySelectorAll('details.stg')];expand.textContent=items.length&&items.every(x=>x.open)?'Collapse all stages':'Expand all stages';}
+  expand.addEventListener('click',()=>{const items=[...document.getElementById(current).querySelectorAll('details.stg')];const open=!items.every(x=>x.open);items.forEach(x=>x.open=open);updateExpand();});
+  document.querySelectorAll('details.stg').forEach(x=>x.addEventListener('toggle',updateExpand));
+  function route(focus=false){
+    const requested=location.hash.slice(1);current=sections.some(x=>x.id===requested)?requested:'broker';
+    const isRole=Boolean(roles[current]);
+    sections.forEach(s=>s.hidden=s.id!==current);
+    document.getElementById('workflow-controls').hidden=!isRole;
+    notes.hidden=current!=='audit'; footer.hidden=current!=='audit';
+    intro.querySelectorAll('a').forEach(a=>{const active=a.dataset.view?(isRole?a.dataset.view==='roles':a.dataset.view===current):a.hash==='#'+current;if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+    updateExpand();
+    if(focus){const heading=document.getElementById(current).querySelector('h2');heading.tabIndex=-1;heading.focus({preventScroll:true});intro.scrollIntoView({behavior:'instant'});}
+  }
+  document.body.classList.add('enhanced');
+  document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a||!sections.some(s=>'#'+s.id===a.hash))return;e.preventDefault();if(location.hash===a.hash)route(true);else location.hash=a.hash;});
+  window.addEventListener('hashchange',()=>route(true));
+  window.addEventListener('beforeprint',()=>document.querySelectorAll('details.stg').forEach(d=>{d.dataset.wasOpen=String(d.open);d.open=true;}));
+  window.addEventListener('afterprint',()=>document.querySelectorAll('details.stg').forEach(d=>d.open=d.dataset.wasOpen==='true'));
+  route();
+})();
+</script>

@@ -1,0 +1,38 @@
+{
+  "org_family": "InsurTech America",
+  "founder": "Stacey Brown (Founder/President InsurTech Hartford; 20+ years insurance-tech exec; separately Head of Global Technology Innovation at AXA XL)",
+  "founded": "InsurTech Hartford founded 2016 (original chapter); network expanded to sister chapters over 2017-2025",
+  "structure": "InsurTech America (insurtechamerica.com) is the umbrella brand for six regional chapters, each with its own site: InsurTech Hartford (insurtechhartford.com), InsurTech Chicago (insurtechchi.com), InsurTech Atlanta (insurtechatlanta.com), InsurTech New England (insurtechnewengland.com), InsurTech Florida (insurtechfl.com), InsurTech Carolinas (insurtechcarolinas.com).",
+  "this_is_a_separate_network_from_insurtechny": true,
+  "startup_directory_or_map": "NONE FOUND. Unlike InsurTech NY, none of the six chapter sites publish a startup map/company directory - confirmed by direct page fetch of insurtechamerica.com/about-us.html, insurtechhartford.com, and insurtechdenver.org (InsurTech Denver appears to be a separate, unaffiliated regional group - not listed as one of the six InsurTech America chapters).",
+  "multiyear_census_available_via": "Each chapter runs an annual 'Innovation Challenge' (Hartford's is presented with ACORD). This functions as InsurTech Hartford's own version of InsurTech NY's Competition - a startup name list per year. Only Hartford's had recoverable per-year winner data; Chicago/Atlanta/New England/Florida/Carolinas challenge history was not found in this pass.",
+  "insurtech_hartford_innovation_challenge_by_year": {
+    "2024": {
+      "award": "Innovation Challenge winners",
+      "winners": ["Wuuii", "Parachute", "iGuard Home Solutions"],
+      "source": "insurtechhartford.com homepage, live pull"
+    },
+    "2022": {
+      "categories": {
+        "Most Novel Underwriting Data Capture Solution": {"winner": "Bees360", "prize": "$10,000 from The Hartford", "finalists": ["HomeZada", "CogniSure"]},
+        "Cyber Risk Prevention & Mitigation Tech": {"winner": "Haventec", "prize": "$10,000 from Hartford Steam Boiler", "finalists": ["Phalanx", "Sling"]},
+        "Best Emerging InsurTech": {"winner": "Ahoy! Insurance", "prize": "$10,000 from Launc[H]artford and EMC", "finalists": ["Dreyev"]}
+      },
+      "source": "GlobeNewswire press release, 2022-11-18"
+    },
+    "2021": {
+      "categories": {
+        "Travelers Emerging Product Category": {"winner": "PainWorth", "runners_up": ["Saya", "Sola"]},
+        "Judges' All-Around Favorite": {"winner": "Otonomi", "runners_up": ["Serenus", "Protosure"]},
+        "Best Emerging InsurTech": {"winner": "CoverHero", "runners_up": ["WeAnalyze", "MotionsCloud"]}
+      },
+      "source": "GlobeNewswire press release, 2021-06-30",
+      "note": "received ~100 submissions from 12 countries"
+    },
+    "2020": {
+      "winners": ["Infiniquo Inc. (NJ, virtual training simulations)", "Tide Foundation (Australia, IT/tech services)", "Hosta Labs Inc. (Cambridge MA, AI floor plans from imagery)", "Sigo Insurance Services LLC (NY, mobile-first car insurance)"],
+      "source": "Insurance Journal / Hartford Business Journal coverage"
+    },
+    "2019_and_2023": "not found in this pass - would need direct access to insurtechhartford.com/innovation-challenge archive pages or press search by exact year"
+  }
+}

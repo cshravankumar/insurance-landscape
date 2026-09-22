@@ -1,0 +1,16 @@
+{
+  "org": "Global Insurance Accelerator (GIA), Des Moines, Iowa",
+  "founded": 2014,
+  "description": "World's first insurtech-focused accelerator, backed by Iowa's insurance industry (Iowa Economic Development / opportunityiowa.gov lists it under Finance & Insurance key industries). ~85 alumni companies claimed as of 2026 annual report.",
+  "coverage": "PARTIAL - this is a genuine multi-year accelerator (cohorts every year since 2014), but the official companies page (globalinsuranceaccelerator.com/companies) is a JS-rendered Squarespace filter widget that would not yield company names to either WebFetch or raw-HTML grep (only cohort-year tag labels like \"(2015)\" were extractable, not the company names attached to each tag - the association is done client-side in JS we could not execute). Company names below are stitched together from press coverage found via WebSearch, not from the portfolio page itself.",
+  "cohorts_recovered": {
+    "2014-2015": {"count_claimed": 6, "companies_named": ["Bonzah"]},
+    "2015-2016": {"count_claimed": 6, "companies_named": []},
+    "2016-2017": {"count_claimed": 6, "companies_named": ["MotionsCloud (Munich)", "RE-Sure (Detroit)", "Sentrys (Belgrade)", "ViewSpection (Tucson)", "FindBob (Toronto)"]},
+    "2017-2018": {"companies_named": []},
+    "2018-2019": {"companies_named": []},
+    "2024": {"companies_named": ["AppEase", "Cybercade", "Innocuous AI", "Lotus Fertility Insurance", "Starup Insurance", "tumbleweed", "Tylmen Tech"]}
+  },
+  "cohort_years_confirmed_to_exist_but_roster_not_recovered": [2019, 2020, 2021, 2022, 2023, 2025, 2026],
+  "honesty_note": "Do not treat the empty cohort_years list as 'no companies' - it means the roster could not be pulled in this pass, not that GIA had no cohort that year. A future pass should try each /demo-day-YYYY page individually via WebFetch/curl rather than the aggregate /companies page."
+}
