@@ -5143,6 +5143,20 @@
    "funding_as_of": "2026-09-22",
    "funding_source": "https://www.moneycontrol.com/news/business/startup/b2b-insurtech-firm-zopper-raises-25-million-in-series-d-funding-round-12878831.html",
    "funding_refreshed": "2026-09-22"
+  },
+  {
+   "name": "Cara",
+   "url": "https://www.withoyster.com",
+   "what": "AI platform automating insurance brokerage operations (coverage comparisons, proposal generation, form completion, voice/email client handling); evolved from Oyster Technologies after its brokerage book sold to The McGowan Companies",
+   "workflow_step": "broker-ops",
+   "buyer": "broker",
+   "stage": "$8M Seed, Mar 2026 (led by Kearny Jackson)",
+   "investors": [
+    "Kearny Jackson"
+   ],
+   "source": "insurtechny-map-2026-09",
+   "funding_source": "https://coverager.com/cara-raises-8-million/",
+   "funding_refreshed": "2026-10-08"
   }
  ]
 }
