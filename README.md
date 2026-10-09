@@ -6,7 +6,7 @@ Five linked, sourced maps of the US property & casualty insurance market — who
 |---|---|
 | [Market Map](pc-market-map.html) | Every participant type in the $1.05T US P&C market — carriers, reinsurers, brokers, wholesalers, MGAs, fronting carriers, claims/TPAs, and the periphery — named and sized, audited against canonical censuses (NAIC market share, Business Insurance Top 100, AM Best surplus lines, Conning MGA census, Gallagher Re fronting composite). |
 | [Workflow Evidence Map](pc-workflow-map.html) | Six roles × 158 tasks with cited evidence (job postings, audit checklists, regulator handbooks, practitioner accounts), an automation grade per stage, and a ledger of reported AI deployments. |
-| [Investor Graph](insurtech-graph.html) | 332 insurance startups × their investors, as a browsable directory with portfolio highlighting. |
+| [Investor Graph](insurtech-graph.html) | 407 insurance startups × their investors, as a browsable directory with portfolio highlighting. |
 | [Capital Flow](capital-flow.html) | Disclosed funding laid along the value chain the workflow map defines, plus investor concentration ("who doubled down"). |
 | [Capital Timeline](capital-timeline.html) | The same data by year and tier, cross-filterable by investor, drillable to the company. |
 
