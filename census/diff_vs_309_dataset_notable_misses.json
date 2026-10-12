@@ -1,5 +1,5 @@
 {
-  "method": "Read all 309 'name' fields from /Users/shravan/Desktop/appetite-probe/insurtech-dataset.json, lowercased, and diffed against every company name recovered across all new sources this pass (InsurTech NY events/competition/2026 sponsors/2023 map, InsurTech America-Hartford Innovation Challenge, Global Insurance Accelerator, gener8tor/OnRamp, Plug and Play). Did not edit the dataset file itself, per instructions.",
+  "method": "Read all 309 'name' fields from insurtech-dataset.json, lowercased, and diffed against every company name recovered across all new sources this pass (InsurTech NY events/competition/2026 sponsors/2023 map, InsurTech America-Hartford Innovation Challenge, Global Insurance Accelerator, gener8tor/OnRamp, Plug and Play). Did not edit the dataset file itself, per instructions.",
   "headline_numbers": {
     "total_unique_candidate_names_checked": 204,
     "already_in_309_dataset": 22,

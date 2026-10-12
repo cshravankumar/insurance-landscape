@@ -41,7 +41,7 @@ def fetch(company, after):
     q = f'"{company}" (raises OR raised OR funding OR "Series" OR seed OR acquired OR acquires)'
     if after: q += f' after:{after}'
     url = 'https://news.google.com/rss/search?q=' + urllib.parse.quote(q) + '&hl=en-US&gl=US&ceid=US:en'
-    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (appetite-probe freshness check; contact in repo)'})
+    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (insurance-landscape freshness check; contact in repo)'})
     xml = urllib.request.urlopen(req, timeout=25).read()
     out = []
     for it in ET.fromstring(xml).findall('.//item'):

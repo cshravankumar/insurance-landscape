@@ -16,7 +16,7 @@
     "status": "CLOSED main operations per one search result ('SVIA has closed its main operations, though the search results also show their website is still active') - treat as historical/inactive, not a current source of new cohorts.",
     "claimed_scale": "60+ webinars, 400+ thought leaders/innovators/startups showcased across all events over its run",
     "coverage": "NONE - portfolio/companies page (sviaccelerator.com/portfolio/) returned only event-logistics content (hotel info, nav menus), no company names. No cohort roster recovered.",
-    "recommendation": "If this org matters to appetite-probe later, its historical startup showcase would need Wayback recovery of sviaccelerator.com's now-defunct program pages, not the live site."
+    "recommendation": "If this org matters later, its historical startup showcase would need Wayback recovery of sviaccelerator.com's now-defunct program pages, not the live site."
   },
   "regional_meetup_only_orgs_no_directory_found": [
     {"name": "InsurTech Denver", "url": "insurtechdenver.org", "status": "real, active - events/newsletter/video content", "directory": "none found - not affiliated with the InsurTech America (Stacey Brown) network"},

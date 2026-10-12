@@ -47,6 +47,9 @@ def norm(n): return re.sub(r'[^a-z0-9]', '', n.lower())
 
 batch_pattern = sys.argv[1] if len(sys.argv) > 1 else 'triage_batch_*.json'
 result_pattern = sys.argv[2] if len(sys.argv) > 2 else 'triage_result_*.json'
+source_tag = sys.argv[3] if len(sys.argv) > 3 else 'insurtechny-triage-2026-10'
+log_name = sys.argv[4] if len(sys.argv) > 4 else 'TRIAGE_LOG.md'
+log_title = sys.argv[5] if len(sys.argv) > 5 else 'InsurTech NY census triage log'
 
 census = {}
 for f in sorted(glob.glob(f'{BUILD}/{batch_pattern}')):
@@ -76,13 +79,13 @@ for name, r in results.items():
     c = census.get(name, {})
     d['companies'].append({
         'name': name,
-        'url': c.get('website', ''),
+        'url': r.get('url') or c.get('website', ''),
         'what': r.get('what') or r.get('reason', ''),
         'workflow_step': r.get('workflow_step') or 'other',
         'buyer': r.get('buyer') or '',
         'stage': stage_text(r),
         'investors': [r['lead_investor']] if r.get('lead_investor') else [],
-        'source': 'insurtechny-triage-2026-10',
+        'source': source_tag,
         'funding_source': r.get('source_url'),
         'funding_refreshed': str(date.today()),
     })
@@ -91,12 +94,11 @@ for name, r in results.items():
 
 json.dump(d, open(DS, 'w'), indent=1, ensure_ascii=False)
 
-log = [f"# InsurTech NY census triage log — {date.today()}",
+log = [f"# {log_title} — {date.today()}",
        "",
-       f"Every one of the {len(results)} candidates from the InsurTech NY NYC/Boston maps that were",
-       "never individually evaluated in the original Sept 2026 merge now has an explicit decision",
-       "and reason below. This file exists so a gap like the original miss (24 of 180 candidates",
-       "reviewed, the other 156 silently dropped) is checkable rather than implicit.",
+       f"Every one of the {len(results)} census candidates in this pass has an explicit decision",
+       "and reason below. This file exists so a gap like the original InsurTech NY miss (24 of 180",
+       "candidates reviewed, the other 156 silently dropped) is checkable rather than implicit.",
        "",
        f"**{len(included)} included** ({len(skipped_dupe)} already in the dataset under a different name, skipped as duplicates), **{len(excluded)} excluded**.",
        "",
@@ -110,8 +112,8 @@ if skipped_dupe:
 log += ["", "## Excluded", ""]
 for r in sorted(excluded, key=lambda x: x['name']):
     log.append(f"- **{r['name']}** — {r.get('reason','')}")
-open(f'{ROOT}/TRIAGE_LOG.md', 'w').write('\n'.join(log) + '\n')
+open(f'{ROOT}/{log_name}', 'w').write('\n'.join(log) + '\n')
 
 print(f"included: {len(included)} | excluded: {len(excluded)} | duplicates skipped: {len(skipped_dupe)}")
 print(f"dataset now: {len(d['companies'])} companies")
-print("wrote TRIAGE_LOG.md")
+print(f"wrote {log_name}")

@@ -7,7 +7,7 @@ import re
 # $ / £ / € / GBP / EUR / USD amounts; non-USD converted at a flat approximate rate (good enough for a
 # capital-flow chart, wrong for accounting) -- USD_PER tells the reader which figures were converted.
 MONEY_RE = re.compile(r'(?:(\$|£|€|USD|GBP|EUR)\s?)([\d,.]+)(?:\s?[-–]\s?[\d,.]+)?\s*([MBK])\b', re.I)
-USD_PER = {'$':1.0,'USD':1.0,'£':1.27,'GBP':1.27,'€':1.08,'EUR':1.08}
+USD_PER = {'$':1.0,'USD':1.0,'£':1.27,'GBP':1.27,'€':1.08,'EUR':1.08,'BRL':0.18,'CAD':0.73}
 # words that mean "this $ figure is NOT money raised by the company"
 AFTER_BAD  = re.compile(r'^\W{0,3}\+?\s*(valuation|valued|post[- ]money|pre[- ]money|lending|credit|commitment|debt facility|GWP|premium|revenue|ARR|market)', re.I)
 BEFORE_BAD = re.compile(r'(acquir\w*|acquisition|bought|sold|exit\w*|deal value|valued at|valuation of|worth|for)\s*(~|about|approx\.?|around|c\.)?\s*$', re.I)
