@@ -1,5 +1,5 @@
 <title>Insurtech Capital Flow</title>
-<meta name="description" content="831 insurtech companies' funding mapped onto the P&C value chain: where capital went, who doubled down, and what raised nothing.">
+<meta name="description" content="The capital of 831 insurtech companies on the P&C value chain. The page shows the capital of each stage and the investors with a concentration in one tier.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
   :root{
@@ -41,7 +41,7 @@
   .callout b{color:var(--gold)}
 
   /* stage bars */
-  .bar-row{display:grid;grid-template-columns:190px 1fr 92px 60px;align-items:center;gap:10px;margin-bottom:7px}
+  .bar-row{display:grid;grid-template-columns:190px 1fr 72px 112px;align-items:center;gap:10px;margin-bottom:7px}
   .bar-row .lbl{font-size:12.5px;text-align:right;color:var(--ink)}
   .bar-row .lbl small{display:block;color:var(--faint);font-size:10.5px}
   .bar-track{background:var(--track);height:20px;position:relative;border-radius:2px;overflow:hidden}
@@ -54,7 +54,7 @@
 
   /* value-chain tiers (rollup of the workflow steps onto the Workflow Map's participants) */
   .tier{margin-bottom:6px}
-  .tier-row{display:grid;grid-template-columns:190px 1fr 92px 60px;align-items:center;gap:10px;cursor:pointer;border-radius:4px;padding:5px 0}
+  .tier-row{display:grid;grid-template-columns:190px 1fr 72px 112px;align-items:center;gap:10px;cursor:pointer;border-radius:4px;padding:5px 0}
   .tier-row:hover{background:var(--track)}
   .tier-row .lbl{font-size:13px;text-align:right;color:var(--ink);font-weight:600}
   .tier-row .lbl small{display:block;color:var(--faint);font-size:10.5px;font-weight:400}
@@ -73,7 +73,7 @@
   .chain-arrow{color:var(--faint);font-size:13px;line-height:1;margin:0 0 6px 190px;padding-left:2px}
 
   /* funnel */
-  .funnel-row{display:grid;grid-template-columns:110px 1fr 84px 70px;align-items:center;gap:10px;margin-bottom:6px;font-size:12.5px}
+  .funnel-row{display:grid;grid-template-columns:110px 1fr 104px 64px;align-items:center;gap:10px;margin-bottom:6px;font-size:12.5px}
   .funnel-row .lbl{text-align:right}
   .funnel-track{background:var(--track);height:16px;border-radius:2px;overflow:hidden}
   .funnel-fill{height:100%;background:var(--green);opacity:.8}
@@ -105,17 +105,17 @@
   footer{margin-top:60px;padding-top:16px;border-top:1px solid var(--line);color:var(--faint);font-size:12px;max-width:78ch}
   a{color:var(--gold)}
   @media (max-width:640px){
-    .bar-row{grid-template-columns:100px 1fr 74px 44px}
+    .bar-row{grid-template-columns:100px 1fr 60px 96px}
     .bar-row .lbl{font-size:11px}
     /* narrow screens: label on its own line, bar gets the full width */
-    .tier-row,.sub-rows .bar-row{grid-template-columns:1fr 74px 52px;grid-template-areas:"lbl lbl lbl" "bar val cnt";row-gap:3px}
+    .tier-row,.sub-rows .bar-row{grid-template-columns:1fr 60px 108px;grid-template-areas:"lbl lbl lbl" "bar val cnt";row-gap:3px}
     .tier-row .lbl,.sub-rows .bar-row .lbl{grid-area:lbl;text-align:left;font-size:12.5px}
     .tier-row .lbl small{display:inline;margin-left:6px}
     .tier-row .bar-track,.sub-rows .bar-row .bar-track{grid-area:bar}
     .tier-row .val,.sub-rows .bar-row .val{grid-area:val}
     .tier-row .cnt,.sub-rows .bar-row .cnt{grid-area:cnt}
     .chain-arrow{margin-left:0}
-    .funnel-row{grid-template-columns:64px 1fr 60px 0}
+    .funnel-row{grid-template-columns:84px 1fr 96px 0}
     .funnel-row .cnt{display:none}
   }
 
@@ -142,70 +142,70 @@
 <div class="wrap">
 <header>
   <div class="eyebrow">Analysis · Insurtech Capital Flow</div>
-  <h1>Where the money actually went</h1>
-  <p class="lede">831 tracked insurtech companies, their funding, and their investors — mapped onto the same value-chain stages as the <a href="pc-workflow-map.html">Workflow Evidence Map</a>. See also: <a href="capital-timeline.html">Capital Deployment Timeline</a>, this same data with a time axis.</p>
+  <h1>Where the capital went</h1>
+  <p class="lede">This page shows the capital and the investors of 831 tracked insurtech companies. It uses the same stages of the value chain as the <a href="pc-workflow-map.html">Workflow Evidence Map</a>. The <a href="capital-timeline.html">Capital Timeline</a> shows the same data by year.</p>
   <div class="stats" id="headline-stats"></div>
 </header>
 
 <section id="chain">
-  <div class="sec-head"><h2>Capital along the value chain</h2><div class="mono" style="font-size:12px;color:var(--muted)">same spine as the Workflow Evidence Map</div></div>
-  <p class="sec-note">Broker → underwriter → policy in force → claims: the same participants as the Workflow Evidence Map's chain. Click a tier to see the steps inside it. Full-stack insurers aren't a stage — they're a bet on the whole chain — so they sit below it, not in it.</p>
+  <div class="sec-head"><h2>Capital by stage of the value chain</h2><div class="mono" style="font-size:12px;color:var(--muted)">same stages as the Workflow Evidence Map</div></div>
+  <p class="sec-note">The chain goes from broker to underwriter, to policy in force, to claims. These are the same participants as in the Workflow Evidence Map. Click a tier to see its steps. A full-stack carrier is not a stage. It does all the stages, thus it is below the chain.</p>
   <div id="chain-tiers"></div>
   <div class="crosscut-block">
-    <h3 style="margin-top:26px">Not a stage — a bet on the whole chain</h3>
+    <h3 style="margin-top:26px">Companies that are not in one stage</h3>
     <div id="crosscut-tiers"></div>
   </div>
-  <div class="callout"><b>The read:</b> <span id="chain-callout"></span></div>
+  <div class="callout"><b>Summary:</b> <span id="chain-callout"></span></div>
 </section>
 
 <section id="funnel">
-  <div class="sec-head"><h2>Stage-of-maturity funnel</h2></div>
-  <p class="sec-note">How far each company has gotten, regardless of what it does. Capital concentrates at Series C/D — fewer, bigger rounds. Two catch-alls sit underneath and they are not the same thing: companies that state a figure but never name the round, and companies that disclose nothing at all.</p>
+  <div class="sec-head"><h2>Companies by round type</h2></div>
+  <p class="sec-note">Each bar shows the companies with that round type. Series C and Series D rounds hold more capital than each other named round type. These rounds are fewer and larger. The last two bars are different. A "No round name" company gives an amount but no round name. A "No capital data" company gives no amount.</p>
   <div id="funnel-bars"></div>
 </section>
 
 <section id="investors">
-  <div class="sec-head"><h2>Investor leaderboard</h2><div class="mono" style="font-size:12px;color:var(--muted)" id="inv-count"></div></div>
-  <p class="sec-note">Ranked by number of portfolio companies in this dataset. "Concentrated" means 60%+ of an investor's bets sit in one tier of the value chain — a thesis, not a spray. Everyone else is a generalist across insurtech.</p>
+  <div class="sec-head"><h2>Investors by number of companies</h2><div class="mono" style="font-size:12px;color:var(--muted)" id="inv-count"></div></div>
+  <p class="sec-note">The table shows the investors in order of their number of companies in this dataset. "Concentrated" means that 60% or more of the companies of an investor are in one tier of the value chain. Each other investor is a "generalist".</p>
   <div class="tbl-wrap">
     <table>
-      <thead><tr><th>Investor</th><th style="text-align:right">Cos.</th><th>Top segment</th><th>Pattern</th></tr></thead>
+      <thead><tr><th>Investor</th><th style="text-align:right">Companies</th><th>Largest tier</th><th>Pattern</th></tr></thead>
       <tbody id="inv-table"></tbody>
     </table>
   </div>
 </section>
 
 <section id="doubled-down">
-  <div class="sec-head"><h2>Who doubled down</h2></div>
-  <p class="sec-note">Investors with 3+ portfolio companies concentrated (≥60%) in a single value-chain segment — repeated conviction in one part of the chain, not diversification across insurtech broadly.</p>
+  <div class="sec-head"><h2>Investors with a concentration</h2></div>
+  <p class="sec-note">Each investor here has 3 or more companies in this dataset. 60% or more of those companies are in one tier of the value chain.</p>
   <div class="dd-grid" id="dd-grid"></div>
 </section>
 
 <footer>
-  Source: <code>insurtech-dataset.json</code> (831 companies, this repo), cross-referenced with the <a href="pc-workflow-map.html">Workflow Evidence Map</a>'s value-chain stages and the <a href="insurtech-graph.html">Investor Graph</a>. Capital figures are the largest single dollar amount parsed from each company's free-text funding history — a "total raised" proxy, not an audited figure; rounds without a disclosed amount are excluded from totals but still counted as companies. Investor names normalized across known aliases (e.g. HSCM Ventures / HSCM Bermuda / Hudson Structured Capital Management merged as one fund). Compiled 2026-10.
+  The source is <code>insurtech-dataset.json</code> (831 companies, this repo). The stages are from the <a href="pc-workflow-map.html">Workflow Evidence Map</a>. The <a href="insurtech-graph.html">Investor Graph</a> uses the same investors. The capital of a company is the largest single amount in its funding text. It is an estimate of the total capital of the company, and it is not an audited amount. A company with no disclosed amount adds $0 to the totals, but the page counts it as a company. The page shows each investor under one name. For example, HSCM Ventures, HSCM Bermuda and Hudson Structured Capital Management are one investor. Compiled 2026-11.
 </footer>
 </div>
 
 <script>
 const STAGE_ORDER = [
-  ["intake","Submission intake","& digitization"],
-  ["triage","Triage","& prioritization"],
-  ["risk-enrichment","Risk enrichment","& verification"],
+  ["intake","Submission intake","and digitization"],
+  ["triage","Triage","and priority"],
+  ["risk-enrichment","Risk enrichment","and verification"],
   ["pricing","Pricing","infrastructure"],
-  ["MGA-ops","MGA / underwriting","ops, delegated authority"],
-  ["quote-bind","Quote–bind","connectivity"],
-  ["broker-ops","Broker & agency","operations"],
-  ["policy-servicing","Policy servicing","& administration"],
-  ["claims-fnol","Claims FNOL","& intake"],
-  ["claims-guidance","Claims guidance","& medical"],
-  ["fraud","Fraud","& SIU"],
-  ["bordereaux","Bordereaux","& MGA finance"],
-  ["compliance","Compliance","& licensing"],
-  ["other","Other /","uncategorized"],
+  ["MGA-ops","MGA and underwriting","operations, delegated authority"],
+  ["quote-bind","Quote and bind","connectivity"],
+  ["broker-ops","Broker and agency","operations"],
+  ["policy-servicing","Policy servicing","and administration"],
+  ["claims-fnol","Claims FNOL","and intake"],
+  ["claims-guidance","Claims guidance","and medical"],
+  ["fraud","Fraud","and SIU"],
+  ["bordereaux","Bordereaux","and MGA finance"],
+  ["compliance","Compliance","and licensing"],
+  ["other","Other","no category"],
 ];
 const CROSSCUT = [
-  ["full-stack-insurer","Full-stack insurer","new carrier, owns the whole chain"],
-  ["distribution/embedded","Distribution & embedded","marketplaces, embedded & new channels"],
+  ["full-stack-insurer","Full-stack carrier","new carrier, all stages of the chain"],
+  ["distribution/embedded","Distribution and embedded","marketplaces, embedded and new channels"],
 ];
 
 const BY_STAGE = {"intake":{"capital":642550000.0,"count":30,"funded_count":19},"broker-ops":{"capital":1094170000.0,"count":83,"funded_count":49},"full-stack-insurer":{"capital":5925829300.0,"count":70,"funded_count":56},"claims-fnol":{"capital":543282000.0,"count":36,"funded_count":19},"policy-servicing":{"capital":1492325000.0,"count":90,"funded_count":33},"risk-enrichment":{"capital":2294291600.0,"count":96,"funded_count":56},"MGA-ops":{"capital":2136721000.0,"count":73,"funded_count":54},"distribution/embedded":{"capital":3100100000.0,"count":139,"funded_count":88},"pricing":{"capital":771950000.0,"count":27,"funded_count":19},"claims-guidance":{"capital":816600000.0,"count":74,"funded_count":39},"fraud":{"capital":365650000.0,"count":9,"funded_count":6},"quote-bind":{"capital":441840000.0,"count":39,"funded_count":24},"compliance":{"capital":259500000.0,"count":18,"funded_count":5},"other":{"capital":700960000.0,"count":41,"funded_count":19},"triage":{"capital":180000000.0,"count":4,"funded_count":1},"bordereaux":{"capital":7000000.0,"count":2,"funded_count":1}};
@@ -224,25 +224,25 @@ function renderStats(){
   const totalFunded = Object.values(BY_STAGE).reduce((a,b)=>a+b.funded_count,0);
   const el = document.getElementById('headline-stats');
   const stats = [
-    [fmtM(totalCap), 'disclosed capital raised, per company', `Money raised as stated in each company's funding text. £/€ rounds converted at a flat ~1.27/1.08; valuations, acquisition prices and lending commitments are excluded — "$200M Series D at $2.2B valuation" counts $200M. A floor, not a census: ${100-Math.round(100*totalFunded/totalCos)}% of companies disclose no amount at all.`],
-    [totalCos, 'companies tracked', null],
-    [Math.round(100*totalFunded/totalCos)+'%', 'have any disclosed funding amount', null],
-    [TOP_INVESTORS.length, 'investors with 3+ portfolio companies shown', null],
+    [fmtM(totalCap), 'disclosed capital', `This is the capital that each company gives in its funding text. The page converts GBP and EUR rounds at fixed rates of approximately 1.27 and 1.08. The total does not include valuations, purchase prices or loan commitments. For example, "$200M Series D at $2.2B valuation" counts as $200M. The total is a minimum, because ${100-Math.round(100*totalFunded/totalCos)}% of the companies give no amount.`],
+    [totalCos, 'companies', null],
+    [Math.round(100*totalFunded/totalCos)+'%', 'of the companies give an amount', null],
+    [TOP_INVESTORS.length, 'investors with 3 or more companies', null],
   ];
-  el.innerHTML = stats.map(([b,s,note])=>`<div class="stat"><b class="mono">${b}${note?` <button class="dmark" aria-label="note">i<span class="dpop">${note}</span></button>`:''}</b><span>${s}</span></div>`).join('');
+  el.innerHTML = stats.map(([b,s,note])=>`<div class="stat"><b class="mono">${b}${note?` <button class="dmark" aria-label="Note">i<span class="dpop">${note}</span></button>`:''}</b><span>${s}</span></div>`).join('');
 }
 
 // The 16 workflow-step tags rolled up onto the Workflow Evidence Map's participants.
 // [id, participant, what they do (the map's own verbs), steps, noun for prose]
 const TIERS = [
-  ["distribute","Retail broker & distribution","collect · market · bind · service",["broker-ops","quote-bind","distribution/embedded"],"distribution"],
-  ["underwrite","Underwriter & MGA","triage · assess · price · bind — admitted or E&S",["intake","triage","risk-enrichment","pricing","MGA-ops"],"underwriting"],
+  ["distribute","Retail broker and distribution","collect · market · bind · service",["broker-ops","quote-bind","distribution/embedded"],"distribution"],
+  ["underwrite","Underwriter and MGA","triage · assess · price · bind, admitted or E&S",["intake","triage","risk-enrichment","pricing","MGA-ops"],"underwriting"],
   ["administer","Policy in force","servicing · compliance · bordereaux",["policy-servicing","compliance","bordereaux"],"policy administration"],
   ["claims","Claims adjuster","FNOL · investigate · resolve",["claims-fnol","claims-guidance","fraud"],"claims"],
 ];
 const CROSSCUT_TIERS = [
-  ["newcarrier","Full-stack insurer","new carrier — owns the whole chain",["full-stack-insurer"],"new carriers"],
-  ["other","Other","uncategorized",["other"],"other"],
+  ["newcarrier","Full-stack carrier","new carrier, all stages of the chain",["full-stack-insurer"],"new carriers"],
+  ["other","Other","no category",["other"],"other"],
 ];
 const ALL_TIERS = [...TIERS, ...CROSSCUT_TIERS];
 const TIER_OF = {}, TIER_LABEL = {};
@@ -268,7 +268,7 @@ function renderChain(list, containerId, crosscut){
         <div class="lbl">${sl1} <span style="color:var(--faint)">${sl2}</span></div>
         <div class="bar-track"><div class="bar-fill${crosscut?' crosscut':''}" style="width:${Math.max(2,100*b.capital/stepMax)}%"></div></div>
         <div class="val mono">${fmtM(b.capital/1e6)}</div>
-        <div class="cnt mono">${b.count} cos</div>
+        <div class="cnt mono">${b.count} companies</div>
       </div>`;
     }).join('');
     const arrow = (!crosscut && i < list.length-1) ? `<div class="chain-arrow">↓</div>` : '';
@@ -277,7 +277,7 @@ function renderChain(list, containerId, crosscut){
         <div class="lbl">${l1}<small>${l2}</small></div>
         <div class="bar-track"><div class="bar-fill${crosscut?' crosscut':''}" style="width:${Math.max(2,100*t.capital/allMax)}%"></div></div>
         <div class="val mono">${fmtM(t.capital/1e6)}</div>
-        <div class="cnt mono">${t.count} cos</div>
+        <div class="cnt mono">${t.count} companies</div>
       </div>
       <div class="sub-rows">${subs}</div>
     </div>${arrow}`;
@@ -294,25 +294,26 @@ function renderFunnel(){
   const present = order.filter(k => FUNNEL[k]);
   const max = Math.max(...present.map(k=>FUNNEL[k].count), 1);
   // the two catch-alls are different things: a figure with no round name vs. nothing at all
+  const SHOW = {'Round not stated':'No round name', 'Nothing disclosed':'No capital data', 'IPO/public':'IPO or public'};
   const NOTES = {
-    'Round not stated': 'A dollar figure is stated but no round is named — e.g. "~$320M raised" or "$5M strategic". The money is disclosed; the stage isn\'t.',
-    'Nothing disclosed': 'No dollar figure anywhere in the funding text. Counted as a company, contributes $0 to every total on this page.',
+    'Round not stated': 'The company gives an amount but no round name. Examples are "~$320M raised" and "$5M strategic".',
+    'Nothing disclosed': 'The funding text of the company gives no amount. The page counts the company and adds $0 to each total.',
   };
   document.getElementById('funnel-bars').innerHTML = present.map(k => {
     const f = FUNNEL[k];
     const pct = Math.max(3, 100*f.count/max);
-    const note = NOTES[k] ? `<button class="dmark" aria-label="what this bucket means">i<span class="dpop">${NOTES[k]}</span></button>` : '';
+    const note = NOTES[k] ? `<button class="dmark" aria-label="Definition">i<span class="dpop">${NOTES[k]}</span></button>` : '';
     return `<div class="funnel-row">
-      <div class="lbl">${k}${note}</div>
+      <div class="lbl">${SHOW[k]||k}${note}</div>
       <div class="funnel-track"><div class="funnel-fill" style="width:${pct}%"></div></div>
-      <div class="val mono">${f.count} cos</div>
+      <div class="val mono">${f.count} companies</div>
       <div class="cnt mono">${fmtM(f.capital/1e6)}</div>
     </div>`;
   }).join('');
 }
 
 function renderInvestors(){
-  document.getElementById('inv-count').textContent = `top ${TOP_INVESTORS.length} of 700+ distinct investors`;
+  document.getElementById('inv-count').textContent = `${TOP_INVESTORS.length} of more than 800 investors`;
   document.getElementById('inv-table').innerHTML = TOP_INVESTORS.map(inv => {
     const spread = tierSpread(inv.segment_spread);
     const [topSeg, topN] = Object.entries(spread).sort((a,b)=>b[1]-a[1])[0];
@@ -321,7 +322,7 @@ function renderInvestors(){
     return `<tr>
       <td class="wrap-ok">${inv.investor}</td>
       <td class="n">${inv.company_count}</td>
-      <td>${TIER_LABEL[topSeg]||topSeg} <span style="color:var(--faint)">(${topN}/${inv.company_count})</span></td>
+      <td>${TIER_LABEL[topSeg]||topSeg} <span style="color:var(--faint)">(${topN} of ${inv.company_count})</span></td>
       <td>${isConc ? '<span class="tag conc">concentrated</span>' : '<span class="tag gen">generalist</span>'}</td>
     </tr>`;
   }).join('');
@@ -338,8 +339,8 @@ function renderDoubledDown(){
     const more = d.companies.length - shown.length;
     return `<div class="dd-card">
       <div class="name">${d.investor}</div>
-      <div class="meta">${topN}/${d.company_count} bets in <b style="color:var(--green)">${TIER_LABEL[topSeg]||topSeg}</b></div>
-      <div class="chips">${shown.map(c=>`<span class="chip">${c}</span>`).join('')}${more>0?`<span class="chip more">+${more} more</span>`:''}</div>
+      <div class="meta">${topN} of ${d.company_count} companies in <b style="color:var(--green)">${TIER_LABEL[topSeg]||topSeg}</b></div>
+      <div class="chips">${shown.map(c=>`<span class="chip">${c}</span>`).join('')}${more>0?`<span class="chip more">${more} more</span>`:''}</div>
     </div>`;
   }).join('');
 }
@@ -353,7 +354,7 @@ function renderCallout(){
     .map(([k,l1,l2]) => [`${l1} ${l2}`, (BY_STAGE[k]||{capital:0}).capital])
     .sort((a,b)=>a[1]-b[1]).slice(0,3).map(([l])=>l);
   document.getElementById('chain-callout').textContent =
-    `${pct}% of disclosed capital (${fmtM(nc/1e6)}) went to building new carriers — a bet on the whole chain rather than on any one stage of it. Along the chain itself, ${chain.map(([n,c])=>`${n} drew ${fmtM(c/1e6)}`).join(', ')}. The thinnest steps are ${thin.join(', ')} — still nearly empty.`;
+    `New carriers received ${pct}% of the disclosed capital (${fmtM(nc/1e6)}). A new carrier does all the stages of the chain. In the chain, ${chain.map(([n,c])=>`${n} received ${fmtM(c/1e6)}`).join(', ')}. The steps with the least capital are ${thin.join(', ')}.`;
 }
 
 renderStats(); renderChain(TIERS, 'chain-tiers', false); renderChain(CROSSCUT_TIERS, 'crosscut-tiers', true);

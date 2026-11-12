@@ -26,7 +26,7 @@ for name, key in [('BY_STAGE','by_stage'),('FUNNEL','stage_funnel'),('TOP_INVEST
     h, n = re.subn(rf'^const {name} = .*?;$', lambda m: f'const {name} = ' + json.dumps(ca[key], separators=(",",":")) + ';', h, count=1, flags=re.M)
     assert n == 1, name
 N = len(json.load(open(DS))['companies']); STAMP = date.today().strftime('%Y-%m')
-h = re.sub(r"\d+ insurtech (?:startups|companies)'", f"{N} insurtech companies'", h)
+h = re.sub(r"The capital of \d+ insurtech companies", f"The capital of {N} insurtech companies", h)
 h = re.sub(r'\d+ tracked insurtech (?:startups|companies)', f'{N} tracked insurtech companies', h)
 h = re.sub(r'\(\d+ companies, this repo\)', f'({N} companies, this repo)', h)
 h = re.sub(r'Compiled \d{4}-\d{2}', f'Compiled {STAMP}', h)
@@ -46,7 +46,7 @@ p = f'{MAPS}/insurtech-graph.html'; g = open(p).read()
 m = re.search(r'const DATA = (\{.*?\});\n', g, re.S); data = json.loads(m.group(1))
 for c in data['companies']:
     src = ds.get(c['name'])
-    if src: c['stage'] = (src.get('stage') or '')[:60]; c['investors'] = src.get('investors', [])
+    if src: c['what'] = src.get('what', ''); c['stage'] = (src.get('stage') or '')[:60]; c['investors'] = src.get('investors', [])
 GROUP = {'MGA-ops': 'mga-uw', 'intake': 'mga-uw', 'triage': 'mga-uw', 'broker-ops': 'broker-ops',
          'full-stack-insurer': 'full-stack', 'claims-guidance': 'claims', 'claims-fnol': 'claims', 'fraud': 'claims',
          'policy-servicing': 'bind-service', 'quote-bind': 'bind-service', 'compliance': 'bind-service',
@@ -61,7 +61,11 @@ inv = {}
 for c in data['companies']:
     for i in c['investors']: inv[i] = inv.get(i, 0) + 1
 data['invCounts'] = inv
-open(p, 'w').write(g[:m.start(1)] + json.dumps(data, ensure_ascii=True, separators=(",",":")) + g[m.end(1):])
+g = g[:m.start(1)] + json.dumps(data, ensure_ascii=True, separators=(",",":")) + g[m.end(1):]
+open(p, 'w').write(re.sub(r'Compiled \d{4}-\d{2}', f'Compiled {STAMP}', g))
+
+p = f'{MAPS}/pc-workflow-map.html'; w = open(p).read()   # its link to the Investor Graph gives the company count
+open(p, 'w').write(re.sub(r'(Investor Graph</a> )\(\d+ companies\)', rf'\g<1>({N} companies)', w))
 
 bs = ca['by_stage']; tot_cap = sum(v['capital'] for v in bs.values())
 print(f"rebuilt: ${tot_cap/1e9:.2f}B disclosed | new-carrier {round(100*bs['full-stack-insurer']['capital']/tot_cap)}% | dated {dated}/{tot} | funnel: "
